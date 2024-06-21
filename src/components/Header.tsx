@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import ThemeToggle from "./ThemeToggle";
 
 type Props = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: () => void;
   theme: string;
 };
 
@@ -11,7 +12,7 @@ const Header: React.FC<Props> = (props: Props) => {
     <>
       <NavBar>
         <div>
-          <span className="logo">COMPILER</span>
+          <Logo className="logo">COMPILER</Logo>
         </div>
         <NavLinks>
           <a href="#about">About</a>
@@ -19,14 +20,16 @@ const Header: React.FC<Props> = (props: Props) => {
           <a href="#organizer">Organizer</a>
           <a href="#sponsors">Sponsor Us</a>
           <CtaBtn>GET IN TOUCH</CtaBtn>
-          <button onClick={props.onClick}>
-            {props.theme === "light" ? "Dark Mode" : "Light Mode"}
-          </button>
+          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
         </NavLinks>
       </NavBar>
     </>
   );
 };
+
+const Logo = styled.span`
+  letter-spacing: 0.3rem;
+`;
 
 const NavBar = styled.nav`
   width: 100%;

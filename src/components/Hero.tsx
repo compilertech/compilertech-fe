@@ -55,12 +55,12 @@ const StyledSection = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
 `;
 
 const CarouselWrapper = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   position: relative;
 
   .slick-slider {
@@ -68,12 +68,12 @@ const CarouselWrapper = styled.div`
   }
 
   .slick-slide {
-    max-height: 50vh;
+    max-height: 60vh;
     img {
       width: 100%;
       height: 100vh;
       object-fit: cover;
-      opacity: 1;
+      filter: brightness(50%);
     }
   }
 
@@ -93,6 +93,19 @@ const CarouselWrapper = styled.div`
     }
     li.slick-active button:before {
       color: white; // Change the active dot color for better visibility
+    }
+
+    &::before {
+      content: "COMING SOON, BANGALORE!";
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.3rem;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 32px;
+      line-height: 48px;
     }
   }
 `;
