@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const Sponsors = (props: Props) => {
+const Sponsors: React.FC = () => {
   return <section id="sponsors">Sponsors</section>;
 };
 

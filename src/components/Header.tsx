@@ -6,7 +6,7 @@ type Props = {
   theme: string;
 };
 
-const Header = (props: Props) => {
+const Header: React.FC<Props> = (props: Props) => {
   return (
     <>
       <NavBar>

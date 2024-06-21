@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {};
 
-const Tracks = (props: Props) => {
+const Tracks: React.FC<Props> = () => {
   return <section id="tracks">Tracks</section>;
 };
 
