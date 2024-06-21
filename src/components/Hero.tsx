@@ -56,7 +56,6 @@ const StyledSection = styled.section`
   align-items: flex-start;
   justify-content: center;
   height: 50vh;
-  outline: 1px solid whitesmoke;
 `;
 
 const CarouselWrapper = styled.div`
