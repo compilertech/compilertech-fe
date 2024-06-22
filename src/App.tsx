@@ -9,7 +9,6 @@ import Tracks from "./components/Tracks";
 import Header from "./components/Header";
 import About from "./components/About";
 import Organizer from "./components/Organizer";
-import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
