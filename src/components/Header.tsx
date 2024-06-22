@@ -43,6 +43,11 @@ const Logo = styled.span`
 
 const NavBar = styled.nav`
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: ${({ theme }) => theme.body};
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -50,6 +55,10 @@ const NavBar = styled.nav`
   font-style: normal;
   font-size: 2rem;
   height: auto;
+  z-index: 1;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const NavLinks = styled.nav<{ isOpen: boolean }>`
@@ -78,11 +87,10 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     transition: transform 0.3s ease-in-out;
     transform: ${({ isOpen }) =>
       isOpen ? "translateX(0)" : "translateX(100%)"};
-    z-index: 999;
 
     a {
       margin: 1rem 0;
-      font-size: 1rem;
+      font-size: 1.75rem;
     }
   }
 `;

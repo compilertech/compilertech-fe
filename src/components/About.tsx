@@ -77,6 +77,7 @@ const Description = styled.p`
   line-height: 1.7rem;
   letter-spacing: 0.125rem;
   font-weight: 100;
+  text-align: justify;
 `;
 
 const Form = styled.form`
