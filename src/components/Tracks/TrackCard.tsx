@@ -72,6 +72,7 @@ const Title = styled.p`
   font-size: 48px;
   line-height: 60px;
   letter-spacing: 2px;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Description = styled.p`
@@ -79,6 +80,7 @@ const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   font-weight: 100;
   line-height: 1.7rem;
+  color: ${({ theme }) => theme.text};
 `;
 
 const TrackCard: React.FC<TrackCardProps> = ({
