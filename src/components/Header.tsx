@@ -84,7 +84,6 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
       margin: 1rem 0;
       font-size: 1rem;
     }
-    outline: 1px solid red;
   }
 `;
 
