@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
   padding: 4rem 12rem;
-  color: white;
+  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   justify-content: center;

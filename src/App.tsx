@@ -8,6 +8,7 @@ import Sponsors from "./components/Sponsors";
 import Tracks from "./components/Tracks";
 import Header from "./components/Header";
 import About from "./components/About";
+import Organizer from "./components/Organizer";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
@@ -28,6 +29,7 @@ function App() {
           <Hero />
           <About />
           <Tracks />
+          <Organizer />
           <Sponsors />
         </Main>
       </Wrapper>

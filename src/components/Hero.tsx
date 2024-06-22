@@ -80,7 +80,7 @@ const CarouselWrapper = styled.div`
     }
     li button:before {
       font-size: 12px;
-      color: white; // Change the dot color for better visibility
+      color: #eae9e9; // Change the dot color for better visibility
     }
     li.slick-active button:before {
       color: white; // Change the active dot color for better visibility

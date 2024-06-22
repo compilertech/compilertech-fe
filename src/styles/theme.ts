@@ -5,6 +5,7 @@ export const lightTheme = {
     primaryHover: '#550055',
     textHover: '#333',
     bodyHover: '#EEE',
+    cardBg: "white"
   };
   
   export const darkTheme = {
@@ -14,5 +15,6 @@ export const lightTheme = {
     primaryHover: '#550055',
     textHover: '#DDD',
     bodyHover: '#333',
+    cardBg: '#28292A'
   };
   

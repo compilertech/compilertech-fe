@@ -1,12 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const About: React.FC = () => {
+const Organizer: React.FC = () => {
   return (
-    <Section id="about">
+    <Section id="organizer">
       <ContentWrapper>
+        <ImageWrapper>
+          <Image
+            src="https://images.unsplash.com/photo-1718659107049-af60bebaacf0"
+            alt="organizer"
+          />
+        </ImageWrapper>
         <TextWrapper>
-          <Title>ABOUT</Title>
+          <Title>ORGANIZER</Title>
           <Description>
             Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
             vivamus mauris elit. Hendrerit a donec platea nulla pretium
@@ -17,16 +23,9 @@ const About: React.FC = () => {
             aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
           </Description>
           <Form>
-            <Input type="email" placeholder="Email address" />
             <Button>Get Updates</Button>
           </Form>
         </TextWrapper>
-        <ImageWrapper>
-          <Image
-            src="https://images.unsplash.com/photo-1718659107049-af60bebaacf0"
-            alt="About"
-          />
-        </ImageWrapper>
       </ContentWrapper>
     </Section>
   );
@@ -54,7 +53,7 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   flex: 1;
-  padding: 4rem 2rem;
+  padding: 2rem;
   @media (min-width: 768px) {
     padding: 2rem 4rem;
   }
@@ -87,19 +86,6 @@ const Form = styled.form`
   }
 `;
 
-const Input = styled.input`
-  padding: 0.75rem;
-  width: 100%;
-  border: 1px solid ${({ theme }) => theme.text};
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  @media (min-width: 768px) {
-    margin-right: 1rem;
-    margin-bottom: 0;
-    width: 70%;
-  }
-`;
-
 const Button = styled.button`
   padding: 0.75rem 1.5rem;
   background-color: ${({ theme }) => theme.primary};
@@ -124,4 +110,4 @@ const Image = styled.img`
   border-radius: 40px 0;
 `;
 
-export default About;
+export default Organizer;
