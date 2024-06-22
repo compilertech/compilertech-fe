@@ -1,5 +1,5 @@
 export const lightTheme = {
-    body: '#FFF',
+    body: '#FAFAFA',
     text: '#000',
     primary: '#a93d9d',
     primaryHover: '#550055',
@@ -8,7 +8,7 @@ export const lightTheme = {
   };
   
   export const darkTheme = {
-    body: '#000',
+    body: '#222',
     text: '#FFF',
     primary: '#a93d9d',
     primaryHover: '#550055',

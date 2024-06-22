@@ -28,22 +28,13 @@ const Hero: React.FC = () => {
       <CarouselWrapper>
         <Slider {...settings}>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1718659107049-af60bebaacf0"
-              alt="Slide 1"
-            />
+            <img src="./carousel_1.jpeg" alt="Slide 1" />
           </div>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1718657532611-e1fbcf73d776"
-              alt="Slide 1"
-            />
+            <img src="./carousel_2.jpeg" alt="Slide 1" />
           </div>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1718294330460-7f6355d3895a"
-              alt="Slide 1"
-            />
+            <img src="./carousel_3.jpeg" alt="Slide 1" />
           </div>
         </Slider>
       </CarouselWrapper>
@@ -104,8 +95,9 @@ const CarouselWrapper = styled.div`
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: 32px;
+      font-size: clamp(1rem, 2vw, 4rem);
       line-height: 48px;
+      width: 100%;
     }
   }
 `;

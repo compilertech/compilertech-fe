@@ -27,8 +27,8 @@ function App() {
         <Main>
           <Hero />
           <About />
-          <Sponsors />
           <Tracks />
+          <Sponsors />
         </Main>
       </Wrapper>
     </ThemeProvider>
@@ -65,6 +65,10 @@ const HeaderWrapper = styled.header`
 
 const Main = styled.main`
   width: 100%;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default App;

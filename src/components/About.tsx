@@ -38,7 +38,7 @@ const Section = styled.section`
   align-items: center;
   padding: 2rem 2rem;
   background-color: ${({ theme }) => theme.body};
-  height: 60vh;
+  height: auto !important;
 `;
 
 const ContentWrapper = styled.div`
@@ -60,12 +60,13 @@ const TextWrapper = styled.div`
   }
 `;
 
-const Title = styled.h2`
-  font-size: 2.5rem;
+const Title = styled.p`
+  font-size: 64px;
+  line-height: 80px;
+  letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;
   font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 0.2em;
 `;
 
 const Description = styled.p`

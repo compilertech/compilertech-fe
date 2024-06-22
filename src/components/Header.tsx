@@ -73,7 +73,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     bottom: 0;
     background: ${({ theme }) => theme.body};
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     transition: transform 0.3s ease-in-out;
     transform: ${({ isOpen }) =>
@@ -84,6 +84,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
       margin: 1rem 0;
       font-size: 1rem;
     }
+    outline: 1px solid red;
   }
 `;
 
@@ -107,14 +108,14 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
     // Animate hamburger to close icon
     span:nth-child(1) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(45deg) translate(5px, 5px)" : "rotate(0)"};
+        isOpen ? "rotate(45deg) translate(7px, 5px)" : "rotate(0)"};
     }
     span:nth-child(2) {
       opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
     }
     span:nth-child(3) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(-45deg) translate(5px, -5px)" : "rotate(0)"};
+        isOpen ? "rotate(-45deg) translate(6px, -5px)" : "rotate(0)"};
     }
   }
 `;
