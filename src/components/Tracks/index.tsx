@@ -55,7 +55,7 @@ const Tracks: React.FC = () => {
   ];
 
   return (
-    <Container>
+    <Container id="tracks">
       <Heading>TRACKS</Heading>
       <div
         style={{

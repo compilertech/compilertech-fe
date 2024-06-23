@@ -37,6 +37,10 @@ const Hero: React.FC = () => {
             <img src="./carousel_3.jpeg" alt="Slide 1" />
           </div>
         </Slider>
+        <CarouselOverlay>
+          Theme: "Innovations in Compiler Technologies for
+          <br /> a Rapidly Evolving Landscape"
+        </CarouselOverlay>
       </CarouselWrapper>
     </StyledSection>
   );
@@ -64,13 +68,13 @@ const CarouselWrapper = styled.div`
       width: 100%;
       height: 100vh;
       object-fit: cover;
-      filter: brightness(50%);
+      filter: brightness(40%);
     }
   }
 
   .slick-dots {
     position: absolute;
-    bottom: 20px; // Adjust this value to position the dots vertically within the carousel
+    bottom: 20px;
     width: 100%;
     display: flex !important;
     justify-content: center;
@@ -80,10 +84,10 @@ const CarouselWrapper = styled.div`
     }
     li button:before {
       font-size: 12px;
-      color: #eae9e9; // Change the dot color for better visibility
+      color: #eae9e9;
     }
     li.slick-active button:before {
-      color: white; // Change the active dot color for better visibility
+      color: white;
     }
 
     &::before {
@@ -104,11 +108,34 @@ const CarouselWrapper = styled.div`
 
 const DotsWrapper = styled.div`
   position: absolute;
-  bottom: 20px; // Adjust this value to position the dots vertically within the carousel
+  bottom: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const CarouselOverlay = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Bebas Neue";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background-image: linear-gradient(
+    135deg,
+    white,
+    lightblue,
+    ${({ theme }) => theme.primary},
+    #ff6f00
+  );
+  background-clip: text;
+  background-size: 100%;
+  color: transparent;
 `;
 
 export default Hero;

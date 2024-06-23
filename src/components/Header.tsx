@@ -39,9 +39,10 @@ const Header: React.FC<Props> = (props: Props) => {
 
 const Logo = styled.span`
   letter-spacing: 0.3rem;
+  color: ${({ theme }) => theme.primary};
 `;
 
-const NavBar = styled.nav`
+const NavBar = styled.section`
   width: 100%;
   position: fixed;
   top: 0;
@@ -84,7 +85,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     transform: ${({ isOpen }) =>
       isOpen ? "translateX(0)" : "translateX(100%)"};
 
@@ -99,7 +100,7 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 1001; // Make sure the hamburger menu stays above the nav
+  z-index: 1001;
   span {
     height: 4px;
     width: 25px;

@@ -6,10 +6,7 @@ const Organizer: React.FC = () => {
     <Section id="organizer">
       <ContentWrapper>
         <ImageWrapper>
-          <Image
-            src="https://images.unsplash.com/photo-1718659107049-af60bebaacf0"
-            alt="organizer"
-          />
+          <Image src="./about.jpeg" alt="organizer" />
         </ImageWrapper>
         <TextWrapper>
           <Title>ORGANIZER</Title>
@@ -35,7 +32,7 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
 `;
@@ -108,7 +105,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   max-width: 100%;
-  border-radius: 40px 0;
+  border-radius: 0 40px;
 `;
 
 export default Organizer;

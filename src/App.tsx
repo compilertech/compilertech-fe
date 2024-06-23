@@ -9,6 +9,9 @@ import Tracks from "./components/Tracks";
 import Header from "./components/Header";
 import About from "./components/About";
 import Organizer from "./components/Organizer";
+import Interests from "./components/Interests";
+import SubmissionReview from "./components/SubmissionReview";
+import Benefits from "./components/Benefits";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
@@ -28,8 +31,11 @@ function App() {
         <Main>
           <Hero />
           <About />
+          <Interests />
           <Tracks />
           <Organizer />
+          <SubmissionReview />
+          <Benefits />
           <Sponsors />
           {/* <Footer /> */}
         </Main>

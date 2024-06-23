@@ -8,24 +8,20 @@ const About: React.FC = () => {
         <TextWrapper>
           <Title>ABOUT</Title>
           <Description>
-            Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-            vivamus mauris elit. Hendrerit a donec platea nulla pretium
-            venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-            egestas. Sit eget integer consequat odio fringilla massa sed
-            pulvinar dignissim. Faucibus est in tincidunt cras egestas duis dui
-            eros. Velit tempus scelerisque facilisis at amet habitant mattis
-            aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
+            The Compiler Technology Workshop organizing committee invites
+            researchers, practitioners, and enthusiasts in the field of compiler
+            technologies to submit presentation proposals for our upcoming
+            workshop. This year's theme focuses on the cutting-edge advancements
+            in compiler design, implementation, and optimization, and their
+            impact on emerging software and hardware platforms.
           </Description>
           <Form>
             <Input type="email" placeholder="Email address" />
-            <Button>Get Updates</Button>
+            <Button>GET UPDATES</Button>
           </Form>
         </TextWrapper>
         <ImageWrapper>
-          <Image
-            src="https://images.unsplash.com/photo-1718659107049-af60bebaacf0"
-            alt="About"
-          />
+          <Image src="./about.jpeg" alt="About" />
         </ImageWrapper>
       </ContentWrapper>
     </Section>
@@ -105,6 +101,13 @@ const Button = styled.button`
   padding: 0.75rem 1.5rem;
   background-color: ${({ theme }) => theme.primary};
   color: white;
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-align: left;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
