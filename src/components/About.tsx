@@ -50,13 +50,13 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   flex: 1;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   @media (min-width: 768px) {
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.p`
   font-size: clamp(38px, 5vw, 64px);
   line-height: 80px;
   letter-spacing: 4px;

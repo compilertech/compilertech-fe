@@ -12,6 +12,7 @@ import Organizer from "./components/Organizer";
 import Interests from "./components/Interests";
 import SubmissionReview from "./components/SubmissionReview";
 import Benefits from "./components/Benefits";
+import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
@@ -37,7 +38,7 @@ function App() {
           <SubmissionReview />
           <Benefits />
           <Sponsors />
-          {/* <Footer /> */}
+          <Footer />
         </Main>
       </Wrapper>
     </ThemeProvider>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Sponsors: React.FC = () => {
   return (
-    <Section>
+    <Section id="sponsors">
       <Title>SPONSOR US</Title>
       <Description>
         We are looking for sponsors! Your support will help us deliver a
@@ -30,7 +30,7 @@ const Section = styled.section`
 
 const Title = styled.p`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 64px;
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   line-height: 80px;
   letter-spacing: 0.04em;

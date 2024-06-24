@@ -5,7 +5,7 @@ const Section = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 1rem 4rem;
+  padding: 0rem 8rem;
   height: auto;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -14,7 +14,7 @@ const Section = styled.section`
 `;
 
 const Column = styled.div`
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
   font-family: Satoshi;
   font-size: 16px;
   font-weight: 500;
@@ -32,12 +32,15 @@ const Column = styled.div`
 
 const Title = styled.h2`
   font-family: Bebas Neue;
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(32px, 5vw, 64px);
   font-weight: 400;
   line-height: 80px;
   letter-spacing: 0.04em;
   text-align: left;
   color: ${({ theme }) => theme.primary};
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Text = styled.p`

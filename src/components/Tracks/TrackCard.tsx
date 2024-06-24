@@ -6,7 +6,36 @@ interface TrackCardProps {
   title: string;
   description: string;
   imageSrc: string;
+  list: string[];
 }
+
+const TrackCard: React.FC<TrackCardProps> = ({
+  title,
+  description,
+  imageSrc,
+  list,
+}) => {
+  return (
+    <Card>
+      <CardImage>
+        <img src={imageSrc} alt={title} />
+        <div className="overlay">
+          <ComingSoon>COMING SOON</ComingSoon>
+          <Location>Bangalore Only</Location>
+        </div>
+      </CardImage>
+      <CardContent>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <List>
+          {list.map((item) => (
+            <li>{item}</li>
+          ))}
+        </List>
+      </CardContent>
+    </Card>
+  );
+};
 
 const Card = styled.div`
   display: flex;
@@ -83,26 +112,10 @@ const Description = styled.p`
   color: ${({ theme }) => theme.text};
 `;
 
-const TrackCard: React.FC<TrackCardProps> = ({
-  title,
-  description,
-  imageSrc,
-}) => {
-  return (
-    <Card>
-      <CardImage>
-        <img src={imageSrc} alt={title} />
-        <div className="overlay">
-          <ComingSoon>COMING SOON</ComingSoon>
-          <Location>Bangalore Only</Location>
-        </div>
-      </CardImage>
-      <CardContent>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-      </CardContent>
-    </Card>
-  );
-};
+const List = styled.ul`
+  font-family: "Satoshi";
+  font-weight: 100;
+  line-height: 1.7rem;
+`;
 
 export default TrackCard;

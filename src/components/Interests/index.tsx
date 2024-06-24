@@ -64,7 +64,7 @@ const Tracks: React.FC = () => {
 };
 
 const Container = styled.section`
-  padding: 2rem 12rem;
+  padding: 2rem 8rem;
   color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 2rem 0;
 `;
 
 const Title = styled.h2`
@@ -47,6 +47,9 @@ const BenefitCard = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+  img {
+    filter: ${({ theme }) => theme.filter};
+  }
 `;
 
 const Description = styled.p`
@@ -69,6 +72,9 @@ const CardTitle = styled.h4`
   letter-spacing: 0.02em;
   text-align: center;
   text-transform: uppercase;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Benefits: React.FC = () => {
