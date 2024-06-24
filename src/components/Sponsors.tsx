@@ -6,22 +6,10 @@ const Sponsors: React.FC = () => {
     <Section>
       <Title>SPONSOR US</Title>
       <Description>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque vel ad
-        aspernatur at pariatur sed, fugiat dignissimos nihil quos sit
-        consequuntur! Consequuntur vel ullam, modi veniam ex sapiente quae
-        error! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-        vel ad aspernatur at pariatur sed, fugiat dignissimos nihil quos sit
-        consequuntur! Consequuntur vel ullam, modi veniam ex sapiente quae
-        error! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-        vel ad aspernatur at pariatur sed, fugiat dignissimos nihil quos sit
-        consequuntur! Consequuntur vel ullam, modi veniam ex sapiente quae
-        error! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-        vel ad aspernatur at pariatur sed, fugiat dignissimos nihil quos sit
-        consequuntur! Consequuntur vel ullam, modi veniam ex sapiente quae
-        error! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-        vel ad aspernatur at pariatur sed, fugiat dignissimos nihil quos sit
-        consequuntur! Consequuntur vel ullam, modi veniam ex sapiente quae
-        error!
+        We are looking for sponsors! Your support will help us deliver a
+        high-quality, impactful workshop, fostering the next wave of innovation
+        in compiler technology. Join us in making this event a remarkable
+        success!
       </Description>
       <Button>SPONSOR US</Button>
     </Section>

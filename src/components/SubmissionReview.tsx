@@ -13,7 +13,7 @@ const Section = styled.section`
 `;
 
 const Column = styled.div`
-  padding: 2rem 8rem;
+  padding: 2rem 4rem;
   font-family: Satoshi;
   font-size: 16px;
   font-weight: 500;
@@ -47,7 +47,7 @@ const Text = styled.p`
 const SubmissionReview: React.FC = () => {
   return (
     <Section>
-      <Column style={{ paddingRight: "2rem" }}>
+      <Column>
         <Title>SUBMISSION GUIDELINES</Title>
         <Text>
           <ul>
@@ -67,7 +67,7 @@ const SubmissionReview: React.FC = () => {
           </ul>
         </Text>
       </Column>
-      <Column style={{ paddingLeft: "2rem" }}>
+      <Column>
         <Title>REVIEW PROCESS</Title>
         <Text>
           All submissions will undergo a rigorous review process by a program
