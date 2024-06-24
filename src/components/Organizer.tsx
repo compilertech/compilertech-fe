@@ -11,13 +11,11 @@ const Organizer: React.FC = () => {
         <TextWrapper>
           <Title>ORGANIZER</Title>
           <Description>
-            Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-            vivamus mauris elit. Hendrerit a donec platea nulla pretium
-            venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-            egestas. Sit eget integer consequat odio fringilla massa sed
-            pulvinar dignissim. Faucibus est in tincidunt cras egestas duis dui
-            eros. Velit tempus scelerisque facilisis at amet habitant mattis
-            aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
+            We believe this workshop will become a venue that brings together
+            compiler engineers, students and professors from all over India. We
+            have a strong organizing team with engineers from Google, AMD,
+            Nvidia and TCS Research who are experienced in organizing technical
+            events working tirelessly to make the workshop successful.
           </Description>
           <Form>
             <Button>Get Updates</Button>
@@ -57,12 +55,15 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 64px;
+  font-size: clamp(38px, 5vw, 64px);
   line-height: 80px;
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;
   font-family: "Bebas Neue", sans-serif;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Description = styled.p`

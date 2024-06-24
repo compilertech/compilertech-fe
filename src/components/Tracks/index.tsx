@@ -31,7 +31,7 @@ const Tracks: React.FC = () => {
     {
       title: "GENERAL COMPILER OPTIMIZATIONS",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit. Hendrerit a donec platea nulla pretium venenatis enim. Amet ul nunc eu fusce sit venenatis amet nunc egestas. Sit eget integer consequat odio fringilla massa sed pulvinar.Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit. Hendrerit a donec platea nulla pretium venenatis enim. Amet ul nunc eu fusce sit venenatis amet nunc egestas. Sit eget integer consequat odio fringilla massa sed pulvinar.",
+        "Lorem ipsum dolor sit amet consectetur. <ul><li>Consectetur eget rhoncus vivamus mauris elit.</li> <li>Hendrerit a donec platea nulla pretium venenatis enim.</li></ul> Amet ul nunc eu fusce sit venenatis amet nunc egestas. Sit eget integer consequat odio fringilla massa sed pulvinar.Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit. Hendrerit a donec platea nulla pretium venenatis enim. Amet ul nunc eu fusce sit venenatis amet nunc egestas. Sit eget integer consequat odio fringilla massa sed pulvinar.",
       imageSrc: "./card_bg.jpeg",
     },
     {

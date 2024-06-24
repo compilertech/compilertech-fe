@@ -9,6 +9,7 @@ const Section = styled.section`
   height: auto;
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: revert;
   }
 `;
 
@@ -31,7 +32,7 @@ const Column = styled.div`
 
 const Title = styled.h2`
   font-family: Bebas Neue;
-  font-size: 64px;
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   line-height: 80px;
   letter-spacing: 0.04em;
@@ -70,10 +71,14 @@ const SubmissionReview: React.FC = () => {
       <Column>
         <Title>REVIEW PROCESS</Title>
         <Text>
-          All submissions will undergo a rigorous review process by a program
-          committee of experts in the field. Selection criteria will include
-          relevance to the conference theme, technical merit, clarity of
-          presentation, and potential impact on the field.
+          <ul>
+            <li>
+              All submissions will undergo a rigorous review process by a
+              program committee of experts in the field. Selection criteria will
+              include relevance to the conference theme, technical merit,
+              clarity of presentation, and potential impact on the field.
+            </li>
+          </ul>
         </Text>
       </Column>
     </Section>

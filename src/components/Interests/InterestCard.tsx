@@ -22,6 +22,10 @@ const Card = styled.div`
 const CardContent = styled.div`
   padding: 2rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `;
 
 const Title = styled.p`

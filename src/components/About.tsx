@@ -56,13 +56,17 @@ const TextWrapper = styled.div`
   }
 `;
 
-const Title = styled.p`
-  font-size: 64px;
+const Title = styled.h2`
+  font-size: clamp(38px, 5vw, 64px);
   line-height: 80px;
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;
   font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const Description = styled.p`

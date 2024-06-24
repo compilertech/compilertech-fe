@@ -49,7 +49,7 @@ const Tracks: React.FC = () => {
 
   return (
     <Container>
-      <Heading>TOPICS OF INTEREST</Heading>
+      <Title>TOPICS OF INTEREST</Title>
       <CardContainer>
         {tracks.map((track, index) => (
           <InterestCard
@@ -76,12 +76,12 @@ const Container = styled.section`
   }
 `;
 
-const Heading = styled.p`
+const Title = styled.p`
   color: ${({ theme }) => theme.primary};
   text-align: center;
   margin-bottom: 40px;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 64px;
+  font-size: clamp(32px, 5vw, 64px);
   line-height: 80px;
   letter-spacing: 4px;
 `;
