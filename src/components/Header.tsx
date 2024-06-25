@@ -73,10 +73,10 @@ const Action = styled.div<{ isOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transform: ${({ isOpen }) => (isOpen ? "translateX(-285px)" : "none")};
+  transform: ${({ isOpen }) => (isOpen ? "translateX(-300%)" : "none")};
   transition: transform 0.5s ease-in-out;
   @media (max-width: 768px) {
-    right: 10%;
+    right: 12%;
     position: absolute;
     button {
       display: none;

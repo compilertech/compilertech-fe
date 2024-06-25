@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const settings: Settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -146,8 +146,8 @@ const CarouselOverlay = styled.h1`
   color: transparent;
   @media (max-width: 786px) {
     width: 80%;
-    bottom: 0;
-    top: 20%;
+    bottom: 20%;
+    top: 0;
     transform: translate(-50%, +50%);
   }
 `;
