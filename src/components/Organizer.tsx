@@ -64,7 +64,6 @@ const Description = styled.p`
   color: ${({ theme }) => theme.lightText};
   margin-bottom: 2rem;
   line-height: 1.7rem;
-  letter-spacing: 1px;
   font-weight: 100;
   text-align: justify;
 `;

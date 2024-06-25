@@ -38,14 +38,19 @@ const Hero: React.FC = () => {
           </div>
         </Slider>
         <CarouselOverlay>
-          Theme: "Innovations in Compiler Technologies for a Rapidly Evolving
-          Landscape"
+          <HidingText>Theme:</HidingText>"Innovations in Compiler Technologies
+          for a Rapidly Evolving Landscape"
         </CarouselOverlay>
       </CarouselWrapper>
     </StyledSection>
   );
 };
 
+const HidingText = styled.span`
+  @media (max-width: 786px) {
+    display: none;
+  }
+`;
 const StyledSection = styled.section`
   display: flex;
   align-items: flex-start;
@@ -119,7 +124,7 @@ const DotsWrapper = styled.div`
 const CarouselOverlay = styled.h1`
   width: 50%;
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bebas Neue";

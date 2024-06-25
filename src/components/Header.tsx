@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import Modal from "./shared/Modal";
+import { Button } from "./shared/Button";
 
 type Props = {
   onClick: () => void;
@@ -11,6 +12,14 @@ type Props = {
 const Header: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const allLinks = [
+    { id: "about", desc: "about" },
+    { id: "tracks", desc: "tracks" },
+    { id: "topics", desc: "topics of interests" },
+    { id: "benefits", desc: "benefits of conference" },
+    { id: "organizer", desc: "organizer" },
+    { id: "sponsors", desc: "sponsor us" },
+  ];
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -27,17 +36,16 @@ const Header: React.FC<Props> = (props: Props) => {
         </div>
         <NavLinks isOpen={isOpen}>
           <Links>
-            <a href="#about">About</a>
-            <a href="#tracks">Tracks</a>
-            <a href="#interests">Topics of interests</a>
-            <a href="#benefits">Benefits of conference</a>
-            <a href="#organizer">Organizer</a>
-            <a href="#sponsors">Sponsor Us</a>
-            <CtaBtn onClick={toggleModal}>GET IN TOUCH</CtaBtn>
+            {allLinks.map((link, index) => (
+              <a key={index} onClick={handleToggle} href={`#${link.id}`}>
+                {link.desc}
+              </a>
+            ))}
+            <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
           </Links>
         </NavLinks>
         <Action>
-          <CtaBtn onClick={toggleModal}>GET IN TOUCH</CtaBtn>
+          <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
         </Action>
         <Hamburger isOpen={isOpen} onClick={handleToggle}>
@@ -56,15 +64,19 @@ const Header: React.FC<Props> = (props: Props) => {
     </>
   );
 };
+
+const StyledButton = styled(Button)`
+  color: white !important;
+`;
 const Action = styled.div`
-  width: 15%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   @media (max-width: 768px) {
     position: absolute;
     right: 10%;
-    a {
+    button {
       display: none;
     }
   }
@@ -75,12 +87,13 @@ const Links = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     align-items: center;
     justify-content: space-evenly;
   }
 `;
 const Logo = styled.span`
-  letter-spacing: 0.3rem;
+  letter-spacing: 2px;
   color: ${({ theme }) => theme.primary};
 `;
 
@@ -168,30 +181,6 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
       transform: ${({ isOpen }) =>
         isOpen ? "rotate(-45deg) translate(6px, -5px)" : "rotate(0)"};
     }
-  }
-`;
-const CtaBtn = styled.a`
-  margin: 0;
-  padding: 0.75rem 1.25rem;
-  background-color: ${({ theme }) => theme.primary};
-  color: white !important;
-  font-family: "Bebas Neue";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.08em;
-  text-align: center;
-
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${({ theme }) => theme.primaryHover};
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    align-self: center;
   }
 `;
 

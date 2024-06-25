@@ -99,7 +99,7 @@ const Heading = styled.p`
   text-align: center;
   margin-bottom: 1.75rem;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 64px;
+  font-size: clamp(40px, 5vw, 64px);
   line-height: 80px;
   letter-spacing: 4px;
 `;

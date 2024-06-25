@@ -85,7 +85,6 @@ const Title = styled.h2`
   font-family: Bebas Neue;
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 400;
-  letter-spacing: 0.04em;
   text-align: left;
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;

@@ -43,7 +43,7 @@ const Card = styled.div`
   margin-bottom: 20px;
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
-  box-shadow: 0 0 20px 0 ${({ theme }) => theme.shadow};
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -117,6 +117,7 @@ const List = styled.ul`
   font-weight: 100;
   line-height: 1.7rem;
   color: ${({ theme }) => theme.lightText};
+  padding-left: 1rem;
 `;
 
 export default TrackCard;
