@@ -1,5 +1,4 @@
-// TrackCard.tsx
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 interface TrackCardProps {
@@ -15,6 +14,10 @@ const TrackCard: React.FC<TrackCardProps> = ({
   imageSrc,
   list,
 }) => {
+  const [listLen, setListLen] = useState(3);
+  const toggleListLen = () => {
+    setListLen(listLen === 3 ? list.length : 3);
+  };
   return (
     <Card>
       <CardImage>
@@ -28,22 +31,32 @@ const TrackCard: React.FC<TrackCardProps> = ({
         <Title>{title}</Title>
         <Description>{description}</Description>
         <List>
-          {list.map((item) => (
-            <li>{item}</li>
-          ))}
+          {list.slice(0, listLen).map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}{" "}
+          <ReadToggle onClick={toggleListLen}>
+            {listLen === 3 ? "read more" : "read less"}
+          </ReadToggle>
         </List>
       </CardContent>
     </Card>
   );
 };
 
+const ReadToggle = styled.a`
+  color: ${({ theme }) => theme.primary};
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.primary};
+  }
+`;
+
 const Card = styled.div`
   display: flex;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 20px;
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: height 0.2s ease-in-out;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -79,9 +92,8 @@ const CardImage = styled.div`
   }
 `;
 
-const ComingSoon = styled.div`
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: bold;
+const ComingSoon = styled.p`
+  font-size: clamp(40px, 5vw, 48px);
   color: ${({ theme }) => theme.primary};
 `;
 

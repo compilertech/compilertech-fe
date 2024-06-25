@@ -72,7 +72,7 @@ const Section = styled.section`
   height: auto;
   width: 100%;
   padding: 0 11.25rem;
-  margin-top: 3.75rem;
+  margin-top: 7.5rem;
   @media (max-width: 786px) {
     margin-top: 3.75rem;
     width: 90%;

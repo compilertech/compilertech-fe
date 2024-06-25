@@ -60,16 +60,12 @@ const Section = styled.section`
 `;
 
 const Column = styled.div`
-  font-family: Satoshi;
+  font-family: "Satoshi";
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: justify;
-  ul {
-    padding: 1rem;
-    margin: 0;
-  }
   li {
     color: ${({ theme }) => theme.lightText};
     margin-bottom: 1rem;
@@ -81,23 +77,32 @@ const Bold = styled.span`
   font-weight: 500;
 `;
 
-const Title = styled.h2`
-  font-family: Bebas Neue;
+const Title = styled.p`
+  font-family: "Bebas Neue";
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 400;
   text-align: left;
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;
+  margin-top: 1rem;
   @media (max-width: 768px) {
     text-align: center;
   }
 `;
 
-const Text = styled.p`
+const Text = styled.div`
   font-size: 1em;
   line-height: 1.5;
+  ul {
+    padding: 0.5rem;
+  }
   li {
     font-weight: 100;
+  }
+  @media (max-width: 768px) {
+    ul {
+      padding-left: 1.25rem;
+    }
   }
 `;
 

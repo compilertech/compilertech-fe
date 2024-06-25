@@ -10,10 +10,9 @@ interface InterestCardProps {
 const Card = styled.div`
   display: flex;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 20px;
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   height: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -36,7 +35,7 @@ const Title = styled.h4`
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: center;
   width: 100%;
 `;
 

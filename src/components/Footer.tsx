@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         </Section>
         <Links>
           <Section>
-            <p style={{ marginBottom: "10px" }}>Tracks</p>
+            <Title style={{ marginBottom: "10px" }}>Tracks</Title>
             <List>
               <ListItem>General Compiler Optimizations</ListItem>
               <ListItem>AI/ML</ListItem>
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
             </List>
           </Section>
           <Section>
-            <p style={{ marginBottom: "10px" }}>Social</p>
+            <Title style={{ marginBottom: "10px" }}>Social</Title>
             <List>
               <ListItem>LinkedIn</ListItem>
               <ListItem>Twitter</ListItem>
@@ -79,7 +79,7 @@ const Paragraph = styled.p`
   margin: 0 0 20px 0;
   line-height: 1.5;
   color: #cccccc;
-  letter-spacing: 1.5px;
+  text-align: justify;
 `;
 
 const List = styled.ul`
@@ -104,10 +104,9 @@ const Copyright = styled.div`
 const Links = styled.div`
   @media (min-width: 768px) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 60%;
-    margin-top: 50px;
   }
 `;
 

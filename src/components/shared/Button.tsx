@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const Button = styled.button<{ width?: number }>`
   padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.primary} !important;
   color: white;
@@ -19,7 +19,7 @@ export const Button = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 40%;
+    width: ${({ width = 40 }) => width}%;
     align-self: center;
   }
 `;

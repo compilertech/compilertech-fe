@@ -44,8 +44,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 9rem;
-  margin-bottom: 7.5rem;
+  margin-top: 7.5rem;
   @media (max-width: 768px) {
     margin-top: 3.75rem;
     margin-bottom: 0;

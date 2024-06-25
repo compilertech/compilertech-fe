@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Button } from "./shared/Button";
+import Modal from "./shared/Modal";
 
 const Sponsors: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <Section id="sponsors">
       <Title>SPONSOR US</Title>
@@ -11,7 +18,16 @@ const Sponsors: React.FC = () => {
         in compiler technology. Join us in making this event a remarkable
         success!
       </Description>
-      <Button>Become a sponsor</Button>
+      <Button width={50} onClick={toggleModal}>
+        Become a sponsor
+      </Button>
+      {isModalOpen && (
+        <Modal
+          title="Sponsor us"
+          description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+          onClose={toggleModal}
+        />
+      )}
     </Section>
   );
 };
@@ -21,11 +37,12 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  margin-top: 3.75rem;
+  margin-top: 7.5rem;
   padding: 0 11.75rem;
   @media (max-width: 768px) {
     width: 90%;
     padding: 0;
+    margin-top: 3.75rem;
   }
 `;
 
@@ -55,30 +72,6 @@ const Description = styled.p`
   @media (max-width: 768px) {
     margin-bottom: 1.5rem;
     text-align: justify;
-  }
-`;
-
-const Button = styled.button`
-  padding: 0.75rem 1.25rem;
-  background-color: ${({ theme }) => theme.primary};
-  color: white;
-  font-family: "Bebas Neue";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.08em;
-  text-align: center;
-
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${({ theme }) => theme.primaryHover};
-  }
-
-  @media (max-width: 768px) {
-    width: 60%;
-    align-self: center;
   }
 `;
 

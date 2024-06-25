@@ -119,6 +119,9 @@ const DotsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ul {
+    padding: 0;
+  }
 `;
 
 const CarouselOverlay = styled.h1`
@@ -144,7 +147,7 @@ const CarouselOverlay = styled.h1`
   @media (max-width: 786px) {
     width: 80%;
     bottom: 0;
-    top: 15%;
+    top: 20%;
     transform: translate(-50%, +50%);
   }
 `;

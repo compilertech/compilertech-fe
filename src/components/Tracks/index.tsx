@@ -14,6 +14,10 @@ const Tracks: React.FC = () => {
         "Code Generation and optimization techniques",
         "Performance of runtime libraries (like standard libraries, high performance libraries)",
         "Any tools or products developed using compiler technologies",
+        "Software performance tracing",
+        "Compiler flags, annotations and remarks to understand and improve performance",
+        "Program synthesis",
+        "SuperOptimizers",
       ],
     },
     {

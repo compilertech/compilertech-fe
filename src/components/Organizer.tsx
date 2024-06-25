@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
+import Modal from "./shared/Modal";
 
 const Organizer: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <Section id="organizer">
       <ImageWrapper>
@@ -17,9 +23,16 @@ const Organizer: React.FC = () => {
           and TCS Research who are experienced in organizing technical events
           working tirelessly to make the workshop successful.
         </Description>
-        <Form>
-          <Button>Get Updates</Button>
-        </Form>
+        <ButtonContainer>
+          <Button onClick={toggleModal}>Get updates</Button>
+          {isModalOpen && (
+            <Modal
+              title="Get Updates"
+              description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+              onClose={toggleModal}
+            />
+          )}
+        </ButtonContainer>
       </TextWrapper>
     </Section>
   );
@@ -34,6 +47,7 @@ const Section = styled.section`
   margin-top: 7.5rem;
   padding: 0 11.25rem;
   width: 100%;
+  transition: background 0.2s ease-in-out;
   @media (max-width: 768px) {
     margin-top: 3.75rem;
     padding: revert;
@@ -44,7 +58,7 @@ const Section = styled.section`
 const TextWrapper = styled.div`
   flex: 1;
   @media (min-width: 768px) {
-    padding: 2rem 4rem;
+    padding: 0 4rem;
   }
 `;
 
@@ -68,7 +82,7 @@ const Description = styled.p`
   text-align: justify;
 `;
 
-const Form = styled.form`
+const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 768px) {
@@ -89,6 +103,10 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   max-width: 100%;
   border-radius: 0 40px;
+  transition: border-radius 0.2s ease-in-out;
+  &:hover {
+    border-radius: 0 60px;
+  }
 `;
 
 export default Organizer;

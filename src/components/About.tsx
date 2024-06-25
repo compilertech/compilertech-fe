@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Button } from "./shared/Button";
+import Modal from "./shared/Modal";
 
 const About: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <Section id="about">
       <TextWrapper>
@@ -14,9 +21,16 @@ const About: React.FC = () => {
           in compiler design, implementation, and optimization, and their impact
           on emerging software and hardware platforms.
         </Description>
-        <Form>
-          <Button>GET UPDATES</Button>
-        </Form>
+        <ButtonContainer>
+          <Button onClick={toggleModal}>Get Updates</Button>
+        </ButtonContainer>
+        {isModalOpen && (
+          <Modal
+            title="Get Updates"
+            description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+            onClose={toggleModal}
+          />
+        )}
       </TextWrapper>
       <ImageWrapper>
         <Image src="./about.jpeg" alt="About" />
@@ -35,6 +49,7 @@ const Section = styled.section`
   background-color: ${({ theme }) => theme.body};
   gap: 2rem;
   height: auto !important;
+  transition: background 0.2s ease-in-out;
   @media (max-width: 768px) {
     flex-direction: column;
     padding: revert;
@@ -70,35 +85,11 @@ const Description = styled.p`
   text-align: justify;
 `;
 
-const Form = styled.form`
+const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 768px) {
     flex-direction: row;
-  }
-`;
-
-const Button = styled.button`
-  padding: 0.75rem 1.25rem;
-  background-color: ${({ theme }) => theme.primary};
-  color: white;
-  font-family: "Bebas Neue";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.08em;
-  text-align: center;
-
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${({ theme }) => theme.primaryHover};
-  }
-
-  @media (max-width: 768px) {
-    width: 40%;
-    align-self: center;
   }
 `;
 

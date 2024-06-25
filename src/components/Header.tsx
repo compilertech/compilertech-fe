@@ -44,7 +44,7 @@ const Header: React.FC<Props> = (props: Props) => {
             <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
           </Links>
         </NavLinks>
-        <Action>
+        <Action isOpen={isOpen}>
           <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
         </Action>
@@ -56,7 +56,7 @@ const Header: React.FC<Props> = (props: Props) => {
       </NavBar>
       {isModalOpen && (
         <Modal
-          title="Get updates"
+          title="Get in touch"
           description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
           onClose={toggleModal}
         />
@@ -68,14 +68,16 @@ const Header: React.FC<Props> = (props: Props) => {
 const StyledButton = styled(Button)`
   color: white !important;
 `;
-const Action = styled.div`
+const Action = styled.div<{ isOpen: boolean }>`
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  transform: ${({ isOpen }) => (isOpen ? "translateX(-285px)" : "none")};
+  transition: transform 0.5s ease-in-out;
   @media (max-width: 768px) {
-    position: absolute;
     right: 10%;
+    position: absolute;
     button {
       display: none;
     }

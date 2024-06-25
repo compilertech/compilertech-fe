@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Satoshi', sans-serif;
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    transition: all 0.5s linear;
+    transition: background 0.2s ease-in-out !important;
   }
   main {
     display: flex;
