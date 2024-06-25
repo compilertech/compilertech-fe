@@ -4,24 +4,22 @@ import styled from "styled-components";
 const Organizer: React.FC = () => {
   return (
     <Section id="organizer">
-      <ContentWrapper>
-        <ImageWrapper>
-          <Image src="./about.jpeg" alt="organizer" />
-        </ImageWrapper>
-        <TextWrapper>
-          <Title>ORGANIZER</Title>
-          <Description>
-            We believe this workshop will become a venue that brings together
-            compiler engineers, students and professors from all over India. We
-            have a strong organizing team with engineers from Google, AMD,
-            Nvidia and TCS Research who are experienced in organizing technical
-            events working tirelessly to make the workshop successful.
-          </Description>
-          <Form>
-            <Button>Get Updates</Button>
-          </Form>
-        </TextWrapper>
-      </ContentWrapper>
+      <ImageWrapper>
+        <Image src="./about.jpeg" alt="organizer" />
+      </ImageWrapper>
+      <TextWrapper>
+        <Title>ORGANIZER</Title>
+        <Description>
+          We believe this workshop will become a venue that brings together
+          compiler engineers, students and professors from all over India. We
+          have a strong organizing team with engineers from Google, AMD, Nvidia
+          and TCS Research who are experienced in organizing technical events
+          working tirelessly to make the workshop successful.
+        </Description>
+        <Form>
+          <Button>Get Updates</Button>
+        </Form>
+      </TextWrapper>
     </Section>
   );
 };
@@ -30,25 +28,20 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.body};
-  height: auto !important;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  max-width: 1200px;
+  height: auto;
+  margin-top: 7.5rem;
+  padding: 0 11.25rem;
   width: 100%;
-  flex-direction: column;
-  align-items: center;
-  @media (min-width: 768px) {
-    flex-direction: row;
+  @media (max-width: 768px) {
+    margin-top: 3.75rem;
+    padding: revert;
+    width: 90%;
   }
 `;
 
 const TextWrapper = styled.div`
   flex: 1;
-  padding: 2rem;
   @media (min-width: 768px) {
     padding: 2rem 4rem;
   }
@@ -56,10 +49,8 @@ const TextWrapper = styled.div`
 
 const Title = styled.p`
   font-size: clamp(38px, 5vw, 64px);
-  line-height: 80px;
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
-  margin-bottom: 1rem;
   font-family: "Bebas Neue", sans-serif;
   @media (max-width: 768px) {
     text-align: center;
@@ -69,10 +60,10 @@ const Title = styled.p`
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   font-size: 1rem;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.lightText};
   margin-bottom: 2rem;
   line-height: 1.7rem;
-  letter-spacing: 0.125rem;
+  letter-spacing: 1px;
   font-weight: 100;
   text-align: justify;
 `;
@@ -86,14 +77,26 @@ const Form = styled.form`
 `;
 
 const Button = styled.button`
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.primary};
   color: white;
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-align: center;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
     background-color: ${({ theme }) => theme.primaryHover};
+  }
+
+  @media (max-width: 768px) {
+    width: 40%;
+    align-self: center;
   }
 `;
 
@@ -102,6 +105,9 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 786px) {
+    display: none;
+  }
 `;
 
 const Image = styled.img`

@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Tracks: React.FC = () => {
   const tracks = [
     {
-      title: "GENERAL COMPILER OPTIMIZATIONS",
+      title: "Classical Compiler Techniques",
       description:
         "Classical compiler techniques for performance, codesize, debugging and software engineering",
       imageSrc: "./card_bg.jpeg",
@@ -17,7 +17,7 @@ const Tracks: React.FC = () => {
       ],
     },
     {
-      title: "AI/ML",
+      title: "AI/ML, DSLS",
       description:
         "Exploring the intersection of AI/ML with compiler technologies",
       imageSrc: "./card_bg.jpeg",
@@ -39,7 +39,7 @@ const Tracks: React.FC = () => {
       ],
     },
     {
-      title: "BLOCKCHAIN & WEB3",
+      title: "WEB3/Blockchain",
       description:
         "Compiler techniques for shaping the next generation of the Web",
       imageSrc: "./card_bg.jpeg",
@@ -52,7 +52,7 @@ const Tracks: React.FC = () => {
   ];
 
   return (
-    <Container id="tracks">
+    <Section id="tracks">
       <Heading>TRACKS</Heading>
       <div
         style={{
@@ -73,27 +73,31 @@ const Tracks: React.FC = () => {
           />
         ))}
       </div>
-    </Container>
+    </Section>
   );
 };
 
-const Container = styled.section`
-  padding: 4rem 12rem;
+const Section = styled.section`
+  margin-top: 7.5rem;
   color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: auto;
+  width: 100%;
+  padding: 0 11.25rem;
   @media (max-width: 768px) {
-    padding: 2rem 2rem;
+    padding: 0;
+    width: 90%;
+    margin-top: 3.75rem;
   }
 `;
 
 const Heading = styled.p`
   color: ${({ theme }) => theme.primary};
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 1.75rem;
   font-family: "Bebas Neue", sans-serif;
   font-size: 64px;
   line-height: 80px;

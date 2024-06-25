@@ -48,7 +48,7 @@ const Tracks: React.FC = () => {
   ];
 
   return (
-    <Container>
+    <Section id="interests">
       <Title>TOPICS OF INTEREST</Title>
       <CardContainer>
         {tracks.map((track, index) => (
@@ -59,31 +59,34 @@ const Tracks: React.FC = () => {
           />
         ))}
       </CardContainer>
-    </Container>
+    </Section>
   );
 };
 
-const Container = styled.section`
-  padding: 2rem 8rem;
+const Section = styled.section`
   color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: auto;
-  @media (max-width: 768px) {
-    padding: 4rem 4rem;
+  width: 100%;
+  padding: 0 11.25rem;
+  margin-top: 3.75rem;
+  @media (max-width: 786px) {
+    margin-top: 3.75rem;
+    width: 90%;
+    padding: 0;
   }
 `;
 
 const Title = styled.p`
   color: ${({ theme }) => theme.primary};
   text-align: center;
-  margin-bottom: 40px;
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(32px, 5vw, 64px);
-  line-height: 80px;
   letter-spacing: 4px;
+  margin-bottom: 1.875rem;
 `;
 
 const CardContainer = styled.div`
@@ -94,6 +97,7 @@ const CardContainer = styled.div`
   grid-row-gap: 52px;
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
   }
 `;
 

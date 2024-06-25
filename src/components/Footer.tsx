@@ -2,8 +2,49 @@
 import React from "react";
 import styled from "styled-components";
 
+const Footer: React.FC = () => {
+  return (
+    <>
+      <FooterContainer>
+        <Section>
+          <Title>COMPILER</Title>
+          <Paragraph>
+            The Compiler Technology Workshop organizing committee invites
+            researchers, practitioners, and enthusiasts in the field of compiler
+            technologies to submit presentation proposals for our upcoming
+            workshop. This year's theme focuses on the cutting-edge advancements
+            in compiler design, implementation, and optimization, and their
+            impact on emerging software and hardware platforms.
+          </Paragraph>
+          <Copyright>©2024 Compiler</Copyright>
+        </Section>
+        <Links>
+          <Section>
+            <p style={{ marginBottom: "10px" }}>Tracks</p>
+            <List>
+              <ListItem>General Compiler Optimizations</ListItem>
+              <ListItem>AI/ML</ListItem>
+              <ListItem>Security</ListItem>
+              <ListItem>Blockchain & Web3</ListItem>
+            </List>
+          </Section>
+          <Section>
+            <p style={{ marginBottom: "10px" }}>Social</p>
+            <List>
+              <ListItem>LinkedIn</ListItem>
+              <ListItem>Twitter</ListItem>
+              <ListItem>WhatsApp</ListItem>
+            </List>
+          </Section>
+        </Links>
+      </FooterContainer>
+    </>
+  );
+};
+
 const FooterContainer = styled.footer`
   background-color: #303134;
+  margin-top: 3.75rem;
   color: white;
   padding: 2rem 2rem;
   display: flex;
@@ -38,7 +79,7 @@ const Paragraph = styled.p`
   margin: 0 0 20px 0;
   line-height: 1.5;
   color: #cccccc;
-  text-align: justify;
+  letter-spacing: 1.5px;
 `;
 
 const List = styled.ul`
@@ -69,47 +110,5 @@ const Links = styled.div`
     margin-top: 50px;
   }
 `;
-
-const Footer: React.FC = () => {
-  return (
-    <>
-      <FooterContainer>
-        <Section>
-          <Title>COMPILER</Title>
-          <Paragraph>
-            Lorem ipsum dolor sit amet consectetur. Neque non tincidunt
-            scelerisque mauris suspendisse pellentesque. Tempus hendrerit
-            facilisis morbi viverra. Neque vitae pellentesque facilisis lacus
-            eget enim. Id aliquam elit condimentum enim urna. Lorem ipsum dolor
-            sit amet consectetur. Neque non tincidunt scelerisque mauris
-            suspendisse pellentesque. Tempus hendrerit facilisis morbi viverra.
-            Neque vitae pellentesque facilisis lacus eget enim. Id aliquam elit
-            condimentum enim urna.
-          </Paragraph>
-          <Copyright>©2024 Compiler</Copyright>
-        </Section>
-        <Links>
-          <Section>
-            <p style={{ marginBottom: "10px" }}>Tracks</p>
-            <List>
-              <ListItem>General Compiler Optimizations</ListItem>
-              <ListItem>AI/ML</ListItem>
-              <ListItem>Security</ListItem>
-              <ListItem>Blockchain & Web3</ListItem>
-            </List>
-          </Section>
-          <Section>
-            <p style={{ marginBottom: "10px" }}>Social</p>
-            <List>
-              <ListItem>LinkedIn</ListItem>
-              <ListItem>Twitter</ListItem>
-              <ListItem>WhatsApp</ListItem>
-            </List>
-          </Section>
-        </Links>
-      </FooterContainer>
-    </>
-  );
-};
 
 export default Footer;

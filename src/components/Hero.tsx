@@ -38,8 +38,8 @@ const Hero: React.FC = () => {
           </div>
         </Slider>
         <CarouselOverlay>
-          Theme: "Innovations in Compiler Technologies for
-          <br /> a Rapidly Evolving Landscape"
+          Theme: "Innovations in Compiler Technologies for a Rapidly Evolving
+          Landscape"
         </CarouselOverlay>
       </CarouselWrapper>
     </StyledSection>
@@ -51,6 +51,7 @@ const StyledSection = styled.section`
   align-items: flex-start;
   justify-content: center;
   height: 60vh;
+  width: 100%;
 `;
 
 const CarouselWrapper = styled.div`
@@ -93,13 +94,13 @@ const CarouselWrapper = styled.div`
     &::before {
       content: "COMING SOON, BANGALORE!";
       font-family: "Bebas Neue", sans-serif;
-      letter-spacing: 0.3rem;
+      letter-spacing: 2px;
       position: absolute;
       top: -40px;
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: clamp(1rem, 2vw, 4rem);
+      font-size: 32px;
       line-height: 48px;
       width: 100%;
     }
@@ -116,15 +117,14 @@ const DotsWrapper = styled.div`
 `;
 
 const CarouselOverlay = styled.h1`
+  width: 50%;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bebas Neue";
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0.02em;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: 2px;
   text-align: center;
   background-image: linear-gradient(
     135deg,
@@ -136,6 +136,12 @@ const CarouselOverlay = styled.h1`
   background-clip: text;
   background-size: 100%;
   color: transparent;
+  @media (max-width: 786px) {
+    width: 80%;
+    bottom: 0;
+    top: 15%;
+    transform: translate(-50%, +50%);
+  }
 `;
 
 export default Hero;

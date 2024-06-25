@@ -43,7 +43,7 @@ const Card = styled.div`
   margin-bottom: 20px;
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 ${({ theme }) => theme.shadow};
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -65,7 +65,7 @@ const CardImage = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(232, 229, 229, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,33 +75,33 @@ const CardImage = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    height: 20rem;
+    height: 15.125rem;
   }
 `;
 
 const ComingSoon = styled.div`
-  font-size: 16px;
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: bold;
   color: ${({ theme }) => theme.primary};
 `;
 
-const Location = styled.div`
-  font-size: 14px;
-  color: white;
+const Location = styled.p`
+  font-size: clamp(24px, 5vw, 36px);
+  color: #000;
   margin-top: 10px;
 `;
 
 const CardContent = styled.div`
-  padding: 2rem;
+  padding: 1.5rem;
   flex: 1;
 `;
 
 const Title = styled.p`
   margin: 0 0 10px 0;
-  font-size: 48px;
-  line-height: 60px;
-  letter-spacing: 2px;
-  color: ${({ theme }) => theme.text};
+  font-size: clamp(40px, 5vw, 48px);
+  letter-spacing: 1px;
+  color: ${({ theme }) => theme.cardTitle};
+  width: 100%;
 `;
 
 const Description = styled.p`
@@ -109,13 +109,14 @@ const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   font-weight: 100;
   line-height: 1.7rem;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.lightText};
 `;
 
 const List = styled.ul`
   font-family: "Satoshi";
   font-weight: 100;
   line-height: 1.7rem;
+  color: ${({ theme }) => theme.lightText};
 `;
 
 export default TrackCard;

@@ -48,10 +48,10 @@ const NavBar = styled.section`
   top: 0;
   left: 0;
   background: ${({ theme }) => theme.body};
-  padding: 1rem;
+  padding: 1rem 11.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   font-size: 2rem;
@@ -59,6 +59,7 @@ const NavBar = styled.section`
   z-index: 1;
   @media (max-width: 768px) {
     justify-content: space-between;
+    padding: 1rem;
   }
 `;
 

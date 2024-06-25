@@ -11,7 +11,7 @@ const Sponsors: React.FC = () => {
         in compiler technology. Join us in making this event a remarkable
         success!
       </Description>
-      <Button>SPONSOR US</Button>
+      <Button>Become a sponsor</Button>
     </Section>
   );
 };
@@ -21,10 +21,11 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  padding: 1rem 3rem;
-
-  @media (min-width: 768px) {
-    padding: 4rem 8rem;
+  margin-top: 3.75rem;
+  padding: 0 11.75rem;
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 0;
   }
 `;
 
@@ -32,11 +33,13 @@ const Title = styled.p`
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
-  line-height: 80px;
-  letter-spacing: 0.04em;
+  letter-spacing: 2px;
+  margin-bottom: 3.75rem;
   text-align: left;
   color: ${({ theme }) => theme.primary};
-  padding-bottom: 2rem;
+  @media (max-width: 786px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const Description = styled.p`
@@ -47,22 +50,36 @@ const Description = styled.p`
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: justify;
-  color: ${({ theme }) => theme.text};
-  padding-bottom: 3rem;
-  @media (min-width: 768px) {
-    text-align: center;
+  color: ${({ theme }) => theme.lightText};
+  text-align: center;
+  margin-bottom: 3.75rem;
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+    text-align: justify;
   }
 `;
 
 const Button = styled.button`
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.primary};
   color: white;
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-align: center;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
     background-color: ${({ theme }) => theme.primaryHover};
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
+    align-self: center;
   }
 `;
 
