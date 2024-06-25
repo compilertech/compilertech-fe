@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
+import Modal from "./shared/Modal";
 
 type Props = {
   onClick: () => void;
@@ -9,6 +10,11 @@ type Props = {
 
 const Header: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -20,23 +26,59 @@ const Header: React.FC<Props> = (props: Props) => {
           <Logo className="logo">COMPILER</Logo>
         </div>
         <NavLinks isOpen={isOpen}>
-          <a href="#about">About</a>
-          <a href="#tracks">Tracks</a>
-          <a href="#organizer">Organizer</a>
-          <a href="#sponsors">Sponsor Us</a>
-          <CtaBtn>GET IN TOUCH</CtaBtn>
-          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
+          <Links>
+            <a href="#about">About</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#interests">Topics of interests</a>
+            <a href="#benefits">Benefits of conference</a>
+            <a href="#organizer">Organizer</a>
+            <a href="#sponsors">Sponsor Us</a>
+            <CtaBtn onClick={toggleModal}>GET IN TOUCH</CtaBtn>
+          </Links>
         </NavLinks>
+        <Action>
+          <CtaBtn onClick={toggleModal}>GET IN TOUCH</CtaBtn>
+          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
+        </Action>
         <Hamburger isOpen={isOpen} onClick={handleToggle}>
           <span />
           <span />
           <span />
         </Hamburger>
       </NavBar>
+      {isModalOpen && (
+        <Modal
+          title="Get updates"
+          description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+          onClose={toggleModal}
+        />
+      )}
     </>
   );
 };
-
+const Action = styled.div`
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 10%;
+    a {
+      display: none;
+    }
+  }
+`;
+const Links = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+`;
 const Logo = styled.span`
   letter-spacing: 0.3rem;
   color: ${({ theme }) => theme.primary};
@@ -64,11 +106,11 @@ const NavBar = styled.section`
 `;
 
 const NavLinks = styled.nav<{ isOpen: boolean }>`
-  width: 50%;
+  width: 15%;
   font-size: 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   a {
     margin: 0 1rem;
     color: ${({ theme }) => theme.text};
@@ -129,13 +171,27 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
   }
 `;
 const CtaBtn = styled.a`
+  margin: 0;
+  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.primary};
   color: white !important;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: 0.4s;
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-align: center;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   &:hover {
-    box-shadow: 0px 1px 3px 1px black;
+    background-color: ${({ theme }) => theme.primaryHover};
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-self: center;
   }
 `;
 

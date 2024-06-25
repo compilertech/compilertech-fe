@@ -8,7 +8,7 @@ export const lightTheme = {
     bodyHover: '#EEE',
     filter: "none",
     cardTitle: "#3d3d3d",
-    shadow: "#e9e7e7"
+    shadow: "rgba(99, 99, 99, 0.2)"
   };
   
   export const darkTheme = {
@@ -22,6 +22,6 @@ export const lightTheme = {
     cardBg: '#28292A',
     filter: "invert(1)",
     cardTitle: "#FAFAFA",
-    shadow: "#222"
+    shadow: "rgba(255, 255, 255, 0.2)"
   };
   
