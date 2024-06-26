@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
 
@@ -9,6 +9,42 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
+  const defaultForm = {
+    name: "",
+    email: "",
+    message: "",
+  };
+  const [formState, setFormState] = useState(defaultForm);
+  const handleFormChange = (field: keyof typeof formState, value: string) => {
+    const newForm = {
+      ...formState,
+    };
+    newForm[field] = value;
+    setFormState(newForm);
+  };
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+  const handleSubmission = (e: React.FormEvent) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": title.toLowerCase().split(" ").join("-") + "-form",
+        ...formState,
+      }),
+    })
+      .then(() => {
+        alert("Success!");
+        setFormState(defaultForm);
+      })
+      .catch((error) => alert(error));
+    e.preventDefault();
+  };
   return (
     <Backdrop onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
@@ -17,19 +53,30 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
           <Description>{description}</Description>
         </Header>
         <Body>
-          <form
-            name={title.toLowerCase().split(" ").join("-") + "-form"}
-            method="POST"
-            data-netlify="true"
-          >
-            <Input type="text" name="name" placeholder="Full Name" required />
+          <form onSubmit={handleSubmission}>
+            <Input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              required
+              value={formState.name}
+              onChange={(e) => handleFormChange("name", e.target.value)}
+            />
             <Input
               type="email"
               name="email"
+              value={formState.email}
               placeholder="Email Address"
+              onChange={(e) => handleFormChange("email", e.target.value)}
               required
             />
-            <Textarea name="message" placeholder="Message" required></Textarea>
+            <Textarea
+              onChange={(e) => handleFormChange("message", e.target.value)}
+              name="message"
+              placeholder="Message"
+              value={formState.message}
+              required
+            ></Textarea>
             <Footer>
               <StyledButton onClick={onClose}>Cancel</StyledButton>
               <Button type="submit" style={{ flex: 1, color: "white" }}>

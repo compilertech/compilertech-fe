@@ -3,24 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compiler Conference</title>
   </head>
   <body>
     <div id="root"></div>
-    <form name='get-in-touch-form' netlify hidden>
+    <form name='get-in-touch-form' netlify hidden data-netlify-honeypot="bot-field">
       <input type='text' name='name' />
       <input type='email' name='email' />
       <textarea name='message'></textarea>
     </form>
-    <form name='get-updates-form' netlify hidden>
+    <form name='get-updates-form' netlify hidden data-netlify-honeypot="bot-field">
       <input type='text' name='name' />
       <input type='email' name='email' />
       <textarea name='message'></textarea>
     </form>
-    <form name='sponsor-us-form' netlify hidden>
+    <form name='sponsor-us-form' netlify hidden data-netlify-honeypot="bot-field">
       <input type='text' name='name' />
       <input type='email' name='email' />
       <textarea name='message'></textarea>
