@@ -1,6 +1,7 @@
 // Footer.tsx
 import React from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Footer: React.FC = () => {
   const tracks = [
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
     },
     {
       id: "ai-ml",
-      title: "AI/ML, DSLS",
+      title: "AI/ML, DLS",
     },
     {
       id: "security",
@@ -86,7 +87,7 @@ const FooterContainer = styled.footer`
   flex-direction: column-reverse;
   justify-content: flex-start;
   align-items: flex-start;
-  @media (min-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
     padding: 60px 120px;
     h3 {
@@ -142,7 +143,7 @@ const Copyright = styled.div`
 `;
 
 const Links = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
     align-items: flex-start;
     justify-content: center;

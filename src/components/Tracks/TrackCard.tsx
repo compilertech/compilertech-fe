@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 interface TrackCardProps {
   title: string;
@@ -74,7 +75,7 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.cardBg};
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   transition: height 0.2s ease-in-out;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
   }
 `;
@@ -103,7 +104,10 @@ const CardImage = styled.div`
     color: white;
     text-align: center;
   }
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    width: 40%;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
     height: 15.125rem;
   }

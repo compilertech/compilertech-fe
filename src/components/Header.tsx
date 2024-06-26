@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import Modal from "./shared/Modal";
 import { Button } from "./shared/Button";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 type Props = {
   onClick: () => void;
@@ -15,7 +16,7 @@ const Header: React.FC<Props> = (props: Props) => {
   const allLinks = [
     { id: "about", desc: "about" },
     { id: "tracks", desc: "tracks" },
-    { id: "topics", desc: "topics of interests" },
+    { id: "interests", desc: "topics of interests" },
     { id: "benefits", desc: "benefits of conference" },
     { id: "organizer", desc: "organizer" },
     { id: "sponsors", desc: "sponsor us" },
@@ -57,7 +58,7 @@ const Header: React.FC<Props> = (props: Props) => {
       {isModalOpen && (
         <Modal
           title="Get in touch"
-          description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+          description="Have something to say ? Don't hesistate to get in touch with us."
           onClose={toggleModal}
         />
       )}
@@ -74,7 +75,14 @@ const Action = styled.div<{ isOpen: boolean }>`
   align-items: center;
   justify-content: space-around;
   transition: left 0.5s ease-in-out;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    width: auto;
+    button {
+      width: auto;
+      margin-right: 1rem;
+    }
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     left: ${({ isOpen }) => (isOpen ? "2%" : "69%")};
     position: absolute;
     button {
@@ -84,7 +92,7 @@ const Action = styled.div<{ isOpen: boolean }>`
 `;
 const Links = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -113,7 +121,10 @@ const NavBar = styled.section`
   font-size: 2rem;
   height: auto;
   z-index: 1;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
+    padding: 1rem 4rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: space-between;
     padding: 1rem;
   }
@@ -131,7 +142,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     text-decoration: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
     position: fixed;
     top: 0;
@@ -167,7 +178,7 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
     transition: all 0.3s linear;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
 
     // Animate hamburger to close icon

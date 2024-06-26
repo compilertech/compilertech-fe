@@ -20,3 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 90%;
   }
 `;
+
+export const TABLET_BREAKPOINT = "1340px"
+export const MOBILE_BREAKPOINT = "786px"

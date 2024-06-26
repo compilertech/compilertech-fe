@@ -1,6 +1,7 @@
 // TrackCard.tsx
 import React from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 
 interface InterestCardProps {
   title: string;
@@ -14,7 +15,7 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.cardBg};
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   height: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
   }
 `;

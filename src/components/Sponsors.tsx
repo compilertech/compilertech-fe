@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Sponsors: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,7 +25,7 @@ const Sponsors: React.FC = () => {
       {isModalOpen && (
         <Modal
           title="Sponsor us"
-          description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+          description="Thank you for considering this. Fill out the details and we will get back to you."
           onClose={toggleModal}
         />
       )}
@@ -39,7 +40,11 @@ const Section = styled.section`
   height: auto;
   margin-top: 7.5rem;
   padding: 0 11.75rem;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+    margin-top: 5rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 90%;
     padding: 0;
     margin-top: 3.75rem;
@@ -54,7 +59,7 @@ const Title = styled.p`
   margin-bottom: 3.75rem;
   text-align: left;
   color: ${({ theme }) => theme.primary};
-  @media (max-width: 786px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 0.5rem;
   }
 `;
@@ -69,9 +74,9 @@ const Description = styled.p`
   color: ${({ theme }) => theme.lightText};
   text-align: center;
   margin-bottom: 3.75rem;
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 1.5rem;
-    text-align: justify;
+    text-align: center;
   }
 `;
 

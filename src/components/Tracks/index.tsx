@@ -2,6 +2,7 @@
 import React from "react";
 import TrackCard from "./TrackCard";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const Tracks: React.FC = () => {
   const tracks = [
@@ -10,7 +11,7 @@ const Tracks: React.FC = () => {
       title: "Classical Compiler Techniques",
       description:
         "Classical compiler techniques for performance, codesize, debugging and software engineering",
-      imageSrc: "./card_bg.jpeg",
+      imageSrc: "./card_bg.webp",
       list: [
         "Code Generation and optimization techniques",
         "Performance of runtime libraries (like standard libraries, high performance libraries)",
@@ -23,10 +24,10 @@ const Tracks: React.FC = () => {
     },
     {
       id: "ai-ml",
-      title: "AI/ML, DSLS",
+      title: "AI/ML, DLS",
       description:
         "Exploring the intersection of AI/ML with compiler technologies",
-      imageSrc: "./card_bg.jpeg",
+      imageSrc: "./card_bg.webp",
       list: [
         "Compilers for AI/ML",
         "AI Frameworks (Tensorflow, Pytorch etc.)",
@@ -39,7 +40,7 @@ const Tracks: React.FC = () => {
       title: "SECURITY",
       description:
         "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
-      imageSrc: "./card_bg.jpeg",
+      imageSrc: "./card_bg.webp",
       list: [
         "Improving the security of generated code",
         "Validating compiler optimizations (translation validation)",
@@ -50,7 +51,7 @@ const Tracks: React.FC = () => {
       title: "WEB3/Blockchain",
       description:
         "Compiler techniques for shaping the next generation of the Web",
-      imageSrc: "./card_bg.jpeg",
+      imageSrc: "./card_bg.webp",
       list: [
         "Programming language advancements to address Web3 challenges",
         "Verification of smart contracts using abstract interpretation (e.g., symbolic evaluation) techniques.",
@@ -96,7 +97,11 @@ const Section = styled.section`
   height: auto;
   width: 100%;
   padding: 0 11.25rem;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+    margin-top: 5rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 0;
     width: 90%;
     margin-top: 3.75rem;

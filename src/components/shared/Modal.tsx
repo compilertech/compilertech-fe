@@ -17,16 +17,18 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
           <Description>{description}</Description>
         </Header>
         <Body>
-          <form>
+          <form name={title.toLowerCase().split(" ").join("-") + "-form"}>
             <Input type="text" placeholder="Full Name" required />
             <Input type="email" placeholder="Email Address" required />
             <Textarea placeholder="Message" required></Textarea>
+            <Footer>
+              <StyledButton onClick={onClose}>Cancel</StyledButton>
+              <Button type="submit" style={{ flex: 1, color: "white" }}>
+                {title}
+              </Button>
+            </Footer>
           </form>
         </Body>
-        <Footer>
-          <StyledButton onClick={onClose}>Cancel</StyledButton>
-          <Button style={{ flex: 1, color: "white" }}>Get In Touch</Button>
-        </Footer>
       </ModalContent>
     </Backdrop>
   );
@@ -50,6 +52,7 @@ const Backdrop = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1001;
+  transition: opacity 0.2s ease-in-out;
 `;
 
 const ModalContent = styled.div`
@@ -81,7 +84,7 @@ const Description = styled.p`
 `;
 
 const Body = styled.div`
-  margin-bottom: 20px;
+  font-family: Satoshi;
 `;
 
 const Input = styled.input`
@@ -100,6 +103,7 @@ const Textarea = styled.textarea`
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: Satoshi;
 `;
 
 const Footer = styled.div`

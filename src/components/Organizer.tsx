@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Organizer: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,7 +13,7 @@ const Organizer: React.FC = () => {
   return (
     <Section id="organizer">
       <ImageWrapper>
-        <Image src="./about.jpeg" alt="organizer" />
+        <Image src="./about.webp" alt="organizer" />
       </ImageWrapper>
       <TextWrapper>
         <Title>ORGANIZER</Title>
@@ -48,7 +49,11 @@ const Section = styled.section`
   padding: 0 11.25rem;
   width: 100%;
   transition: background 0.2s ease-in-out;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+    margin-top: 5rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-top: 3.75rem;
     padding: revert;
     width: 90%;
@@ -56,9 +61,9 @@ const Section = styled.section`
 `;
 
 const TextWrapper = styled.div`
-  flex: 1;
-  @media (min-width: 768px) {
-    padding: 0 4rem;
+  padding: 0 4rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0;
   }
 `;
 
@@ -67,7 +72,7 @@ const Title = styled.p`
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
   font-family: "Bebas Neue", sans-serif;
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
   }
 `;
@@ -77,25 +82,32 @@ const Description = styled.p`
   font-size: 1rem;
   color: ${({ theme }) => theme.lightText};
   margin-bottom: 2rem;
-  line-height: 1.7rem;
-  font-weight: 100;
+  line-height: 24px;
   text-align: justify;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    justify-content: center;
+  }
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
   }
 `;
 
 const ImageWrapper = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 786px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;

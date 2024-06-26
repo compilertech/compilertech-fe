@@ -18,8 +18,8 @@ export const Button = styled.button<{ width?: number }>`
     background-color: ${({ theme }) => theme.primaryHover};
   }
 
-  @media (max-width: 768px) {
-    width: ${({ width = 40 }) => width}%;
+  @media (max-width: 1000px) {
+    width: fit-content;
     align-self: center;
   }
 `;

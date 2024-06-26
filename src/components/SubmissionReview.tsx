@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const SubmissionReview: React.FC = () => {
   return (
@@ -51,10 +52,16 @@ const Section = styled.section`
   gap: 2rem;
   width: 100%;
   padding: 0 11.25rem;
-  @media (max-width: 768px) {
-    width: 90%;
-    margin-top: 3.75rem;
+  flex-direction: row;
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+    margin-top: 5rem;
     flex-direction: column;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 90%;
+    flex-direction: column;
+    margin-top: 3.75rem;
     padding: revert;
   }
 `;
@@ -85,7 +92,7 @@ const Title = styled.p`
   color: ${({ theme }) => theme.primary};
   margin-bottom: 1rem;
   margin-top: 1rem;
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
   }
 `;
@@ -99,7 +106,7 @@ const Text = styled.div`
   li {
     font-weight: 100;
   }
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     ul {
       padding-left: 1.25rem;
     }

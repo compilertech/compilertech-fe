@@ -3,7 +3,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme";
-import { GlobalStyle } from "./styles/GlobalStyle";
+import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
 import Sponsors from "./components/Sponsors";
 import Tracks from "./components/Tracks";
 import Header from "./components/Header";
@@ -75,7 +75,7 @@ const HeaderWrapper = styled.header`
 
 const Main = styled.main`
   width: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
     flex-direction: column;
   }

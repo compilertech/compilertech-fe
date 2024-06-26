@@ -2,11 +2,12 @@
 import React from "react";
 import InterestCard from "./InterestCard";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const Tracks: React.FC = () => {
   const tracks = [
     {
-      title: "Novel Compiler Optimizations",
+      title: "Compiler Optimizations",
       description:
         "Techniques for improving performance, energy efficiency, code size, and security.",
     },
@@ -73,6 +74,10 @@ const Section = styled.section`
   width: 100%;
   padding: 0 11.25rem;
   margin-top: 7.5rem;
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+    margin-top: 5rem;
+  }
   @media (max-width: 786px) {
     margin-top: 3.75rem;
     width: 90%;
@@ -95,7 +100,11 @@ const CardContainer = styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 27px;
   grid-row-gap: 52px;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }

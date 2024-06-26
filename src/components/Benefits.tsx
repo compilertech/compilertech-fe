@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Benefits: React.FC = () => {
   const benefits = [
@@ -45,7 +46,10 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 7.5rem;
-  @media (max-width: 768px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    margin-top: 5rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-top: 3.75rem;
     margin-bottom: 0;
   }
@@ -59,7 +63,7 @@ const Title = styled.h2`
   letter-spacing: 0.04em;
   text-align: left;
   margin-bottom: 3.75rem;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     margin-bottom: 1.875rem;
   }
@@ -68,13 +72,14 @@ const Title = styled.h2`
 const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0 4rem;
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 2rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
     gap: 1.5rem;
   }
 `;
@@ -86,7 +91,7 @@ const BenefitCard = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 33.33%;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
   }
   img {
@@ -102,7 +107,7 @@ const Description = styled.p`
   text-align: center;
   color: ${({ theme }) => theme.lightText};
   width: 70%;
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
   }
 `;
@@ -116,7 +121,7 @@ const CardTitle = styled.h4`
   text-align: center;
   text-transform: uppercase;
   color: ${({ theme }) => theme.cardTitle};
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
   }
 `;

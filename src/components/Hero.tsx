@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -28,13 +29,13 @@ const Hero: React.FC = () => {
       <CarouselWrapper>
         <Slider {...settings}>
           <div>
-            <img src="./carousel_1.jpeg" alt="Slide 1" />
+            <img src="./carousel_1.webp" alt="Slide 1" />
           </div>
           <div>
-            <img src="./carousel_2.jpeg" alt="Slide 1" />
+            <img src="./carousel_2.webp" alt="Slide 1" />
           </div>
           <div>
-            <img src="./carousel_3.jpeg" alt="Slide 1" />
+            <img src="./carousel_3.webp" alt="Slide 1" />
           </div>
         </Slider>
         <CarouselOverlay>
@@ -70,6 +71,7 @@ const CarouselWrapper = styled.div`
 
   .slick-slide {
     max-height: 60vh;
+
     img {
       width: 100%;
       height: 100vh;
@@ -144,6 +146,11 @@ const CarouselOverlay = styled.h1`
   background-clip: text;
   background-size: 100%;
   color: transparent;
+  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    width: 80%;
+    top: 70%;
+  }
   @media (max-width: 786px) {
     width: 80%;
     bottom: 20%;

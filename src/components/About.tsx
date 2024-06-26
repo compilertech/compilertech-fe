@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
+import { TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const About: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,13 +28,13 @@ const About: React.FC = () => {
         {isModalOpen && (
           <Modal
             title="Get Updates"
-            description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+            description="Stay in the loop and don't miss a thing about this conference."
             onClose={toggleModal}
           />
         )}
       </TextWrapper>
       <ImageWrapper>
-        <Image src="./about.jpeg" alt="About" />
+        <Image src="./about.webp" alt="About" />
       </ImageWrapper>
     </Section>
   );
@@ -50,7 +51,7 @@ const Section = styled.section`
   gap: 2rem;
   height: auto !important;
   transition: background 0.2s ease-in-out;
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     padding: revert;
     margin: revert;
@@ -71,7 +72,7 @@ const Title = styled.p`
   margin-bottom: 0;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
   }
 `;
@@ -83,12 +84,17 @@ const Description = styled.p`
   margin-bottom: 2rem;
   line-height: 24px;
   text-align: justify;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  align-items: center;
+  justify-content: flex-start;
+  @media (min-width: ${TABLET_BREAKPOINT}) {
     flex-direction: row;
   }
 `;
@@ -99,7 +105,7 @@ const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 786px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
