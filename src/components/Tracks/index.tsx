@@ -6,6 +6,7 @@ import styled from "styled-components";
 const Tracks: React.FC = () => {
   const tracks = [
     {
+      id: "classical-compiler",
       title: "Classical Compiler Techniques",
       description:
         "Classical compiler techniques for performance, codesize, debugging and software engineering",
@@ -21,6 +22,7 @@ const Tracks: React.FC = () => {
       ],
     },
     {
+      id: "ai-ml",
       title: "AI/ML, DSLS",
       description:
         "Exploring the intersection of AI/ML with compiler technologies",
@@ -33,6 +35,7 @@ const Tracks: React.FC = () => {
       ],
     },
     {
+      id: "security",
       title: "SECURITY",
       description:
         "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
@@ -43,6 +46,7 @@ const Tracks: React.FC = () => {
       ],
     },
     {
+      id: "web3-blockchain",
       title: "WEB3/Blockchain",
       description:
         "Compiler techniques for shaping the next generation of the Web",
@@ -74,6 +78,7 @@ const Tracks: React.FC = () => {
             description={track.description}
             imageSrc={track.imageSrc}
             list={track.list}
+            id={track.id}
           />
         ))}
       </div>

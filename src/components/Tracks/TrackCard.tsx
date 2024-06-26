@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 interface TrackCardProps {
@@ -6,6 +6,7 @@ interface TrackCardProps {
   description: string;
   imageSrc: string;
   list: string[];
+  id: string;
 }
 
 const TrackCard: React.FC<TrackCardProps> = ({
@@ -13,13 +14,25 @@ const TrackCard: React.FC<TrackCardProps> = ({
   description,
   imageSrc,
   list,
+  id,
 }) => {
-  const [listLen, setListLen] = useState(3);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const listRef = useRef<HTMLUListElement>(null);
+
   const toggleListLen = () => {
-    setListLen(listLen === 3 ? list.length : 3);
+    setIsExpanded(!isExpanded);
   };
+
+  useEffect(() => {
+    if (listRef.current) {
+      listRef.current.style.maxHeight = isExpanded
+        ? `${listRef.current.scrollHeight}px`
+        : "5.5rem";
+    }
+  }, [isExpanded]);
+
   return (
-    <Card>
+    <Card id={`tracks-${id}`}>
       <CardImage>
         <img src={imageSrc} alt={title} />
         <div className="overlay">
@@ -30,21 +43,25 @@ const TrackCard: React.FC<TrackCardProps> = ({
       <CardContent>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <List>
-          {list.slice(0, listLen).map((item, index) => (
+        <List ref={listRef}>
+          {list.map((item, index) => (
             <li key={index}>{item}</li>
-          ))}{" "}
-          <ReadToggle onClick={toggleListLen}>
-            {listLen === 3 ? "read more" : "read less"}
-          </ReadToggle>
+          ))}
         </List>
+        {list.length > 3 && (
+          <ReadToggle onClick={toggleListLen}>
+            {isExpanded ? "read less" : "read more"}
+          </ReadToggle>
+        )}
       </CardContent>
     </Card>
   );
 };
 
-const ReadToggle = styled.a`
+const ReadToggle = styled.span`
+  font-family: Satoshi;
   color: ${({ theme }) => theme.primary};
+  cursor: pointer;
   &:hover {
     border-bottom: 1px solid ${({ theme }) => theme.primary};
   }
@@ -130,6 +147,9 @@ const List = styled.ul`
   line-height: 1.7rem;
   color: ${({ theme }) => theme.lightText};
   padding-left: 1rem;
+  overflow: hidden;
+  max-height: 4.5rem;
+  transition: max-height 0.3s ease-in-out;
 `;
 
 export default TrackCard;

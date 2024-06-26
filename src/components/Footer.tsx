@@ -3,6 +3,26 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer: React.FC = () => {
+  const tracks = [
+    {
+      id: "classical-compiler",
+      title: "Classical Compiler Techniques",
+    },
+    {
+      id: "ai-ml",
+      title: "AI/ML, DSLS",
+    },
+    {
+      id: "security",
+      title: "SECURITY",
+    },
+    {
+      id: "web3-blockchain",
+      title: "WEB3/Blockchain",
+      description:
+        "Compiler techniques for shaping the next generation of the Web",
+    },
+  ];
   return (
     <>
       <FooterContainer>
@@ -22,18 +42,33 @@ const Footer: React.FC = () => {
           <Section>
             <Title style={{ marginBottom: "10px" }}>Tracks</Title>
             <List>
-              <ListItem>General Compiler Optimizations</ListItem>
-              <ListItem>AI/ML</ListItem>
-              <ListItem>Security</ListItem>
-              <ListItem>Blockchain & Web3</ListItem>
+              {tracks.map((track) => (
+                <ListItem>
+                  <a href={`#tracks-${track.id}`}>
+                    {track.title.toLowerCase()}
+                  </a>
+                </ListItem>
+              ))}
             </List>
           </Section>
           <Section>
             <Title style={{ marginBottom: "10px" }}>Social</Title>
             <List>
-              <ListItem>LinkedIn</ListItem>
-              <ListItem>Twitter</ListItem>
-              <ListItem>WhatsApp</ListItem>
+              <ListItem>
+                <a href="https://LinkedIn.com" target="_blank">
+                  LinkedIn
+                </a>
+              </ListItem>
+              <ListItem>
+                <a href="https://Twitter.com" target="_blank">
+                  Twitter
+                </a>
+              </ListItem>
+              <ListItem>
+                <a href="https://WhatsApp.com" target="_blank">
+                  WhatsApp
+                </a>
+              </ListItem>
             </List>
           </Section>
         </Links>
@@ -92,6 +127,13 @@ const List = styled.ul`
 const ListItem = styled.li`
   margin-bottom: 10px;
   text-align: left;
+  a {
+    color: inherit;
+    text-transform: capitalize;
+    &:hover {
+      border-bottom: 1px solid white;
+    }
+  }
 `;
 
 const Copyright = styled.div`
