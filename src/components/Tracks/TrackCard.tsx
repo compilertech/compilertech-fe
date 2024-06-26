@@ -146,7 +146,7 @@ const List = styled.ul`
   font-weight: 100;
   line-height: 1.7rem;
   color: ${({ theme }) => theme.lightText};
-  padding-left: 1rem;
+  padding-left: 1.25rem;
   overflow: hidden;
   max-height: 4.5rem;
   transition: max-height 0.3s ease-in-out;
