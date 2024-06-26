@@ -75,7 +75,7 @@ const Action = styled.div<{ isOpen: boolean }>`
   justify-content: space-around;
   transition: left 0.5s ease-in-out;
   @media (max-width: 768px) {
-    left: ${({ isOpen }) => (isOpen ? "5%" : "65%")};
+    left: ${({ isOpen }) => (isOpen ? "2%" : "69%")};
     position: absolute;
     button {
       display: none;

@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
           <Section>
             <Title style={{ marginBottom: "10px" }}>Tracks</Title>
             <List>
-              {tracks.map((track) => (
-                <ListItem>
+              {tracks.map((track, index) => (
+                <ListItem key={index}>
                   <a href={`#tracks-${track.id}`}>
                     {track.title.toLowerCase()}
                   </a>
@@ -130,9 +130,7 @@ const ListItem = styled.li`
   a {
     color: inherit;
     text-transform: capitalize;
-    &:hover {
-      border-bottom: 1px solid white;
-    }
+    text-decoration: none;
   }
 `;
 
