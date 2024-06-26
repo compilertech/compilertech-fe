@@ -29,7 +29,7 @@ const Organizer: React.FC = () => {
           {isModalOpen && (
             <Modal
               title="Get Updates"
-              description="Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit."
+              description="Stay in the loop and don't miss a thing about this conference."
               onClose={toggleModal}
             />
           )}

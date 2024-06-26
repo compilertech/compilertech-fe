@@ -10,6 +10,10 @@ export const Button = styled.button<{ width?: number }>`
   line-height: 24px;
   letter-spacing: 0.08em;
   text-align: center;
+  &:disabled {
+    background-color: #a86aa1 !important;
+    cursor: not-allowed;
+  }
 
   border: none;
   border-radius: 5px;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
+import { FaCircleNotch } from "react-icons/fa";
 
 interface ModalProps {
   title: string;
@@ -15,6 +16,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
     message: "",
   };
   const [formState, setFormState] = useState(defaultForm);
+  const [loading, setIsLoading] = useState(false);
   const handleFormChange = (field: keyof typeof formState, value: string) => {
     const newForm = {
       ...formState,
@@ -30,6 +32,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
       .join("&");
   };
   const handleSubmission = (e: React.FormEvent) => {
+    setIsLoading(true);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -39,6 +42,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
       }),
     })
       .then(() => {
+        setIsLoading(false);
         alert("Success!");
         setFormState(defaultForm);
       })
@@ -79,8 +83,12 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
             ></Textarea>
             <Footer>
               <StyledButton onClick={onClose}>Cancel</StyledButton>
-              <Button type="submit" style={{ flex: 1, color: "white" }}>
-                {title}
+              <Button
+                disabled={loading}
+                type="submit"
+                style={{ flex: 1, color: "white" }}
+              >
+                {loading ? <Loader size={18} /> : title}
               </Button>
             </Footer>
           </form>
@@ -89,6 +97,18 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
     </Backdrop>
   );
 };
+
+const Loader = styled(FaCircleNotch)`
+  animation: heartbeat 1s linear infinite;
+  @keyframes heartbeat {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
 
 const StyledButton = styled(Button)`
   background: white !important;
