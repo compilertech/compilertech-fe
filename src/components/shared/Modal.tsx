@@ -18,9 +18,14 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
         </Header>
         <Body>
           <form name={title.toLowerCase().split(" ").join("-") + "-form"}>
-            <Input type="text" placeholder="Full Name" required />
-            <Input type="email" placeholder="Email Address" required />
-            <Textarea placeholder="Message" required></Textarea>
+            <Input type="text" name="name" placeholder="Full Name" required />
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <Textarea name="message" placeholder="Message" required></Textarea>
             <Footer>
               <StyledButton onClick={onClose}>Cancel</StyledButton>
               <Button type="submit" style={{ flex: 1, color: "white" }}>
