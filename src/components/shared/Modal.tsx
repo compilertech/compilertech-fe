@@ -17,7 +17,11 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
           <Description>{description}</Description>
         </Header>
         <Body>
-          <form name={title.toLowerCase().split(" ").join("-") + "-form"}>
+          <form
+            name={title.toLowerCase().split(" ").join("-") + "-form"}
+            method="POST"
+            data-netlify="true"
+          >
             <Input type="text" name="name" placeholder="Full Name" required />
             <Input
               type="email"
