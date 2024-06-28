@@ -1,7 +1,10 @@
 // Footer.tsx
 import React from "react";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 
 const Footer: React.FC = () => {
   const tracks = [
@@ -25,7 +28,7 @@ const Footer: React.FC = () => {
     },
   ];
   return (
-    <>
+    <Container>
       <FooterContainer>
         <Section>
           <Title>COMPILER</Title>
@@ -74,15 +77,22 @@ const Footer: React.FC = () => {
           </Section>
         </Links>
       </FooterContainer>
-    </>
+    </Container>
   );
 };
 
-const FooterContainer = styled.footer`
+const Container = styled.div`
   background-color: #303134;
   margin-top: 3.75rem;
   color: white;
   padding: 2rem 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
@@ -93,6 +103,10 @@ const FooterContainer = styled.footer`
     h3 {
       margin: 0;
     }
+  }
+  @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
+    padding: 3.75rem 0;
+    max-width: 1080px;
   }
 `;
 

@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id="hero">
       <CarouselWrapper>
         <Slider {...settings}>
           <div>

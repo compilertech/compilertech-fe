@@ -3,7 +3,11 @@ import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import Modal from "./shared/Modal";
 import { Button } from "./shared/Button";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 
 type Props = {
   onClick: () => void;
@@ -15,10 +19,11 @@ const Header: React.FC<Props> = (props: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const allLinks = [
     { id: "about", desc: "about" },
-    { id: "tracks", desc: "tracks" },
     { id: "interests", desc: "topics of interests" },
-    { id: "benefits", desc: "benefits of conference" },
+    { id: "tracks", desc: "tracks" },
     { id: "organizer", desc: "organizer" },
+    { id: "submissions-and-review", desc: "Submissions & Review" },
+    { id: "benefits", desc: "benefits of conference" },
     { id: "sponsors", desc: "sponsor us" },
   ];
 
@@ -121,12 +126,16 @@ const NavBar = styled.section`
   font-size: 2rem;
   height: auto;
   z-index: 1;
-  @media (max-width: 1000px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 1rem 4rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: space-between;
     padding: 1rem;
+  }
+  @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
+    padding-left: calc(44% - 420px);
+    padding-right: calc(44% - 420px);
   }
 `;
 
