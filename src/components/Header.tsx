@@ -37,9 +37,15 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <>
       <NavBar>
-        <div>
-          <Logo className="logo">COMPILER</Logo>
-        </div>
+        <Logo className="logo">
+          <img
+            src={
+              props.theme === "light"
+                ? "./icons/logo_light.png"
+                : "./icons/logo_dark.png"
+            }
+          />
+        </Logo>
         <NavLinks isOpen={isOpen}>
           <Links>
             {allLinks.map((link, index) => (
@@ -106,9 +112,10 @@ const Links = styled.div`
     justify-content: space-evenly;
   }
 `;
-const Logo = styled.span`
-  letter-spacing: 2px;
-  color: ${({ theme }) => theme.primary};
+const Logo = styled.div`
+  img {
+    height: 60px;
+  }
 `;
 
 const NavBar = styled.section`
@@ -126,16 +133,20 @@ const NavBar = styled.section`
   font-size: 2rem;
   height: auto;
   z-index: 1;
+  padding-top: 0;
+  padding-bottom: 0;
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 1rem 4rem;
+    padding: 0 4rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0 1rem;
   }
   @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
     padding-left: calc(44% - 420px);
     padding-right: calc(44% - 420px);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `;
 

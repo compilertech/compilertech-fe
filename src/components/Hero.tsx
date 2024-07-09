@@ -3,11 +3,7 @@ import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-  WIDESCREEN_BREAKPOINT,
-} from "../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -28,6 +24,15 @@ const Hero: React.FC = () => {
     ),
   };
 
+  let isFirefoxBrowser: boolean;
+  try {
+    // @ts-ignore
+    isFirefoxBrowser = typeof InstallTrigger !== undefined;
+  } catch {
+    isFirefoxBrowser = false;
+  }
+  console.log(isFirefoxBrowser);
+
   return (
     <StyledSection id="hero">
       <CarouselWrapper>
@@ -43,8 +48,14 @@ const Hero: React.FC = () => {
           </div>
         </Slider>
         <CarouselOverlay>
-          <HidingText>Theme:</HidingText>"Innovations in Compiler Technologies
-          for a Rapidly Evolving Landscape"
+          {!isFirefoxBrowser ? (
+            <>
+              <HidingText>Theme:</HidingText>"Innovations in Compiler
+              Technologies for a Rapidly Evolving Landscape"
+            </>
+          ) : (
+            <img className="hero-text-img" src="./hero_image.svg" />
+          )}
         </CarouselOverlay>
       </CarouselWrapper>
     </StyledSection>
@@ -161,13 +172,9 @@ const CarouselOverlay = styled.h1`
     top: 0;
     transform: translate(-50%, +50%);
   }
-  @-moz-document url-prefix() {
-    @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
-      color: white;
-    }
-    @media (min-width: ${TABLET_BREAKPOINT}) and (max-width: ${WIDESCREEN_BREAKPOINT}) {
-      color: white;
-    }
+  .hero-text-img {
+    width: 100%;
+    height: auto;
   }
 `;
 
