@@ -27,11 +27,10 @@ const Hero: React.FC = () => {
   let isFirefoxBrowser: boolean;
   try {
     // @ts-ignore
-    isFirefoxBrowser = typeof InstallTrigger !== undefined;
+    isFirefoxBrowser = typeof InstallTrigger === "object";
   } catch {
     isFirefoxBrowser = false;
   }
-  console.log(isFirefoxBrowser);
 
   return (
     <StyledSection id="hero">
