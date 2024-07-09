@@ -13,20 +13,22 @@ import Interests from "./components/Interests";
 import SubmissionReview from "./components/SubmissionReview";
 import Benefits from "./components/Benefits";
 import Footer from "./components/Footer";
+import { useThemeDetector } from "./utils/detectBrowserTheme";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
+  const isBrowserDarkTheme = useThemeDetector();
 
   useEffect(() => {
     const faviconUpdate = async () => {
       const favicon: any = document.getElementById("favicon");
-      if (theme === "dark") {
+      if (isBrowserDarkTheme) {
         favicon.href = "/icons/favicon_white.svg";
       } else {
         favicon.href = "/icons/favicon_black.svg";
       }
     };
     faviconUpdate();
-  }, [theme]);
+  }, [isBrowserDarkTheme]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
