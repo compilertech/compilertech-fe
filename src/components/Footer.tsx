@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import {
   MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
 
@@ -18,11 +19,11 @@ const Footer: React.FC = () => {
     },
     {
       id: "security",
-      title: "SECURITY",
+      title: "Security",
     },
     {
       id: "web3-blockchain",
-      title: "WEB3/Blockchain",
+      title: "Web3/Blockchain",
       description:
         "Compiler techniques for shaping the next generation of the Web",
     },
@@ -44,33 +45,29 @@ const Footer: React.FC = () => {
         </Section>
         <Links>
           <Section>
-            <Title style={{ marginBottom: "10px" }}>Tracks</Title>
+            <Title>Tracks</Title>
             <List>
               {tracks.map((track, index) => (
                 <ListItem key={index}>
-                  <a href={`#tracks-${track.id}`}>
-                    {track.title.toLowerCase()}
-                  </a>
+                  <a href={`#tracks-${track.id}`}>{track.title}</a>
                 </ListItem>
               ))}
             </List>
           </Section>
           <Section>
-            <Title style={{ marginBottom: "10px" }}>Social</Title>
+            <Title>Social</Title>
             <List>
               <ListItem>
-                <a href="https://LinkedIn.com" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/compiler-technology"
+                  target="_blank"
+                >
                   LinkedIn
                 </a>
               </ListItem>
               <ListItem>
-                <a href="https://Twitter.com" target="_blank">
+                <a href="https://x.com/compiler_tech" target="_blank">
                   Twitter
-                </a>
-              </ListItem>
-              <ListItem>
-                <a href="https://WhatsApp.com" target="_blank">
-                  WhatsApp
                 </a>
               </ListItem>
             </List>
@@ -85,11 +82,13 @@ const Container = styled.div`
   background-color: #303134;
   margin-top: 3.75rem;
   color: white;
-  padding: 2rem 2rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 2rem;
+  }
 `;
 
 const FooterContainer = styled.footer`
@@ -97,9 +96,18 @@ const FooterContainer = styled.footer`
   flex-direction: column-reverse;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 10px;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
-    padding: 60px 120px;
+    padding: 60px 60px;
+    gap: 60px;
+    h3 {
+      margin: 0;
+    }
+  }
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    padding: 60px 100px;
+    gap: 120px;
     h3 {
       margin: 0;
     }
@@ -112,11 +120,10 @@ const FooterContainer = styled.footer`
 
 const Section = styled.div`
   flex: 1;
-  margin: 0 20px;
 `;
 
 const Title = styled.h3`
-  margin: 10px 0;
+  margin: 10px 0 !important;
   font-family: Bebas Neue;
   font-size: 40px;
   font-weight: 400;
@@ -144,7 +151,6 @@ const ListItem = styled.li`
   text-align: left;
   a {
     color: inherit;
-    text-transform: capitalize;
     text-decoration: none;
   }
 `;
@@ -157,8 +163,13 @@ const Copyright = styled.div`
 `;
 
 const Links = styled.div`
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    display: flex;
+    flex: 1.5;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     width: 60%;

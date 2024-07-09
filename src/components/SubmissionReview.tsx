@@ -49,7 +49,7 @@ const Section = styled.section`
   justify-content: space-around;
   height: auto;
   margin-top: 7.5rem;
-  gap: 2rem;
+  gap: 4rem;
   width: 100%;
   padding: 0 11.25rem;
   flex-direction: row;
@@ -101,15 +101,10 @@ const Text = styled.div`
   font-size: 1em;
   line-height: 1.5;
   ul {
-    padding: 0.5rem;
+    padding: 1.25rem;
   }
   li {
     font-weight: 100;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    ul {
-      padding-left: 1.25rem;
-    }
   }
 `;
 

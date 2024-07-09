@@ -77,6 +77,7 @@ const Card = styled.div`
   transition: height 0.2s ease-in-out;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
+    width: 100%;
   }
 `;
 

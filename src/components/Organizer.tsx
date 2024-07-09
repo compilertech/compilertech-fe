@@ -13,7 +13,7 @@ const Organizer: React.FC = () => {
   return (
     <Section id="organizer">
       <ImageWrapper>
-        <Image src="./about.webp" alt="organizer" />
+        <Image src="./organizer.webp" alt="organizer" />
       </ImageWrapper>
       <TextWrapper>
         <Title>ORGANIZER</Title>
@@ -61,7 +61,7 @@ const Section = styled.section`
 `;
 
 const TextWrapper = styled.div`
-  padding: 0 4rem;
+  padding: 0 0 0 5rem;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0;
   }
@@ -113,7 +113,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 100%;
+  max-width: 520px;
   border-radius: 0 40px;
   transition: border-radius 0.2s ease-in-out;
   &:hover {
