@@ -17,11 +17,19 @@ import { useThemeDetector } from "./utils/detectBrowserTheme";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
+  // @ts-ignore
+  const isChrome = navigator?.userAgentData?.brands
+    .map((data: any) => data.brand)
+    .includes("Google Chrome");
+  console.log("🚀 ~ App ~ isChrome:", isChrome);
 
   useEffect(() => {
     const faviconUpdate = async () => {
       const favicon: any = document.getElementById("favicon");
-      if (isBrowserDarkTheme) {
+      if (Boolean(isChrome)) {
+        favicon.href = "/icons/favicon_chrome.png";
+        favicon.tye = "image/png";
+      } else if (isBrowserDarkTheme) {
         favicon.href = "/icons/favicon_white.svg";
       } else {
         favicon.href = "/icons/favicon_black.svg";
