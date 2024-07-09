@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import styled, { ThemeProvider } from "styled-components";
@@ -13,9 +13,20 @@ import Interests from "./components/Interests";
 import SubmissionReview from "./components/SubmissionReview";
 import Benefits from "./components/Benefits";
 import Footer from "./components/Footer";
-
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
+
+  useEffect(() => {
+    const faviconUpdate = async () => {
+      const favicon: any = document.getElementById("favicon");
+      if (theme === "dark") {
+        favicon.href = "/icons/favicon_white.svg";
+      } else {
+        favicon.href = "/icons/favicon_black.svg";
+      }
+    };
+    faviconUpdate();
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");

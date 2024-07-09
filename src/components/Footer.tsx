@@ -32,7 +32,9 @@ const Footer: React.FC = () => {
     <Container>
       <FooterContainer>
         <Section>
-          <Title>COMPILER</Title>
+          <>
+            <img className="footer-logo" src="./icons/logo_dark.png" />
+          </>
           <Paragraph>
             The Compiler Technology Workshop organizing committee invites
             researchers, practitioners, and enthusiasts in the field of compiler
@@ -97,6 +99,12 @@ const FooterContainer = styled.footer`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
+  .footer-logo {
+    width: 100px;
+    @media (min-width: ${MOBILE_BREAKPOINT}) {
+      margin-top: -2.5rem;
+    }
+  }
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
     padding: 60px 60px;
