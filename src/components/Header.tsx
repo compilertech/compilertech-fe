@@ -41,8 +41,8 @@ const Header: React.FC<Props> = (props: Props) => {
           <img
             src={
               props.theme === "light"
-                ? "./icons/logo_light.png"
-                : "./icons/logo_dark.png"
+                ? "./icons/logo_light-cropped.png"
+                : "./icons/logo_dark-cropped.png"
             }
           />
         </Logo>
@@ -114,7 +114,9 @@ const Links = styled.div`
 `;
 const Logo = styled.div`
   img {
-    height: 60px;
+    height: 70px;
+    margin-top: 15px;
+    margin-bottom: 7px;
   }
 `;
 
@@ -124,7 +126,7 @@ const NavBar = styled.section`
   top: 0;
   left: 0;
   background: ${({ theme }) => theme.body};
-  padding: 1rem 11.25rem;
+  padding: 0 11.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

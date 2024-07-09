@@ -143,7 +143,7 @@ const DotsWrapper = styled.div`
 const CarouselOverlay = styled.h1`
   width: 50%;
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bebas Neue";
@@ -163,7 +163,7 @@ const CarouselOverlay = styled.h1`
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
     width: 80%;
-    top: 70%;
+    top: 60%;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 80%;

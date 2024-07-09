@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
       <FooterContainer>
         <Section>
           <>
-            <img className="footer-logo" src="./icons/logo_dark.png" />
+            <img className="footer-logo" src="./icons/logo_dark-cropped.png" />
           </>
           <Paragraph>
             The Compiler Technology Workshop organizing committee invites
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             in compiler design, implementation, and optimization, and their
             impact on emerging software and hardware platforms.
           </Paragraph>
-          <Copyright>©2024 Compiler</Copyright>
+          <Copyright>© 2024 Compiler Technology</Copyright>
         </Section>
         <Links>
           <Section>
@@ -100,9 +100,11 @@ const FooterContainer = styled.footer`
   align-items: flex-start;
   gap: 10px;
   .footer-logo {
-    width: 100px;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     @media (min-width: ${MOBILE_BREAKPOINT}) {
-      margin-top: -2.5rem;
+      margin-top: -1.5rem;
     }
   }
   @media (min-width: ${MOBILE_BREAKPOINT}) {

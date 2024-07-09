@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button<{ width?: number }>`
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   background-color: ${({ theme }) => theme.primary} !important;
   color: white;
   font-family: "Bebas Neue";
