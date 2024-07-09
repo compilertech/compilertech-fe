@@ -3,7 +3,11 @@ import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -151,11 +155,19 @@ const CarouselOverlay = styled.h1`
     width: 80%;
     top: 70%;
   }
-  @media (max-width: 786px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 80%;
     bottom: 20%;
     top: 0;
     transform: translate(-50%, +50%);
+  }
+  @-moz-document url-prefix() {
+    @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
+      color: white;
+    }
+    @media (min-width: ${TABLET_BREAKPOINT}) and (max-width: ${WIDESCREEN_BREAKPOINT}) {
+      color: white;
+    }
   }
 `;
 
