@@ -48,19 +48,21 @@ const Section = styled.section`
   margin-top: 7.5rem;
   padding: 0 180px;
   background-color: ${({ theme }) => theme.body};
-  gap: 2rem;
   height: auto !important;
   transition: background 0.2s ease-in-out;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     padding: revert;
-    margin: revert;
+    margin-top: 3.75rem;
     width: 90%;
   }
 `;
 
 const TextWrapper = styled.div`
-  flex: 1;
+  padding: 0 4rem 0 0;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0;
+  }
 `;
 
 const Title = styled.p`
@@ -68,7 +70,7 @@ const Title = styled.p`
   line-height: 80px;
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
-  margin: 3.75rem 0;
+  margin: 0 0 3.75rem 0;
   margin-bottom: 0;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
@@ -100,7 +102,7 @@ const ButtonContainer = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  flex: 1;
+  max-width: 580px;
   display: flex;
   justify-content: center;
   align-items: center;
