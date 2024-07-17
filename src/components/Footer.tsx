@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
     },
     {
       id: "ai-ml",
-      title: "AI/ML, DLS",
+      title: "AI/ML, DSL",
     },
     {
       id: "security",
