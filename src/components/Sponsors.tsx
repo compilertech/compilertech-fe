@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
@@ -10,26 +10,38 @@ const Sponsors: React.FC = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  useEffect(() => {
+    const rzpPaymentForm = document.getElementById("rzp_payment_form");
+
+    if (rzpPaymentForm && !rzpPaymentForm.hasChildNodes()) {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+      script.async = true;
+      script.dataset.payment_button_id = "pl_OZypo9JDPLwY9M";
+      rzpPaymentForm.appendChild(script);
+    }
+  });
   return (
-    <Section id="sponsors">
-      <Title>SPONSOR US</Title>
-      <Description>
-        We are looking for sponsors! Your support will help us deliver a
-        high-quality, impactful workshop, fostering the next wave of innovation
-        in compiler technology. Join us in making this event a remarkable
-        success!
-      </Description>
-      <Button width={50} onClick={toggleModal}>
-        Become a sponsor
-      </Button>
-      {isModalOpen && (
-        <Modal
-          title="Sponsor us"
-          description="Thank you for considering this. Fill out the details and we will get back to you."
-          onClose={toggleModal}
-        />
-      )}
-    </Section>
+    <>
+      <Section id="sponsors">
+        <Title>SPONSOR US</Title>
+        <Description>
+          We are looking for sponsors! Your support will help us deliver a
+          high-quality, impactful workshop, fostering the next wave of
+          innovation in compiler technology. Join us in making this event a
+          remarkable success!
+        </Description>
+        <form id="rzp_payment_form"></form>
+        {isModalOpen && (
+          <Modal
+            title="Sponsor us"
+            description="Thank you for considering this. Fill out the details and we will get back to you."
+            onClose={toggleModal}
+          />
+        )}
+      </Section>
+    </>
   );
 };
 
