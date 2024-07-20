@@ -66,7 +66,7 @@ const Header: React.FC<Props> = (props: Props) => {
           <span />
         </Hamburger>
       </NavBar>
-      {<RegisterModal onClose={toggleModal} hidden={isModalOpen} />}
+      {<RegisterModal onClose={toggleModal} hidden={!isModalOpen} />}
     </>
   );
 };
