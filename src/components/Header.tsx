@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
-import Modal from "./shared/Modal";
+import RegisterModal from "./shared/RegisterModal";
 import { Button } from "./shared/Button";
 import {
   MOBILE_BREAKPOINT,
@@ -53,11 +53,11 @@ const Header: React.FC<Props> = (props: Props) => {
                 {link.desc}
               </a>
             ))}
-            <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
+            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
           </Links>
         </NavLinks>
         <Action isOpen={isOpen}>
-          <StyledButton onClick={toggleModal}>GET IN TOUCH</StyledButton>
+          <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
         </Action>
         <Hamburger isOpen={isOpen} onClick={handleToggle}>
@@ -66,19 +66,16 @@ const Header: React.FC<Props> = (props: Props) => {
           <span />
         </Hamburger>
       </NavBar>
-      {isModalOpen && (
-        <Modal
-          title="Get in touch"
-          description="Have something to say ? Don't hesistate to get in touch with us."
-          onClose={toggleModal}
-        />
-      )}
+      {<RegisterModal onClose={toggleModal} hidden={isModalOpen} />}
     </>
   );
 };
 
 const StyledButton = styled(Button)`
   color: white !important;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 `;
 const Action = styled.div<{ isOpen: boolean }>`
   width: 20%;
