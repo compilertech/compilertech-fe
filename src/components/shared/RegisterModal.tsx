@@ -37,7 +37,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
     <Backdrop
       onClick={onClose}
       style={
-        hidden ? { opacity: 0, zIndex: -100 } : { opacity: 100, zIndex: 0 }
+        hidden ? { opacity: 0, zIndex: -100 } : { opacity: 100, zIndex: 100 }
       }
     >
       <ModalContent onClick={(e) => e.stopPropagation()}>
