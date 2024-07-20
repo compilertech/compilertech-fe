@@ -49,16 +49,18 @@ const Hero: React.FC = () => {
           </div>
         </Slider>
         <CarouselOverlay>
-          {!isFirefoxBrowser ? (
-            <h4>
-              <q>
-                Innovations in Compiler Technologies for a Rapidly Evolving
-                Landscape
-              </q>
-            </h4>
-          ) : (
-            <img className="hero-text-img" src="./hero_image.svg" />
-          )}
+          <div>
+            {!isFirefoxBrowser ? (
+              <h4>
+                <q>
+                  Innovations in Compiler Technologies for a Rapidly Evolving
+                  Landscape
+                </q>
+              </h4>
+            ) : (
+              <img className="hero-text-img" src="./hero_image.svg" />
+            )}
+          </div>
           <div>
             <h3>
               <LuCalendarRange
@@ -167,16 +169,18 @@ const CarouselOverlay = styled.div`
   font-size: clamp(32px, 5vw, 48px);
   letter-spacing: 2px;
   text-align: center;
-  background-image: linear-gradient(
-    135deg,
-    white,
-    lightblue,
-    ${({ theme }) => theme.primary},
-    #ff6f00
-  );
-  background-clip: text;
-  background-size: 100%;
-  color: transparent;
+  div:first-of-type {
+    background-image: linear-gradient(
+      135deg,
+      white,
+      lightblue,
+      ${({ theme }) => theme.primary},
+      #ff6f00
+    );
+    background-clip: text;
+    background-size: 100%;
+    color: transparent;
+  }
   h1 {
     font-size: 24px;
     display: flex;
