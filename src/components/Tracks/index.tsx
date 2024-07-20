@@ -24,7 +24,7 @@ const Tracks: React.FC = () => {
     },
     {
       id: "ai-ml",
-      title: "AI/ML, DLS",
+      title: "AI/ML, DSLs",
       description:
         "Exploring the intersection of AI/ML with compiler technologies",
       imageSrc: "./card_bg.webp",

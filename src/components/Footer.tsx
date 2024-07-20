@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
     },
     {
       id: "ai-ml",
-      title: "AI/ML, DSL",
+      title: "AI/ML, DSLs",
     },
     {
       id: "security",
@@ -36,12 +36,13 @@ const Footer: React.FC = () => {
             <img className="footer-logo" src="./icons/logo_dark-cropped.png" />
           </>
           <Paragraph>
-            The Compiler Technology Workshop organizing committee invites
-            researchers, practitioners, and enthusiasts in the field of compiler
-            technologies to submit presentation proposals for our upcoming
-            workshop. This year's theme focuses on the cutting-edge advancements
-            in compiler design, implementation, and optimization, and their
-            impact on emerging software and hardware platforms.
+            IICT (Innovation In Compiler Technology) aimed at propagating the
+            innovations in compiler field invites researchers, practitioners,
+            and enthusiasts in the field of compiler technologies to submit
+            presentation proposals for our upcoming workshop. This year's theme
+            focuses on the cutting-edge advancements in compiler design,
+            implementation, and optimization, and their impact on emerging
+            software and hardware platforms.
           </Paragraph>
           <Copyright>© 2024 Compiler Technology</Copyright>
         </Section>

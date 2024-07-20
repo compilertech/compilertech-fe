@@ -13,8 +13,8 @@ const SubmissionReview: React.FC = () => {
               <Bold>Presentation Format:</Bold> Proposals should include a
               title, abstract (250 words maximum), and a brief outline of the
               proposed presentation (500 words maximum). Please indicate the
-              preferred presentation format (oral presentation, poster
-              presentation, or both).
+              preferred presentation format (either oral presentation or poster
+              presentation).
             </li>
             <li>
               <Bold>Submision Deadliine: </Bold>TBD
