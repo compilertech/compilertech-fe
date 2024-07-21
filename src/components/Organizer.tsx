@@ -16,10 +16,10 @@ const Organizer: React.FC = () => {
         <Image src="./organizer.webp" alt="organizer" />
       </ImageWrapper>
       <TextWrapper>
-        <Title>ORGANIZER</Title>
+        <Title>ORGANIZATION</Title>
         <Description>
           We believe this workshop will become a venue that brings together
-          compiler engineers, students and professors from all over India. We
+          compiler engineers, students and professors. We
           have a strong organizing team with engineers from Google, AMD, Nvidia
           and TCS Research who are experienced in organizing technical events
           working tirelessly to make the workshop successful.
