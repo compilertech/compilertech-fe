@@ -72,7 +72,6 @@ const Description = styled.p`
 const Email = styled.a`
   color: ${({ theme }) => theme.primary};
   font-weight: bold;
-  filter: brightness(${({ theme }) => (theme.text === "#FFF" ? 1.5 : 1.1)});
   font-decoration: none;
 `;
 
