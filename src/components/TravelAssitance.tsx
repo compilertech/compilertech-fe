@@ -7,13 +7,13 @@ const TravelAssistance: React.FC = () => {
     <Section id="sponsors">
       <Title>Travel Assistance</Title>
       <Description>
-        Would you like travel assistance for attending the conference? Note that
+        We are providing travel assistance to current undergraduate and graduate students who need financial support to attend the workshop.
+        All students are encouraged to apply. Note that
         the travel assistance will be granted for student attendees on a case by
-        case basis. Please provide a legitimate reason for requesting travel
-        assistance via our email{" "}
+        case basis. Please email{" "}
         <Email href="mailto:support@compilertech.org?subject=Request%20for%20travel%20assistance">
           support@compilertech.org
-        </Email>
+        </Email> with a legitimate reason for requesting travel assistance.
       </Description>
     </Section>
   );
