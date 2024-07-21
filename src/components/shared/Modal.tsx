@@ -154,7 +154,7 @@ const Backdrop = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1001;
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 `;
 
 const ModalContent = styled.div`

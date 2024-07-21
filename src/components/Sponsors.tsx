@@ -49,7 +49,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   padding: 0 11.75rem;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;

@@ -15,13 +15,12 @@ const About: React.FC = () => {
       <TextWrapper>
         <Title>ABOUT</Title>
         <Description>
-          The IICT (Innovation In Compiler Technology) workshop aims to bring together
-          researchers, practitioners, and enthusiasts in the field of compiler technologies.
-          This year's theme
-          focuses on the cutting-edge advancements in compiler design,
-          implementation, and optimization, and their impact on emerging
-          software and hardware platforms.
-          We invite presentation proposals for our upcoming workshop.
+          The IICT (Innovation In Compiler Technology) workshop aims to bring
+          together researchers, practitioners, and enthusiasts in the field of
+          compiler technologies. This year's theme focuses on the cutting-edge
+          advancements in compiler design, implementation, and optimization, and
+          their impact on emerging software and hardware platforms. We invite
+          presentation proposals for our upcoming workshop.
         </Description>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get Updates</Button>
@@ -50,7 +49,7 @@ const Section = styled.section`
   padding: 0 180px;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
-  transition: background 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     padding: revert;

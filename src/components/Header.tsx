@@ -82,7 +82,7 @@ const Action = styled.div<{ isOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transition: left 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: auto;
     button {
@@ -172,7 +172,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform: ${({ isOpen }) =>
       isOpen ? "translateX(0)" : "translateX(100%)"};
 
@@ -194,7 +194,7 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
     background: ${({ theme }) => theme.text};
     margin-bottom: 4px;
     border-radius: 5px;
-    transition: all 0.3s linear;
+    transition: all 0.2s ease-in-out;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {

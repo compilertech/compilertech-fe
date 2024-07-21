@@ -24,7 +24,7 @@ const ToggleWrapper = styled.div<{ theme: string }>`
   height: 30px;
   border-radius: 15px;
   position: relative;
-  transition: background 0.3s;
+  transition: all 0.2s ease-in-out;
   box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
   background: ${({ theme }) => (theme === "dark" ? "#474646" : "#fafafa")};
 `;
@@ -40,7 +40,7 @@ const IconWrapper = styled.div<{ theme: string }>`
   position: absolute;
   top: 0;
   left: ${({ theme }) => (theme === "dark" ? "30px" : "0")};
-  transition: left 0.3s, background 0.3s, color 0.3s;
+  transition: all 0.2s ease-in-out;
 `;
 
 export default ThemeToggle;

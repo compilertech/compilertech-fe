@@ -12,18 +12,49 @@ const Organizer: React.FC = () => {
   };
   return (
     <Section id="organizer">
-      <ImageWrapper>
-        <Image src="./organizer.webp" alt="organizer" />
-      </ImageWrapper>
       <TextWrapper>
         <Title>ORGANIZATION</Title>
         <Description>
           We believe this workshop will become a venue that brings together
-          compiler engineers, students and professors. We
-          have a strong organizing team with engineers from Google, AMD, Nvidia
-          and TCS Research who are experienced in organizing technical events
-          working tirelessly to make the workshop successful.
+          compiler engineers, students and professors. We have a strong
+          organizing team with engineers from Google, AMD, Nvidia and TCS
+          Research who are experienced in organizing technical events working
+          tirelessly to make the workshop successful.
         </Description>
+        <CommiteeContainer>
+          <CommitteeBox>
+            <CommitteeName>Program Committee</CommitteeName>
+            <CommitteeList>
+              <CommitteeListItem>
+                Prof. Uday Khedker, IIT Bombay (PC Chair)
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Dibyendu Das, Sr. Principal Engineer, Intel
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Prof. Ramakrishna Upadrasta, IIT Hyderabad
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Prof. Krishna Nandivada, IIT Madras
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Prof. Manas Thakur, IIT Bombay
+              </CommitteeListItem>
+            </CommitteeList>
+          </CommitteeBox>
+          <CommitteeBox>
+            <CommitteeName>Organizing Committee</CommitteeName>
+            <CommitteeList>
+              <CommitteeListItem>
+                Aditya Kumar, Distinguished Speaker at ACM
+              </CommitteeListItem>
+              <CommitteeListItem>Ashutosh Pandey, AMD</CommitteeListItem>
+              <CommitteeListItem>Pradeep Kumar, Nvidia</CommitteeListItem>
+              <CommitteeListItem>Prerona Chaudhuri, Nvidia</CommitteeListItem>
+              <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
+            </CommitteeList>
+          </CommitteeBox>
+        </CommiteeContainer>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get updates</Button>
           {isModalOpen && (
@@ -41,6 +72,7 @@ const Organizer: React.FC = () => {
 
 const Section = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.body};
@@ -48,7 +80,7 @@ const Section = styled.section`
   margin-top: 7.5rem;
   padding: 0 11.25rem;
   width: 100%;
-  transition: background 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
     margin-top: 5rem;
@@ -61,10 +93,10 @@ const Section = styled.section`
 `;
 
 const TextWrapper = styled.div`
-  padding: 0 0 0 5rem;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 0;
-  }
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const Title = styled.p`
@@ -72,53 +104,62 @@ const Title = styled.p`
   letter-spacing: 4px;
   color: ${({ theme }) => theme.primary};
   font-family: "Bebas Neue", sans-serif;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-  }
+  text-align: center;
 `;
 
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   font-size: 1rem;
   color: ${({ theme }) => theme.lightText};
-  margin-bottom: 2rem;
   line-height: 24px;
-  text-align: justify;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-  }
+  text-align: center;
 `;
 
 const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    justify-content: center;
-  }
+  display: none;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
   }
 `;
 
-const ImageWrapper = styled.div`
+const CommiteeContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    display: none;
+  gap: 12px;
+  width: 100%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 10px;
+    gap: 20px;
   }
 `;
 
-const Image = styled.img`
-  max-width: 520px;
-  border-radius: 0 40px;
-  transition: border-radius 0.2s ease-in-out;
-  &:hover {
-    border-radius: 0 60px;
-  }
+const CommitteeBox = styled.div`
+  flex: 1;
+  background-color: ${({ theme }) => theme.cardBg};
+  padding: 24px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+`;
+
+const CommitteeName = styled.div`
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 24px;
+`;
+
+const CommitteeList = styled.ul`
+  margin-top: 16px;
+  color: ${({ theme }) => theme.lightText};
+`;
+
+const CommitteeListItem = styled.li`
+  line-height: 1.7rem;
 `;
 
 export default Organizer;

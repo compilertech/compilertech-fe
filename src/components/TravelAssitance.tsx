@@ -29,6 +29,7 @@ const Section = styled.section`
   justify-content: space-around;
   height: auto;
   padding: 0 11.75rem;
+  margin-top: 1rem;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
     margin-top: 4rem;

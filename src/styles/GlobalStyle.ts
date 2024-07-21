@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-export const TABLET_BREAKPOINT = "1340px"
-export const WIDESCREEN_BREAKPOINT = "1920px"
-export const MOBILE_BREAKPOINT = "786px"
+export const TABLET_BREAKPOINT = "1340px";
+export const WIDESCREEN_BREAKPOINT = "1920px";
+export const MOBILE_BREAKPOINT = "786px";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Satoshi', sans-serif;
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    transition: background 0.2s ease-in-out !important;
+    transition: all 0.2s ease-in-out !important;
   }
   main {
     display: flex;

@@ -74,7 +74,7 @@ const Card = styled.div`
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
-  transition: height 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     width: 100%;
@@ -154,7 +154,7 @@ const List = styled.ul`
   padding-left: 1.25rem;
   overflow: hidden;
   max-height: 4.5rem;
-  transition: max-height 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 `;
 
 export default TrackCard;
