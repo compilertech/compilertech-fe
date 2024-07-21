@@ -17,7 +17,7 @@ const SubmissionReview: React.FC = () => {
               presentation).
             </li>
             <li>
-              <Bold>Submision Deadliine: September 1, 2024</Bold>
+              <Bold>Submision Deadline: September 1, 2024</Bold>
             </li>
           </ul>
         </Text>

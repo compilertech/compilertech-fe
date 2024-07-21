@@ -192,7 +192,6 @@ const CarouselOverlay = styled.div`
   }
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: 800px;
-    top: 300px;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     height: 150px;
