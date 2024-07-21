@@ -58,7 +58,6 @@ function App() {
           <Tracks />
           <Organizer />
           <SubmissionReview />
-          <Benefits />
           <Sponsors />
           <TravelAssistance />
           <Footer />
