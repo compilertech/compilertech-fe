@@ -17,7 +17,7 @@ const SubmissionReview: React.FC = () => {
               presentation).
             </li>
             <li>
-              <Bold>Submision Deadliine: </Bold>TBD
+              <Bold>Submision Deadliine: September 1, 2024</Bold>
             </li>
           </ul>
         </Text>
@@ -34,7 +34,7 @@ const SubmissionReview: React.FC = () => {
               the field.
             </li>
             <li>
-              <Bold>Notification of acceptance:</Bold> TBD
+              <Bold>Notification of acceptance: September 14, 2024</Bold>
             </li>
           </ul>
         </Text>
