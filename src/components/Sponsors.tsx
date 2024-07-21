@@ -49,16 +49,15 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  margin-top: 7.5rem;
+  margin-top: 3rem;
   padding: 0 11.75rem;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
-    margin-top: 5rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 90%;
     padding: 0;
-    margin-top: 3.75rem;
+    margin-top: 1.5rem;
   }
 `;
 

@@ -7,13 +7,17 @@ const TravelAssistance: React.FC = () => {
     <Section id="sponsors">
       <Title>Travel Assistance</Title>
       <Description>
-        We are providing travel assistance to current undergraduate and graduate students who need financial support to attend the workshop.
-        All students are encouraged to apply. Note that
-        the travel assistance will be granted for student attendees on a case by
-        case basis. Please email{" "}
-        <Email href="mailto:support@compilertech.org?subject=Request%20for%20travel%20assistance">
+        We are providing travel assistance to current undergraduate and graduate
+        students who need financial support to attend the workshop. All students
+        are encouraged to apply. Note that the travel assistance will be granted
+        for student attendees on a case by case basis. Please email{" "}
+        <Email
+          href="mailto:support@compilertech.org?subject=Request%20for%20travel%20assistance"
+          target="_blank"
+        >
           support@compilertech.org
-        </Email> with a legitimate reason for requesting travel assistance.
+        </Email>{" "}
+        with a legitimate reason for requesting travel assistance.
       </Description>
     </Section>
   );
@@ -24,16 +28,15 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  margin-top: 7.5rem;
   padding: 0 11.75rem;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 90%;
     padding: 0;
-    margin-top: 3.75rem;
+    margin-top: 3rem;
   }
 `;
 

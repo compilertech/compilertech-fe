@@ -71,6 +71,11 @@ const Footer: React.FC = () => {
                 <a href="https://x.com/compiler_tech" target="_blank">
                   Twitter
                 </a>
+              </ListItem>{" "}
+              <ListItem>
+                <a href="mailto:support@compilertech.org" target="_blank">
+                  Email
+                </a>
               </ListItem>
             </List>
           </Section>

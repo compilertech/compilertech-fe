@@ -57,12 +57,14 @@ const Section = styled.section`
     padding: 0 4rem;
     margin-top: 5rem;
     flex-direction: column;
+    gap: 3rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 90%;
     flex-direction: column;
     margin-top: 3.75rem;
     padding: revert;
+    gap: 2rem;
   }
 `;
 

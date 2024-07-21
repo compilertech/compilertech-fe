@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
-import { FaCircleNotch } from "react-icons/fa";
+import { FaCheckCircle, FaCircleNotch } from "react-icons/fa";
 
 interface ModalProps {
   title: string;
@@ -10,13 +10,13 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
-  const defaultForm = {
+  const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
-  };
-  const [formState, setFormState] = useState(defaultForm);
+  });
   const [loading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleFormChange = (field: keyof typeof formState, value: string) => {
     const newForm = {
       ...formState,
@@ -31,25 +31,32 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
       )
       .join("&");
   };
-  const handleSubmission = (e: React.FormEvent) => {
-    setIsLoading(true);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": title.toLowerCase().split(" ").join("-") + "-form",
-        ...formState,
-      }),
-    })
-      .then(() => {
-        setIsLoading(false);
-        // TODO TODO
-        alert("Success!");
-        setFormState(defaultForm);
+  const handleSubmission = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsLoading(true);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": title.toLowerCase().split(" ").join("-") + "-form",
+          ...formState,
+        }),
       })
-      .catch((error) => alert(error));
-    e.preventDefault();
-  };
+        .then(() => {
+          setIsLoading(false);
+          setIsSubmitted(true);
+          setTimeout(() => onClose(), 1500);
+        })
+        .catch((error) => {
+          console.error(`${title} form submission failing: ${error}`);
+          setIsLoading(false);
+          setIsSubmitted(false);
+          alert("Something went wrong, please try again!");
+        });
+    },
+    [formState, onClose, title]
+  );
   return (
     <Backdrop onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
@@ -65,6 +72,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
               placeholder="Full Name"
               required
               value={formState.name}
+              disabled={loading || isSubmitted}
               onChange={(e) => handleFormChange("name", e.target.value)}
             />
             <Input
@@ -73,6 +81,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
               value={formState.email}
               placeholder="Email Address"
               onChange={(e) => handleFormChange("email", e.target.value)}
+              disabled={loading || isSubmitted}
               required
             />
             <Textarea
@@ -80,17 +89,33 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
               name="message"
               placeholder="Message"
               value={formState.message}
+              disabled={loading || isSubmitted}
               required
             ></Textarea>
             <Footer>
-              <StyledButton onClick={onClose}>Cancel</StyledButton>
-              <Button
-                disabled={loading}
-                type="submit"
-                style={{ flex: 1, color: "white" }}
-              >
-                {loading ? <Loader size={18} /> : title}
-              </Button>
+              {isSubmitted ? (
+                <Button type="submit" style={{ flex: 1, color: "white" }}>
+                  <FaCheckCircle
+                    size={22}
+                    style={{ verticalAlign: "middle" }}
+                  />
+                </Button>
+              ) : (
+                <>
+                  <StyledButton onClick={onClose}>Cancel</StyledButton>
+                  <Button
+                    disabled={loading}
+                    type="submit"
+                    style={{ flex: 1, color: "white" }}
+                  >
+                    {loading ? (
+                      <Loader size={22} style={{ verticalAlign: "middle" }} />
+                    ) : (
+                      title
+                    )}
+                  </Button>
+                </>
+              )}
             </Footer>
           </form>
         </Body>
@@ -162,6 +187,7 @@ const Description = styled.p`
 
 const Body = styled.div`
   font-family: Satoshi;
+  height: 200px !important;
 `;
 
 const Input = styled.input`

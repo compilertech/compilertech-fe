@@ -11,7 +11,6 @@ import About from "./components/About";
 import Organizer from "./components/Organizer";
 import Interests from "./components/Interests";
 import SubmissionReview from "./components/SubmissionReview";
-import Benefits from "./components/Benefits";
 import TravelAssistance from "./components/TravelAssitance";
 import Footer from "./components/Footer";
 import { useThemeDetector } from "./utils/detectBrowserTheme";

@@ -26,14 +26,6 @@ const Hero: React.FC = () => {
     ),
   };
 
-  let isFirefoxBrowser: boolean;
-  try {
-    // @ts-ignore
-    isFirefoxBrowser = typeof InstallTrigger === "object";
-  } catch {
-    isFirefoxBrowser = false;
-  }
-
   return (
     <StyledSection id="hero">
       <CarouselWrapper>
@@ -50,32 +42,23 @@ const Hero: React.FC = () => {
         </Slider>
         <CarouselOverlay>
           <div>
-            {!isFirefoxBrowser ? (
-              <h4>
-                <q>
-                  Innovations in Compiler Technologies for a Rapidly Evolving
-                  Landscape
-                </q>
-              </h4>
-            ) : (
-              <img className="hero-text-img" src="./hero_image.svg" />
-            )}
+            <img className="hero-text-img" src="./title.svg" />
           </div>
           <div>
-            <h3>
+            <h1>
               <LuCalendarRange
                 fill="#a93d9d"
                 stroke="white"
                 strokeWidth="1.7px"
               />
               <a
-                href="http://www.google.com/calendar/event?action=TEMPLATE&text=Innovations%20in%20Compiler%20Technology%20Workshop&dates=20240928T033000Z/20240929T113000Z&details=IICT%20%28Innovation%20In%20Compiler%20Technology%29%20aimed%20at%20propagating%20the%20innovations%20in%20compiler%20field%20invites%20researchers%2C%20practitioners%2C%20and%20enthusiasts%20in%20the%20field%20of%20compiler%20technologies%20to%20submit%20presentation%20proposals%20for%20our%20upcoming%20workshop.%20This%20year%27s%20theme%20focuses%20on%20the%20cutting-edge%20advancements%20in%20compiler%20design%2C%20implementation%2C%20and%20optimization%2C%20and%20their%20impact%20on%20emerging%20software%20and%20hardware%20platforms&location=Dayananda%20Sagar%20College%20of%20Engineering%2C%20Bangalore%2C%20India"
+                href="http://www.google.com/calendar/event?action=TEMPLATE&text=Innovations%20in%20Compiler%20Technology%20Workshop&dates=20240928T033000Z/20240929T113000Z&details=The%20First%20Innovations%20In%20Compiler%20Technology%20%28IICT%29%20Workshop%20will%20be%20held%20at%20%20Dayananda%20Sagar%20College%20of%20Engineering%2C%20Bangalore%2C%20India%28compilertech.org%29.%20The%20two-day%20workshop%20will%20be%20in-person&location=Dayananda%20Sagar%20College%20of%20Engineering%2C%20Bangalore%2C%20India"
                 target="_blank"
               >
                 28th &amp; 29th September, 9AM-5PM
               </a>
-            </h3>
-            <h1>
+            </h1>
+            <h3>
               <TiLocationArrow
                 fill="#a93d9d"
                 stroke="white"
@@ -87,7 +70,7 @@ const Hero: React.FC = () => {
               >
                 Dayananda Sagar College of Engineering, BANGALORE
               </a>
-            </h1>
+            </h3>
           </div>
         </CarouselOverlay>
       </CarouselWrapper>
@@ -159,10 +142,10 @@ const CarouselOverlay = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   position: absolute;
   height: 40%;
-  top: 55%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bebas Neue";
@@ -181,23 +164,24 @@ const CarouselOverlay = styled.div`
     background-size: 100%;
     color: transparent;
   }
-  h1 {
+  .hero-text-img {
+    width: 600px;
+    height: auto;
+  }
+  h3 {
     font-size: 24px;
     display: flex;
     justify-content: center;
     gap: 0px;
     color: white;
+    margin-top: -3px;
   }
-  h3 {
+  h1 {
     font-size: 36px;
     display: flex;
     justify-content: center;
     gap: 5px;
     color: white;
-  }
-  h4 {
-    font-size: 36px;
-    font-family: cursive;
   }
   a {
     text-decoration: none;
@@ -207,33 +191,23 @@ const CarouselOverlay = styled.div`
     text-decoration: underline;
   }
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
-    h1 {
-      font-size: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 0px;
-      color: white;
-    }
-    h3 {
-      font-size: 36px;
-      display: flex;
-      justify-content: center;
-      gap: 5px;
-      color: white;
-    }
-    h4 {
-      font-size: 32px;
-      font-family: cursive;
-    }
-    font-size: 32px;
-    width: 80%;
-    top: 60%;
+    width: 800px;
+    top: 300px;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    height: 70%;
-    gap: 100px;
+    height: 150px;
+    width: 100% !important;
     justify-content: end;
-    h1 {
+    top: unset;
+    bottom: -25px;
+    gap: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .hero-text-img {
+      width: 95%;
+      max-width: 550px;
+    }
+    h3 {
       font-size: 14px;
       display: flex;
       justify-content: center;
@@ -242,8 +216,9 @@ const CarouselOverlay = styled.div`
       svg {
         display: none;
       }
+      margin-top: 0px;
     }
-    h3 {
+    h1 {
       font-size: 20px;
       display: flex;
       justify-content: center;
@@ -253,19 +228,9 @@ const CarouselOverlay = styled.div`
         display: none;
       }
     }
-    h4 {
-      font-size: 20px;
-      font-family: "Bebas Neue";
-    }
     a:hover {
       text-decoration: none;
     }
-    width: 90%;
-    bottom: 20%;
-  }
-  .hero-text-img {
-    width: 100%;
-    height: auto;
   }
 `;
 
