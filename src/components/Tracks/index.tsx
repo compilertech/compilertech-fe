@@ -3,63 +3,61 @@ import React from "react";
 import TrackCard from "./TrackCard";
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
-
+const tracks = [
+  {
+    id: "classical-compiler",
+    title: "Classical Compiler Techniques",
+    description:
+      "Classical compiler techniques for performance, codesize, debugging and software engineering",
+    imageSrc: "./card_bg.webp",
+    list: [
+      "Code Generation and optimization techniques",
+      "Performance of runtime libraries (like standard libraries, high performance libraries)",
+      "Any tools or products developed using compiler technologies",
+      "Software performance tracing",
+      "Compiler flags, annotations and remarks to understand and improve performance",
+      "Program synthesis",
+      "SuperOptimizers",
+    ],
+  },
+  {
+    id: "ai-ml",
+    title: "AI/ML, DSLs",
+    description:
+      "Exploring the intersection of AI/ML with compiler technologies",
+    imageSrc: "./card_bg.webp",
+    list: [
+      "Compilers for AI/ML",
+      "AI Frameworks (Tensorflow, Pytorch etc.)",
+      "Machine Learning Model Optimization",
+      "Optimizing compilers for Machine Learning workloads",
+    ],
+  },
+  {
+    id: "security",
+    title: "SECURITY",
+    description:
+      "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
+    imageSrc: "./card_bg.webp",
+    list: [
+      "Improving the security of generated code",
+      "Validating compiler optimizations (translation validation)",
+    ],
+  },
+  {
+    id: "web3-blockchain",
+    title: "WEB3/Blockchain",
+    description:
+      "Compiler techniques for shaping the next generation of the Web",
+    imageSrc: "./card_bg.webp",
+    list: [
+      "Programming language advancements to address Web3 challenges",
+      "Verification of smart contracts using abstract interpretation (e.g., symbolic evaluation) techniques.",
+      "Fuzz testing, fault injection etc using compiler techniques",
+    ],
+  },
+];
 const Tracks: React.FC = () => {
-  const tracks = [
-    {
-      id: "classical-compiler",
-      title: "Classical Compiler Techniques",
-      description:
-        "Classical compiler techniques for performance, codesize, debugging and software engineering",
-      imageSrc: "./card_bg.webp",
-      list: [
-        "Code Generation and optimization techniques",
-        "Performance of runtime libraries (like standard libraries, high performance libraries)",
-        "Any tools or products developed using compiler technologies",
-        "Software performance tracing",
-        "Compiler flags, annotations and remarks to understand and improve performance",
-        "Program synthesis",
-        "SuperOptimizers",
-      ],
-    },
-    {
-      id: "ai-ml",
-      title: "AI/ML, DSLs",
-      description:
-        "Exploring the intersection of AI/ML with compiler technologies",
-      imageSrc: "./card_bg.webp",
-      list: [
-        "Compilers for AI/ML",
-        "AI Frameworks (Tensorflow, Pytorch etc.)",
-        "Machine Learning Model Optimization",
-        "Optimizing compilers for Machine Learning workloads",
-      ],
-    },
-    {
-      id: "security",
-      title: "SECURITY",
-      description:
-        "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
-      imageSrc: "./card_bg.webp",
-      list: [
-        "Improving the security of generated code",
-        "Validating compiler optimizations (translation validation)",
-      ],
-    },
-    {
-      id: "web3-blockchain",
-      title: "WEB3/Blockchain",
-      description:
-        "Compiler techniques for shaping the next generation of the Web",
-      imageSrc: "./card_bg.webp",
-      list: [
-        "Programming language advancements to address Web3 challenges",
-        "Verification of smart contracts using abstract interpretation (e.g., symbolic evaluation) techniques.",
-        "Fuzz testing, fault injection etc using compiler techniques",
-      ],
-    },
-  ];
-
   return (
     <Section id="tracks">
       <Heading>TRACKS</Heading>

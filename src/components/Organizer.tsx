@@ -151,6 +151,7 @@ const CommitteeName = styled.div`
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1.5px;
   font-size: 24px;
+  color: ${({ theme }) => theme.cardTitle};
 `;
 
 const CommitteeList = styled.ul`
