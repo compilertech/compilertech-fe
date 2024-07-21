@@ -45,13 +45,13 @@ const TrackCard: React.FC<TrackCardProps> = ({
         <Title>{title}</Title>
         <Description>{description}</Description>
         <List ref={listRef}>
-          {list.map((item, index) => (
+          {list.slice(0, isExpanded ? list.length : 2).map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </List>
-        {list.length > 3 && (
+        {list.length > 2 && (
           <ReadToggle onClick={toggleListLen}>
-            {isExpanded ? "read less" : "read more"}
+            <span>{isExpanded ? "read less" : "read more"}</span>
           </ReadToggle>
         )}
       </CardContent>
@@ -59,11 +59,12 @@ const TrackCard: React.FC<TrackCardProps> = ({
   );
 };
 
-const ReadToggle = styled.span`
+const ReadToggle = styled.div`
+  margin-top: 5px;
   font-family: Satoshi;
   color: ${({ theme }) => theme.primary};
   cursor: pointer;
-  &:hover {
+  span:hover {
     border-bottom: 1px solid ${({ theme }) => theme.primary};
   }
 `;
@@ -147,6 +148,7 @@ const Description = styled.p`
 `;
 
 const List = styled.ul`
+  margin-top: 5px;
   font-family: "Satoshi";
   font-weight: 100;
   line-height: 1.7rem;
