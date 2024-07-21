@@ -45,7 +45,6 @@ const Title = styled.p`
   font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   letter-spacing: 2px;
-  margin-bottom: 3.75rem;
   text-align: left;
   color: ${({ theme }) => theme.primary};
   @media (max-width: ${TABLET_BREAKPOINT}) {

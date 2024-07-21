@@ -30,8 +30,8 @@ const Sponsors: React.FC = () => {
           high-quality, impactful workshop, fostering the next wave of
           innovation in compiler technology. Join us in making this event a
           remarkable success!
+          <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
-        <form id="rzp_payment_form"></form>
         {isModalOpen && (
           <Modal
             title="Sponsor us"
@@ -66,7 +66,6 @@ const Title = styled.p`
   font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   letter-spacing: 2px;
-  margin-bottom: 3.75rem;
   text-align: left;
   color: ${({ theme }) => theme.primary};
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -84,9 +83,15 @@ const Description = styled.p`
   color: ${({ theme }) => theme.lightText};
   text-align: center;
   margin-bottom: 3.75rem;
+  form {
+    margin-top: 28px;
+  }
   @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 1.5rem;
     text-align: center;
+    form {
+      margin-top: 16px;
+    }
   }
 `;
 
