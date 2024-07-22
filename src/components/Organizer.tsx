@@ -46,13 +46,17 @@ const Organizer: React.FC = () => {
             <CommitteeName>Organizing Committee</CommitteeName>
             <CommitteeList>
               <CommitteeListItem>
-                Aditya Kumar, Distinguished Speaker at ACM
+                Chair: Aditya Kumar, Distinguished Speaker at ACM
               </CommitteeListItem>
-              <CommitteeListItem>Ashutosh Pandey, AMD</CommitteeListItem>
-              <CommitteeListItem>Pradeep Kumar, Nvidia</CommitteeListItem>
+              <CommitteeListItem>Co-chair: Ashutosh Pandey, AMD</CommitteeListItem>
+              <CommitteeListItem>Co-chair: Pradeep Kumar, Nvidia</CommitteeListItem>
+            </CommitteeList>
+            <CommitteeName>Volunteers</CommitteeName>
+            <CommitteeList>
               <CommitteeListItem>Prerona Chaudhuri, Nvidia</CommitteeListItem>
               <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
             </CommitteeList>
+
           </CommitteeBox>
         </CommiteeContainer>
         <ButtonContainer>
