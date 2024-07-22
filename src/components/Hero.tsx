@@ -146,7 +146,7 @@ const CarouselOverlay = styled.div`
   justify-content: space-between;
   position: absolute;
   height: 40%;
-  top: 58%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Bebas Neue";
