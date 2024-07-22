@@ -57,10 +57,12 @@ const Organizer: React.FC = () => {
               <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
+        </CommiteeContainer>
+        <CommiteeContainer>
         <Description>
           In case of any queries please reach out to the workshop organizers: aditya@compilertech.org, ashutosh@compilertech.org, pradeep@compilertech.org
         </Description>
-        </CommiteeContainer>
+        <CommiteeContainer>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get updates</Button>
           {isModalOpen && (
