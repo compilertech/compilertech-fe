@@ -45,6 +45,7 @@ const Hero: React.FC = () => {
             <img className="hero-text-img" src="./title.svg" />
           </div>
           <div>
+            <img src="./dsce-logo.webp" style={{ width: "80px" }} />
             <h1>
               <LuCalendarRange
                 fill="#a93d9d"
