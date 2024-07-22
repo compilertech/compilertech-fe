@@ -56,8 +56,10 @@ const Organizer: React.FC = () => {
               <CommitteeListItem>Prerona Chaudhuri, Nvidia</CommitteeListItem>
               <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
             </CommitteeList>
-
           </CommitteeBox>
+        <Description>
+          In case of any queries please reach out to the workshop organizers: aditya@compilertech.org, ashutosh@compilertech.org, pradeep@compilertech.org
+        </Description>
         </CommiteeContainer>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get updates</Button>
