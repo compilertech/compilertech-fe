@@ -36,10 +36,6 @@ const TrackCard: React.FC<TrackCardProps> = ({
     <Card id={`tracks-${id}`}>
       <CardImage>
         <img src={imageSrc} alt={title} />
-        <div className="overlay">
-          <ComingSoon>COMING SOON</ComingSoon>
-          <Location>Bangalore Only</Location>
-        </div>
       </CardImage>
       <CardContent>
         <Title>{title}</Title>
@@ -92,20 +88,6 @@ const CardImage = styled.div`
     object-fit: cover;
   }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(232, 229, 229, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-  }
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: 40%;
   }
@@ -113,17 +95,6 @@ const CardImage = styled.div`
     width: 100%;
     height: 15.125rem;
   }
-`;
-
-const ComingSoon = styled.p`
-  font-size: clamp(40px, 5vw, 48px);
-  color: ${({ theme }) => theme.primary};
-`;
-
-const Location = styled.p`
-  font-size: clamp(24px, 5vw, 36px);
-  color: #000;
-  margin-top: 10px;
 `;
 
 const CardContent = styled.div`

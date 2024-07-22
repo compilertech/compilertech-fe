@@ -9,7 +9,7 @@ const tracks = [
     title: "Classical Compiler Techniques",
     description:
       "Classical compiler techniques for performance, codesize, debugging and software engineering",
-    imageSrc: "./card_bg.webp",
+    imageSrc: "./classical-compiler-tech.webp",
     list: [
       "Code Generation and optimization techniques",
       "Performance of runtime libraries (like standard libraries, high performance libraries)",
@@ -25,7 +25,7 @@ const tracks = [
     title: "AI/ML, DSLs",
     description:
       "Exploring the intersection of AI/ML with compiler technologies",
-    imageSrc: "./card_bg.webp",
+    imageSrc: "./ai-ml.webp",
     list: [
       "Compilers for AI/ML",
       "AI Frameworks (Tensorflow, Pytorch etc.)",
@@ -38,7 +38,7 @@ const tracks = [
     title: "SECURITY",
     description:
       "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
-    imageSrc: "./card_bg.webp",
+    imageSrc: "./security.webp",
     list: [
       "Improving the security of generated code",
       "Validating compiler optimizations (translation validation)",
@@ -49,7 +49,7 @@ const tracks = [
     title: "WEB3/Blockchain",
     description:
       "Compiler techniques for shaping the next generation of the Web",
-    imageSrc: "./card_bg.webp",
+    imageSrc: "./blockchain.webp",
     list: [
       "Programming language advancements to address Web3 challenges",
       "Verification of smart contracts using abstract interpretation (e.g., symbolic evaluation) techniques.",
