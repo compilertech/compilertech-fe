@@ -17,9 +17,9 @@ const Organizer: React.FC = () => {
         <Description>
           We believe this workshop will become a venue that brings together
           compiler engineers, students and professors. We have a strong
-          organizing team with engineers from Google, AMD, Nvidia and TCS
-          Research who are experienced in organizing technical events working
-          tirelessly to make the workshop successful.
+          organizing team with engineers from Google, AMD, and Nvidia who are
+          experienced in organizing technical events working tirelessly to make
+          the workshop successful.
         </Description>
         <CommiteeContainer>
           <CommitteeBox>
