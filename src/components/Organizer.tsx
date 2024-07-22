@@ -26,7 +26,7 @@ const Organizer: React.FC = () => {
             <CommitteeName>Program Committee</CommitteeName>
             <CommitteeList>
               <CommitteeListItem>
-                Prof. Uday Khedker, IIT Bombay (PC Chair)
+                PC Chair: Prof. Uday Khedker, IIT Bombay
               </CommitteeListItem>
               <CommitteeListItem>
                 Dibyendu Das, Sr. Principal Engineer, Intel
