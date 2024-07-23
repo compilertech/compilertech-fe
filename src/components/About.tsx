@@ -28,6 +28,7 @@ const About: React.FC = () => {
         {isModalOpen && (
           <Modal
             title="Get Updates"
+            formName="get-updates-form"
             description="Stay in the loop and don't miss a thing about this conference."
             onClose={toggleModal}
           />

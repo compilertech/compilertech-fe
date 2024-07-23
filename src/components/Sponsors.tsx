@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Modal from "./shared/Modal";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const Sponsors: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   useEffect(() => {
     const rzpPaymentForm = document.getElementById("rzp_payment_form");
 
@@ -32,13 +25,6 @@ const Sponsors: React.FC = () => {
           remarkable success!
           <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
-        {isModalOpen && (
-          <Modal
-            title="Sponsor us"
-            description="Thank you for considering this. Fill out the details and we will get back to you."
-            onClose={toggleModal}
-          />
-        )}
       </Section>
     </>
   );

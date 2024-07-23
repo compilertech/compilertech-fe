@@ -72,7 +72,7 @@ const Description = styled.p`
 const Email = styled.a`
   color: ${({ theme }) => theme.primary};
   font-weight: bold;
-  font-decoration: none;
+  text-decoration: none;
 `;
 
 export default TravelAssistance;

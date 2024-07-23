@@ -1,33 +1,41 @@
 // Footer.tsx
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
+import { Button } from "./shared/Button";
+import Modal from "./shared/Modal";
+
+const tracks = [
+  {
+    id: "classical-compiler",
+    title: "Classical Compiler Techniques",
+  },
+  {
+    id: "ai-ml",
+    title: "AI/ML, DSLs",
+  },
+  {
+    id: "security",
+    title: "Security",
+  },
+  {
+    id: "web3-blockchain",
+    title: "Web3/Blockchain",
+    description:
+      "Compiler techniques for shaping the next generation of the Web",
+  },
+];
 
 const Footer: React.FC = () => {
-  const tracks = [
-    {
-      id: "classical-compiler",
-      title: "Classical Compiler Techniques",
-    },
-    {
-      id: "ai-ml",
-      title: "AI/ML, DSLs",
-    },
-    {
-      id: "security",
-      title: "Security",
-    },
-    {
-      id: "web3-blockchain",
-      title: "Web3/Blockchain",
-      description:
-        "Compiler techniques for shaping the next generation of the Web",
-    },
-  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <Container>
       <FooterContainer>
@@ -36,12 +44,11 @@ const Footer: React.FC = () => {
             <img className="footer-logo" src="./icons/logo_dark-cropped.png" />
           </>
           <Paragraph>
-            The IICT (Innovation In Compiler Technology) workshop aims to bring together
-            researchers, practitioners, and enthusiasts in the field of compiler technologies.
-            This year's theme
-            focuses on the cutting-edge advancements in compiler design,
-            implementation, and optimization, and their impact on emerging
-            software and hardware platforms.
+            The IICT (Innovation In Compiler Technology) workshop aims to bring
+            together researchers, practitioners, and enthusiasts in the field of
+            compiler technologies. This year's theme focuses on the cutting-edge
+            advancements in compiler design, implementation, and optimization,
+            and their impact on emerging software and hardware platforms.
           </Paragraph>
           <Copyright>© 2024 Compiler Technology</Copyright>
         </Section>
@@ -79,6 +86,23 @@ const Footer: React.FC = () => {
               </ListItem>
             </List>
           </Section>
+          <Section style={{ width: "250px", flex: "none" }}>
+            <Title>Get in touch</Title>
+            <Paragraph>
+              In case of any queries please reach out to the workshop
+              organizers.
+            </Paragraph>
+
+            <Button onClick={toggleModal}>Contact Us</Button>
+            {isModalOpen && (
+              <Modal
+                title="Contact Us"
+                formName="get-in-touch-form"
+                description="Stay in the loop and don't miss a thing about this conference."
+                onClose={toggleModal}
+              />
+            )}
+          </Section>
         </Links>
       </FooterContainer>
     </Container>
@@ -113,7 +137,6 @@ const FooterContainer = styled.footer`
     }
   }
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: row;
     padding: 60px 60px;
     gap: 60px;
     h3 {
@@ -121,6 +144,7 @@ const FooterContainer = styled.footer`
     }
   }
   @media (min-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: row;
     padding: 60px 100px;
     gap: 120px;
     h3 {
@@ -187,7 +211,7 @@ const Links = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    width: 60%;
+    width: 100%;
   }
 `;
 

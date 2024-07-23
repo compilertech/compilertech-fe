@@ -5,11 +5,17 @@ import { FaCheckCircle, FaCircleNotch } from "react-icons/fa";
 
 interface ModalProps {
   title: string;
+  formName: "get-updates-form" | "get-in-touch-form";
   description: string;
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
+const Modal: React.FC<ModalProps> = ({
+  title,
+  formName,
+  description,
+  onClose,
+}) => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -39,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
-          "form-name": title.toLowerCase().split(" ").join("-") + "-form",
+          "form-name": formName,
           ...formState,
         }),
       })
@@ -55,7 +61,7 @@ const Modal: React.FC<ModalProps> = ({ title, description, onClose }) => {
           alert("Something went wrong, please try again!");
         });
     },
-    [formState, onClose, title]
+    [formName, formState, onClose, title]
   );
   return (
     <Backdrop onClick={onClose}>

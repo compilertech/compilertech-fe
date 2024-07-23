@@ -48,20 +48,20 @@ const Organizer: React.FC = () => {
               <CommitteeListItem>
                 Chair: Aditya Kumar, Distinguished Speaker at ACM
               </CommitteeListItem>
-              <CommitteeListItem>Co-chair: Ashutosh Pandey, AMD</CommitteeListItem>
-              <CommitteeListItem>Co-chair: Pradeep Kumar, Nvidia</CommitteeListItem>
-            </CommitteeList>
-            <CommitteeName>Volunteers</CommitteeName>
-            <CommitteeList>
-              <CommitteeListItem>Prerona Chaudhuri, Nvidia</CommitteeListItem>
-              <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
+              <CommitteeListItem>
+                Co-chair: Ashutosh Pandey, AMD
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Co-chair: Pradeep Kumar, Nvidia
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Volunteer: Prerona Chaudhuri, Nvidia
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Volunteer: Vinayaka Bandishti, Google
+              </CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
-        </CommiteeContainer>
-        <CommiteeContainer>
-        <Description>
-          In case of any queries please reach out to the workshop organizers: aditya@compilertech.org, ashutosh@compilertech.org, pradeep@compilertech.org
-        </Description>
         </CommiteeContainer>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get updates</Button>
@@ -70,6 +70,7 @@ const Organizer: React.FC = () => {
               title="Get Updates"
               description="Stay in the loop and don't miss a thing about this conference."
               onClose={toggleModal}
+              formName="get-updates-form"
             />
           )}
         </ButtonContainer>
@@ -163,7 +164,7 @@ const CommitteeName = styled.div`
 `;
 
 const CommitteeList = styled.ul`
-  margin-top: 16px;
+  margin-top: 10px;
   color: ${({ theme }) => theme.lightText};
 `;
 
