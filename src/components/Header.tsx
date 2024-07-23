@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import RegisterModal from "./shared/RegisterModal";
@@ -34,6 +34,11 @@ const Header: React.FC<Props> = (props: Props) => {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleCallForProposalClick = useCallback(() => {
+    window.open("https://easychair.org/conferences/?conf=compilertech2024");
+  }, []);
+
   return (
     <>
       <NavBar>
@@ -53,10 +58,18 @@ const Header: React.FC<Props> = (props: Props) => {
                 {link.desc}
               </a>
             ))}
-            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+            <div className="flex gap-4 w-full">
+              <StyledButton onClick={handleCallForProposalClick}>
+                PROPOSALS
+              </StyledButton>
+              <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+            </div>
           </Links>
         </NavLinks>
         <Action isOpen={isOpen}>
+          <StyledButton onClick={handleCallForProposalClick}>
+            PROPOSALS
+          </StyledButton>
           <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
         </Action>
@@ -78,11 +91,11 @@ const StyledButton = styled(Button)`
   gap: 5px;
 `;
 const Action = styled.div<{ isOpen: boolean }>`
-  width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   transition: all 0.2s ease-in-out;
+  gap: 20px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: auto;
     button {
@@ -91,7 +104,7 @@ const Action = styled.div<{ isOpen: boolean }>`
     }
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    left: ${({ isOpen }) => (isOpen ? "2%" : "69%")};
+    ${({ isOpen }) => (!isOpen ? `right:60px` : "left:15px;")};
     position: absolute;
     button {
       display: none;
@@ -160,7 +173,11 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     color: ${({ theme }) => theme.text};
     text-decoration: none;
   }
-
+  button {
+    width: 200px;
+    display: inline;
+    margin: 0 10px;
+  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
     position: fixed;
