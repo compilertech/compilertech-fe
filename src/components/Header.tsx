@@ -110,7 +110,7 @@ const StyledButton = styled(Button)<{ small?: boolean }>`
       max-width: 220px;
       text-wrap: nowrap;
       font-size: 20px;
-      padding: 6px 10px;
+      padding: 6px 10px !important;
     `}
 `;
 const Action = styled.div<{ isOpen: boolean }>`
@@ -134,6 +134,8 @@ const Action = styled.div<{ isOpen: boolean }>`
   }
 `;
 const Links = styled.div`
+  margin-top: 40px;
+  margin-bottom: -16px;
   display: none;
   a {
     text-align: center;
