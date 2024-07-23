@@ -26,7 +26,7 @@ const Organizer: React.FC = () => {
             <CommitteeName>Program Committee</CommitteeName>
             <CommitteeList>
               <CommitteeListItem>
-                Prof. Uday Khedker, IIT Bombay (PC Chair)
+                PC Chair: Prof. Uday Khedker, IIT Bombay
               </CommitteeListItem>
               <CommitteeListItem>
                 Dibyendu Das, Sr. Principal Engineer, Intel
@@ -46,14 +46,22 @@ const Organizer: React.FC = () => {
             <CommitteeName>Organizing Committee</CommitteeName>
             <CommitteeList>
               <CommitteeListItem>
-                Aditya Kumar, Distinguished Speaker at ACM
+                Chair: Aditya Kumar, Distinguished Speaker at ACM
               </CommitteeListItem>
-              <CommitteeListItem>Ashutosh Pandey, AMD</CommitteeListItem>
-              <CommitteeListItem>Pradeep Kumar, Nvidia</CommitteeListItem>
+              <CommitteeListItem>Co-chair: Ashutosh Pandey, AMD</CommitteeListItem>
+              <CommitteeListItem>Co-chair: Pradeep Kumar, Nvidia</CommitteeListItem>
+            </CommitteeList>
+            <CommitteeName>Volunteers</CommitteeName>
+            <CommitteeList>
               <CommitteeListItem>Prerona Chaudhuri, Nvidia</CommitteeListItem>
               <CommitteeListItem>Vinayaka Bandishti, Google</CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
+        </CommiteeContainer>
+        <CommiteeContainer>
+        <Description>
+          In case of any queries please reach out to the workshop organizers: aditya@compilertech.org, ashutosh@compilertech.org, pradeep@compilertech.org
+        </Description>
         </CommiteeContainer>
         <ButtonContainer>
           <Button onClick={toggleModal}>Get updates</Button>
