@@ -122,7 +122,6 @@ const Action = styled.div<{ isOpen: boolean }>`
   align-items: center;
   justify-content: space-around;
   transition: all 0.2s ease-in-out;
-  gap: 20px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: auto;
     button {
