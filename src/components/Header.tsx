@@ -58,11 +58,38 @@ const Header: React.FC<Props> = (props: Props) => {
                 {link.desc}
               </a>
             ))}
-            <div className="flex gap-4 w-full">
-              <StyledButton onClick={handleCallForProposalClick}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+                width: "100%",
+                padding: "0 20px",
+                justifyContent: "center",
+              }}
+            >
+              <StyledButton
+                onClick={handleCallForProposalClick}
+                style={{
+                  flex: 1,
+                  display: "inline-block",
+                  maxWidth: "180px",
+                  textWrap: "nowrap",
+                }}
+              >
                 PROPOSALS
               </StyledButton>
-              <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+              <StyledButton
+                onClick={toggleModal}
+                style={{
+                  flex: 1,
+                  display: "inline-block",
+                  maxWidth: "180px",
+                  textWrap: "nowrap",
+                }}
+              >
+                REGISTER NOW
+              </StyledButton>
             </div>
           </Links>
         </NavLinks>
@@ -113,6 +140,9 @@ const Action = styled.div<{ isOpen: boolean }>`
 `;
 const Links = styled.div`
   display: none;
+  a {
+    text-align: center;
+  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
     flex-direction: column;
@@ -172,11 +202,6 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
     margin: 0 1rem;
     color: ${({ theme }) => theme.text};
     text-decoration: none;
-  }
-  button {
-    width: 200px;
-    display: inline;
-    margin: 0 10px;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
