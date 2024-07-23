@@ -23,8 +23,8 @@ const Header: React.FC<Props> = (props: Props) => {
     { id: "tracks", desc: "tracks" },
     { id: "organizer", desc: "organizer" },
     { id: "submissions-and-review", desc: "Submissions & Review" },
-    { id: "benefits", desc: "benefits of conference" },
     { id: "sponsors", desc: "sponsor us" },
+    { id: "travel-assistance", desc: "travel assistance" },
   ];
 
   const toggleModal = () => {
@@ -174,8 +174,6 @@ const NavBar = styled.section`
   font-size: 2rem;
   height: auto;
   z-index: 1;
-  padding-top: 0;
-  padding-bottom: 0;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
   }
@@ -186,8 +184,6 @@ const NavBar = styled.section`
   @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
     padding-left: calc(44% - 420px);
     padding-right: calc(44% - 420px);
-    padding-top: 0;
-    padding-bottom: 0;
   }
 `;
 

@@ -4,7 +4,7 @@ import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 
 const TravelAssistance: React.FC = () => {
   return (
-    <Section id="sponsors">
+    <Section id="travel-assistance">
       <Title>Travel Assistance</Title>
       <Description>
         We are providing travel assistance to current undergraduate and graduate

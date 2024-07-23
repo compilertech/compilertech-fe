@@ -76,7 +76,6 @@ const HeaderWrapper = styled.header`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
   background: ${({ theme }) => theme.body};
 
   nav a {
