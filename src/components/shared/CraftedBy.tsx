@@ -29,7 +29,7 @@ const CreditSection = styled.div`
   background-color: #fafafa;
   width: 100%;
   padding: 16px 0;
-  border: 0.5px solid #ccc;
+  border-top: 0.75px solid #ccc;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
