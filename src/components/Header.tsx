@@ -73,18 +73,18 @@ const Header: React.FC<Props> = (props: Props) => {
                 style={{
                   flex: 1,
                   display: "inline-block",
-                  maxWidth: "180px",
+                  maxWidth: "200px",
                   textWrap: "nowrap",
                 }}
               >
-                PROPOSALS
+                CALL FOR PROPOSALS
               </StyledButton>
               <StyledButton
                 onClick={toggleModal}
                 style={{
                   flex: 1,
                   display: "inline-block",
-                  maxWidth: "180px",
+                  maxWidth: "200px",
                   textWrap: "nowrap",
                 }}
               >
@@ -95,7 +95,7 @@ const Header: React.FC<Props> = (props: Props) => {
         </NavLinks>
         <Action isOpen={isOpen}>
           <StyledButton onClick={handleCallForProposalClick}>
-            PROPOSALS
+            CALL FOR PROPOSALS
           </StyledButton>
           <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
@@ -122,11 +122,11 @@ const Action = styled.div<{ isOpen: boolean }>`
   align-items: center;
   justify-content: space-around;
   transition: all 0.2s ease-in-out;
+  gap: 20px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     width: auto;
     button {
       width: auto;
-      margin-right: 1rem;
     }
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
