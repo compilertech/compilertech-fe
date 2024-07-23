@@ -33,7 +33,8 @@ const CreditSection = styled.div`
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    padding-bottom: 20px;
+    padding: 8px 0;
+    padding-bottom: 16px;
   }
 `;
 

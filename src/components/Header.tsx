@@ -69,26 +69,10 @@ const Header: React.FC<Props> = (props: Props) => {
                 justifyContent: "center",
               }}
             >
-              <StyledButton
-                onClick={handleCallForProposalClick}
-                style={{
-                  flex: 1,
-                  display: "inline-block",
-                  maxWidth: "200px",
-                  textWrap: "nowrap",
-                }}
-              >
+              <StyledButton onClick={handleCallForProposalClick} small>
                 CALL FOR PROPOSALS
               </StyledButton>
-              <StyledButton
-                onClick={toggleModal}
-                style={{
-                  flex: 1,
-                  display: "inline-block",
-                  maxWidth: "200px",
-                  textWrap: "nowrap",
-                }}
-              >
+              <StyledButton onClick={toggleModal} small>
                 REGISTER NOW
               </StyledButton>
             </div>
@@ -113,11 +97,21 @@ const Header: React.FC<Props> = (props: Props) => {
   );
 };
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<{ small?: boolean }>`
   color: white !important;
   display: flex;
   justify-content: center;
   gap: 5px;
+  ${({ small }) =>
+    small &&
+    ` 
+      flex: 1;
+      display: inline-block;
+      max-width: 220px;
+      text-wrap: nowrap;
+      font-size: 20px;
+      padding: 6px 10px;
+    `}
 `;
 const Action = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -173,7 +167,6 @@ const NavBar = styled.section`
   justify-content: space-between;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
-  font-size: 2rem;
   height: auto;
   z-index: 1;
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -191,7 +184,6 @@ const NavBar = styled.section`
 
 const NavLinks = styled.nav<{ isOpen: boolean }>`
   width: 15%;
-  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -218,8 +210,7 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
       isOpen ? "translateX(0)" : "translateX(100%)"};
 
     a {
-      margin: 1rem 0;
-      font-size: 1.75rem;
+      font-size: 24px;
     }
   }
 `;
