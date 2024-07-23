@@ -89,8 +89,17 @@ const Footer: React.FC = () => {
           <Section style={{ width: "250px", flex: "none" }}>
             <Title>Get in touch</Title>
             <Paragraph>
-              In case of any queries please reach out to the workshop
-              organizers.
+              In case of any queries please reach out to the workshop organizers{" "}
+              <Email href="mailto:aditya@compilertech.org">Aditya Kumar</Email>
+              {", "}
+              <Email href="mailto:ashutosh@compilertech.org">
+                Ashutosh Pandey
+              </Email>
+              {", "}
+              <Email href="mailto:pradeep@compilertech.org">
+                Pradeep Kumar
+              </Email>
+              {"."}
             </Paragraph>
 
             <Button onClick={toggleModal}>Contact Us</Button>
@@ -213,6 +222,12 @@ const Links = styled.div`
     justify-content: center;
     width: 100%;
   }
+`;
+
+const Email = styled.a`
+  color: ${({ theme }) => theme.primary};
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 export default Footer;
