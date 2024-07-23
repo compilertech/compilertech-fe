@@ -153,18 +153,6 @@ const CarouselOverlay = styled.div`
   font-size: clamp(32px, 5vw, 48px);
   letter-spacing: 2px;
   text-align: center;
-  div:first-of-type {
-    background-image: linear-gradient(
-      135deg,
-      white,
-      lightblue,
-      ${({ theme }) => theme.primary},
-      #ff6f00
-    );
-    background-clip: text;
-    background-size: 100%;
-    color: transparent;
-  }
   .hero-text-img {
     width: 600px;
     height: auto;
