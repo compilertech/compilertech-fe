@@ -199,8 +199,8 @@ const CarouselOverlay = styled.div`
     width: 100% !important;
     justify-content: end;
     top: unset;
-    bottom: -25px;
-    gap: 100px;
+    bottom: -16px;
+    gap: 72px;
     padding-left: 20px;
     padding-right: 20px;
     .hero-text-img {

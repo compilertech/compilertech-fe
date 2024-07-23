@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const TABLET_BREAKPOINT = "1340px";
 export const WIDESCREEN_BREAKPOINT = "1920px";
 export const MOBILE_BREAKPOINT = "786px";
+export const SMALL_MOBILE_BREAKPOINT = "480px";
 
 export const GlobalStyle = createGlobalStyle`
   body {

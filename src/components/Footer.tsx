@@ -8,6 +8,7 @@ import {
 } from "../styles/GlobalStyle";
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
+import CraftedBy from "./shared/CraftedBy";
 
 const tracks = [
   {
@@ -114,6 +115,7 @@ const Footer: React.FC = () => {
           </Section>
         </Links>
       </FooterContainer>
+      <CraftedBy />
     </Container>
   );
 };
@@ -124,11 +126,9 @@ const Container = styled.div`
   color: white;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 2rem;
-  }
 `;
 
 const FooterContainer = styled.footer`
@@ -137,6 +137,7 @@ const FooterContainer = styled.footer`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
+  padding: 28px;
   .footer-logo {
     width: 120px;
     margin-top: 20px;
@@ -146,7 +147,7 @@ const FooterContainer = styled.footer`
     }
   }
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    padding: 60px 60px;
+    padding: 50px 60px;
     gap: 60px;
     h3 {
       margin: 0;
@@ -154,7 +155,7 @@ const FooterContainer = styled.footer`
   }
   @media (min-width: ${TABLET_BREAKPOINT}) {
     flex-direction: row;
-    padding: 60px 100px;
+    padding: 60px 60px 45px 60px;
     gap: 120px;
     h3 {
       margin: 0;
@@ -162,7 +163,7 @@ const FooterContainer = styled.footer`
   }
   @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
     padding: 3.75rem 0;
-    max-width: 1080px;
+    max-width: 1340px;
   }
 `;
 

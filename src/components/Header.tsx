@@ -8,6 +8,7 @@ import {
   TABLET_BREAKPOINT,
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
+import CraftedBy from "./shared/CraftedBy";
 
 type Props = {
   onClick: () => void;
@@ -92,6 +93,7 @@ const Header: React.FC<Props> = (props: Props) => {
               </StyledButton>
             </div>
           </Links>
+          {isOpen && <CraftedBy />}
         </NavLinks>
         <Action isOpen={isOpen}>
           <StyledButton onClick={handleCallForProposalClick}>
@@ -201,6 +203,8 @@ const NavLinks = styled.nav<{ isOpen: boolean }>`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
     position: fixed;
+    height: 100%;
+    overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
