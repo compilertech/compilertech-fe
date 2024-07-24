@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../styles/GlobalStyle";
 import { LuCalendarRange } from "react-icons/lu";
 import { TiLocationArrow } from "react-icons/ti";
+import { Button } from "./shared/Button";
+import RegisterModal from "./shared/RegisterModal";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -25,6 +31,29 @@ const Hero: React.FC = () => {
       </DotsWrapper>
     ),
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleCallForProposalClick = useCallback(() => {
+    window.open("https://easychair.org/conferences/?conf=compilertech2024");
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <StyledSection id="hero">
@@ -72,12 +101,58 @@ const Hero: React.FC = () => {
                 Dayananda Sagar College of Engineering, BANGALORE
               </a>
             </h3>
+            <ButtonContainer>
+              <StyledButton onClick={handleCallForProposalClick}>
+                CALL FOR PROPOSALS
+              </StyledButton>
+              <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+            </ButtonContainer>
           </div>
         </CarouselOverlay>
       </CarouselWrapper>
+      {width <= 786 && (
+        <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
+      )}
     </StyledSection>
   );
 };
+
+const ButtonContainer = styled.div`
+  display: none;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    margin-top: 4px;
+    justify-content: center;
+  }
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    gap: 8px;
+    margin-top: 8px;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex: 1;
+  max-width: 220px;
+  text-wrap: nowrap;
+  font-size: 20px;
+  padding: 6px 10px !important;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    max-width: 200px;
+    padding: 4px 6px !important;
+    font-size: 18px;
+  }
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 16px;
+    padding: 3px 6px !important;
+  }
+`;
 
 const StyledSection = styled.section`
   display: flex;
@@ -188,7 +263,7 @@ const CarouselOverlay = styled.div`
     justify-content: end;
     top: unset;
     bottom: -16px;
-    gap: 72px;
+    gap: 48px;
     padding-left: 20px;
     padding-right: 20px;
     .hero-text-img {
@@ -218,6 +293,13 @@ const CarouselOverlay = styled.div`
     }
     a:hover {
       text-decoration: none;
+    }
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    gap: 32px;
+    .hero-text-img {
+      width: 100%;
+      max-width: 550px;
     }
   }
 `;

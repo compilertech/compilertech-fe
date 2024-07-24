@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import RegisterModal from "./shared/RegisterModal";
@@ -18,6 +18,7 @@ type Props = {
 const Header: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
   const allLinks = [
     { id: "about", desc: "about" },
     { id: "interests", desc: "topics of interests" },
@@ -40,6 +41,18 @@ const Header: React.FC<Props> = (props: Props) => {
     window.open("https://easychair.org/conferences/?conf=compilertech2024");
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <NavBar>
@@ -59,23 +72,6 @@ const Header: React.FC<Props> = (props: Props) => {
                 {link.desc}
               </a>
             ))}
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px",
-                width: "100%",
-                padding: "0 20px",
-                justifyContent: "center",
-              }}
-            >
-              <StyledButton onClick={handleCallForProposalClick} small>
-                CALL FOR PROPOSALS
-              </StyledButton>
-              <StyledButton onClick={toggleModal} small>
-                REGISTER NOW
-              </StyledButton>
-            </div>
           </Links>
           {isOpen && <CraftedBy />}
         </NavLinks>
@@ -92,26 +88,18 @@ const Header: React.FC<Props> = (props: Props) => {
           <span />
         </Hamburger>
       </NavBar>
-      {<RegisterModal onClose={toggleModal} hidden={!isModalOpen} />}
+      {width > 786 && (
+        <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
+      )}
     </>
   );
 };
 
-const StyledButton = styled(Button)<{ small?: boolean }>`
+const StyledButton = styled(Button)`
   color: white !important;
   display: flex;
   justify-content: center;
   gap: 5px;
-  ${({ small }) =>
-    small &&
-    ` 
-      flex: 1;
-      display: inline-block;
-      max-width: 220px;
-      text-wrap: nowrap;
-      font-size: 20px;
-      padding: 6px 10px !important;
-    `}
 `;
 const Action = styled.div<{ isOpen: boolean }>`
   display: flex;
