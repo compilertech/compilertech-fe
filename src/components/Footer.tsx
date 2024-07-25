@@ -91,13 +91,15 @@ const Footer: React.FC = () => {
             <Title>Get in touch</Title>
             <Paragraph>
               In case of any queries please reach out to the workshop organizers{" "}
-              <Email href="mailto:aditya@compilertech.org">Aditya Kumar</Email>
+              <Email href="mailto:aditya.kumar@compilertech.org">
+                Aditya Kumar
+              </Email>
               {", "}
               <Email href="mailto:ashutosh@compilertech.org">
                 Ashutosh Pandey
               </Email>
               {", "}
-              <Email href="mailto:pradeep@compilertech.org">
+              <Email href="mailto:pradeep.kumar@compilertech.org">
                 Pradeep Kumar
               </Email>
               {"."}
