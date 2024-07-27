@@ -32,13 +32,19 @@ const Organizer: React.FC = () => {
                 Dibyendu Das, Sr. Principal Engineer, Intel
               </CommitteeListItem>
               <CommitteeListItem>
-                Prof. Ramakrishna Upadrasta, IIT Hyderabad
+                Prof. Govindarajan Ramaswamy, IISc Bangalore
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Krishna Nandivada, IIT Madras
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Manas Thakur, IIT Bombay
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Prof. Ramakrishna Upadrasta, IIT Hyderabad
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Prof. Subodh Sharma, IIT Delhi
               </CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
