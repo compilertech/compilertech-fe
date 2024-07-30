@@ -38,10 +38,16 @@ const Organizer: React.FC = () => {
                 Prof. Krishna Nandivada, IIT Madras
               </CommitteeListItem>
               <CommitteeListItem>
+                Prof. Komondoor V. Raghavan, IISc Bangalore
+              </CommitteeListItem>
+              <CommitteeListItem>
                 Prof. Manas Thakur, IIT Bombay
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Ramakrishna Upadrasta, IIT Hyderabad
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Dr. Saurabh Joshi, Supra Research
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Subodh Sharma, IIT Delhi
