@@ -19,18 +19,42 @@
     />
     <meta property="og:type" content="website" />
     <title>Compiler Technology</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-46EFRKDBH9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-46EFRKDBH9");
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <form name='get-in-touch-form' netlify hidden data-netlify-honeypot="bot-field">
-      <input type='text' name='name' />
-      <input type='email' name='email' />
-      <textarea name='message'></textarea>
+    <form
+      name="get-in-touch-form"
+      netlify
+      hidden
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
     </form>
-    <form name='get-updates-form' netlify hidden data-netlify-honeypot="bot-field">
-      <input type='text' name='name' />
-      <input type='email' name='email' />
-      <textarea name='message'></textarea>
+    <form
+      name="get-updates-form"
+      netlify
+      hidden
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
     </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
