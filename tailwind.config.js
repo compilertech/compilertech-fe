@@ -9,7 +9,10 @@ export default {
     extend: {},
     colors:{
       LayoutPink:"#A93D9D",
-      DarkGray :"#28292A"
+      DarkGray :"#28292A",
+      textGray :"#878787",
+      titleGray:"#3D3D3D",
+      white:"#FFFFFF"
     },
    
   },

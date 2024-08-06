@@ -18,19 +18,19 @@ import { useThemeDetector } from "./utils/detectBrowserTheme";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
-  // @ts-ignore
-  const [dark, setDark] = useState(localStorage.getItem("theme") ?? "dark" === "dark");
+  
   const darkModeHandler = () => {
-      setDark(!dark);
-      document.body.classList.toggle("dark");
+    document.body.classList.toggle("dark");
   }
+  // @ts-ignore
   const isChrome = navigator?.userAgentData?.brands
     .map((data: any) => data.brand)
     .includes("Google Chrome");
   console.log("🚀 ~ App ~ isChrome:", isChrome);
 
   useEffect(() => {
-    document.body.classList.toggle("dark");
+    const hasDarkClass = document.body.classList.contains("dark");
+    if (theme === "dark" && !hasDarkClass) darkModeHandler();
     const faviconUpdate = async () => {
       const favicon: any = document.getElementById("favicon");
       if (Boolean(isChrome)) {
@@ -48,9 +48,9 @@ function App() {
   }, [isBrowserDarkTheme]);
 
   const toggleTheme = () => {
+    darkModeHandler()
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-    darkModeHandler()
   };
 
   return (
