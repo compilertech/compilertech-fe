@@ -96,10 +96,10 @@ const Title = styled.p`
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 27px;
-  grid-row-gap: 52px;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;

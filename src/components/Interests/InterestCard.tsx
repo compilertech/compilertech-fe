@@ -5,12 +5,14 @@ import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 
 interface InterestCardProps {
   title: string;
-  description: string;
+  description?: string;
+  listItems?: string[];
 }
 
 const Card = styled.div`
   display: flex;
   color: ${({ theme }) => theme.text};
+  width: 100%;
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
@@ -25,7 +27,7 @@ const CardContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
 `;
 
@@ -36,7 +38,7 @@ const Title = styled.h4`
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.02em;
-  text-align: center;
+  text-align: left;
   width: 100%;
 `;
 
@@ -52,12 +54,34 @@ const Description = styled.p`
   color: ${({ theme }) => theme.lightText};
 `;
 
-const InterestCard: React.FC<InterestCardProps> = ({ title, description }) => {
+const ListItem = styled.li`
+  margin: 0;
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: ${({ theme }) => theme.lightText};
+`;
+
+const InterestCard: React.FC<InterestCardProps> = ({
+  title,
+  description,
+  listItems,
+}) => {
   return (
     <Card>
       <CardContent>
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        {description && <Description>{description}</Description>}
+        {listItems?.length && (
+          <ul>
+            {listItems.map((item) => {
+              return <ListItem>{item}</ListItem>;
+            })}
+          </ul>
+        )}
       </CardContent>
     </Card>
   );

@@ -14,6 +14,7 @@ import SubmissionReview from "./components/SubmissionReview";
 import TravelAssistance from "./components/TravelAssitance";
 import Footer from "./components/Footer";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
+import CallForProposals from "./components/CallForProposals";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
@@ -52,6 +53,7 @@ function App() {
         </HeaderWrapper>
         <Main>
           <Hero />
+          <CallForProposals />
           <About />
           <Interests />
           <Tracks />
