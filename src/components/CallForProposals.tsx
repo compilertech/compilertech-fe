@@ -1,4 +1,7 @@
+
+
 function CallForProposals() {
+
   return (
     <div>
       <div className="w-[75vw] py-10 flex-col flex items-start justify-evenly">
@@ -17,21 +20,21 @@ function CallForProposals() {
           present their work in one of the following Tracks.
         </p>
         <button style={
-            { fontFamily: "Bebas Neue,sans-serif"}
+            { fontFamily: "Bebas Neue,sans-serif",color:"white"}
         }
           type="button"
-          className="bg-LayoutPink p-2 rounded-lg text-white tracking-wide"
+          className="bg-LayoutPink p-2 rounded-lg text-white tracking-wider text-lg "
         >
           CALL FOR PROPOSALS
         </button>
       </div>
 
-      <div className="flex  flex-col items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-[75vw] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <div className="flex  flex-col items-center  border border-gray-200 rounded shadow md:flex-row md:max-w-[75vw] hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
         <div className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             What are We looking for?
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 ">
             {" "}
             Proposals should provide sufficient information for the review
             committee to be able to judge the quality of the submission.
@@ -45,7 +48,7 @@ function CallForProposals() {
 
       <div className="flex items-center justify-evenly w-full max-md:flex-col my-5">
 
-        <div className="flex  flex-col items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div className="flex  flex-col items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
           <div className="flex flex-col justify-between m-5 p-4 leading-normal">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             We are looking for:
@@ -61,7 +64,8 @@ function CallForProposals() {
         </div>
 
 
-        <div className="flex ml-5 flex-col items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-600 dark:hover:bg-gray-700">
+        <div className="flex ml-5 flex-col items-center border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700"
+        >
           <div className="flex flex-col justify-between m-5 p-4 leading-normal">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
            What types of people should attend?
