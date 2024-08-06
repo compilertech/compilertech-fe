@@ -101,8 +101,9 @@ const Title = styled.p`
   margin-bottom: 0;
   font-family: "Bebas Neue", sans-serif;
   text-align: center;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    line-height: revert;
+    margin-bottom: 1rem;
   }
 `;
 
