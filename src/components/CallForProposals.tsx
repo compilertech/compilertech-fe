@@ -52,7 +52,7 @@ function CallForProposals() {
 
       <div className="flex items-center justify-evenly max-md:justify-center w-[90vw] lg:w-[85vw] max-md:w-full max-md:flex-col my-5">
         <div className="flex  flex-col items-center max-md:w-[90vw]  max-md:my-5 md:w-[35vw] border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
-          <div className="flex flex-col justify-evenly  md:h-[20rem] lg:h-[15rem] ml-5 px-4 leading-normal">
+          <div className="flex flex-col justify-evenly  md:h-[20rem] lg:h-[15rem] ml-5 p-4 leading-normal">
             <h5 className="mb-2 text-2xl max-lg:text-center  tracking-wide text-titleGray dark:text-white" style={{ fontFamily: "Bebas Neue,sans-serif" }}>
               We are looking for:
             </h5>
