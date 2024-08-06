@@ -1,6 +1,6 @@
 function CallForProposals() {
   return (
-    <div className="flex-col flex items-center justify-center">
+    <div className="flex-col flex items-center justify-center md:my-10">
       <div className="w-[75vw] py-10 flex-col flex lg:items-start max-md:justify-center justify-center  max-lg:w-full max-lg:items-center ">
         <div
           className="text-LayoutPink lg:w-[75vw] text-[60px]  tracking-wide text-start max-lg:text-4xl max-lg:text-center"
@@ -32,11 +32,11 @@ function CallForProposals() {
 <div className="flex  flex-col items-center max-md:justify-center max-md:w-[90vw] 
        border border-gray-200 rounded shadow md:flex-row md:max-w-[78vw] lg:w-[76vw] hover:bg-gray-100 
        dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700 md:mb-[1rem]">
-        <div className="flex flex-col justify-between p-4 leading-normal">
+        <div className="flex flex-col justify-between  p-4 leading-normal">
           <h5 className="mb-2 text-2xl tracking-wide text-titleGray max-lg:text-center dark:text-white"style={{ fontFamily: "Bebas Neue,sans-serif" }}>
             What are We looking for?
           </h5>
-          <p className="mb-3 font-normal text-textGray "  style={{ fontFamily: "Satoshi,sans-serif" }}>
+          <p className="mb-3 font-normal text-textGray text-justify"  style={{ fontFamily: "Satoshi,sans-serif" }}>
             {" "}
             Proposals should provide sufficient information for the review
             committee to be able to judge the quality of the submission.
@@ -51,12 +51,12 @@ function CallForProposals() {
       
 
       <div className="flex items-center justify-evenly max-md:justify-center w-[90vw] lg:w-[85vw] max-md:w-full max-md:flex-col my-5">
-        <div className="flex  flex-col items-center max-md:w-[90vw] md:h-[20rem] max-md:my-5 md:w-[35vw] border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
-          <div className="flex flex-col justify-between m-5 p-4 leading-normal">
+        <div className="flex  flex-col items-center max-md:w-[90vw]  max-md:my-5 md:w-[35vw] border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
+          <div className="flex flex-col justify-evenly  md:h-[20rem] lg:h-[15rem] ml-5 px-4 leading-normal">
             <h5 className="mb-2 text-2xl max-lg:text-center  tracking-wide text-titleGray dark:text-white" style={{ fontFamily: "Bebas Neue,sans-serif" }}>
               We are looking for:
             </h5>
-            <p className="mb-3 font-normal text-textGray"  style={{ fontFamily: "Satoshi,sans-serif" }}>
+            <p className="mb-3 font-normal text-textGray "  style={{ fontFamily: "Satoshi,sans-serif" }}>
               {" "}
               <li>Keynote speakers (30-60minutes),</li>
               <li>
@@ -69,12 +69,12 @@ function CallForProposals() {
           </div>
         </div>
 
-        <div className="flex ml-5 max-md:ml-0 max-md:w-[90vw] md:w-[35vw] md:h-[20rem] flex-col items-center border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
-          <div className="flex flex-col justify-between m-5 p-4 leading-normal">
+        <div className="flex ml-5 max-md:ml-0 max-md:w-[90vw] md:w-[35vw]  flex-col items-center border border-gray-200 rounded shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-DarkGray bg-white dark:hover:bg-gray-700">
+          <div className="flex flex-col justify-evenly ml-5 p-4 leading-normal lg:h-[15rem] md:h-[20rem]">
             <h5 className="mb-2 text-2xl max-lg:text-center tracking-wide text-titleGray dark:text-white" style={{ fontFamily: "Bebas Neue,sans-serif" }}>
               What types of people should attend?
             </h5>
-            <p className="mb-3 font-normal text-textGray"  style={{ fontFamily: "Satoshi,sans-serif" }}>
+            <p className="mb-3 font-normal text-textGray "  style={{ fontFamily: "Satoshi,sans-serif" }}>
               {" "}
               <li>Active developers of compilers</li>
               <li>Students and Researchers in the field of compilers</li>
