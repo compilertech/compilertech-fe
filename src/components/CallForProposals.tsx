@@ -8,9 +8,9 @@ function CallForProposals() {
     {
       title: "Slots for the following:",
       content: [
-        "Keynote speakers (30-60minutes),",
-        "Technical presentations: 20 minutes plus questions and discussion,",
-        "Tutorials (30-60minutes),",
+        "Keynote speakers (30-60minutes)",
+        "Technical presentations: 20 minutes plus questions and discussion",
+        "Tutorials (30-60minutes)",
         "Poster presentations",
       ],
     },
@@ -19,7 +19,7 @@ function CallForProposals() {
       content: [
         "Active developers of compilers",
         "Students and Researchers in the field of compilers",
-        "Those interested in using compiler and toolchain technology in novel and interesting ways.",
+        "Those interested in using compiler and toolchain technology in novel and interesting ways",
       ],
     },
   ];
@@ -31,7 +31,7 @@ function CallForProposals() {
   return (
     <Section id="call-for-proposals">
       <TextWrapper>
-        <Title>CALL FOR PRESENTATION PROPOSALS</Title>
+        <Title>CALL FOR PROPOSALS</Title>
         <Description>
           The IICT (Innovations In Compiler Technology) workshop aims to bring
           together researchers, practitioners, and enthusiasts in the field of

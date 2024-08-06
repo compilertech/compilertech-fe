@@ -76,7 +76,7 @@ const InterestCard: React.FC<InterestCardProps> = ({
         <Title>{title}</Title>
         {description && <Description>{description}</Description>}
         {listItems?.length && (
-          <ul>
+          <ul style={{ marginTop: "0.85rem" }}>
             {listItems.map((item) => {
               return <ListItem>{item}</ListItem>;
             })}
