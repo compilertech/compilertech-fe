@@ -18,10 +18,10 @@ import { useThemeDetector } from "./utils/detectBrowserTheme";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
-  
+
   const darkModeHandler = () => {
     document.body.classList.toggle("dark");
-  }
+  };
   // @ts-ignore
   const isChrome = navigator?.userAgentData?.brands
     .map((data: any) => data.brand)
@@ -44,11 +44,10 @@ function App() {
     };
 
     faviconUpdate();
-   
   }, [isBrowserDarkTheme]);
 
   const toggleTheme = () => {
-    darkModeHandler()
+    darkModeHandler();
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };

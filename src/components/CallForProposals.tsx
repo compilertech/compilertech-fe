@@ -25,7 +25,7 @@ function CallForProposals() {
         <div className="text-LayoutPink lg:w-[75vw] text-[60px]  tracking-wide text-start max-lg:text-4xl max-lg:text-center font-Bebas">
           Call For Presentation Proposals
         </div>
-        <p className="lg:text-justify my-8 md:w-[90vw] max-md:my-5 max-md:leading-relaxed leading-snug text-textGray max-lg:text-center max-md:w-[90vw] lg:w-[75vw] font-Satoshi">
+        <p className="lg:text-justify mb-8 mt-2 md:w-[90vw] max-md:my-5 max-md:leading-relaxed leading-snug text-textGray max-lg:text-center max-md:w-[90vw] lg:w-[75vw] font-Satoshi">
           The IICT (Innovations In Compiler Technology) workshop aims to bring
           together researchers, practitioners, and enthusiasts in the field of
           compiler technologies. This year's theme focuses on the cutting-edge
