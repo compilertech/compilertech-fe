@@ -29,7 +29,7 @@ const Organizer: React.FC = () => {
                 PC Chair: Prof. Uday Khedker, IIT Bombay
               </CommitteeListItem>
               <CommitteeListItem>
-                Dibyendu Das, Sr. Principal Engineer, Intel
+                Dr. Dibyendu Das, Sr. Principal Engineer, Intel
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Govindarajan Ramaswamy, IISc Bangalore
@@ -48,6 +48,9 @@ const Organizer: React.FC = () => {
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Ramakrishna Upadrasta, IIT Hyderabad
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Ramana Radhakrishnan, Director - CPU Compilers, Nvidia
               </CommitteeListItem>
               <CommitteeListItem>
                 Dr. Saurabh Joshi, Supra Research
