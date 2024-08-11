@@ -6,7 +6,7 @@ import InterestCard from "./Interests/InterestCard";
 function CallForProposals() {
   const data = [
     {
-      title: "Slots for the following:",
+      title: "What we are looking for?",
       content: [
         "Keynote speakers (30-60minutes)",
         "Technical presentations: 20 minutes plus questions and discussion",
@@ -15,7 +15,7 @@ function CallForProposals() {
       ],
     },
     {
-      title: "What types of people should attend?",
+      title: "What types of people attend?",
       content: [
         "Active developers of compilers",
         "Students and Researchers in the field of compilers",
@@ -37,20 +37,15 @@ function CallForProposals() {
           together researchers, practitioners, and enthusiasts in the field of
           compiler technologies. This year's theme focuses on the cutting-edge
           advancements in design, implementation, and optimization of compiler
-          techniques as well as their applications on emerging software and
+          techniques as well as their applications in emerging software and
           hardware platforms. We invite speakers from academia and industry to
           present their work in one of the following Tracks.
         </Description>
-        <ButtonContainer>
-          <Button onClick={handleCallForProposalClick}>
-            Call for proposals
-          </Button>
-        </ButtonContainer>
       </TextWrapper>
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>
         <InterestCard
-          title="What are We looking for?"
-          description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an extended abstract, full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
+          title="About the proposals:"
+          description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an extended abstract(typically less than 500 words, for example https://llvm.org/devmtg/2023-02-25/), full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
         />
         <CardGroupContainerRow>
           {data.map((element) => {
@@ -60,6 +55,11 @@ function CallForProposals() {
           })}
         </CardGroupContainerRow>
       </CardGroupContainerColumn>
+      <ButtonContainer>
+        <Button onClick={handleCallForProposalClick}>
+          Call for proposals
+        </Button>
+      </ButtonContainer>
     </Section>
   );
 }
