@@ -54,12 +54,12 @@ function CallForProposals() {
             );
           })}
         </CardGroupContainerRow>
+        <ButtonContainer>
+          <Button onClick={handleCallForProposalClick}>
+            Call for proposals
+          </Button>
+        </ButtonContainer>
       </CardGroupContainerColumn>
-      <ButtonContainer>
-        <Button onClick={handleCallForProposalClick}>
-          Call for proposals
-        </Button>
-      </ButtonContainer>
     </Section>
   );
 }
