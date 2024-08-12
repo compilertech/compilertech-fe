@@ -76,6 +76,9 @@ const Organizer: React.FC = () => {
                 Volunteer: Prerona Chaudhuri, Nvidia
               </CommitteeListItem>
               <CommitteeListItem>
+                Volunteer: Dr. Raveendra Kumar, TCS Research
+              </CommitteeListItem>
+              <CommitteeListItem>
                 Volunteer: Vinayaka Bandishti, Google
               </CommitteeListItem>
             </CommitteeList>
