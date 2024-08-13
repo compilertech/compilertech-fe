@@ -15,7 +15,7 @@ const About: React.FC = () => {
       <TextWrapper>
         <Title>ABOUT</Title>
         <Description>
-          The IICT (Innovation In Compiler Technology) workshop aims to bring
+          The IICT (Innovations In Compiler Technology) workshop aims to bring
           together researchers, practitioners, and enthusiasts in the field of
           compiler technologies. This year's theme focuses on the cutting-edge
           advancements in compiler design, implementation, and optimization, and

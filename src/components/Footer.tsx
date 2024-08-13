@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             <img className="footer-logo" src="./icons/logo_dark-cropped.png" />
           </>
           <Paragraph>
-            The IICT (Innovation In Compiler Technology) workshop aims to bring
+            The IICT (Innovations In Compiler Technology) workshop aims to bring
             together researchers, practitioners, and enthusiasts in the field of
             compiler technologies. This year's theme focuses on the cutting-edge
             advancements in compiler design, implementation, and optimization,

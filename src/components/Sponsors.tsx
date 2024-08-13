@@ -21,7 +21,7 @@ const Sponsors: React.FC = () => {
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
-          innovation in compiler technology. Join us in making this event a
+          innovations in compiler technology. Join us in making this event a
           remarkable success!
           <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
