@@ -53,10 +53,13 @@ const Organizer: React.FC = () => {
                 Ramana Radhakrishnan, Director - CPU Compilers, Nvidia
               </CommitteeListItem>
               <CommitteeListItem>
-                Dr. Saurabh Joshi, Supra Research
+                Dr. Saurabh Joshi, Principal Researcher, Supra Research
               </CommitteeListItem>
               <CommitteeListItem>
                 Prof. Subodh Sharma, IIT Delhi
+              </CommitteeListItem>
+              <CommitteeListItem>
+                Dr. Uday Bondhugula, Founder, CEO & CTO, Polymage Labs
               </CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
