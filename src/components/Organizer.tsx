@@ -59,7 +59,7 @@ const Organizer: React.FC = () => {
                 Prof. Subodh Sharma, IIT Delhi
               </CommitteeListItem>
               <CommitteeListItem>
-                Dr. Uday Bondhugula, Founder, CEO, and CTO, Polymage Labs
+                Dr. Uday Bondhugula, Founder, CEO & CTO, Polymage Labs
               </CommitteeListItem>
             </CommitteeList>
           </CommitteeBox>
