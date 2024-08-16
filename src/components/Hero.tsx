@@ -160,6 +160,7 @@ const StyledSection = styled.section`
   justify-content: center;
   height: 60vh;
   width: 100%;
+  margin-top:5vh;
 `;
 
 const CarouselWrapper = styled.div`
