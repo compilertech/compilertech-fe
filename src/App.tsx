@@ -15,6 +15,9 @@ import TravelAssistance from "./components/TravelAssitance";
 import Footer from "./components/Footer";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
 import CallForProposals from "./components/CallForProposals";
+import HeroOptions from "./components/HeroOptions";
+import Organization from "./components/Organization";
+import { Routes, Route } from "react-router-dom";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
@@ -47,22 +50,31 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyle />
+
       <Wrapper>
         <HeaderWrapper>
           <Header onClick={toggleTheme} theme={theme} />
         </HeaderWrapper>
-        <Main>
-          <Hero />
-          <CallForProposals />
-          <About />
-          <Interests />
-          <Tracks />
-          <Organizer />
-          <SubmissionReview />
-          <Sponsors />
-          <TravelAssistance />
-          <Footer />
-        </Main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main>
+                <Hero />
+                <CallForProposals />
+                <About />
+                <Interests />
+                <Tracks />
+                <Organizer />
+                <SubmissionReview />
+                <Sponsors />
+                <TravelAssistance />
+              </Main>
+            }
+          />
+          <Route path="/organisation" element={<Organization />} />
+        </Routes>
+        <Footer />
       </Wrapper>
     </ThemeProvider>
   );

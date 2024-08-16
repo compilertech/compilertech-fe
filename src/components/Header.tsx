@@ -9,6 +9,7 @@ import {
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
 import CraftedBy from "./shared/CraftedBy";
+import HeroOptions from "./HeroOptions";
 
 type Props = {
   onClick: () => void;
@@ -56,37 +57,40 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <>
       <NavBar>
-        <Logo className="logo">
-          <img
-            src={
-              props.theme === "light"
-                ? "./icons/logo_light-cropped.png"
-                : "./icons/logo_dark-cropped.png"
-            }
-          />
-        </Logo>
-        <NavLinks isOpen={isOpen}>
-          <Links>
-            {allLinks.map((link, index) => (
-              <a key={index} onClick={handleToggle} href={`#${link.id}`}>
-                {link.desc}
-              </a>
-            ))}
-          </Links>
-          {isOpen && <CraftedBy />}
-        </NavLinks>
-        <Action isOpen={isOpen}>
-          <StyledButton onClick={handleCallForProposalClick}>
-            CALL FOR PROPOSALS
-          </StyledButton>
-          <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
-          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
-        </Action>
-        <Hamburger isOpen={isOpen} onClick={handleToggle}>
-          <span />
-          <span />
-          <span />
-        </Hamburger>
+        <NavbarWrapper>
+          <Logo className="logo">
+            <img
+              src={
+                props.theme === "light"
+                  ? "./icons/logo_light-cropped.png"
+                  : "./icons/logo_dark-cropped.png"
+              }
+            />
+          </Logo>
+          <NavLinks isOpen={isOpen}>
+            <Links>
+              {allLinks.map((link, index) => (
+                <a key={index} onClick={handleToggle} href={`#${link.id}`}>
+                  {link.desc}
+                </a>
+              ))}
+            </Links>
+            {isOpen && <CraftedBy />}
+          </NavLinks>
+          <Action isOpen={isOpen}>
+            <StyledButton onClick={handleCallForProposalClick}>
+              CALL FOR PROPOSALS
+            </StyledButton>
+            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+            <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
+          </Action>
+          <Hamburger isOpen={isOpen} onClick={handleToggle}>
+            <span />
+            <span />
+            <span />
+          </Hamburger>
+          <HeroOptions />
+        </NavbarWrapper>
       </NavBar>
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
@@ -153,6 +157,7 @@ const NavBar = styled.section`
   background: ${({ theme }) => theme.body};
   padding: 0 11.25rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-family: "Bebas Neue", sans-serif;
@@ -171,7 +176,12 @@ const NavBar = styled.section`
     padding-right: calc(44% - 420px);
   }
 `;
-
+const NavbarWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 const NavLinks = styled.nav<{ isOpen: boolean }>`
   width: 15%;
   display: flex;
