@@ -13,6 +13,7 @@ export interface MemberCardProps {
 
 const Card = styled.div`
   display: flex;
+  align-items:center;
   color: ${({ theme }) => theme.text};
   width: 100%;
   font-family: "Bebas Neue", sans-serif;
@@ -42,7 +43,7 @@ const Name = styled.div`
   text-align: left;
   color: ${({ theme }) => theme.primary};
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 4vw;
+    font-size: 4.5vw;
   }
 `;
 
@@ -50,11 +51,11 @@ const Institute = styled.div`
   margin: 0;
   font-family: "Bebas Neue", sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 `;
 
@@ -62,11 +63,11 @@ const Position = styled.div`
   margin: 0;
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.02em;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
 `;
 
