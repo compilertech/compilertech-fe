@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import Hero from "./components/Hero";
+import { Route, Routes } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./styles/theme";
-import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
-import Sponsors from "./components/Sponsors";
-import Tracks from "./components/Tracks";
-import Header from "./components/Header";
+import "./App.css";
 import About from "./components/About";
-import Organizer from "./components/Organizer";
-import Interests from "./components/Interests";
-import SubmissionReview from "./components/SubmissionReview";
-import TravelAssistance from "./components/TravelAssitance";
-import Footer from "./components/Footer";
-import { useThemeDetector } from "./utils/detectBrowserTheme";
 import CallForProposals from "./components/CallForProposals";
-import HeroOptions from "./components/HeroOptions";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Interests from "./components/Interests";
 import Organization from "./components/Organization";
-import { Routes, Route } from "react-router-dom";
+import Organizer from "./components/Organizer";
+import Sponsors from "./components/Sponsors";
+import SubmissionReview from "./components/SubmissionReview";
+import Tracks from "./components/Tracks";
+import TravelAssistance from "./components/TravelAssitance";
+import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
+import { darkTheme, lightTheme } from "./styles/theme";
+import { useThemeDetector } from "./utils/detectBrowserTheme";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
@@ -30,7 +29,7 @@ function App() {
   useEffect(() => {
     const faviconUpdate = async () => {
       const favicon: any = document.getElementById("favicon");
-      if (Boolean(isChrome)) {
+      if (isChrome) {
         favicon.href = "/icons/favicon_chrome.png";
         favicon.tye = "image/png";
       } else if (isBrowserDarkTheme) {
@@ -72,7 +71,7 @@ function App() {
               </Main>
             }
           />
-          <Route path="/organisation" element={<Organization />} />
+          <Route path="/organization" element={<Organization />} />
         </Routes>
         <Footer />
       </Wrapper>

@@ -38,6 +38,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 180px;
+  padding-top: 160px;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
   transition: all 0.2s ease-in-out;

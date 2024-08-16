@@ -1,15 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import ThemeToggle from "./ThemeToggle";
-import RegisterModal from "./shared/RegisterModal";
-import { Button } from "./shared/Button";
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
-import CraftedBy from "./shared/CraftedBy";
 import HeroOptions from "./HeroOptions";
+import ThemeToggle from "./ThemeToggle";
+import { Button } from "./shared/Button";
+import CraftedBy from "./shared/CraftedBy";
+import RegisterModal from "./shared/RegisterModal";
 
 type Props = {
   onClick: () => void;
@@ -89,8 +89,8 @@ const Header: React.FC<Props> = (props: Props) => {
             <span />
             <span />
           </Hamburger>
-          <HeroOptions />
         </NavbarWrapper>
+        <HeroOptions />
       </NavBar>
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
@@ -158,8 +158,8 @@ const NavBar = styled.section`
   padding: 0 11.25rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   height: auto;

@@ -2,14 +2,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Section = styled.section`
-  height: 150px;
-  width: 100%;
-  /* top: 0;
-  left: 0;
-  position:fixed;
-  z-index:20; */
+  height: 70px;
   background: ${({ theme }) => theme.body};
-  padding: 0 11.25rem;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -25,7 +19,7 @@ const OptionText = styled.div`
 
 function HeroOptions() {
   const navigate = useNavigate();
-  const options: string[] = ["Attending", "Organisation", "Schedule"];
+  const options: string[] = ["Attending", "Organization", "Schedule"];
 
   function handleOnClick(path: string) {
     navigate(`/${path.toLowerCase()}`);
