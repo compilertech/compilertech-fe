@@ -15,6 +15,7 @@ const OptionText = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  letter-spacing:0.1em;
 `;
 
 function HeroOptions() {

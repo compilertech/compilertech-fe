@@ -46,6 +46,7 @@ const Section = styled.section`
     flex-direction: column;
     padding: revert;
     width: 90%;
+    padding-top:20vh;
   }
 `;
 
