@@ -17,6 +17,7 @@ import TravelAssistance from "./components/TravelAssitance";
 import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
+import Attending from "./components/Attending";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
@@ -72,6 +73,7 @@ function App() {
             }
           />
           <Route path="/organization" element={<Organization />} />
+          <Route path="/attending" element={<Attending/>} />
         </Routes>
         <Footer />
       </Wrapper>

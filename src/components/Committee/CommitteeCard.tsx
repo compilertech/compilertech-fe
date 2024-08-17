@@ -10,36 +10,37 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
   title,
   committeeMemberList,
 }) => {
-  return <Wrapper>
-  <Title> {title}</Title>
-  <CardContainer>
-    {committeeMemberList.map((value, index) => {
-      return ( 
-        <MemberCard
-          key={index}
-          id={value.id}
-          image={value.image}
-          name={value.name}
-          institute={value.institute}
-          position={value.position}
-        />
-      );
-    })}
-  </CardContainer>
-  </Wrapper>
+  return (
+    <Wrapper>
+      <Title> {title}</Title>
+      <CardContainer>
+        {committeeMemberList.map((value, index) => {
+          return (
+            <MemberCard
+              key={index}
+              id={value.id}
+              image={value.image}
+              name={value.name}
+              institute={value.institute}
+              position={value.position}
+            />
+          );
+        })}
+      </CardContainer>
+    </Wrapper>
+  );
 };
 
 export default CommitteeCard;
 
 const Wrapper = styled.div`
-width:100%;
-padding: 0 ;
-
-`
+  width: 100%;
+  padding: 0;
+`;
 
 const Title = styled.p`
   font-size: clamp(40px, 5vw, 40px);
-  margin-top:20px;
+  margin-top: 20px;
   line-height: 80px;
   letter-spacing: 4px;
   /* color: ${({ theme }) => theme.primary}; */
@@ -47,7 +48,7 @@ const Title = styled.p`
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size:6vw;
+    font-size: 6vw;
     line-height: revert;
     margin-bottom: 1rem;
   }
