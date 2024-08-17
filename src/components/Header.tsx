@@ -91,6 +91,7 @@ const Header: React.FC<Props> = (props: Props) => {
           </Hamburger>
         </NavbarWrapper>
         <HeroOptions />
+        <Headerborder />
       </NavBar>
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
@@ -98,6 +99,12 @@ const Header: React.FC<Props> = (props: Props) => {
     </>
   );
 };
+
+const Headerborder = styled.div`
+  height: 0.8px;
+  width: 100vw;
+  background-color: ${({ theme }) => theme.navborder};
+`;
 
 const StyledButton = styled(Button)`
   color: white !important;
@@ -155,7 +162,6 @@ const NavBar = styled.section`
   top: 0;
   left: 0;
   background: ${({ theme }) => theme.body};
-  padding: 0 11.25rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -181,6 +187,7 @@ const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 11.25rem;
 `;
 const NavLinks = styled.nav<{ isOpen: boolean }>`
   width: 15%;

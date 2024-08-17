@@ -73,7 +73,7 @@ function App() {
             }
           />
           <Route path="/organization" element={<Organization />} />
-          <Route path="/attending" element={<Attending/>} />
+          <Route path="/attending" element={<Attending />} />
         </Routes>
         <Footer />
       </Wrapper>
@@ -88,7 +88,7 @@ const Wrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.header`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   background: ${({ theme }) => theme.body};

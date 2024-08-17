@@ -39,12 +39,12 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: clamp(40px, 5vw, 40px);
+  font-size: clamp(30px, 5vw, 30px);
   margin-top: 20px;
   line-height: 80px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   /* color: ${({ theme }) => theme.primary}; */
-  margin-bottom: 0;
+  margin-bottom: 20px;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -57,8 +57,8 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;

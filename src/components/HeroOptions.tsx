@@ -7,6 +7,8 @@ const Section = styled.section`
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  /* border-bottom: 1px solid ${({ theme }) => theme.imageborder}; */
+  padding: 0 11.25rem;
 `;
 
 const OptionText = styled.div`
@@ -16,6 +18,8 @@ const OptionText = styled.div`
   align-items: center;
   cursor: pointer;
   letter-spacing:0.1em;
+  font-family: "Satoshi", sans-serif;
+  
 `;
 
 function HeroOptions() {

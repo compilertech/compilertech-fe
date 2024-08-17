@@ -61,8 +61,9 @@ const Title = styled.p`
   font-size: clamp(40px, 5vw, 40px);
   line-height: 80px;
   letter-spacing: 4px;
-  /* color: ${({ theme }) => theme.primary}; */
-  margin-bottom: 0;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 20px;
+  border-bottom:1px solid ${({ theme }) => theme.imageborder};;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
