@@ -56,8 +56,8 @@ function App() {
         <HeaderWrapper>
           <Header onClick={toggleTheme} theme={theme} />
         </HeaderWrapper>
-        {/* <HeroOptions />
-        <Headerborder /> */}
+        <HeroOptions />
+        <Headerborder />
         <Routes>
           <Route
             path="/"
@@ -95,6 +95,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   background: ${({ theme }) => theme.body};
+  border-bottom: 1px solid ${({ theme }) => theme.navborder};
 
   nav a {
     margin: 0 1rem;
@@ -121,7 +122,7 @@ const Main = styled.main`
 const Headerborder = styled.div`
   height: 0.8px;
   width: 100vw;
-  background-color: ${({ theme }) => theme.navborder};
+  background-color: ${({ theme }) => theme.imageborder};
 `;
 
 export default App;

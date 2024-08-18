@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT, WIDESCREEN_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 import CommitteeCard from "./Committee/CommitteeCard";
 import {
   organizingCommitteeMemberData,
@@ -35,11 +39,11 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height:auto;
+  height: auto;
   justify-content: center;
   align-items: center;
   padding: 0 180px;
-  margin-top: 100px;
+  margin-top: 50px;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
   transition: all 0.2s ease-in-out;
@@ -74,7 +78,7 @@ const Title = styled.p`
   letter-spacing: 4px;
   color: ${({ theme }) => theme.titleText};
   margin-bottom: 20px;
-  border-bottom:1px solid ${({ theme }) => theme.imageborder};;
+  border-bottom: 1px solid ${({ theme }) => theme.imageborder};
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {

@@ -1,11 +1,22 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, SMALL_MOBILE_BREAKPOINT, TABLET_BREAKPOINT, WIDESCREEN_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 import { attendingText, vectors } from "./attending/Data";
 
 function Attending() {
-  const { location, accommodation, advices, codeOfConduct: coc } = attendingText;
-  const { location: locationVectors, accomodation: accommodationVectors } = vectors;
-const height:number = 40 
+  const {
+    location,
+    accommodation,
+    advices,
+    codeOfConduct: coc,
+  } = attendingText;
+  const { location: locationVectors, accomodation: accommodationVectors } =
+    vectors;
+  const height: number = 40;
   return (
     <Section>
       <Heading>{attendingText.heading}</Heading>
@@ -28,7 +39,9 @@ const height:number = 40
       <Wrapper>
         <TextWrapper>
           <Title>{accommodation.title}</Title>
-          <AccommodationDescription>{accommodation.description}</AccommodationDescription>
+          <AccommodationDescription>
+            {accommodation.description}
+          </AccommodationDescription>
         </TextWrapper>
         <Vector>
           {accommodationVectors.map((value, index) => (
@@ -62,18 +75,17 @@ const height:number = 40
 export default Attending;
 
 const Section = styled.section`
-height:auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height:auto;
+  height: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 20px;
   padding: 0 180px;
   background-color: ${({ theme }) => theme.body};
   transition: all 0.2s ease-in-out;
-
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     padding: revert;
@@ -107,17 +119,14 @@ const Heading = styled.div`
   border-bottom: 1px solid gray;
   color: ${({ theme }) => theme.titleText};
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    
     font-size: clamp(40px, 5vw, 40px);
     letter-spacing: 4px;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}){
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: clamp(30px, 5vw, 30px);
-  line-height: 45px;
-  letter-spacing: 3px;
-
+    line-height: 45px;
+    letter-spacing: 3px;
   }
-  
 `;
 
 const TextWrapper = styled.div`
@@ -137,10 +146,9 @@ const Title = styled.p`
   color: ${({ theme }) => theme.titleText};
   @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 1rem;
-    
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
- width:100%;
+    width: 100%;
     text-align: center;
   }
 `;
@@ -154,14 +162,12 @@ const Description = styled.p`
   text-align: justify;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-   
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
- width:100%;
- display:flex;
-    align-items:center;
-    justify-content:center;
-  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 const ListDescription = styled.p`
@@ -173,17 +179,15 @@ const ListDescription = styled.p`
   text-align: justify;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-   
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
- width:100%;
- display:flex;
-    align-items:center;
-    justify-content:center;
-  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    width:95%;
+    width: 95%;
   }
 `;
 
@@ -193,17 +197,16 @@ const LocationDescription = styled.p`
   color: ${({ theme }) => theme.lightText};
   margin-bottom: 1rem;
   line-height: 24px;
-  max-width:30vw;
+  max-width: 30vw;
   text-align: justify;
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin-bottom:2rem,
+    margin-bottom: 2rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
- max-width:90%;
- margin-left:5vw;
- /* padding-right:5%; */
+    max-width: 90%;
+    margin-left: 5vw;
+    /* padding-right:5%; */
     text-align: justify;
-    
   }
 `;
 const AccommodationDescription = styled.p`
@@ -212,50 +215,47 @@ const AccommodationDescription = styled.p`
   color: ${({ theme }) => theme.lightText};
   margin-bottom: 3rem;
   line-height: 24px;
-  max-width:25vw;
+  max-width: 25vw;
   text-align: justify;
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    max-width:100%;
-    margin-bottom:3rem
+    max-width: 100%;
+    margin-bottom: 3rem;
   }
- 
 `;
 
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content:space-between;
-  padding-top:55px;
-  padding-bottom:40px;
+  justify-content: space-between;
+  padding-top: 55px;
+  padding-bottom: 40px;
   width: 100%;
-  @media (max-width: ${TABLET_BREAKPOINT}){
-    flex-direction : column;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
- width:100%;
- align-items:center;
- justify-content:center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
 const Vector = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-left:5vw;
-  margin-top:20px;
-  
+  margin-left: 5vw;
+  margin-top: 20px;
+
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     grid-template-columns: repeat(3, 1fr);
-    width:100%;
-    align-items:center;
-    justify-content:center;
-    
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: repeat(1, 1fr);
-    gap:40px;
-  
+    gap: 40px;
   }
 `;
 
@@ -264,17 +264,16 @@ const IconWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width:15rem;
- 
+  width: 15rem;
 `;
 
 const IconDescription = styled.p`
-   font-family: "Bebas Neue", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 16px;
-  letter-spacing:1px;
+  letter-spacing: 1px;
   font-weight: 500;
   margin-top: 20px;
-  max-width:13rem;
+  max-width: 13rem;
   color: ${({ theme }) => theme.iconText};
   text-align: center;
 `;
@@ -291,9 +290,7 @@ const CocTitle = styled.p`
   color: ${({ theme }) => theme.titleText};
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 1rem;
-    width:100%;
+    width: 100%;
     text-align: center;
-   
   }
-
 `;

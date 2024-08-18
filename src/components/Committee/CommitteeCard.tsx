@@ -41,10 +41,10 @@ const Wrapper = styled.div`
 
 const Title = styled.p`
   font-size: clamp(30px, 5vw, 30px);
-  margin-top: 20px;
+  margin-top: 50px;
   line-height: 80px;
   letter-spacing: 2px;
-  margin-bottom:40px;
+  margin-bottom: 40px;
   color: ${({ theme }) => theme.titleText};
   margin-bottom: 10px;
   font-family: "Bebas Neue", sans-serif;
