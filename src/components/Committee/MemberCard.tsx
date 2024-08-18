@@ -1,7 +1,7 @@
 // TrackCard.tsx
 import React from "react";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, SMALL_MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 export interface MemberCardProps {
@@ -10,12 +10,14 @@ export interface MemberCardProps {
   name: string;
   institute?: string;
   position?: string;
+  link: string;
 }
 const Icon = styled.div`
   visibility: hidden;
-  color:${({ theme }) => theme.primary};
-  margin-left:10px;
+  color: ${({ theme }) => theme.primary};
+  margin-left: 20px;
   cursor: pointer;
+  padding-right: 10px;
 `;
 const Card = styled.div`
   display: flex;
@@ -29,9 +31,9 @@ const Card = styled.div`
   padding: 20px;
   border-radius: 4px;
   border: 2px solid transparent;
-
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
+    max-width: 92%;
   }
 
   &:hover {
@@ -44,17 +46,24 @@ const Card = styled.div`
 `;
 
 const NameWrapper = styled.div`
-  display:flex;
-  align-items:center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+  width:40vw;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  width:45vw;
+  }
+`;
 
 const CardContent = styled.div`
-  padding: 1rem;
-  flex: 1;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: flex-start;
+  justify-content: center;
+
 `;
 
 const Name = styled.div`
@@ -66,8 +75,15 @@ const Name = styled.div`
   text-align: left;
   color: ${({ theme }) => theme.primary};
 
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 2.2vh;
+    letter-spacing: 1px;
+    max-width:30vw;
+  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 4.5vw;
+    font-size: 2.2vh;
+    letter-spacing: 1px;
+    max-width:42vw;
   }
 `;
 
@@ -79,8 +95,10 @@ const Institute = styled.div`
   letter-spacing: 0.05em;
   text-align: left;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 3.5vw;
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 1.7vh;
+    max-width:5rem;
   }
 `;
 
@@ -92,8 +110,9 @@ const Position = styled.div`
   letter-spacing: 0.02em;
   text-align: left;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 2.7vw;
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 1vh;
+    max-width:5rem;
   }
 `;
 
@@ -110,6 +129,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   name,
   institute,
   position,
+  link
 }) => {
   return (
     <Card>
@@ -118,12 +138,14 @@ const MemberCard: React.FC<MemberCardProps> = ({
       </Wrapper>
       <CardContent key={id}>
         <NameWrapper>
-        <Name>{name}</Name>
-        <Icon>
-          <RiExternalLinkLine size={25}/>
-        </Icon>
+          <Name>{name}</Name>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <RiExternalLinkLine size={25} />
+            </Icon>
+          </a>
         </NameWrapper>
-        
+
         <Institute>{institute}</Institute>
         <Position>{position}</Position>
       </CardContent>

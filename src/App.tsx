@@ -56,8 +56,8 @@ function App() {
         <HeaderWrapper>
           <Header onClick={toggleTheme} theme={theme} />
         </HeaderWrapper>
-        <HeroOptions />
-        <Headerborder />
+        {/* <HeroOptions />
+        <Headerborder /> */}
         <Routes>
           <Route
             path="/"

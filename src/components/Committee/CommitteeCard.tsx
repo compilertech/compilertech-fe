@@ -23,6 +23,7 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
               name={value.name}
               institute={value.institute}
               position={value.position}
+              link={value.link}
             />
           );
         })}
@@ -43,14 +44,14 @@ const Title = styled.p`
   margin-top: 20px;
   line-height: 80px;
   letter-spacing: 2px;
-  /* color: ${({ theme }) => theme.primary}; */
-  margin-bottom: 20px;
+  margin-bottom:40px;
+  color: ${({ theme }) => theme.titleText};
+  margin-bottom: 10px;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 6vw;
     line-height: revert;
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
   }
 `;
 const CardContainer = styled.div`
@@ -60,11 +61,11 @@ const CardContainer = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
+    gap: 30px;
   }
 `;

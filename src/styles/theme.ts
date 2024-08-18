@@ -12,6 +12,9 @@ export const lightTheme = {
     shadow: "rgba(99, 99, 99, 0.2)",
     imageborder:"#e7e7e7",
     navborder:"#e7e7e7",
+    titleText:"#3d3d3d",
+    iconText: "#787878",
+
   };
   
   export const darkTheme = {
@@ -29,5 +32,7 @@ export const lightTheme = {
     shadow: "rgba(255, 255, 255, 0.2)",
     imageborder:"#787878",
     navborder:"#787878",
+     titleText:"#fff",
+     iconText: "#787878",
   };
   

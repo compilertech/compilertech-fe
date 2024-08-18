@@ -1,15 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+import ThemeToggle from "./ThemeToggle";
+import RegisterModal from "./shared/RegisterModal";
+import { Button } from "./shared/Button";
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
-import HeroOptions from "./HeroOptions";
-import ThemeToggle from "./ThemeToggle";
-import { Button } from "./shared/Button";
 import CraftedBy from "./shared/CraftedBy";
-import RegisterModal from "./shared/RegisterModal";
 
 type Props = {
   onClick: () => void;
@@ -57,39 +56,37 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <>
       <NavBar>
-        <NavbarWrapper>
-          <Logo className="logo">
-            <img
-              src={
-                props.theme === "light"
-                  ? "./icons/logo_light-cropped.png"
-                  : "./icons/logo_dark-cropped.png"
-              }
-            />
-          </Logo>
-          <NavLinks isOpen={isOpen}>
-            <Links>
-              {allLinks.map((link, index) => (
-                <a key={index} onClick={handleToggle} href={`#${link.id}`}>
-                  {link.desc}
-                </a>
-              ))}
-            </Links>
-            {isOpen && <CraftedBy />}
-          </NavLinks>
-          <Action isOpen={isOpen}>
-            <StyledButton onClick={handleCallForProposalClick}>
-              CALL FOR PROPOSALS
-            </StyledButton>
-            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
-            <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
-          </Action>
-          <Hamburger isOpen={isOpen} onClick={handleToggle}>
-            <span />
-            <span />
-            <span />
-          </Hamburger>
-        </NavbarWrapper>
+        <Logo className="logo">
+          <img
+            src={
+              props.theme === "light"
+                ? "./icons/logo_light-cropped.png"
+                : "./icons/logo_dark-cropped.png"
+            }
+          />
+        </Logo>
+        <NavLinks isOpen={isOpen}>
+          <Links>
+            {allLinks.map((link, index) => (
+              <a key={index} onClick={handleToggle} href={`#${link.id}`}>
+                {link.desc}
+              </a>
+            ))}
+          </Links>
+          {isOpen && <CraftedBy />}
+        </NavLinks>
+        <Action isOpen={isOpen}>
+          <StyledButton onClick={handleCallForProposalClick}>
+            CALL FOR PROPOSALS
+          </StyledButton>
+          <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
+        </Action>
+        <Hamburger isOpen={isOpen} onClick={handleToggle}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
       </NavBar>
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
@@ -97,8 +94,6 @@ const Header: React.FC<Props> = (props: Props) => {
     </>
   );
 };
-
-
 
 const StyledButton = styled(Button)`
   color: white !important;
@@ -156,10 +151,10 @@ const NavBar = styled.section`
   top: 0;
   left: 0;
   background: ${({ theme }) => theme.body};
+  padding: 0 11.25rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   height: auto;
@@ -176,13 +171,7 @@ const NavBar = styled.section`
     padding-right: calc(44% - 420px);
   }
 `;
-const NavbarWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 11.25rem;
-`;
+
 const NavLinks = styled.nav<{ isOpen: boolean }>`
   width: 15%;
   display: flex;

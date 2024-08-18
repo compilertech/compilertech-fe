@@ -14,14 +14,20 @@ const Section = styled.section`
 
 const OptionText = styled.div`
   margin-bottom: 30px;
-  margin-right: 5vw;
   display: flex;
+  margin-right:20px;
   align-items: center;
+  justify-content:space-evenly;
   cursor: pointer;
   letter-spacing:0.1em;
   font-family: "Satoshi", sans-serif;
   
 `;
+const Wrapper = styled.div `
+   display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+`
 
 function HeroOptions() {
   const navigate = useNavigate();
@@ -32,11 +38,14 @@ function HeroOptions() {
   }
   return (
     <Section>
+      <Wrapper>
       {options.map((option, index) => (
         <OptionText onClick={() => handleOnClick(option)} key={index}>
           {option}
         </OptionText>
       ))}
+      </Wrapper>
+     
     </Section>
   );
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT, WIDESCREEN_BREAKPOINT } from "../styles/GlobalStyle";
 import CommitteeCard from "./Committee/CommitteeCard";
 import {
   organizingCommitteeMemberData,
@@ -35,10 +35,11 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height:auto;
   justify-content: center;
   align-items: center;
   padding: 0 180px;
-  padding-top: 160px;
+  margin-top: 100px;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
   transition: all 0.2s ease-in-out;
@@ -46,12 +47,22 @@ const Section = styled.section`
     flex-direction: column;
     padding: revert;
     width: 90%;
-    padding-top:20vh;
+  }
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 0;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+    padding: 0 0;
+  }
+  @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
+    padding-left: calc(44% - 420px);
+    padding-right: calc(44% - 420px);
   }
 `;
 
 const TextWrapper = styled.div`
-  padding: 0 4rem 0 0;
+  /* padding: 0 4rem 0 0; */
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0;
   }
@@ -61,7 +72,7 @@ const Title = styled.p`
   font-size: clamp(40px, 5vw, 40px);
   line-height: 80px;
   letter-spacing: 4px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.titleText};
   margin-bottom: 20px;
   border-bottom:1px solid ${({ theme }) => theme.imageborder};;
   font-family: "Bebas Neue", sans-serif;
@@ -76,8 +87,7 @@ const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   font-size: 1rem;
   color: ${({ theme }) => theme.lightText};
-  margin-bottom: 1rem;
-  line-height: 24px;
+  line-height: 25px;
   text-align: justify;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: justify;

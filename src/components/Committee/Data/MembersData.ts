@@ -29,6 +29,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Uday Khedker",
     institute: "IIT Bombay",
     position: "(PC Chair)",
+    link:"https://www.cse.iitb.ac.in/~uday/",
   },
   {
     id: "program_committee_m2",
@@ -36,6 +37,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Dr. Dibyendu Das",
     institute: "Sr. Principal Engineer, Intel",
     position: "(PC Member)",
+    link:"https://www.researchgate.net/profile/Dibyendu-Das",
   },
   {
     id: "program_committee_m3",
@@ -43,6 +45,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Govindarajan Ramaswamy",
     institute: "IISc Bangalore",
     position: "(PC Member)",
+    link:"https://eecs.iisc.ac.in/people/govindarajan-r/",
   },
   {
     id: "program_committee_m4",
@@ -50,6 +53,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Kartik Nagar",
     institute: "IIT Madras",
     position: "(PC Member)",
+    link:""    //missing
   },
   {
     id: "program_committee_m5",
@@ -57,6 +61,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Krishna Nandivada",
     institute: "IIT Madras",
     position: "(PC Member)",
+    link:"http://www.cse.iitm.ac.in/~krishna/",
   },
   {
     id: "program_committee_m6",
@@ -64,6 +69,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Komondoor V. Raghavan",
     institute: "IISc Bangalore",
     position: "(PC Member)",
+    link:" https://www.csa.iisc.ac.in/~raghavan/",
   },
   {
     id: "program_committee_m7",
@@ -71,6 +77,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Manas Thakur",
     institute: "IIT Bombay",
     position: "(PC Member)",
+    link:"https://www.cse.iitb.ac.in/~manas/"
   },
   {
     id: "program_committee_m8",
@@ -78,6 +85,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Ramakrishna Upadrasta",
     institute: "IIT Hyderabad",
     position: "(PC Member)",
+    link:"https://people.iith.ac.in/ramakrishna/",
   },
   {
     id: "program_committee_m9",
@@ -85,6 +93,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Ramana Radhakrishnan",
     institute: "Director - CPU Compilers, Nvidia",
     position: "(PC Member)",
+    link:""    //missing
   },
   {
     id: "program_committee_m10",
@@ -92,6 +101,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Dr. Saurabh Joshi",
     institute: "Principal Researcher, Supra Research",
     position: "(PC Member)",
+    link:"https://supra.com/research-team/saurabh-joshi/",
   },
   {
     id: "program_committee_m11",
@@ -99,6 +109,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Subodh Sharma",
     institute: "IIT Delhi",
     position: "(PC Member)",
+    link:"https://subodhvsharma.github.io/",
   },
   {
     id: "program_committee_m12",
@@ -106,6 +117,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Dr. Uday Bondhugula",
     institute: "Founder, CEO & CTO, Polymage Labs",
     position: "(PC Member)",
+    link:""    //missing
   },
 ];
 
@@ -117,6 +129,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Aditya Kumar",
       institute: "Distinguished Speaker at ACM",
       position: "(Chair)",
+      link:"https://speakers.acm.org/speakers/kumar_12579",
     },
     {
       id: "organizing_committee_m2",
@@ -124,6 +137,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Ashutosh Pandey",
       institute: "AMD",
       position: "(Co-chair)",
+      link:"https://www.linkedin.com/in/ashupdsce/",
     },
     {
       id: "organizing_committee_m3",
@@ -131,6 +145,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Pradeep Kumar",
       institute: "Nvidia",
       position: "(Co-chair)",
+      link:"https://www.linkedin.com/in/pradeep-kumar-786a66114",
     },
     {
       id: "organizing_committee_m4",
@@ -138,6 +153,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Prerona Chaudhuri",
       institute: "Nvidia",
       position: "(Volunteer)",
+      link:"https://www.linkedin.com/in/prerona-chaudhuri-893091141/",
     },
     {
       id: "organizing_committee_m5",
@@ -145,6 +161,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Dr. Raveendra Kumar",
       institute: "TCS Research",
       position: "(Volunteer)",
+      link:"https://www.linkedin.com/in/raveendrakumar/",
     },
     {
       id: "organizing_committee_m6",
@@ -152,5 +169,6 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       name: "Vinayaka Bandishti",
       institute: "Google",
       position: "(Volunteer)",
+      link:"https://www.linkedin.com/in/vinayaka-bandishti-0825265a/",
     },
   ];
