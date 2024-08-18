@@ -58,6 +58,7 @@ const Section = styled.section`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: space-between;
     padding: 0 0;
+    margin-top: 0;
   }
   @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
     padding-left: calc(44% - 420px);

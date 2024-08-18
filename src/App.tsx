@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import "./App.css";
 import About from "./components/About";
@@ -21,6 +21,7 @@ import Attending from "./components/Attending";
 import HeroOptions from "./components/HeroOptions";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
+  const location = useLocation();
   const isBrowserDarkTheme = useThemeDetector();
   // @ts-ignore
   const isChrome = navigator?.userAgentData?.brands
@@ -29,6 +30,10 @@ function App() {
   console.log("🚀 ~ App ~ isChrome:", isChrome);
 
   useEffect(() => {
+    if (location.hash) {
+      window.location.href = location.hash;
+    }
+
     const faviconUpdate = async () => {
       const favicon: any = document.getElementById("favicon");
       if (isChrome) {
@@ -41,7 +46,7 @@ function App() {
       }
     };
     faviconUpdate();
-  }, [isBrowserDarkTheme]);
+  }, [isBrowserDarkTheme, location]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -123,6 +128,9 @@ const Headerborder = styled.div`
   height: 0.8px;
   width: 100vw;
   background-color: ${({ theme }) => theme.imageborder};
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    visibility: hidden;
+  }
 `;
 
 export default App;

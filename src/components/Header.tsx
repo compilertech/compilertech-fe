@@ -9,6 +9,7 @@ import {
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
 import CraftedBy from "./shared/CraftedBy";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onClick: () => void;
@@ -16,23 +17,30 @@ type Props = {
 };
 
 const Header: React.FC<Props> = (props: Props) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const allLinks = [
-    { id: "about", desc: "about" },
-    { id: "interests", desc: "topics of interests" },
-    { id: "tracks", desc: "tracks" },
-    { id: "organizer", desc: "organizer" },
-    { id: "submissions-and-review", desc: "Submissions & Review" },
-    { id: "sponsors", desc: "sponsor us" },
-    { id: "travel-assistance", desc: "travel assistance" },
+    { id: "#about", desc: "about" },
+    { id: "#interests", desc: "topics of interests" },
+    { id: "#tracks", desc: "tracks" },
+    { id: "#organizer", desc: "organizer" },
+    { id: "#submissions-and-review", desc: "Submissions & Review" },
+    { id: "#sponsors", desc: "sponsor us" },
+    { id: "#travel-assistance", desc: "travel assistance" },
+    { id: "attending", desc: "Attending" },
+    { id: "organization", desc: "Organization" },
   ];
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const handleClick = (path: string) => {
+    handleToggle();
+    navigate(`/${path}`);
+  };
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -68,9 +76,14 @@ const Header: React.FC<Props> = (props: Props) => {
         <NavLinks isOpen={isOpen}>
           <Links>
             {allLinks.map((link, index) => (
-              <a key={index} onClick={handleToggle} href={`#${link.id}`}>
+              <div
+                key={index}
+                onClick={() => {
+                  handleClick(link.id);
+                }}
+              >
                 {link.desc}
-              </a>
+              </div>
             ))}
           </Links>
           {isOpen && <CraftedBy />}

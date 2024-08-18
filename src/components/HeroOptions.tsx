@@ -1,15 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT, WIDESCREEN_BREAKPOINT } from "../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  WIDESCREEN_BREAKPOINT,
+} from "../styles/GlobalStyle";
 
 const Section = styled.section`
   height: auto;
- 
   background: ${({ theme }) => theme.body};
   display: flex;
   padding: 0 7rem;
-  border-top:1px solid  ${({ theme }) => theme.imageborder};
-  margin-top:110px;
+  border-top: 1px solid ${({ theme }) => theme.imageborder};
+  margin-top: 110px;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     padding: revert;
@@ -27,31 +30,31 @@ const Section = styled.section`
     padding-left: calc(44% - 420px);
     padding-right: calc(44% - 420px);
   }
-
 `;
 
 const OptionText = styled.div`
   margin-bottom: 30px;
   display: flex;
-  margin-right:20px;
+  margin-right: 20px;
   align-items: center;
-  padding-top:25px;
-  padding-bottom:10px;
-  justify-content:space-evenly;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  justify-content: space-evenly;
   cursor: pointer;
-  letter-spacing:0.1em;
+  letter-spacing: 0.1em;
   font-family: "Satoshi", sans-serif;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-right:10px;
-    margin-bottom: 0px;
+    /* margin-right:5vw;
+    margin-bottom: 0px; */
+    visibility: hidden;
   }
 `;
-const Wrapper = styled.div `
-   display: flex;
+const Wrapper = styled.div`
+  display: flex;
   align-items: center;
-  justify-content:flex-start;
+  /* background-color:blue; */
   width: 100%;
-`
+`;
 
 function HeroOptions() {
   const navigate = useNavigate();
@@ -63,13 +66,12 @@ function HeroOptions() {
   return (
     <Section>
       <Wrapper>
-      {options.map((option, index) => (
-        <OptionText onClick={() => handleOnClick(option)} key={index}>
-          {option}
-        </OptionText>
-      ))}
+        {options.map((option, index) => (
+          <OptionText onClick={() => handleOnClick(option)} key={index}>
+            {option}
+          </OptionText>
+        ))}
       </Wrapper>
-     
     </Section>
   );
 }
