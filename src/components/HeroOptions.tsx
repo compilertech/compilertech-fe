@@ -9,6 +9,7 @@ const Section = styled.section`
   justify-content: flex-start;
   /* border-bottom: 1px solid ${({ theme }) => theme.imageborder}; */
   padding: 0 11.25rem;
+  margin-top:100px;
 `;
 
 const OptionText = styled.div`

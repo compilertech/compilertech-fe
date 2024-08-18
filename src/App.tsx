@@ -18,6 +18,7 @@ import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
 import Attending from "./components/Attending";
+import HeroOptions from "./components/HeroOptions";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const isBrowserDarkTheme = useThemeDetector();
@@ -55,6 +56,8 @@ function App() {
         <HeaderWrapper>
           <Header onClick={toggleTheme} theme={theme} />
         </HeaderWrapper>
+        <HeroOptions />
+        <Headerborder />
         <Routes>
           <Route
             path="/"
@@ -114,6 +117,11 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
   }
+`;
+const Headerborder = styled.div`
+  height: 0.8px;
+  width: 100vw;
+  background-color: ${({ theme }) => theme.navborder};
 `;
 
 export default App;

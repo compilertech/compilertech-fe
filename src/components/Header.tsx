@@ -90,8 +90,6 @@ const Header: React.FC<Props> = (props: Props) => {
             <span />
           </Hamburger>
         </NavbarWrapper>
-        <HeroOptions />
-        <Headerborder />
       </NavBar>
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
@@ -100,11 +98,7 @@ const Header: React.FC<Props> = (props: Props) => {
   );
 };
 
-const Headerborder = styled.div`
-  height: 0.8px;
-  width: 100vw;
-  background-color: ${({ theme }) => theme.navborder};
-`;
+
 
 const StyledButton = styled(Button)`
   color: white !important;
