@@ -56,7 +56,7 @@ function CallForProposals() {
         </CardGroupContainerRow>
         <ButtonContainer>
           <Button onClick={handleCallForProposalClick}>
-            Submission Link
+            Abstract Submission Link
           </Button>
         </ButtonContainer>
       </CardGroupContainerColumn>
