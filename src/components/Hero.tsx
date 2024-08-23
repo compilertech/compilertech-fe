@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
         </Slider>
         <CarouselOverlay>
           <div>
-            <img className="hero-text-img" src="./title.png" />
+            <img className="hero-text-img" src="./hero-title.png" />
           </div>
           <div>
             <img src="./dsce-logo.webp" style={{ width: "80px" }} />
