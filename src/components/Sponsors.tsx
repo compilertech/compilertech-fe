@@ -25,7 +25,8 @@ const Sponsors: React.FC = () => {
           remarkable success. Three sponsorship tiers are available Platinum, Gold, and Silver. Please reach out
           to know more about different tiers.
           Every sponsor will get their names listed on our website.
-          Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities.
+          Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities. You can directly donate using the link below or
+          contact us at support@compilertech.org for any help.
           <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
       </Section>
