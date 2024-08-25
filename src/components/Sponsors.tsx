@@ -22,7 +22,10 @@ const Sponsors: React.FC = () => {
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
           innovations in compiler technology. Join us in making this event a
-          remarkable success!
+          remarkable success. Three sponsorship tiers are available Platinum, Gold, and Silver. Please reach out
+          to know more about different tiers.
+          Every sponsor will get their names listed on our website.
+          Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities.
           <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
       </Section>
