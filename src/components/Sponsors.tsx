@@ -26,12 +26,14 @@ const Sponsors: React.FC = () => {
           to know more about different tiers.
           Every sponsor will get their names listed on our website.
           Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities. You can directly donate using the link below or
-          contact us at <Email
-          href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
-          target="_blank"
-        >
-          support@compilertech.org
-        </Email>{" "} for any help.
+          email{" "}
+          <Email
+            href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
+            target="_blank"
+          >
+            support@compilertech.org
+          </Email>{" "}
+          for any help.
           <form id="rzp_payment_form" style={{ marginTop: "16px" }}></form>
         </Description>
       </Section>
