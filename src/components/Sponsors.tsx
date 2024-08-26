@@ -92,4 +92,10 @@ const Description = styled.p`
   }
 `;
 
+const Email = styled.a`
+  color: ${({ theme }) => theme.primary};
+  font-weight: bold;
+  text-decoration: none;
+`;
+
 export default Sponsors;
