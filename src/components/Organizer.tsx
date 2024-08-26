@@ -17,7 +17,7 @@ const Organizer: React.FC = () => {
         <Description>
           We believe this workshop will become a venue that brings together
           compiler engineers, students and professors. We have a strong
-          organizing team with engineers from Google, AMD, and Nvidia who are
+          organizing team with engineers from Google, AMD, and NVIDIA who are
           experienced in organizing technical events working tirelessly to make
           the workshop successful.
         </Description>
@@ -50,7 +50,7 @@ const Organizer: React.FC = () => {
                 Prof. Ramakrishna Upadrasta, IIT Hyderabad
               </CommitteeListItem>
               <CommitteeListItem>
-                Ramana Radhakrishnan, Director - CPU Compilers, Nvidia
+                Ramana Radhakrishnan, Director - CPU Compilers, NVIDIA
               </CommitteeListItem>
               <CommitteeListItem>
                 Dr. Saurabh Joshi, Principal Researcher, Supra Research
@@ -73,10 +73,10 @@ const Organizer: React.FC = () => {
                 Co-chair: Ashutosh Pandey, AMD
               </CommitteeListItem>
               <CommitteeListItem>
-                Co-chair: Pradeep Kumar, Nvidia
+                Co-chair: Pradeep Kumar, NVIDIA
               </CommitteeListItem>
               <CommitteeListItem>
-                Volunteer: Prerona Chaudhuri, Nvidia
+                Volunteer: Prerona Chaudhuri, NVIDIA
               </CommitteeListItem>
               <CommitteeListItem>
                 Volunteer: Dr. Raveendra Kumar, TCS Research
