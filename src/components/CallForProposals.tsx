@@ -45,7 +45,7 @@ function CallForProposals() {
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>
         <InterestCard
           title="About the proposals:"
-          description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an extended abstract(typically less than 500 words, for example https://llvm.org/devmtg/2023-02-25/), full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
+          description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an abstract(for example https://llvm.org/devmtg/2023-02-25/), full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
         />
         <CardGroupContainerRow>
           {data.map((element) => {
