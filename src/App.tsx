@@ -18,7 +18,6 @@ import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
 import Attending from "./components/Attending";
-import HeroOptions from "./components/HeroOptions";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -58,11 +57,7 @@ function App() {
       <GlobalStyle />
 
       <Wrapper>
-        <HeaderWrapper>
-          <Header onClick={toggleTheme} theme={theme} />
-        </HeaderWrapper>
-        <HeroOptions />
-        <Headerborder />
+        <Header onClick={toggleTheme} theme={theme} />
         <Routes>
           <Route
             path="/"
@@ -95,41 +90,11 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const HeaderWrapper = styled.header`
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  background: ${({ theme }) => theme.body};
-  border-bottom: 1px solid ${({ theme }) => theme.navborder};
-
-  nav a {
-    margin: 0 1rem;
-    color: ${({ theme }) => theme.text};
-    text-decoration: none;
-  }
-
-  button {
-    background: ${({ theme }) => theme.text};
-    color: ${({ theme }) => theme.body};
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-`;
-
 const Main = styled.main`
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
     flex-direction: column;
-  }
-`;
-const Headerborder = styled.div`
-  height: 0.8px;
-  width: 100vw;
-  background-color: ${({ theme }) => theme.imageborder};
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    visibility: hidden;
   }
 `;
 

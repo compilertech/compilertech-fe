@@ -9,7 +9,7 @@ import {
   WIDESCREEN_BREAKPOINT,
 } from "../styles/GlobalStyle";
 import CraftedBy from "./shared/CraftedBy";
-import { useNavigate } from "react-router-dom";
+import HeaderOptions from "./HeaderOptions";
 
 type Props = {
   onClick: () => void;
@@ -17,30 +17,23 @@ type Props = {
 };
 
 const Header: React.FC<Props> = (props: Props) => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const allLinks = [
-    { id: "#about", desc: "about" },
-    { id: "#interests", desc: "topics of interests" },
-    { id: "#tracks", desc: "tracks" },
-    { id: "#organizer", desc: "organizer" },
-    { id: "#submissions-and-review", desc: "Submissions & Review" },
-    { id: "#sponsors", desc: "sponsor us" },
-    { id: "#travel-assistance", desc: "travel assistance" },
-    { id: "attending", desc: "Attending" },
-    { id: "organization", desc: "Organization" },
+    { id: "/#about", desc: "about" },
+    { id: "/#interests", desc: "topics of interests" },
+    { id: "/#tracks", desc: "tracks" },
+    { id: "/#organizer", desc: "organizer" },
+    { id: "/#submissions-and-review", desc: "Submissions & Review" },
+    { id: "/#sponsors", desc: "sponsor us" },
+    { id: "/#travel-assistance", desc: "travel assistance" },
   ];
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleClick = (path: string) => {
-    handleToggle();
-    navigate(`/${path}`);
-  };
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -63,50 +56,87 @@ const Header: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <NavBar>
-        <Logo className="logo">
-          <img
-            src={
-              props.theme === "light"
-                ? "./icons/logo_light-cropped.png"
-                : "./icons/logo_dark-cropped.png"
-            }
-          />
-        </Logo>
-        <NavLinks isOpen={isOpen}>
-          <Links>
-            {allLinks.map((link, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  handleClick(link.id);
-                }}
-              >
-                {link.desc}
-              </div>
-            ))}
-          </Links>
-          {isOpen && <CraftedBy />}
-        </NavLinks>
-        <Action isOpen={isOpen}>
-          <StyledButton onClick={handleCallForProposalClick}>
-            Abstract Submission Link
-          </StyledButton>
-          <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
-          <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
-        </Action>
-        <Hamburger isOpen={isOpen} onClick={handleToggle}>
-          <span />
-          <span />
-          <span />
-        </Hamburger>
-      </NavBar>
+      <HeaderBox>
+        <NavBar>
+          <Logo className="logo">
+            <img
+              src={
+                props.theme === "light"
+                  ? "./icons/logo_light-cropped.png"
+                  : "./icons/logo_dark-cropped.png"
+              }
+            />
+          </Logo>
+          <NavLinks isOpen={isOpen}>
+            <Links>
+              {allLinks.map((link, index) => (
+                <a key={index} onClick={handleToggle} href={link.id}>
+                  {link.desc}
+                </a>
+              ))}
+            </Links>
+            {isOpen && <CraftedBy />}
+          </NavLinks>
+          <Action isOpen={isOpen}>
+            <StyledButton onClick={handleCallForProposalClick}>
+              Abstract Submission Link
+            </StyledButton>
+            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
+            <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
+          </Action>
+          <Hamburger isOpen={isOpen} onClick={handleToggle}>
+            <span />
+            <span />
+            <span />
+          </Hamburger>
+        </NavBar>
+        <HeaderOptions />
+      </HeaderBox>
+
       {width > 786 && (
         <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
       )}
     </>
   );
 };
+
+const HeaderBox = styled.header`
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1001;
+  background: ${({ theme }) => theme.body};
+  border-bottom: 1px solid ${({ theme }) => theme.imageborder};
+  height: fit-content;
+  nav a {
+    margin: 0 1rem;
+    color: ${({ theme }) => theme.text};
+    text-decoration: none;
+  }
+
+  button {
+    background: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.body};
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 0 4rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    padding-left: calc(44% - 420px);
+    padding-right: calc(44% - 420px);
+  }
+`;
 
 const StyledButton = styled(Button)`
   color: white !important;
@@ -160,29 +190,13 @@ const Logo = styled.div`
 
 const NavBar = styled.section`
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   background: ${({ theme }) => theme.body};
-  padding: 0 11.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   height: auto;
-  z-index: 1;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 0 4rem;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-  @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
-    padding-left: calc(44% - 420px);
-    padding-right: calc(44% - 420px);
-  }
 `;
 
 const NavLinks = styled.nav<{ isOpen: boolean }>`
