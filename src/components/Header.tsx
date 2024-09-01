@@ -90,7 +90,7 @@ const Header: React.FC<Props> = (props: Props) => {
         </NavLinks>
         <Action isOpen={isOpen}>
           <StyledButton onClick={handleCallForProposalClick}>
-            CALL FOR PROPOSALS
+            Abstract Submission Link
           </StyledButton>
           <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
           <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
