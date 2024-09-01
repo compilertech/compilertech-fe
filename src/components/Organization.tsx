@@ -5,7 +5,12 @@ import {
   organizingCommitteeMemberData,
   programCommitteeMemberData,
 } from "./Committee/Data/MembersData";
+import { useLayoutEffect } from "react";
 function Organization() {
+  // scroll to top of page after a page transition.
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
   return (
     <Section id="oraganisation">
       <Title>Organization</Title>

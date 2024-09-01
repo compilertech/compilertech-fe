@@ -2,21 +2,14 @@ import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import "./App.css";
-import About from "./components/About";
-import CallForProposals from "./components/CallForProposals";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Interests from "./components/Interests";
 import Organization from "./components/Organization";
-import Sponsors from "./components/Sponsors";
-import SubmissionReview from "./components/SubmissionReview";
-import Tracks from "./components/Tracks";
-import TravelAssistance from "./components/TravelAssitance";
-import { GlobalStyle, MOBILE_BREAKPOINT } from "./styles/GlobalStyle";
+import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
 import Attending from "./components/Attending";
+import Home from "./components/Home";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -58,22 +51,7 @@ function App() {
       <Wrapper>
         <Header onClick={toggleTheme} theme={theme} />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Main>
-                <Hero />
-                <CallForProposals />
-                <About />
-                <Interests />
-                <Tracks />
-                {/* <Organizer /> */}
-                <SubmissionReview />
-                <Sponsors />
-                <TravelAssistance />
-              </Main>
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/organization" element={<Organization />} />
           <Route path="/attending" element={<Attending />} />
         </Routes>
@@ -87,14 +65,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Main = styled.main`
-  width: 100%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export default App;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
-import { attendingText, vectors } from "./attending/Data";
+import { attendingText, vectors } from "./Attending/Data";
+import { useLayoutEffect } from "react";
 
 function Attending() {
   const { location, accommodation, advices } = attendingText;
@@ -10,6 +11,10 @@ function Attending() {
   const onClickIcon = (href: string) => {
     window.open(href, "_blank");
   };
+  // scroll to top of page after a page transition.
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <Section>
