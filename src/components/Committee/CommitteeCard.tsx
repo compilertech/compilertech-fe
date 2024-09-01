@@ -1,7 +1,7 @@
 import { MemberCardProps } from "./MemberCard";
 import MemberCard from "./MemberCard";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 export interface CommitteeCardProps {
   title: string;
   committeeMemberList: MemberCardProps[];
@@ -12,7 +12,7 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
 }) => {
   return (
     <Wrapper>
-      <Title> {title}</Title>
+      <Title>{title}</Title>
       <CardContainer>
         {committeeMemberList.map((value, index) => {
           return (
@@ -35,37 +35,46 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
 export default CommitteeCard;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 60px;
   width: 100%;
-  padding: 0;
+  &:last-of-type {
+    padding-bottom: 24px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding-top: 48px;
+    &:last-of-type {
+      padding-bottom: revert;
+    }
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Title = styled.p`
-  font-size: clamp(30px, 5vw, 30px);
-  margin-top: 50px;
-  line-height: 80px;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: 0.48px;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 10px;
-  font-family: "Bebas Neue", sans-serif;
-  text-align: left;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    line-height: revert;
-    margin-bottom: 30px;
+    text-align: center;
   }
 `;
 const CardContainer = styled.div`
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
-  }
+  grid-gap: 24px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
+    gap: 24px;
   }
+  width: 100%;
 `;

@@ -1,18 +1,15 @@
 // TrackCard.tsx
 import React from "react";
 import styled from "styled-components";
-import {
-  MOBILE_BREAKPOINT,
-  SMALL_MOBILE_BREAKPOINT,
-} from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 export interface MemberCardProps {
   id: string;
   image: string;
   name: string;
-  institute?: string;
-  position?: string;
+  institute: string;
+  position: string;
   link: string;
 }
 
@@ -37,10 +34,12 @@ const Card = styled.div`
   font-family: "Bebas Neue", sans-serif;
   background-color: ${({ theme }) => theme.cardBg};
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  border-radius: 4px;
+  padding: 12px;
   border: 2px solid transparent;
-  transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+  height: auto;
+  box-sizing: border-box;
+  gap: 16px;
 
   &:hover {
     border-color: ${({ theme }) => theme.primary};
@@ -52,9 +51,8 @@ const Card = styled.div`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
-    max-width: 92%;
-    padding: 15px;
     height: 130px;
+    width: 100% !important;
   }
 `;
 
@@ -62,42 +60,27 @@ const NameWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    width: 40vw;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 45vw;
-  }
 `;
 
 const CardContent = styled.div`
-  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4px;
+  flex: 1;
 `;
 
 const Name = styled.div`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.32px;
   color: ${({ theme }) => theme.primary};
   max-width: 100%;
   word-wrap: break-word; /* Allows the text to wrap within the container */
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 2.2vh;
-    letter-spacing: 1px;
-    max-width: 30vw;
-  }
-
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 2.2vh;
-    letter-spacing: 1px;
-    max-width: 42vw;
+    font-size: 19px;
   }
 `;
 
@@ -105,13 +88,14 @@ const Institute = styled.div`
   font-family: "Bebas Neue", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.32px;
   color: ${({ theme }) => theme.text};
   max-width: 100%;
   word-wrap: break-word; /* Allows the text to wrap within the container */
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 1.7vh;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    line-height: 24px;
+    font-size: 16px;
   }
 `;
 
@@ -119,21 +103,21 @@ const Position = styled.div`
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.02em;
-  color: ${({ theme }) => theme.text};
+  letter-spacing: 0.32px;
+  color: ${({ theme }) => theme.lightText};
   max-width: 100%;
   word-wrap: break-word; /* Allows the text to wrap within the container */
+  line-height: 24px; /* 150% */
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 1vh;
-    max-width: 5rem;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    line-height: 21px;
+    font-size: 14px;
   }
 `;
 
 const Wrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.imageborder};
-  border-radius: 5px;
-  padding: 3px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,17 +127,11 @@ const Wrapper = styled.div`
   img {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 4px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 6rem;
     height: 6rem;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    width: 5rem;
-    height: 5rem;
   }
 `;
 
@@ -179,8 +157,8 @@ const MemberCard: React.FC<MemberCardProps> = ({
             </Icon>
           </a>
         </NameWrapper>
-        {institute && <Institute>{institute}</Institute>}
-        {position && <Position>{position}</Position>}
+        <Institute>{institute}</Institute>
+        <Position>{position}</Position>
       </CardContent>
     </Card>
   );

@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-  WIDESCREEN_BREAKPOINT,
-} from "../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 import CommitteeCard from "./Committee/CommitteeCard";
 import {
   organizingCommitteeMemberData,
@@ -12,8 +8,8 @@ import {
 function Organization() {
   return (
     <Section id="oraganisation">
-      <TextWrapper>
-        <Title>Organization</Title>
+      <Title>Organization</Title>
+      <WrapperOutside>
         <Description>
           We believe this workshop will become a venue that brings together
           compiler engineers, students and professors. We have a strong
@@ -21,31 +17,30 @@ function Organization() {
           experienced in organizing technical events working tirelessly to make
           the workshop successful.
         </Description>
-      </TextWrapper>
-      <CommitteeCard
-        title="Program Committee"
-        committeeMemberList={programCommitteeMemberData}
-      />
-      <CommitteeCard
-        title="Organizing Committee"
-        committeeMemberList={organizingCommitteeMemberData}
-      />
+        <CommitteeCard
+          title="Program Committee"
+          committeeMemberList={programCommitteeMemberData}
+        />
+        <CommitteeCard
+          title="Organizing Committee"
+          committeeMemberList={organizingCommitteeMemberData}
+        />
+      </WrapperOutside>
     </Section>
   );
 }
 
 export default Organization;
 const Section = styled.section`
+  height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
   justify-content: center;
   align-items: center;
-  padding: 0 180px;
-  margin-top: 50px;
+  margin-top: 155px;
   background-color: ${({ theme }) => theme.body};
-  height: auto !important;
   transition: all 0.2s ease-in-out;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
@@ -53,48 +48,53 @@ const Section = styled.section`
     width: 90%;
   }
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 0 0;
+    padding: 0;
+    width: 90%;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: space-between;
     padding: 0 0;
-    margin-top: 0;
   }
-  @media (min-width: ${WIDESCREEN_BREAKPOINT}) {
+  @media (min-width: ${TABLET_BREAKPOINT}) {
     padding-left: calc(44% - 420px);
     padding-right: calc(44% - 420px);
   }
 `;
 
-const TextWrapper = styled.div`
-  /* padding: 0 4rem 0 0; */
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 0;
-  }
+const WrapperOutside = styled.div`
+  border-top: 1px solid ${({ theme }) => theme.imageborder};
+  width: 100%;
 `;
 
 const Title = styled.p`
-  font-size: clamp(40px, 5vw, 40px);
-  line-height: 80px;
-  letter-spacing: 4px;
+  font-family: "Bebas Neue";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.96px;
+  width: 100%;
+  margin-top: 28px;
+  margin-bottom: 22px;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 20px;
-  border-bottom: 1px solid ${({ theme }) => theme.imageborder};
-  font-family: "Bebas Neue", sans-serif;
-  text-align: left;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: clamp(40px, 5vw, 40px);
+  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    line-height: revert;
-    margin-bottom: 1rem;
+    font-size: clamp(30px, 5vw, 30px);
+    line-height: 45px;
+    text-align: center;
   }
 `;
 
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   color: ${({ theme }) => theme.lightText};
   line-height: 25px;
   text-align: justify;
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: justify;
+  margin-top: 24px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: center;
   }
 `;

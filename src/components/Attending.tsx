@@ -116,8 +116,8 @@ const Heading = styled.div`
   line-height: normal;
   letter-spacing: 0.96px;
   width: 100%;
-  margin-top: 26px;
-  margin-bottom: 24px;
+  margin-top: 28px;
+  margin-bottom: 22px;
   color: ${({ theme }) => theme.text};
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: clamp(40px, 5vw, 40px);
