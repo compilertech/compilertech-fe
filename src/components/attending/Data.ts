@@ -25,7 +25,7 @@ export const attendingText = {
       "Email confirmation of the registration",
     ],
   },
-};
+} as const;
 
 export const vectors = {
   location: [
@@ -62,4 +62,4 @@ export const vectors = {
       href: "https://maps.app.goo.gl/m3N9enJUkHEjaW8h8",
     },
   ],
-};
+} as const;
