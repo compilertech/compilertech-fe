@@ -3,13 +3,10 @@ import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import RegisterModal from "./shared/RegisterModal";
 import { Button } from "./shared/Button";
-import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-  WIDESCREEN_BREAKPOINT,
-} from "../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 import CraftedBy from "./shared/CraftedBy";
 import HeaderOptions from "./HeaderOptions";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onClick: () => void;
@@ -17,6 +14,7 @@ type Props = {
 };
 
 const Header: React.FC<Props> = (props: Props) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -58,7 +56,7 @@ const Header: React.FC<Props> = (props: Props) => {
     <>
       <HeaderBox>
         <NavBar>
-          <Logo className="logo">
+          <Logo className="logo" onClick={() => navigate("/")}>
             <img
               src={
                 props.theme === "light"
@@ -186,6 +184,7 @@ const Logo = styled.div`
     margin-top: 15px;
     margin-bottom: 7px;
   }
+  cursor: pointer;
 `;
 
 const NavBar = styled.section`

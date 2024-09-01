@@ -45,7 +45,7 @@ const Title = styled.p`
   line-height: 80px;
   letter-spacing: 2px;
   margin-bottom: 40px;
-  color: ${({ theme }) => theme.titleText};
+  color: ${({ theme }) => theme.text};
   margin-bottom: 10px;
   font-family: "Bebas Neue", sans-serif;
   text-align: left;

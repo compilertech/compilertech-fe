@@ -32,7 +32,7 @@ export const lightTheme = {
     shadow: "rgba(255, 255, 255, 0.2)",
     imageborder:"#3e3e3e",
     navborder:"#787878",
-     titleText:"#fff",
-     iconText: "#787878",
+    titleText:"#fff",
+    iconText: "#787878",
   };
   
