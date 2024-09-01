@@ -9,7 +9,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Interests from "./components/Interests";
 import Organization from "./components/Organization";
-import Organizer from "./components/Organizer";
 import Sponsors from "./components/Sponsors";
 import SubmissionReview from "./components/SubmissionReview";
 import Tracks from "./components/Tracks";
