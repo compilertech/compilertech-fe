@@ -4,12 +4,12 @@ import styled, { ThemeProvider } from "styled-components";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Organization from "./components/Organization";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
-import Attending from "./components/Attending";
-import Home from "./components/Home";
+import Home from "./components/HomePage";
+import Attending from "./components/AttendingPage";
+import Organization from "./components/OrganizationPage";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
