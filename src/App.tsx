@@ -68,7 +68,7 @@ function App() {
                 <About />
                 <Interests />
                 <Tracks />
-                <Organizer />
+                {/* <Organizer /> */}
                 <SubmissionReview />
                 <Sponsors />
                 <TravelAssistance />
