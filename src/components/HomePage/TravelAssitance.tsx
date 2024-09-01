@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const TravelAssistance: React.FC = () => {
   return (

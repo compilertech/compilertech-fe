@@ -2,7 +2,10 @@
 import React from "react";
 import InterestCard from "./InterestCard";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../../styles/GlobalStyle";
 
 const Tracks: React.FC = () => {
   const tracks = [

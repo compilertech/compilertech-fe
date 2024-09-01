@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
-import Hero from "../Hero";
-import CallForProposals from "../CallForProposals";
-import About from "../About";
-import Interests from "../Interests";
-import Tracks from "../Interests";
-import SubmissionReview from "../SubmissionReview";
-import Sponsors from "../Sponsors";
-import TravelAssistance from "../TravelAssitance";
+import Hero from "./Hero";
+import CallForProposals from "./CallForProposals";
+import About from "./About";
+import Interests from "./Interests";
+import Tracks from "./Interests";
+import SubmissionReview from "./SubmissionReview";
+import Sponsors from "./Sponsors";
+import TravelAssistance from "./TravelAssitance";
 import { useLayoutEffect } from "react";
 
 const Main = styled.main`

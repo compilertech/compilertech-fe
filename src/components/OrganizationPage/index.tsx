@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
-import CommitteeCard from "./Committee/CommitteeCard";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import CommitteeCard from "./CommitteeCard";
 import {
   organizingCommitteeMemberData,
   programCommitteeMemberData,
-} from "./Committee/Data/MembersData";
+} from "./Data/MembersData";
 import { useLayoutEffect } from "react";
 function Organization() {
   // scroll to top of page after a page transition.

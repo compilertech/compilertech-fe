@@ -7,11 +7,11 @@ import {
   MOBILE_BREAKPOINT,
   SMALL_MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from "../styles/GlobalStyle";
+} from "../../styles/GlobalStyle";
 import { LuCalendarRange } from "react-icons/lu";
 import { TiLocationArrow } from "react-icons/ti";
-import { Button } from "./shared/Button";
-import RegisterModal from "./shared/RegisterModal";
+import { Button } from "../shared/Button";
+import RegisterModal from "../shared/RegisterModal";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -160,7 +160,7 @@ const StyledSection = styled.section`
   justify-content: center;
   height: 60vh;
   width: 100%;
-  margin-top:5vh;
+  margin-top: 5vh;
 `;
 
 const CarouselWrapper = styled.div`

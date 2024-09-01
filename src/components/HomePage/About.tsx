@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Button } from "./shared/Button";
-import Modal from "./shared/Modal";
-import { TABLET_BREAKPOINT } from "../styles/GlobalStyle";
+import { Button } from "../shared/Button";
+import Modal from "../shared/Modal";
+import { TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const About: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

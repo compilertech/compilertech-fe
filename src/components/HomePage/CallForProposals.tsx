@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
-import { Button } from "./shared/Button";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import { Button } from "../shared/Button";
 import InterestCard from "./Interests/InterestCard";
 
 function CallForProposals() {

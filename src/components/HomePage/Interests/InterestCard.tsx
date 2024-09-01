@@ -1,7 +1,7 @@
 // TrackCard.tsx
 import React from "react";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT } from "../../../styles/GlobalStyle";
 
 interface InterestCardProps {
   title: string;

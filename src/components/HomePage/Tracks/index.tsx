@@ -2,7 +2,10 @@
 import React from "react";
 import TrackCard from "./TrackCard";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../../styles/GlobalStyle";
 const tracks = [
   {
     id: "classical-compiler",

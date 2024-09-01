@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../../styles/GlobalStyle";
 
 interface TrackCardProps {
   title: string;
