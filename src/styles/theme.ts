@@ -9,7 +9,12 @@ export const lightTheme = {
     bodyHover: '#EEE',
     filter: "none",
     cardTitle: "#3d3d3d",
-    shadow: "rgba(99, 99, 99, 0.2)"
+    shadow: "rgba(99, 99, 99, 0.2)",
+    imageborder:"#e7e7e7",
+    navborder:"#e7e7e7",
+    titleText:"#3d3d3d",
+    iconText: "#787878",
+
   };
   
   export const darkTheme = {
@@ -24,6 +29,10 @@ export const lightTheme = {
     cardBg: '#28292A',
     filter: "invert(1)",
     cardTitle: "#FAFAFA",
-    shadow: "rgba(255, 255, 255, 0.2)"
+    shadow: "rgba(255, 255, 255, 0.2)",
+    imageborder:"#3e3e3e",
+    navborder:"#787878",
+    titleText:"#fff",
+    iconText: "#787878",
   };
   

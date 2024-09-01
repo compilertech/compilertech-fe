@@ -146,7 +146,7 @@ const CardGroupContainerRow = styled.div`
 `;
 
 const CardGroupContainerColumn = styled.div`
-  margintop: 24px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
