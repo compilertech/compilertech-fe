@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
-import { attendingText, vectors } from "./Attending/Data";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import { attendingText, vectors } from "./Data";
 import { useLayoutEffect } from "react";
 
 function Attending() {
