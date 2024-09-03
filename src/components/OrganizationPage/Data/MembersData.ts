@@ -128,8 +128,8 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       image: img1_OC,
       name: "Aditya Kumar",
       institute: "Distinguished Speaker at ACM",
-      position: "(Chair)",
-      link:"https://speakers.acm.org/speakers/kumar_12579",
+      position: "(General Chair)",
+      link:"https://linkedin.com/in/hiraditya",
     },
     {
       id: "organizing_committee_m2",
