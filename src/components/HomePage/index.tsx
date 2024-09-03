@@ -4,7 +4,7 @@ import Hero from "./Hero";
 import CallForProposals from "./CallForProposals";
 import About from "./About";
 import Interests from "./Interests";
-import Tracks from "./Interests";
+import Tracks from "./Tracks";
 import SubmissionReview from "./SubmissionReview";
 import Sponsors from "./Sponsors";
 import TravelAssistance from "./TravelAssitance";
