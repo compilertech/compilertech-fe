@@ -101,6 +101,7 @@ const Hero: React.FC = () => {
                 Dayananda Sagar College of Engineering, BANGALORE
               </a>
             </h3>
+            <ResitrationLine>September 15 anywhere on earth</ResitrationLine>
             <ButtonContainer>
               <StyledButton onClick={handleCallForProposalClick}>
                 CALL FOR PROPOSALS
@@ -303,6 +304,11 @@ const CarouselOverlay = styled.div`
       max-width: 550px;
     }
   }
+`;
+const ResitrationLine = styled.p`
+  text-align: center;
+  font-size: 16px;
+  color: white;
 `;
 
 export default Hero;
