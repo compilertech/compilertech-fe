@@ -38,25 +38,29 @@ const tracks = [
   },
   {
     id: "security",
-    title: "SECURITY",
+    title: "SECURITY, VERIFICATION, TESTING",
     description:
       "Improving the security of workloads using static/dynamic analysis techniques and validating compilation transformations",
     imageSrc: "./security.webp",
     list: [
       "Improving the security of generated code",
       "Validating compiler optimizations (translation validation)",
+      "Fuzzing Techniques",
+      "Mutation Techniques",
     ],
   },
   {
     id: "web3-blockchain",
-    title: "WEB3/Blockchain",
+    title: "WEB3, Blockchain, Emerging Tech",
     description:
-      "Compiler techniques for shaping the next generation of the Web",
+      "Compiler techniques for shaping the next generation of technologies",
     imageSrc: "./blockchain.webp",
     list: [
       "Programming language advancements to address Web3 challenges",
       "Verification of smart contracts using abstract interpretation (e.g., symbolic evaluation) techniques.",
-      "Fuzz testing, fault injection etc using compiler techniques",
+      "Fuzz testing of smart contracts, fault injection etc using compiler techniques",
+      "Compilers for quantum computers",
+      "Anything else that doesn't fit into the other three categories but are interesting to the compiler community",
     ],
   },
 ];
