@@ -168,6 +168,14 @@ const Description = styled.p`
       margin-top: 16px;
     }
   }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: justify;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
 const Email = styled.a`

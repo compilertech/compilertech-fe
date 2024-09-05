@@ -67,6 +67,9 @@ const Description = styled.p`
     margin-bottom: 1.5rem;
     text-align: center;
   }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: justify;
+  }
 `;
 
 const Email = styled.a`
