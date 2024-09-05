@@ -17,16 +17,33 @@ const Sponsors: React.FC = () => {
   return (
     <>
       <Section id="sponsors">
-        <Title>SPONSOR US</Title>
+        <Title>SPONSORS</Title>
+        <SponsorTypeSectionList>
+          <SponsorTypeSection>
+            <SponsorType>Platinum</SponsorType>
+            <SponsorListing>Contact us for sponsorship</SponsorListing>
+          </SponsorTypeSection>
+          <SponsorTypeSection>
+            <SponsorType>Gold</SponsorType>
+            <SponsorListing>Contact us for sponsorship</SponsorListing>
+          </SponsorTypeSection>
+          <SponsorTypeSection>
+            <SponsorType>Silver</SponsorType>
+            <SponsorListing>
+              <SponsorImage src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp" />
+            </SponsorListing>
+          </SponsorTypeSection>
+        </SponsorTypeSectionList>
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
           innovations in compiler technology. Join us in making this event a
-          remarkable success. Three sponsorship tiers are available Platinum, Gold, and Silver. Please reach out
-          to know more about different tiers.
-          Every sponsor will get their names listed on our website.
-          Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities. You can directly donate using the link below or
-          email{" "}
+          remarkable success. Three sponsorship tiers are available Platinum,
+          Gold, and Silver. Please reach out to know more about different tiers.
+          Every sponsor will get their names listed on our website. Sponsors can
+          also put booths to showcase their products, talk about their
+          offerings, and share open job opportunities. You can directly donate
+          using the link below or email{" "}
           <Email
             href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
             target="_blank"
@@ -68,6 +85,54 @@ const Title = styled.p`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 0.5rem;
   }
+`;
+
+const SponsorTypeSectionList = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 60px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+`;
+
+const SponsorTypeSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: ${({ theme }) => theme.lightText};
+`;
+
+const SponsorType = styled.h4`
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: ${({ theme }) => theme.primary};
+`;
+
+const SponsorListing = styled.div`
+  display: flex;
+  gap: 20px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
+const SponsorImage = styled.img`
+  height: 40px;
+  width: auto;
 `;
 
 const Description = styled.p`
