@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "../shared/Button";
 import Modal from "../shared/Modal";
-import { TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const About: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -89,6 +89,9 @@ const Description = styled.p`
   text-align: justify;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: justify;
   }
 `;
 
