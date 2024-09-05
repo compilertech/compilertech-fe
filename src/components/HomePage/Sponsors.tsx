@@ -21,16 +21,20 @@ const Sponsors: React.FC = () => {
         <SponsorTypeSectionList>
           <SponsorTypeSection>
             <SponsorType>Platinum</SponsorType>
-            <SponsorListing>Contact us for sponsorship</SponsorListing>
+            <SponsorListing>
+              <p>Contact us for sponsorship</p>
+            </SponsorListing>
           </SponsorTypeSection>
           <SponsorTypeSection>
             <SponsorType>Gold</SponsorType>
-            <SponsorListing>Contact us for sponsorship</SponsorListing>
+            <SponsorListing>
+              <p>Contact us for sponsorship</p>
+            </SponsorListing>
           </SponsorTypeSection>
           <SponsorTypeSection>
             <SponsorType>Silver</SponsorType>
             <SponsorListing>
-              <SponsorImage src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp" />
+              <DarkSponsorImage src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp" />
             </SponsorListing>
           </SponsorTypeSection>
         </SponsorTypeSectionList>
@@ -90,24 +94,25 @@ const Title = styled.p`
 const SponsorTypeSectionList = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: row;
   gap: 60px;
   margin-top: 16px;
   margin-bottom: 32px;
+  width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 24px;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
   }
 `;
 
 const SponsorTypeSection = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
   color: ${({ theme }) => theme.lightText};
 `;
 
@@ -124,15 +129,23 @@ const SponsorType = styled.h4`
 const SponsorListing = styled.div`
   display: flex;
   gap: 20px;
-  height: 40px;
+  height: 72px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    align-items: flex-start;
+    p {
+      margin-top: 12px;
+    }
+  }
 `;
 
-const SponsorImage = styled.img`
-  height: 40px;
-  width: auto;
+const DarkSponsorImage = styled.img`
+  height: 60px;
+  ${({ theme }) =>
+    theme.name === "light" &&
+    "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
 `;
 
 const Description = styled.p`
