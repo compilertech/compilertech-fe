@@ -24,7 +24,7 @@ const Header: React.FC<Props> = (props: Props) => {
     { id: "/#tracks", desc: "tracks" },
     { id: "/#organizer", desc: "organizer" },
     { id: "/#submissions-and-review", desc: "Submissions & Review" },
-    { id: "/#sponsors", desc: "sponsor us" },
+    { id: "/#sponsors", desc: "sponsors" },
     { id: "/#travel-assistance", desc: "travel assistance" },
   ];
 
