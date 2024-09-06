@@ -10,6 +10,7 @@ import { useThemeDetector } from "./utils/detectBrowserTheme";
 import Home from "./components/HomePage";
 import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
+import Schedule from "./components/SchedulePage";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/organization" element={<Organization />} />
           <Route path="/attending" element={<Attending />} />
+          <Route path="/schedule" element={<Schedule />} />
         </Routes>
         <Footer />
       </Wrapper>

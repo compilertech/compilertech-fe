@@ -39,8 +39,8 @@ const Wrapper = styled.div`
 
 function HeaderOptions() {
   const navigate = useNavigate();
-  // const options: string[] = ["Organization", "Attending", "Schedule"];
-  const options: string[] = ["Organization", "Attending"];
+  const options: string[] = ["Organization", "Attending", "Schedule"];
+  // const options: string[] = ["Organization", "Attending"];
 
   function handleOnClick(path: string) {
     navigate(`/${path.toLowerCase()}`);
