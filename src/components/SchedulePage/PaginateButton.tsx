@@ -1,19 +1,21 @@
 import styled from "styled-components";
 
 // Define the props type
-interface PaginateProps {
+interface PaginatedButtonProps {
   text: string;
-  borderLeft?: string;
-  borderRight?: string;
-  selected?: boolean;
+  borderLeft: string;
+  borderRight: string;
+  selected: boolean;
+  onclick(): any;
 }
 
-function Paginate({
+function PaginateButton({
   text,
-  borderLeft = "4px",
-  borderRight = "4px",
-  selected = false,
-}: PaginateProps) {
+  borderLeft,
+  borderRight,
+  selected,
+  onclick,
+}: PaginatedButtonProps) {
   return (
     <Wrapper>
       <Button
@@ -21,6 +23,7 @@ function Paginate({
         borderRight={borderRight}
         selected={selected}
         aria-label={text}
+        onClick={onclick}
       >
         {text}
       </Button>
@@ -28,7 +31,7 @@ function Paginate({
   );
 }
 
-export default Paginate;
+export default PaginateButton;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -53,12 +56,11 @@ const Button = styled.button<{
     selected ? theme.primary : "#b779b5"};
   color: white;
   border: none;
-  border-radius: ${(props) => `
-    ${props.borderLeft} ${props.borderRight} ${props.borderRight} ${props.borderLeft}
-  `};
+  border-radius: ${({ borderLeft, borderRight }) =>
+    `${borderLeft} ${borderRight} ${borderRight} ${borderLeft}`}; /* Top-left, Top-right, Bottom-right, Bottom-left */
   cursor: pointer;
   font-size: 1rem;
-  font-weight: ${(props) => (props.selected ? "700" : "500")};
+  font-weight: ${({ selected }) => (selected ? "700" : "500")};
   transition: background-color 200ms ease-in-out, font-weight 200ms ease-in-out;
 
   &:hover {

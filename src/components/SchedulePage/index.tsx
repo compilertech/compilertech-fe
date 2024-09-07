@@ -1,18 +1,35 @@
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
-import Button from "./Paginate";
-import ProgramTableDay1 from "./ProgramTableDay1";
-// import ProgramTableDay2 from "./ProgramTableDay2";
+import PaginateButton from "./PaginateButton";
+import ProgramTable from "./ProgramTable";
+import { dayOneData } from "./Data/DayOne";
+import { dayTwoData } from "./Data/DayTwo";
+import { useState } from "react";
 function Schedule() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const buttons = ["Day1", "Day2"];
+
   return (
     <Section>
       <Title>2024 Program</Title>
       <WrapperOutside>
-        <Button text={"Day1"} borderLeft={"5px"} borderRight={"0px"} />
-        <Button text={"Day2"} borderRight={"5px"} borderLeft={"0px"} />
+        {buttons.map((value, index) => {
+          return (
+            <PaginateButton
+              key={index}
+              text={value}
+              borderLeft={index === 0 ? "5px" : "0px"}
+              borderRight={index === 1 ? "0px" : "5px"}
+              onclick={() => {
+                setCurrentIndex(index);
+              }}
+              selected={index === currentIndex}
+            />
+          );
+        })}
       </WrapperOutside>
-      <ProgramTableDay1 />
-      {/* <ProgramTableDay2 /> */}
+      {currentIndex == 0 && <ProgramTable />}
+      {currentIndex == 1 && <ProgramTable />}
     </Section>
   );
 }
