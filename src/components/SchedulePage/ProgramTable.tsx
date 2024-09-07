@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { dayOneData } from "./Data/DayOne";
+import { ScheduleTable } from "./Data/DayInterface";
 
 // Define the interface for props
 interface StyledProps {
@@ -7,7 +7,7 @@ interface StyledProps {
 }
 
 interface ProgramTableProps {
-  day: any;
+  day: ScheduleTable;
 }
 
 function ProgramTable({ day }: ProgramTableProps) {
@@ -15,49 +15,27 @@ function ProgramTable({ day }: ProgramTableProps) {
     <Wrapper>
       <Heading>
         <Date>{day.date}</Date>
-        {day.displayedtimezone}
-        <Timezone>{day.timeZone}</Timezone>
+        {/* {day.displayedtimezone}
+        <Timezone>{day.timeZone}</Timezone> */}
         {/* {dayOneData.change} */}
       </Heading>
-      {dayOneData.sessions.map((sessionData, index) => (
-        <Session key={index} bgColor={sessionData.session.bgColor}>
+      {day.scheduleTableChildren.map((sessionData, index) => (
+        <Session key={index} bgColor={sessionData.color}>
           <SessionHeader>
-            <SessionTime>{sessionData.session.sessionDuration}</SessionTime>
-            <SessionType>{sessionData.session.sessionNumber}</SessionType>
-            <SessionCategory>{sessionData.session.sessionType}</SessionCategory>
+            <SessionTime>{sessionData.mainTime}</SessionTime>
+            <SessionType>{sessionData.leading}</SessionType>
+            <SessionCategory>{sessionData.trailing}</SessionCategory>
           </SessionHeader>
 
-          {sessionData.introduction && (
-            <Section bgColor={sessionData.introduction.bgcolor}>
-              <Duration>{sessionData.introduction.duration}</Duration>
-              <SectionHeading>
-                {sessionData.introduction.heading}
-              </SectionHeading>
+          {sessionData.subChildren.map((subChild, keyIndex) => (
+            <Section key={keyIndex} bgColor={subChild.color}>
+              <Duration>{subChild.time}</Duration>
+              <SectionHeading>{subChild.heading}</SectionHeading>
               <Mentor>
-                {sessionData.introduction.mentor},{" "}
-                {sessionData.introduction.inst}
+                {subChild.description}, {subChild.subDescription}
               </Mentor>
             </Section>
-          )}
-
-          {sessionData.keyNote &&
-            sessionData.keyNote.map((keyNote, keyIndex) => (
-              <Section key={keyIndex} bgColor={keyNote.bgcolor}>
-                <Duration>{keyNote.duration}</Duration>
-                <SectionHeading>{keyNote.heading}</SectionHeading>
-                <Mentor>
-                  {keyNote.mentor}, {keyNote.inst}
-                </Mentor>
-              </Section>
-            ))}
-
-          {sessionData.lunch && (
-            <Section bgColor={sessionData.lunch.bgcolor}>
-              <Duration>{sessionData.lunch.duration}</Duration>
-              <SectionHeading>{sessionData.lunch.heading}</SectionHeading>
-              <Description>{sessionData.lunch.description}</Description>
-            </Section>
-          )}
+          ))}
         </Session>
       ))}
     </Wrapper>
@@ -65,6 +43,54 @@ function ProgramTable({ day }: ProgramTableProps) {
 }
 
 export default ProgramTable;
+
+// <Heading>
+//     <Date>{day.date}</Date>
+//     {day.displayedtimezone}
+//     <Timezone>{day.timeZone}</Timezone>
+//     {/* {dayOneData.change} */}
+//   </Heading>
+//   {dayOneData.sessions.map((sessionData, index) => (
+//     <Session key={index} bgColor={sessionData.session.bgColor}>
+//       <SessionHeader>
+//         <SessionTime>{sessionData.session.sessionDuration}</SessionTime>
+//         <SessionType>{sessionData.session.sessionNumber}</SessionType>
+//         <SessionCategory>{sessionData.session.sessionType}</SessionCategory>
+//       </SessionHeader>
+
+//       {sessionData.introduction && (
+//         <Section bgColor={sessionData.introduction.bgcolor}>
+//           <Duration>{sessionData.introduction.duration}</Duration>
+//           <SectionHeading>
+//             {sessionData.introduction.heading}
+//           </SectionHeading>
+//           <Mentor>
+//             {sessionData.introduction.mentor},{" "}
+//             {sessionData.introduction.inst}
+//           </Mentor>
+//         </Section>
+//       )}
+
+//       {sessionData.keyNote &&
+//         sessionData.keyNote.map((keyNote, keyIndex) => (
+//           <Section key={keyIndex} bgColor={keyNote.bgcolor}>
+//             <Duration>{keyNote.duration}</Duration>
+//             <SectionHeading>{keyNote.heading}</SectionHeading>
+//             <Mentor>
+//               {keyNote.mentor}, {keyNote.inst}
+//             </Mentor>
+//           </Section>
+//         ))}
+
+//       {sessionData.lunch && (
+//         <Section bgColor={sessionData.lunch.bgcolor}>
+//           <Duration>{sessionData.lunch.duration}</Duration>
+//           <SectionHeading>{sessionData.lunch.heading}</SectionHeading>
+//           <Description>{sessionData.lunch.description}</Description>
+//         </Section>
+//       )}
+//     </Session>
+//   ))}
 
 const Heading = styled.div`
   width: 100%;

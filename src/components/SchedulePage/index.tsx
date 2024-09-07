@@ -1,10 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import dayOne from "./Data/DayOne";
+import dayTwo from "./Data/DayTwo";
 import PaginateButton from "./PaginateButton";
 import ProgramTable from "./ProgramTable";
-import { dayOneData } from "./Data/DayOne";
-import { dayTwoData } from "./Data/DayTwo";
-import { useState } from "react";
 function Schedule() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const buttons = ["Day1", "Day2"];
@@ -14,6 +14,7 @@ function Schedule() {
       <Title>2024 Program</Title>
       <WrapperOutside>
         {buttons.map((value, index) => {
+          console.log(index);
           return (
             <PaginateButton
               key={index}
@@ -28,8 +29,7 @@ function Schedule() {
           );
         })}
       </WrapperOutside>
-      {currentIndex == 0 && <ProgramTable day={dayOneData} />}
-      {currentIndex == 1 && <ProgramTable day={dayTwoData} />}
+      <ProgramTable day={currentIndex === 0 ? dayOne : dayTwo} />
     </Section>
   );
 }

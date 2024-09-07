@@ -1,207 +1,193 @@
+import { ScheduleTable } from "./DayInterface";
 
-export const dayOneData  = {
+const dayOneData: ScheduleTable = {
     date: "Sat 28 Sep",
-    displayedtimezone:"Displayed time zone:",
-    timeZone: "India(Chennai, Kolkata, Mumbai, New Delhi) ",
-    change:"change",
-    bgColor: "#F0F0F0",
-    sessions: [
+    scheduleTableChildren: [
         {
-            session: {
-                sessionDuration: "09.00-10.00",
-                sessionNumber: "Session 1",
-                sessionType: "Tutorials",
-                bgColor: "#F5D6D6"
-            },
-            introduction: {
-                duration: "9.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Uday Khedker",
-                inst: "Indian Institute of Technology Bombay",
-                bgcolor: "#FAEBEB"
-            },
-            keyNote: [
+            mainTime: "09.00-10.00",
+            leading: "Session 1",
+            trailing: "Tutorials",
+            subChildren: [
                 {
-                    duration: "9.15 45m",
-                    heading: "Keynote of tracks 1",
-                    mentor: "Dibyendu Das",
-                    inst: "Sr. Principal Engineer, Intel",
-                    file: "",
-                    bgcolor: "#FAEBEB"
-                }
-            ]
-        },
-        {
-            session: {
-                sessionDuration: "10.00-11.00",
-                sessionNumber: "Session 2",
-                sessionType: "Tutorials",
-                bgColor: "#FAE2CE"
-            },
-            introduction: {
-                duration: "10.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Govindarajan Ramaswamy",
-                inst: "IISc Bangalore",
-                bgcolor: "#FDEDE0"
-            },
-            keyNote: [
-                {
-                    duration: "10.15 45m",
-                    heading: "Keynote of tracks 2",
-                    mentor: "Prof. Krishna Nandivada",
-                    inst: "IIT Madras",
-                    file: "",
-                    bgcolor: "#FDEDE0"
-                }
-            ]
-        },
-        {
-            session: {
-                sessionDuration: "11.00-12.00",
-                sessionNumber: "Session 3",
-                sessionType: "Tutorials",
-                bgColor: "#EAF3D1"
-            },
-            introduction: {
-                duration: "11.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Komondoor V. Raghavan",
-                inst: "IISc Bangalore",
-                bgcolor: "#F5FAE5"
-            },
-            keyNote: [
-                {
-                    duration: "11.15 45m",
-                    heading: "Keynote of tracks 3",
-                    mentor: "Prof. Manas Thakur",
-                    inst: "IIT Bombay",
-                    file: "",
-                    bgcolor: "#F5FAE5"
-                }
-            ]
-        },
-        {
-            session: {
-                sessionDuration: "12.00-13.00",
-                sessionNumber: "Session 4",
-                sessionType: "Tutorials",
-                bgColor: "#E0F7F1"
-            },
-            introduction: {
-                duration: "12.00 10m",
-                heading: "Introduction",
-                mentor: "Prof. Ramakrishna Upadrasta",
-                inst: "IIT Hyderabad",
-                bgcolor: "#E6FAF7"
-            },
-            keyNote: [
-                {
-                    duration: "12.10 25m",
-                    heading: "Keynote of tracks 4",
-                    mentor: "Dr. Saurabh Joshi",
-                    inst: "IIT Bombay",
-                    file: "",
-                    bgcolor: "#E6FAF7"
+                    time: "9.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Uday Khedker",
+                    subDescription: "Indian Institute of Technology Bombay",
+                    color: "#FAEBEB"
                 },
                 {
-                    duration: "12.35 25m",
-                    heading: "Keynote of tracks 5",
-                    mentor: "Prof. Subodh Sharma",
-                    inst: "Supra Research",
-                    file: "",
-                    bgcolor: "#E6FAF7"
-                }
-            ]
-        },
-        {
-            session: {
-                sessionDuration: "13.00-14.00",
-                sessionNumber: "Lunch",
-                sessionType: "Catering",
-                bgColor: "#D6F5D6"
-            },
-            lunch: {
-                duration: "13.00 1h",
-                heading: "Lunch",
-                description: "Lorem ipsum dolor sit amet consectetur.",
-                bgcolor: "#EBFAEB"
-            }
-        },
-        {
-            session: {
-                sessionDuration: "14.00-15.00",
-                sessionNumber: "Session 5",
-                sessionType: "Tutorials",
-                bgColor: "#DBE8F7"
-            },
-            introduction: {
-                duration: "14.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Uday Khedker",
-                inst: "Indian Institute of Technology Bombay",
-                bgcolor: "#E8EEF8"
-            },
-            keyNote: [
-                {
-                    duration: "14.15 45m",
+                    time: "9.15 45m",
                     heading: "Keynote of tracks 1",
-                    mentor: "Dibyendu Das",
-                    inst: "Sr. Principal Engineer, Intel",
-                    file: "",
-                    bgcolor: "#E8EEF8"
+                    description: "Dibyendu Das",
+                    subDescription: "Sr. Principal Engineer, Intel",
+                    link: "",
+                    color: "#FAEBEB"
                 }
-            ]
+            ],
+            color: "#F5D6D6"
         },
         {
-            session: {
-                sessionDuration: "15.00-16.00",
-                sessionNumber: "Session 6",
-                sessionType: "Tutorials",
-                bgColor: "#D5E9FC"
-            },
-            introduction: {
-                duration: "15.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Govindarajan Ramaswamy",
-                inst: "IISc Bangalore",
-                bgcolor: "#E6F2FD"
-            },
-            keyNote: [
+            mainTime: "10.00-11.00",
+            leading: "Session 2",
+            trailing: "Tutorials",
+            subChildren: [
                 {
-                    duration: "15.15 45m",
+                    time: "10.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Govindarajan Ramaswamy",
+                    subDescription: "IISc Bangalore",
+                    color: "#FDEDE0"
+                },
+                {
+                    time: "10.15 45m",
                     heading: "Keynote of tracks 2",
-                    mentor: "Prof. Krishna Nandivada",
-                    inst: "IIT Madras",
-                    file: "",
-                    bgcolor: "#E6F2FD"
+                    description: "Prof. Krishna Nandivada",
+                    subDescription: "IIT Madras",
+                    link: "",
+                    color: "#FDEDE0"
                 }
-            ]
+            ],
+            color: "#FAE2CE"
         },
         {
-            session: {
-                sessionDuration: "16.00-17.00",
-                sessionNumber: "Session 7",
-                sessionType: "Tutorials",
-                bgColor: "#D2EAF3"
-            },
-            introduction: {
-                duration: "16.00 15m",
-                heading: "Introduction",
-                mentor: "Prof. Komondoor V. Raghavan",
-                inst: "IISc Bangalore",
-                bgcolor: "#E3F4F7"
-            },
-            keyNote: [
+            mainTime: "11.00-12.00",
+            leading: "Session 3",
+            trailing: "Tutorials",
+            subChildren: [
                 {
-                    duration: "16.15 45m",
+                    time: "11.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Komondoor V. Raghavan",
+                    subDescription: "IISc Bangalore",
+                    color: "#F5FAE5"
+                },
+                {
+                    time: "11.15 45m",
                     heading: "Keynote of tracks 3",
-                    mentor: "Prof. Manas Thakur",
-                    inst: "IIT Bombay",
-                    file: "",
-                    bgcolor: "#E3F4F7"
+                    description: "Prof. Manas Thakur",
+                    subDescription: "IIT Bombay",
+                    link: "",
+                    color: "#F5FAE5"
                 }
-            ]
-        }
+            ],
+            color: "#EAF3D1"
+        },
+        {
+            mainTime: "12.00-13.00",
+            leading: "Session 4",
+            trailing: "Tutorials",
+            color: "#E0F7F1",
+            subChildren: [
+                {
+                    time: "12.00 10m",
+                    heading: "Introduction",
+                    description: "Prof. Ramakrishna Upadrasta",
+                    subDescription: "IIT Hyderabad",
+                    color: "#E6FAF7"
+                },
+                {
+                    time: "12.10 25m",
+                    heading: "Keynote of tracks 4",
+                    description: "Dr. Saurabh Joshi",
+                    subDescription: "IIT Bombay",
+                    link: "",
+                    color: "#E6FAF7"
+                }
+                , {
+                    time: "12.35 25m",
+                    heading: "Keynote of tracks 5",
+                    description: "Prof. Subodh Sharma",
+                    subDescription: "Supra Research",
+                    link: "",
+                    color: "#E6FAF7"
+                }
+            ],
+
+        },
+        {
+            mainTime: "13.00-14.00",
+            leading: "Lunch",
+            trailing: "Catering",
+            color: "#D6F5D6",
+            subChildren: [
+                {
+                    time: "13.00 60m",
+                    heading: "Lunch",
+                    description: "Catering",
+                    color: "#FAEBEB"
+                }
+            ],
+        },
+        {
+            mainTime: "14.00-15.00",
+            leading: "Session 5",
+            trailing: "Tutorials",
+            color: "#DBE8F7",
+            subChildren: [
+                {
+                    time: "14.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Uday Khedker",
+                    subDescription: "Indian Institute of Technology Bombay",
+                    color: "#E8EEF8"
+                },
+                {
+                    time: "14.15 45m",
+                    heading: "Keynote of tracks 1",
+                    description: "Dibyendu Das",
+                    subDescription: "Sr. Principal Engineer, Intel",
+                    link: "",
+                    color: "#E8EEF8"
+                }
+            ],
+        },
+        {
+            mainTime: "15.00-16.00",
+            leading: "Session 6",
+            trailing: "Tutorials",
+            color: "#D5E9FC",
+            subChildren: [
+                {
+                    time: "15.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Govindarajan Ramaswamy",
+                    subDescription: "IISc Bangalore",
+                    color: "#E6F2FD"
+                },
+                {
+                    time: "15.15 45m",
+                    heading: "Keynote of tracks 2",
+                    description: "Prof. Krishna Nandivada",
+                    subDescription: "IIT Madras",
+                    link: "",
+                    color: "#E6F2FD"
+                }
+            ],
+        },
+        {
+            mainTime: "16.00-17.00",
+            leading: "Session 7",
+            trailing: "Tutorials",
+            color: "#D2EAF3",
+            subChildren: [
+                {
+                    time: "16.00 15m",
+                    heading: "Introduction",
+                    description: "Prof. Komondoor V. Raghavan",
+                    subDescription: "IISc Bangalore",
+                    color: "#E3F4F7"
+                },
+                {
+                    time: "16.15 45m",
+                    heading: "Keynote of tracks 3",
+                    description: "Prof. Manas Thakur",
+                    subDescription: "IIT Bombay",
+                    link: "",
+                    color: "#E3F4F7"
+                }
+            ],
+        },
     ]
-};
+}
+
+export default dayOneData;
