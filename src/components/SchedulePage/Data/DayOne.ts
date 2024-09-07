@@ -114,7 +114,7 @@ const dayOneData: ScheduleTable = {
                     time: "13.00 60m",
                     heading: "Lunch",
                     description: "Catering",
-                    color: "#FAEBEB"
+                    color: "#EBFAEB"
                 }
             ],
         },

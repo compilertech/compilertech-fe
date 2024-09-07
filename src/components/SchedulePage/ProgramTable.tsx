@@ -15,25 +15,29 @@ function ProgramTable({ day }: ProgramTableProps) {
     <Wrapper>
       <Heading>
         <Date>{day.date}</Date>
-        {/* {day.displayedtimezone}
-        <Timezone>{day.timeZone}</Timezone> */}
-        {/* {dayOneData.change} */}
+        <Text>Displayed time zone:</Text>
+        <Timezone>India(Chennai, Kolkata, Mumbai, New Delhi) </Timezone>
+        change
       </Heading>
       {day.scheduleTableChildren.map((sessionData, index) => (
         <Session key={index} bgColor={sessionData.color}>
           <SessionHeader>
-            <SessionTime>{sessionData.mainTime}</SessionTime>
-            <SessionType>{sessionData.leading}</SessionType>
+            <IntialContent>
+              <SessionTime>{sessionData.mainTime}</SessionTime>
+              <SessionType>{sessionData.leading}</SessionType>
+            </IntialContent>
             <SessionCategory>{sessionData.trailing}</SessionCategory>
           </SessionHeader>
 
           {sessionData.subChildren.map((subChild, keyIndex) => (
             <Section key={keyIndex} bgColor={subChild.color}>
               <Duration>{subChild.time}</Duration>
-              <SectionHeading>{subChild.heading}</SectionHeading>
-              <Mentor>
-                {subChild.description}, {subChild.subDescription}
-              </Mentor>
+              <Content>
+                <SectionHeading>{subChild.heading}</SectionHeading>
+                <Mentor>
+                  {subChild.description}, {subChild.subDescription}
+                </Mentor>
+              </Content>
             </Section>
           ))}
         </Session>
@@ -44,132 +48,99 @@ function ProgramTable({ day }: ProgramTableProps) {
 
 export default ProgramTable;
 
-// <Heading>
-//     <Date>{day.date}</Date>
-//     {day.displayedtimezone}
-//     <Timezone>{day.timeZone}</Timezone>
-//     {/* {dayOneData.change} */}
-//   </Heading>
-//   {dayOneData.sessions.map((sessionData, index) => (
-//     <Session key={index} bgColor={sessionData.session.bgColor}>
-//       <SessionHeader>
-//         <SessionTime>{sessionData.session.sessionDuration}</SessionTime>
-//         <SessionType>{sessionData.session.sessionNumber}</SessionType>
-//         <SessionCategory>{sessionData.session.sessionType}</SessionCategory>
-//       </SessionHeader>
-
-//       {sessionData.introduction && (
-//         <Section bgColor={sessionData.introduction.bgcolor}>
-//           <Duration>{sessionData.introduction.duration}</Duration>
-//           <SectionHeading>
-//             {sessionData.introduction.heading}
-//           </SectionHeading>
-//           <Mentor>
-//             {sessionData.introduction.mentor},{" "}
-//             {sessionData.introduction.inst}
-//           </Mentor>
-//         </Section>
-//       )}
-
-//       {sessionData.keyNote &&
-//         sessionData.keyNote.map((keyNote, keyIndex) => (
-//           <Section key={keyIndex} bgColor={keyNote.bgcolor}>
-//             <Duration>{keyNote.duration}</Duration>
-//             <SectionHeading>{keyNote.heading}</SectionHeading>
-//             <Mentor>
-//               {keyNote.mentor}, {keyNote.inst}
-//             </Mentor>
-//           </Section>
-//         ))}
-
-//       {sessionData.lunch && (
-//         <Section bgColor={sessionData.lunch.bgcolor}>
-//           <Duration>{sessionData.lunch.duration}</Duration>
-//           <SectionHeading>{sessionData.lunch.heading}</SectionHeading>
-//           <Description>{sessionData.lunch.description}</Description>
-//         </Section>
-//       )}
-//     </Session>
-//   ))}
-
 const Heading = styled.div`
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 5px solid "#000";
-  border-radius: 5px;
+  height: 100px;
+  border-bottom: 1px solid #000;
 `;
 const Date = styled.div`
-  font-weight: bold;
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  margin: 15px;
 `;
 
 const Timezone = styled.span`
   font-weight: bold;
+  font-size: 17px;
+`;
+const Text = styled.text`
+  margin-left: 15px;
 `;
 // Apply StyledProps interface here to inform TypeScript of the expected prop types
 const Session = styled.div<StyledProps>`
   width: 100%;
   background-color: ${(props) => props.bgColor};
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 5px solid "#000";
-  border-radius: 5px;
+  border-bottom: 1px solid #000;
 `;
 
 const Section = styled.div<StyledProps>`
   background-color: ${(props) => props.bgColor};
-  margin-top: 10px;
-  padding: 5px;
-  border-radius: 3px;
+  height: 80px;
+  border-top: 1px solid #000;
+  display: flex;
+  align-items: center;
+  gap: 100px;
 `;
 
+const IntialContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 75px;
+`;
 // Other styled-components without props
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Satoshi", sans-serif;
   align-items: center;
   background-color: #f0f0f0;
-  border: 2px solid "#000";
+  border: 4px solid #3d3d3d;
 `;
 
 const SessionHeader = styled.div`
   display: flex;
+  width: 90%;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  height: 80px;
 `;
-
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const SessionTime = styled.span`
-  flex: 1;
+  width: 114px;
+  height: 50px;
+  background-color: #3d3d3d;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 200;
 `;
 
 const SessionType = styled.span`
-  flex: 1;
-  text-align: center;
+  text-align: start;
 `;
 
 const SessionCategory = styled.span`
-  flex: 1;
   text-align: right;
 `;
 
 const Duration = styled.span`
-  font-weight: bold;
-  margin-right: 10px;
+  margin-left: 25px;
 `;
 
 const SectionHeading = styled.span`
   font-weight: bold;
-  margin-right: 10px;
+  color: ${({ theme }) => theme.primary};
+  margin-bottom: 10px;
 `;
 
 const Mentor = styled.span`
   color: #555;
-`;
-
-const Description = styled.p`
-  margin: 5px 0;
-  color: #777;
-  font-size: 0.9rem;
 `;
