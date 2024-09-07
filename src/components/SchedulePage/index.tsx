@@ -19,7 +19,7 @@ function Schedule() {
               key={index}
               text={value}
               borderLeft={index === 0 ? "5px" : "0px"}
-              borderRight={index === 1 ? "0px" : "5px"}
+              borderRight={index === 1 ? "5px" : "0px"}
               onclick={() => {
                 setCurrentIndex(index);
               }}
@@ -28,8 +28,8 @@ function Schedule() {
           );
         })}
       </WrapperOutside>
-      {currentIndex == 0 && <ProgramTable />}
-      {currentIndex == 1 && <ProgramTable />}
+      {currentIndex == 0 && <ProgramTable day={dayOneData} />}
+      {currentIndex == 1 && <ProgramTable day={dayTwoData} />}
     </Section>
   );
 }

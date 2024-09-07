@@ -6,9 +6,19 @@ interface StyledProps {
   bgColor: string;
 }
 
-function ProgramTable() {
+interface ProgramTableProps {
+  day: any;
+}
+
+function ProgramTable({ day }: ProgramTableProps) {
   return (
     <Wrapper>
+      <Heading>
+        <Date>{day.date}</Date>
+        {day.displayedtimezone}
+        <Timezone>{day.timeZone}</Timezone>
+        {/* {dayOneData.change} */}
+      </Heading>
       {dayOneData.sessions.map((sessionData, index) => (
         <Session key={index} bgColor={sessionData.session.bgColor}>
           <SessionHeader>
@@ -56,6 +66,20 @@ function ProgramTable() {
 
 export default ProgramTable;
 
+const Heading = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 5px solid "#000";
+  border-radius: 5px;
+`;
+const Date = styled.div`
+  font-weight: bold;
+`;
+
+const Timezone = styled.span`
+  font-weight: bold;
+`;
 // Apply StyledProps interface here to inform TypeScript of the expected prop types
 const Session = styled.div<StyledProps>`
   width: 100%;
@@ -80,7 +104,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #f0f0f0;
-  padding: 20px;
+  border: 2px solid "#000";
 `;
 
 const SessionHeader = styled.div`

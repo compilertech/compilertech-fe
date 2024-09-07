@@ -1,6 +1,9 @@
-export const dayOneData = {
+
+export const dayOneData  = {
     date: "Sat 28 Sep",
-    timeZone: "Displayed time zone: India(Chennai, Kolkata, Mumbai, New Delhi) change",
+    displayedtimezone:"Displayed time zone:",
+    timeZone: "India(Chennai, Kolkata, Mumbai, New Delhi) ",
+    change:"change",
     bgColor: "#F0F0F0",
     sessions: [
         {
@@ -116,13 +119,13 @@ export const dayOneData = {
                 sessionDuration: "13.00-14.00",
                 sessionNumber: "Lunch",
                 sessionType: "Catering",
-                bgColor: "#FFFFFF"
+                bgColor: "#D6F5D6"
             },
             lunch: {
                 duration: "13.00 1h",
                 heading: "Lunch",
                 description: "Lorem ipsum dolor sit amet consectetur.",
-                bgcolor: "#FFFFFF"
+                bgcolor: "#EBFAEB"
             }
         },
         {

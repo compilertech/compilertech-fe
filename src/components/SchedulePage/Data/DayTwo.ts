@@ -116,13 +116,13 @@ export const dayTwoData = {
             sessionDuration : "13.00-14.00",
             sessionNumber : "Lunch",
             sessionType:"Catering",
-            bgColor:"#F5E6D6"
+            bgColor:"#F5DBD6"
           },
           lunch:{
             duration : "13.00 1h",
             heading : "Lunch",
             description : "Lorem ipsum dolor sit amet consectetur.",
-            bgcolor:"#F8EFE7"
+            bgcolor:"#FAEDEB"
           }
         },
         {
