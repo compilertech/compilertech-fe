@@ -15,7 +15,7 @@ function ProgramTable({ day }: ProgramTableProps) {
     <Wrapper>
       <Heading>
         <Date>{day.date}</Date>
-        <Text>Displayed time zone:</Text>
+        <Text>Displayed time zone: </Text>
         <Timezone>India(Chennai, Kolkata, Mumbai, New Delhi) </Timezone>
         change
       </Heading>
@@ -61,7 +61,8 @@ const Date = styled.div`
 
 const Timezone = styled.span`
   font-weight: bold;
-  font-size: 17px;
+  font-size: 15px;
+  letter-spacing: 1px;
 `;
 const Text = styled.text`
   margin-left: 15px;
@@ -79,7 +80,7 @@ const Section = styled.div<StyledProps>`
   border-top: 1px solid #000;
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 101px;
 `;
 
 const IntialContent = styled.div`
