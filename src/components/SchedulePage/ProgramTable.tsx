@@ -28,6 +28,11 @@ function ProgramTable({ day }: ProgramTableProps) {
                 <SessionTime>{sessionData.mainTime}</SessionTime>
               </SessionTimeWrapper>
               <SessionTypeWrapper>
+                {sessionData.subLeading && (
+                  <div>
+                    <Pill>Invited talk</Pill>
+                  </div>
+                )}
                 <SessionType>{sessionData.leading}</SessionType>
                 <SessionDescription>
                   {sessionData.subLeading}
@@ -54,6 +59,17 @@ function ProgramTable({ day }: ProgramTableProps) {
 }
 
 export default ProgramTable;
+
+const Pill = styled.div`
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #f5d6f5;
+  border: 2px solid ${({ theme }) => theme.primary};
+  border-radius: 24px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+`;
 
 const Heading = styled.div`
   padding: 20px;
@@ -174,7 +190,6 @@ const SessionTypeWrapper = styled.div`
 
 const SessionType = styled.span`
   color: black;
-  text-align: justify;
   font-family: Satoshi;
   font-size: 16px;
   font-style: normal;
@@ -209,7 +224,6 @@ const Duration = styled.span`
 
 const SectionHeading = styled.span`
   color: ${({ theme }) => theme.primary};
-  text-align: justify;
   font-family: Satoshi;
   font-size: 16px;
   font-style: normal;
