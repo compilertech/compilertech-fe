@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ScheduleTable } from "./Data/DayInterface";
-
+import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 // Define the interface for props
 interface StyledProps {
   bgColor: string;
@@ -52,6 +52,9 @@ const Heading = styled.div`
   width: 100%;
   height: 100px;
   border-bottom: 1px solid #000;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+  }
 `;
 const Date = styled.div`
   font-family: "Bebas Neue";
@@ -63,6 +66,9 @@ const Timezone = styled.span`
   font-weight: bold;
   font-size: 15px;
   letter-spacing: 1px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+  }
 `;
 const Text = styled.text`
   margin-left: 15px;
@@ -81,12 +87,20 @@ const Section = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   gap: 101px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+    gap: 95px;
+  }
 `;
 
 const IntialContent = styled.div`
   display: flex;
   align-items: center;
   gap: 75px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+    gap: 45px;
+  }
 `;
 // Other styled-components without props
 const Wrapper = styled.div`
@@ -97,6 +111,9 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #f0f0f0;
   border: 4px solid #3d3d3d;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+  }
 `;
 
 const SessionHeader = styled.div`
