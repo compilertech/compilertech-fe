@@ -21,25 +21,29 @@ function ProgramTable({ day }: ProgramTableProps) {
         </div>
       </Heading>
       {day.scheduleTableChildren.map((sessionData, index) => (
-        <Session key={index} bgColor={sessionData.color}>
-          <SessionHeader>
-            <SessionTimeWrapper>
-              <SessionTime>{sessionData.mainTime}</SessionTime>
-            </SessionTimeWrapper>
-            <SessionType>{sessionData.leading}</SessionType>
-          </SessionHeader>
+        <Session key={index} bgColor={sessionData.subLeading ? "#F5D6F5" : ""}>
+          {sessionData.leading && (
+            <SessionHeader>
+              <SessionTimeWrapper>
+                <SessionTime>{sessionData.mainTime}</SessionTime>
+              </SessionTimeWrapper>
+              <SessionTypeWrapper>
+                <SessionType>{sessionData.leading}</SessionType>
+                <SessionDescription>
+                  {sessionData.subLeading}
+                </SessionDescription>
+              </SessionTypeWrapper>
+            </SessionHeader>
+          )}
 
           {sessionData.subChildren.map((subChild, keyIndex) => (
-            <Section key={keyIndex} bgColor={subChild.color}>
-              <Duration>
-                {subChild.time.split(" ")[0]}{" "}
-                <span>{subChild.time.split(" ")[1]}</span>
-              </Duration>
+            <Section key={keyIndex} bgColor="white">
+              <Duration>{subChild.time}</Duration>
               <Content>
                 <SectionHeading>{subChild.heading}</SectionHeading>
-                <Mentor>
-                  {subChild.description}, <span>{subChild.subDescription}</span>
-                </Mentor>
+                {subChild.description && (
+                  <Mentor>{subChild.description}</Mentor>
+                )}
               </Content>
             </Section>
           ))}
@@ -126,7 +130,6 @@ const SessionHeader = styled.div`
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
-  height: 80px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 16px;
   }
@@ -162,6 +165,13 @@ const SessionTime = styled.span`
   display: inline-flex;
 `;
 
+const SessionTypeWrapper = styled.div`
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
 const SessionType = styled.span`
   color: black;
   text-align: justify;
@@ -171,7 +181,16 @@ const SessionType = styled.span`
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.28px;
-  flex: 4;
+`;
+
+const SessionDescription = styled.p`
+  color: var(--Black, #3d3d3d);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.28px;
 `;
 
 const Duration = styled.span`
@@ -183,16 +202,6 @@ const Duration = styled.span`
   font-weight: 500;
   line-height: 24px; /* 171.429% */
   letter-spacing: 0.28px;
-  span {
-    margin-left: 4px;
-    color: var(--Black, #3d3d3d);
-    font-family: Satoshi;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0.28px;
-  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex: 3;
   }

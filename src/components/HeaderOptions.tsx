@@ -33,14 +33,13 @@ const Wrapper = styled.div`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     gap: revert;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `;
 
 function HeaderOptions() {
   const navigate = useNavigate();
   const options: string[] = ["Organization", "Attending", "Schedule"];
-  // const options: string[] = ["Organization", "Attending"];
 
   function handleOnClick(path: string) {
     navigate(`/${path.toLowerCase()}`);
