@@ -23,20 +23,22 @@ function ProgramTable({ day }: ProgramTableProps) {
       {day.scheduleTableChildren.map((sessionData, index) => (
         <Session key={index} bgColor={sessionData.color}>
           <SessionHeader>
-            <IntialContent>
+            <div style={{ flex: 1 }}>
               <SessionTime>{sessionData.mainTime}</SessionTime>
-              <SessionType>{sessionData.leading}</SessionType>
-            </IntialContent>
-            <SessionCategory>{sessionData.trailing}</SessionCategory>
+            </div>
+            <SessionType>{sessionData.leading}</SessionType>
           </SessionHeader>
 
           {sessionData.subChildren.map((subChild, keyIndex) => (
             <Section key={keyIndex} bgColor={subChild.color}>
-              <Duration>{subChild.time}</Duration>
+              <Duration>
+                {subChild.time.split(" ")[0]}{" "}
+                <span>{subChild.time.split(" ")[1]}</span>
+              </Duration>
               <Content>
                 <SectionHeading>{subChild.heading}</SectionHeading>
                 <Mentor>
-                  {subChild.description}, {subChild.subDescription}
+                  {subChild.description}, <span>{subChild.subDescription}</span>
                 </Mentor>
               </Content>
             </Section>
@@ -97,26 +99,15 @@ const Session = styled.div<StyledProps>`
 
 const Section = styled.div<StyledProps>`
   background-color: ${(props) => props.bgColor};
-  height: 80px;
+  padding: 20px;
   border-top: 1px solid #000;
   display: flex;
   align-items: center;
-  gap: 101px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 12px;
-    gap: 95px;
   }
 `;
 
-const IntialContent = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 75px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
-    gap: 45px;
-  }
-`;
 // Other styled-components without props
 const Wrapper = styled.div`
   width: 100%;
@@ -132,9 +123,9 @@ const Wrapper = styled.div`
 `;
 
 const SessionHeader = styled.div`
+  padding: 20px;
   display: flex;
-  width: 90%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   font-weight: bold;
   height: 80px;
@@ -142,38 +133,81 @@ const SessionHeader = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 4;
+  gap: 4px;
 `;
 const SessionTime = styled.span`
-  width: 114px;
-  height: 50px;
+  padding: 8px 12px;
+  color: var(--White, #fafafa);
+  font-family: Satoshi;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  letter-spacing: 0.24px;
   background-color: #3d3d3d;
   border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin-left: 10px;
-  font-weight: 200;
+  display: inline-flex;
 `;
 
 const SessionType = styled.span`
-  text-align: start;
-`;
-
-const SessionCategory = styled.span`
-  text-align: right;
+  color: black;
+  text-align: justify;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.28px;
+  flex: 4;
 `;
 
 const Duration = styled.span`
-  margin-left: 25px;
+  flex: 1;
+  color: var(--Black, #3d3d3d);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.28px;
+  span {
+    margin-left: 4px;
+    color: var(--Black, #3d3d3d);
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.28px;
+  }
 `;
 
 const SectionHeading = styled.span`
-  font-weight: bold;
   color: ${({ theme }) => theme.primary};
-  margin-bottom: 10px;
+  text-align: justify;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.28px;
 `;
 
 const Mentor = styled.span`
-  color: #555;
+  color: var(--Black, #3d3d3d);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.28px;
+  span {
+    color: var(--Gray, #787878);
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.28px;
+  }
 `;

@@ -4,12 +4,12 @@ const dayOneData: ScheduleTable = {
     date: "Sat 28 Sep",
     scheduleTableChildren: [
         {
-            mainTime: "09.00-10.00",
+            mainTime: "09:00 - 10:00",
             leading: "Session 1",
             trailing: "Tutorials",
             subChildren: [
                 {
-                    time: "9.00 15m",
+                    time: "9:00 15m",
                     heading: "Introduction",
                     description: "Prof. Uday Khedker",
                     subDescription: "Indian Institute of Technology Bombay",
