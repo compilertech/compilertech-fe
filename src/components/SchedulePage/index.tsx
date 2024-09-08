@@ -42,7 +42,6 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 155px;
-  margin-bottom: 155px;
   background-color: ${({ theme }) => theme.body};
   transition: all 0.2s ease-in-out;
   @media (max-width: ${TABLET_BREAKPOINT}) {

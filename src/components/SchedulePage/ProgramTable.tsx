@@ -23,9 +23,9 @@ function ProgramTable({ day }: ProgramTableProps) {
       {day.scheduleTableChildren.map((sessionData, index) => (
         <Session key={index} bgColor={sessionData.color}>
           <SessionHeader>
-            <div style={{ flex: 1 }}>
+            <SessionTimeWrapper>
               <SessionTime>{sessionData.mainTime}</SessionTime>
-            </div>
+            </SessionTimeWrapper>
             <SessionType>{sessionData.leading}</SessionType>
           </SessionHeader>
 
@@ -69,6 +69,7 @@ const Date = styled.div`
   font-weight: 400;
   line-height: 32px; /* 133.333% */
   letter-spacing: 0.48px;
+  color: #000;
 `;
 
 const Timezone = styled.span`
@@ -104,7 +105,7 @@ const Section = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
+    padding: 16px;
   }
 `;
 
@@ -117,9 +118,6 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #f0f0f0;
   border: 4px solid #3d3d3d;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
-  }
 `;
 
 const SessionHeader = styled.div`
@@ -129,13 +127,28 @@ const SessionHeader = styled.div`
   align-items: center;
   font-weight: bold;
   height: 80px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 16px;
+  }
 `;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex: 4;
   gap: 4px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 4;
+  }
 `;
+
+const SessionTimeWrapper = styled.div`
+  flex: 1;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 3;
+  }
+`;
+
 const SessionTime = styled.span`
   padding: 8px 12px;
   color: var(--White, #fafafa);
@@ -179,6 +192,9 @@ const Duration = styled.span`
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.28px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 3;
   }
 `;
 
