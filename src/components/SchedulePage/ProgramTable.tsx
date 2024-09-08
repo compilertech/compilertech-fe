@@ -15,9 +15,10 @@ function ProgramTable({ day }: ProgramTableProps) {
     <Wrapper>
       <Heading>
         <Date>{day.date}</Date>
-        <Text>Displayed time zone: </Text>
-        <Timezone>India(Chennai, Kolkata, Mumbai, New Delhi) </Timezone>
-        change
+        <div>
+          <Text>Displayed time zone: </Text>
+          <Timezone>India (Chennai, Kolkata, Mumbai, New Delhi)</Timezone>
+        </div>
       </Heading>
       {day.scheduleTableChildren.map((sessionData, index) => (
         <Session key={index} bgColor={sessionData.color}>
@@ -49,29 +50,43 @@ function ProgramTable({ day }: ProgramTableProps) {
 export default ProgramTable;
 
 const Heading = styled.div`
+  padding: 20px;
   width: 100%;
-  height: 100px;
   border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
+    padding: 16px;
   }
 `;
 const Date = styled.div`
   font-family: "Bebas Neue";
-  font-size: 25px;
-  margin: 15px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: 0.48px;
 `;
 
 const Timezone = styled.span`
-  font-weight: bold;
-  font-size: 15px;
-  letter-spacing: 1px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
-  }
+  color: var(--Black, #3d3d3d);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.32px;
 `;
 const Text = styled.text`
-  margin-left: 15px;
+  color: var(--Black, #3d3d3d);
+  text-align: justify;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
 `;
 // Apply StyledProps interface here to inform TypeScript of the expected prop types
 const Session = styled.div<StyledProps>`
