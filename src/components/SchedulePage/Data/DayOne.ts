@@ -59,7 +59,7 @@ const dayOneData: ScheduleTable = {
           color: "#F5FAE5",
         },
         {
-          time: "11:40 - 12:00",
+          time: "12:20 - 12:40",
           heading:
             "Finite-State Machine Detection of Hardware Description Language via Static Analysis",
           description:
