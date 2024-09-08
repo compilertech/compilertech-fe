@@ -7,7 +7,7 @@ import PaginateButton from "./PaginateButton";
 import ProgramTable from "./ProgramTable";
 function Schedule() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const buttons = ["Day1", "Day2"];
+  const buttons = ["Day 1", "Day 2"];
 
   return (
     <Section>
@@ -19,8 +19,6 @@ function Schedule() {
             <PaginateButton
               key={index}
               text={value}
-              borderLeft={index === 0 ? "5px" : "0px"}
-              borderRight={index === 1 ? "5px" : "0px"}
               onclick={() => {
                 setCurrentIndex(index);
               }}
@@ -91,4 +89,10 @@ const WrapperOutside = styled.div`
   border-top: 1px solid ${({ theme }) => theme.imageborder};
   width: 100%;
   display: flex;
+  padding-top: 22px;
+  padding-bottom: 30px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
 `;
