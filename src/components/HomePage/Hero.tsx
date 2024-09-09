@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                 Dayananda Sagar College of Engineering, BANGALORE
               </a>
             </h3>
-            <ResitrationLine>September 15 anywhere on earth</ResitrationLine>
+            <ResitrationLine>Registration Deadline: September 15 <a href="https://www.timeanddate.com/time/zones/aoe">anywhere on earth</a></ResitrationLine>
             <ButtonContainer>
               <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
             </ButtonContainer>
