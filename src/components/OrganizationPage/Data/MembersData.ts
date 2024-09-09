@@ -37,7 +37,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Dr. Dibyendu Das",
     institute: "Sr. Principal Engineer, Intel",
     position: "(PC Member)",
-    link:"https://www.researchgate.net/profile/Dibyendu-Das",
+    link:"https://www.linkedin.com/in/dibyendu-das-80341b8/",
   },
   {
     id: "program_committee_m3",
@@ -53,7 +53,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Prof. Kartik Nagar",
     institute: "IIT Madras",
     position: "(PC Member)",
-    link:""    //missing
+    link:"https://kartiknagar.github.io/"
   },
   {
     id: "program_committee_m5",
@@ -93,7 +93,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Ramana Radhakrishnan",
     institute: "Director - CPU Compilers, Nvidia",
     position: "(PC Member)",
-    link:""    //missing
+    link:"https://in.linkedin.com/in/themadrasi"
   },
   {
     id: "program_committee_m10",
@@ -114,10 +114,10 @@ export const programCommitteeMemberData: MemberCardProps[] = [
   {
     id: "program_committee_m12",
     image: img12,
-    name: "Dr. Uday Bondhugula",
-    institute: "Founder, CEO & CTO, Polymage Labs",
+    name: "Prof. Uday Bondhugula",
+    institute: "IISc, Bangalore and Polymage Labs",
     position: "(PC Member)",
-    link:""    //missing
+    link:"https://www.csa.iisc.ac.in/~udayb/"
   },
 ];
 
