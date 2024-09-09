@@ -131,7 +131,8 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
             </div>
           </div>
           <Deadline>
-            Registration Deadline: <span>September 15</span>
+            Registration Deadline: <span>September 15</span>{" "}
+            <a href="https://time.is/Anywhere_on_Earth">(AoE)</a>
           </Deadline>
         </Body>
       </ModalContent>
@@ -171,8 +172,15 @@ const Body = styled.div`
 const Deadline = styled.p`
   text-align: center;
   color: black;
-  span {
+  span,
+  a {
     color: ${({ theme }) => theme.primary};
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 `;
 
