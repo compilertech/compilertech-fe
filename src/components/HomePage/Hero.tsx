@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -38,10 +38,6 @@ const Hero: React.FC = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
-  const handleCallForProposalClick = useCallback(() => {
-    window.open("https://easychair.org/conferences/?conf=compilertech2024");
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -103,9 +99,6 @@ const Hero: React.FC = () => {
             </h3>
             <ResitrationLine>September 15 anywhere on earth</ResitrationLine>
             <ButtonContainer>
-              <StyledButton onClick={handleCallForProposalClick}>
-                CALL FOR PROPOSALS
-              </StyledButton>
               <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
             </ButtonContainer>
           </div>
