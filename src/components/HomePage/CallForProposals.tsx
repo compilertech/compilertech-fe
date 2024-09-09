@@ -38,8 +38,11 @@ function CallForProposals() {
           compiler technologies. This year's theme focuses on the cutting-edge
           advancements in design, implementation, and optimization of compiler
           techniques as well as their applications in emerging software and
-          hardware platforms. We invite speakers from academia and industry to
-          present their work in one of the following Tracks.
+          hardware platforms. The workshop consists of accepted talks by our
+          esteemed Program Committee along with invited talks by experts from
+          both academia and industry. This is a novel opportunity to interact
+          and learn from experts and enthusiasts from both academia and industry.
+          Register and attend to make the best of this opportunity!
         </Description>
       </TextWrapper>
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>
