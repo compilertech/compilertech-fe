@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
 import RegisterModal from "./shared/RegisterModal";
@@ -36,10 +36,6 @@ const Header: React.FC<Props> = (props: Props) => {
     setIsOpen(!isOpen);
   };
 
-  const handleCallForProposalClick = useCallback(() => {
-    window.open("https://easychair.org/conferences/?conf=compilertech2024");
-  }, []);
-
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -76,9 +72,6 @@ const Header: React.FC<Props> = (props: Props) => {
             {isOpen && <CraftedBy />}
           </NavLinks>
           <Action isOpen={isOpen}>
-            <StyledButton onClick={handleCallForProposalClick}>
-              Abstract Submission Link
-            </StyledButton>
             <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
             <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
           </Action>

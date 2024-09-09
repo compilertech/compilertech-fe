@@ -130,6 +130,9 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
               </div>
             </div>
           </div>
+          <Deadline>
+            Registration Deadline: <span>September 15</span>
+          </Deadline>
         </Body>
       </ModalContent>
     </Backdrop>
@@ -163,6 +166,14 @@ const ModalContent = styled.div`
 
 const Body = styled.div`
   font-family: Satoshi;
+`;
+
+const Deadline = styled.p`
+  text-align: center;
+  color: black;
+  span {
+    color: ${({ theme }) => theme.primary};
+  }
 `;
 
 export default RegisterModal;
