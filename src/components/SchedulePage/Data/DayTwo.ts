@@ -4,6 +4,18 @@ const dayTwoData: ScheduleTable = {
   date: "Sun 29 Sep",
   scheduleTableChildren: [
     {
+      mainTime: null,
+      leading: null,
+      subChildren: [
+        {
+          time: "8:00 - 9:00",
+          heading: "Breakfast",
+          color: "#FAEBEB",
+        },
+      ],
+      color: "#F5D6D6",
+    },
+    {
       mainTime: "9:00 - 10:00",
       leading: "Optimizations for Object Oriented Programs",
       subLeading: "Manas Thakur",
