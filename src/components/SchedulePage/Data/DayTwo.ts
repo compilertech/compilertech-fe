@@ -18,27 +18,62 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "9:00 - 10:00",
       leading: "Optimizations for Object Oriented Programs",
-      subLeading: "Manas Thakur",
+      presenters: [
+        { name: "Manas Thakur", link: "https://www.cse.iitb.ac.in/~manas/" },
+      ],
       subChildren: [
         {
           time: "10:00 - 10:20",
           heading:
             "CoS-SSA: SSA for Context-Sensitive Interprocedural Analysis",
-          description:
-            "Pritam Gharat, Uday P. Khedker, Alan Mycroft, Supriya Bhide and Aditya Pradhan",
+          presenters: [
+            {
+              name: "Pritam Gharat",
+            },
+            {
+              name: "Uday P. Khedker",
+              link: "http://www.cse.iitb.ac.in/~uday",
+            },
+            {
+              name: "Alan Mycroft",
+            },
+            {
+              name: "Supriya Bhide",
+            },
+            {
+              name: "Aditya Pradhan",
+              link: "https://adityaanand7.github.io/",
+            },
+          ],
           color: "#EDEFFA",
         },
         {
           time: "10:20 - 10:40",
           heading:
             "A Correspondence Between ϕ-function Placement in SSA and Reaching Definitions Analysis",
-          description: "Supriya Bhide, Uday Khedker and Pritam Gharat",
+          presenters: [
+            {
+              name: "Supriya Bhide",
+            },
+            {
+              name: "Uday Khedker",
+              link: "http://www.cse.iitb.ac.in/~uday",
+            },
+            {
+              name: "Pritam Gharat",
+            },
+          ],
           color: "#EDEFFA",
         },
         {
           time: "10:40 - 11:00",
           heading: "pliron: An Extensible IR Framework in Rust",
-          description: "Vaivaswatha Nagaraj",
+          presenters: [
+            {
+              name: "Vaivaswatha Nagaraj",
+              link: "https://in.linkedin.com/in/vaivaswatha",
+            },
+          ],
           color: "#EDEFFA",
         },
       ],
@@ -52,27 +87,45 @@ const dayTwoData: ScheduleTable = {
           time: "11:30-11:50",
           heading:
             "SLIM: A High-Level Abstraction on LLVM IR Suitable for Program Analysis",
-          description:
-            "Aditi Raste, Aditya Pradhan, Akshat Oke and Uday Khedker",
+          presenters: [
+            {
+              name: "Aditi Raste",
+            },
+            {
+              name: "Aditya Pradhan",
+            },
+            {
+              name: "Akshat Oke",
+            },
+            {
+              name: "Uday Khedker",
+              link: "http://www.cse.iitb.ac.in/~uday",
+            },
+          ],
+
           color: "#F8EFE7",
         },
         {
           time: "11:50 - 12:10",
           heading: "Why generating Three Address Code for Javascript is hard",
-          description: "Meetesh Kalpesh Mehta",
+          presenters: [{ name: "Meetesh Kalpesh Mehta" }],
           color: "#F8EFE7",
         },
         {
           time: "12:10-12:30",
           heading:
             "Program Analysis for Managed Runtimes in Presence of Dynamic Features",
-          description: "Aditya Anand",
+          presenters: [
+            { name: "Aditya Anand", link: "https://adityaanand7.github.io/" },
+          ],
           color: "#F8EFE7",
         },
         {
           time: "12:30-12:50",
           heading: "Engineering behind OCaml's Effect handlers",
-          description: "Manas Jayanth",
+          presenters: [
+            { name: "Manas Jayanth", link: "https://x.com/ManasJayanth/" },
+          ],
           color: "#F8EFE7",
         },
       ],
@@ -103,13 +156,23 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "14:00-15:00",
       leading: "Translation Validation",
-      subLeading: "Supratik Chakraborty",
+      presenters: [
+        {
+          name: "Supratik Chakraborty",
+          link: "https://www.cse.iitb.ac.in/~supratik/",
+        },
+      ],
       subChildren: [
         {
           time: "15:00-15:20",
           heading:
             "Memspect: Tiny Static Analysis Framework for Real-World C Codebases",
-          description: "Hari Varsha",
+          presenters: [
+            {
+              name: "Hari Varsha",
+              link: "linkedin.com/in/harivarshav/",
+            },
+          ],
           color: "#F8EFE7",
         },
         // {
@@ -139,27 +202,42 @@ const dayTwoData: ScheduleTable = {
           time: "15:50 - 16:10",
           heading:
             "Fuzzing Programs with Structure-aware Fuzzers: An Industrial Case Study",
-          description:
-            "Das K Darshana, P Krishnahari, Kuriakose T Libna and C M Parvathy",
+          presenters: [
+            {
+              name: "Das K Darshana",
+            },
+            {
+              name: "P Krishnahari",
+            },
+            {
+              name: "Kuriakose T Libna",
+            },
+            {
+              name: "C M Parvathy",
+            },
+          ],
           color: "#FAEDEB",
         },
         {
           time: "16:10 - 16:30",
           heading: "Automated Verification of Concurrent Programs",
-          description: "Divyanjali Sharma and Subodh Sharma",
+          presenters: [
+            { name: "Divyanjali Sharma" },
+            { name: "Subodh Sharma" },
+          ],
           color: "#FAEDEB",
         },
         {
           time: "16:30 - 16:50",
           heading: "Live Code EMI Mutation: A Practical Approach",
-          description: "Kshitij Roodkee",
+          presenters: [{ name: "Kshitij Roodkee" }],
           color: "#FAEDEB",
         },
         {
           time: "16:50 - 17:10",
           heading:
             "Machine Learning Based Compiler Verification using Mutation Technique",
-          description: "Sushil Kr Soni",
+          presenters: [{ name: "Sushil Kr Soni" }],
           color: "#FAEDEB",
         },
       ],

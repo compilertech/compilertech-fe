@@ -23,20 +23,35 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "9:30 - 10:30",
       leading: "Building compilers for AI programming frameworks",
-      subLeading: "Uday Reddy Bondhugula",
+      presenters: [
+        {
+          name: "Uday Reddy Bondhugula",
+          link: "https://www.csa.iisc.ac.in/~udayb/",
+        },
+      ],
       subChildren: [
         {
           time: "10:30 - 10:50",
           heading: "FireDucks: Pandas Accelerator using MLIR",
-          description: "Sourav Saha, Kazuhisa Ishizaka and Ashu Thakur",
+          presenters: [
+            {
+              name: "Sourav Saha",
+              link: "https://fireducks-dev.github.io/",
+            },
+            { name: "Kazuhisa Ishizaka" },
+            { name: "Ashu Thakur" },
+          ],
           color: "#FDEDE0",
         },
         {
           time: "10:50 - 11:10",
           heading: "STGraph: A Framework for Temporal Graph Neural Networks",
-          description:
-            "Joel Mathew Cherian, Nithin Puthalath Manoj, Kevin Jude Concessao and Unnikrishnan Cheramangalath",
-          link: "",
+          presenters: [
+            { name: "Joel Mathew Cherian" },
+            { name: "Nithin Puthalath Manoj" },
+            { name: "Kevin Jude Concessao" },
+            { name: "Unnikrishnan Cheramangalath" },
+          ],
           color: "#FDEDE0",
         },
       ],
@@ -49,28 +64,47 @@ const dayOneData: ScheduleTable = {
         {
           time: "11:40 - 12:00",
           heading: "New Age of compilation for AI HPC",
-          description: "Srihari Karnam and Judhajit Dutta",
+          presenters: [{ name: "Srihari Karnam" }, { name: "Judhajit Dutta" }],
           color: "#F5FAE5",
         },
         {
           time: "12:00 - 12:20",
           heading: "No-ISA is the Best ISA",
-          description: "Shreeyash Pandey and Rishik Ram Jallarapu",
+          presenters: [
+            {
+              name: "Shreeyash Pandey",
+              link: "https://bojle.github.io/",
+            },
+            {
+              name: "Rishik Ram Jallarapu",
+              link: "https://github.com/markram1729",
+            },
+          ],
           color: "#F5FAE5",
         },
         {
           time: "12:20 - 12:40",
           heading:
             "Finite-State Machine Detection of Hardware Description Language via Static Analysis",
-          description:
-            "Ian D. Taras, Nicholas V. Giamblanco, Thomas Peters, Vikram Narayan and Samir Mittal",
+          presenters: [
+            { name: "Ian D. Taras" },
+            { name: "Nicholas V. Giamblanco" },
+            { name: "Thomas Peters" },
+            { name: "Vikram Narayan" },
+            { name: "Samir Mitta" },
+          ],
           color: "#F5FAE5",
         },
         {
           time: "12:40 - 13:00",
           heading:
             "Unveiling the Future: A Glimpse into the Emerging Landscape of Quantum Compilers",
-          description: "Tanmay Sarkar",
+          presenters: [
+            {
+              name: "Tanmay Sarkar",
+              link: "https://www.linkedin.com/in/tanmay-sarkar-02891519a",
+            },
+          ],
           color: "#F5FAE5",
         },
       ],
@@ -109,26 +143,40 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "14:00 - 14:30",
       leading: "Web3 and Program Analysis",
-      subLeading: "Saurabh Joshi",
+      presenters: [{ name: "Saurabh Joshi" }],
       color: "#D6F5D6",
       subChildren: [
         {
           time: "14:30 - 14:50",
           heading:
             "Techniques for IDE-friendly Compiler Construction and Applications in Blockchain",
-          description: "Bhavya Bhatt",
+          presenters: [
+            {
+              name: "Bhavya Bhatt",
+              link: "https://www.linkedin.com/in/bhavyabhatt/",
+            },
+          ],
           color: "#EBFAEB",
         },
         {
           time: "14:50 - 15:10",
           heading: "Formal verification of smart contracts",
-          description: "Vikramaditya Kokil",
+          presenters: [{ name: "Vikramaditya Kokil" }],
           color: "#EBFAEB",
         },
         {
           time: "15:10 - 15:30",
           heading: "C-lisp and Flexible Macro Programming with S-expressions",
-          description: "Vedanth Padmaraman and Sasank Chilamkurthy",
+          presenters: [
+            {
+              name: "Vedanth Padmaraman",
+              link: "https://github.com/GlowingScrewdriver",
+            },
+            {
+              name: "Sasank Chilamkurthy",
+              link: "https://chsasank.com",
+            },
+          ],
           color: "#EBFAEB",
         },
       ],
@@ -142,7 +190,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "16:00 - 16:20",
           heading: "What is Dyalog APL and What Can It Do For You?",
-          description: "Aarush Bhat",
+          presenters: [{ name: "Aarush Bhat" }],
           color: "#E8EEF8",
         },
       ],
@@ -151,7 +199,16 @@ const dayOneData: ScheduleTable = {
       mainTime: "16:20 - 17:35",
       leading:
         "DL4Compilers - Turbo-charging compiler optimizations via Deep Learning",
-      subLeading: "Dibyendu Das and Ramakrishna Upadrasta ",
+      presenters: [
+        {
+          name: "Dibyendu Das",
+          link: "https://in.linkedin.com/in/dibyendu-das-80341b8?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
+        },
+        {
+          name: "Ramakrishna Upadrasta",
+          link: "https://people.iith.ac.in/ramakrishna/",
+        },
+      ],
       color: "#D5E9FC",
       subChildren: [
         // {

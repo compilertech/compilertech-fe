@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ScheduleTable } from "./Data/DayInterface";
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
+import { LuLink } from "react-icons/lu";
 // Define the interface for props
 interface StyledProps {
   bgColor: string;
@@ -21,21 +22,28 @@ function ProgramTable({ day }: ProgramTableProps) {
         </div>
       </Heading>
       {day.scheduleTableChildren.map((sessionData, index) => (
-        <Session key={index} bgColor={sessionData.subLeading ? "#F5D6F5" : ""}>
+        <Session key={index} bgColor={sessionData.presenters ? "#F5D6F5" : ""}>
           {sessionData.leading && (
             <SessionHeader>
               <SessionTimeWrapper>
                 <SessionTime>{sessionData.mainTime}</SessionTime>
               </SessionTimeWrapper>
               <SessionTypeWrapper>
-                {sessionData.subLeading && (
+                {sessionData.presenters && (
                   <div>
                     <Pill>Invited talk</Pill>
                   </div>
                 )}
                 <SessionType>{sessionData.leading}</SessionType>
                 <SessionDescription>
-                  {sessionData.subLeading}
+                  {sessionData.presenters?.length &&
+                    sessionData.presenters.map((presenter, currentIdx) =>
+                      Presenter(
+                        presenter,
+                        sessionData.presenters?.length ?? 0,
+                        currentIdx
+                      )
+                    )}
                 </SessionDescription>
               </SessionTypeWrapper>
             </SessionHeader>
@@ -46,15 +54,55 @@ function ProgramTable({ day }: ProgramTableProps) {
               <Duration>{subChild.time}</Duration>
               <Content>
                 <SectionHeading>{subChild.heading}</SectionHeading>
-                {subChild.description && (
-                  <Mentor>{subChild.description}</Mentor>
-                )}
+                <div>
+                  {subChild.presenters?.map((presenter, currentIdx) =>
+                    Presenter(
+                      presenter,
+                      subChild.presenters?.length ?? 0,
+                      currentIdx
+                    )
+                  )}
+                </div>
               </Content>
             </Section>
           ))}
         </Session>
       ))}
     </Wrapper>
+  );
+}
+
+function Presenter(
+  presenter: { name: string; link?: string },
+  count: number,
+  currentIdx: number
+) {
+  let suffix = "";
+  if (count === 1 || count - 1 === currentIdx) {
+    suffix = "";
+  } else if ((count === 2 && currentIdx === 0) || currentIdx + 2 === count) {
+    suffix = " and ";
+  } else {
+    suffix = ", ";
+  }
+  console.log({ suffix, presenter, count, currentIdx });
+  return (
+    <>
+      {presenter.link ? (
+        <Mentor>
+          {presenter.name}
+          <a href={presenter.link}>
+            <LuLink color="#a93d9d" size={"12px"} />
+          </a>
+          {suffix}
+        </Mentor>
+      ) : (
+        <Mentor>
+          {presenter.name}
+          {suffix}
+        </Mentor>
+      )}
+    </>
   );
 }
 
@@ -240,6 +288,10 @@ const Mentor = styled.span`
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.28px;
+  a {
+    display: inline-block;
+    margin-left: 2px;
+  }
   span {
     color: var(--Gray, #787878);
     font-family: Satoshi;

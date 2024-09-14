@@ -16,13 +16,14 @@ export const attendingText = {
   accommodation: {
     title: "ACCOMMODATIONS",
     description:
-      "The following locations are near the venue and are relatively cheaper.",
+      "The hotels mentioned are mere suggestions for accommodations near the venue. IICT in no way endorses these locations. Please do your own due diligence.",
   },
   advices: {
-    title: "ADVICES",
+    title: "ON THE DAY OF THE WORKSHOP",
     description: [
-      "Identity proof (Driver's License, Student Id, Aadhaar, or Passport)",
+      "Please bring identity proof (Driver's License, Student Id, Aadhaar, or Passport)",
       "Email confirmation of the registration",
+      "If you don't have the confirmation please email support@compilertech.org or see someone at the checkin counter on the date of the registration.",
     ],
   },
 } as const;
