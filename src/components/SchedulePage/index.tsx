@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import dayOne from "./Data/DayOne";
@@ -8,13 +8,26 @@ import ProgramTable from "./ProgramTable";
 function Schedule() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const buttons = ["Day 1", "Day 2"];
-
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const dayNumber = urlParams.get("day") || "1";
+    if (dayNumber === "1") {
+      setCurrentIndex(0);
+    }
+    if (dayNumber === "2") {
+      setCurrentIndex(1);
+    }
+  }, []);
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("day", (currentIndex + 1).toString());
+    window.history.pushState(null, "", url.toString());
+  }, [currentIndex]);
   return (
     <Section>
       <Title>2024 Program</Title>
       <WrapperOutside>
         {buttons.map((value, index) => {
-          console.log(index);
           return (
             <PaginateButton
               key={index}
