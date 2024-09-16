@@ -124,7 +124,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
                     color: "#a93d9d",
                   }}
                 >
-                  <span style={{ fontSize: "22px" }}>₹</span>1000
+                  <span style={{ fontSize: "22px" }}>₹</span>2000
                 </p>
                 <form id="rzp_payment_form__professional"></form>
               </div>
