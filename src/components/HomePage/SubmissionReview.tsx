@@ -17,7 +17,9 @@ const SubmissionReview: React.FC = () => {
               presentation).
             </li>
             <li>
-              <Bold>Submision Deadline: September 1, 2024</Bold>
+              <Bold>
+                Submision Deadline: September 1, 2024 <Pill>Closed</Pill>
+              </Bold>
             </li>
           </ul>
         </Text>
@@ -34,7 +36,10 @@ const SubmissionReview: React.FC = () => {
               the field.
             </li>
             <li>
-              <Bold>Notification of acceptance: September 14, 2024</Bold>
+              <Bold>
+                Notification of acceptance: September 14, 2024{" "}
+                <Pill>Closed</Pill>
+              </Bold>
             </li>
           </ul>
         </Text>
@@ -108,6 +113,16 @@ const Text = styled.div`
   li {
     font-weight: 100;
   }
+`;
+const Pill = styled.div`
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #f5d6f5;
+  border: 2px solid ${({ theme }) => theme.primary};
+  border-radius: 24px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 export default SubmissionReview;

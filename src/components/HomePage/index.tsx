@@ -27,11 +27,11 @@ export default function Home() {
     <Main>
       <Hero />
       <CallForProposals />
+      <Sponsors />
       <About />
       <Interests />
       <Tracks />
       <SubmissionReview />
-      <Sponsors />
       <TravelAssistance />
     </Main>
   );

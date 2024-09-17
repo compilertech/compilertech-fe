@@ -36,6 +36,19 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 `;
+const Pill = styled.div`
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #f5d6f5;
+  border: 2px solid ${({ theme }) => theme.primary};
+  border-radius: 24px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  top: 112px;
+  left: 785px;
+`;
 
 function HeaderOptions() {
   const navigate = useNavigate();
@@ -58,6 +71,9 @@ function HeaderOptions() {
             {option}
           </OptionText>
         ))}
+        <div>
+          <Pill>New</Pill>
+        </div>
       </Wrapper>
     </Section>
   );

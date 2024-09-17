@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
-import { Button } from "../shared/Button";
+// import { Button } from "../shared/Button";
 import InterestCard from "./Interests/InterestCard";
 
 function CallForProposals() {
@@ -24,14 +24,14 @@ function CallForProposals() {
     },
   ];
 
-  const handleCallForProposalClick = () => {
-    window.open("https://easychair.org/conferences/?conf=compilertech2024");
-  };
+  // const handleCallForProposalClick = () => {
+  //   window.open("https://easychair.org/conferences/?conf=compilertech2024");
+  // };
 
   return (
     <Section id="call-for-proposals">
       <TextWrapper>
-        <Title>CALL FOR PROPOSALS</Title>
+        <Title>Vision of IICT</Title>
         <Description>
           The IICT (Innovations In Compiler Technology) workshop aims to bring
           together researchers, practitioners, and enthusiasts in the field of
@@ -41,15 +41,16 @@ function CallForProposals() {
           hardware platforms. The workshop consists of accepted talks by our
           esteemed Program Committee along with invited talks by experts from
           both academia and industry. This is a novel opportunity to interact
-          and learn from experts and enthusiasts from both academia and industry.
-          Register and attend to make the best of this opportunity!
+          and learn from experts and enthusiasts from both academia and
+          industry. Late Bird Special passes are still available! Register and
+          attend to make the best of this opportunity!
         </Description>
       </TextWrapper>
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>
-        <InterestCard
+        {/* <InterestCard
           title="About the proposals:"
           description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an abstract(for example https://llvm.org/devmtg/2023-02-25/), full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
-        />
+        /> */}
         <CardGroupContainerRow>
           {data.map((element) => {
             return (
@@ -57,11 +58,11 @@ function CallForProposals() {
             );
           })}
         </CardGroupContainerRow>
-        <ButtonContainer>
+        {/* <ButtonContainer>
           <Button onClick={handleCallForProposalClick}>
             Abstract Submission Link
           </Button>
-        </ButtonContainer>
+        </ButtonContainer> */}
       </CardGroupContainerColumn>
     </Section>
   );

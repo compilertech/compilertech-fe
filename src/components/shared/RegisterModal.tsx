@@ -14,6 +14,17 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
     const rzpProfessionalPaymentForm = document.getElementById(
       "rzp_payment_form__professional"
     );
+    const rzpLateBirdPaymentForm = document.getElementById(
+      "rzp_payment_form_lateBird"
+    );
+
+    if (rzpLateBirdPaymentForm && !rzpLateBirdPaymentForm.hasChildNodes()) {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+      script.async = true;
+      script.dataset.payment_button_id = "pl_OZypo9JDPLwY9M";
+      rzpLateBirdPaymentForm.appendChild(script);
+    }
 
     if (rzpStudentPaymentForm && !rzpStudentPaymentForm.hasChildNodes()) {
       const script = document.createElement("script");
@@ -131,8 +142,52 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
             </div>
           </div>
           <Deadline>
-            Registration Deadline: <span>September 15</span>{" "}
-            <a href="https://time.is/Anywhere_on_Earth">(AoE)</a>
+            Late Bird Special
+            <div
+              style={{ borderTop: "1px solid gray", marginTop: "5px" }}
+            ></div>
+            {/* <span>September 15</span>{" "} */}
+            {/* <a href="https://time.is/Anywhere_on_Earth">(AoE)</a> */}
+          </Deadline>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "Bebas Neue",
+                letterSpacing: "0.3px",
+                fontSize: "20px",
+                paddingTop: "3px",
+                paddingBottom: "3px",
+              }}
+            >
+              Last Minute Saver Registration
+            </h3>
+            <p>minimum 5 people/ 1500 INR per person</p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <form
+                id="rzp_payment_form_lateBird"
+                style={{ marginTop: "16px" }}
+              ></form>
+            </div>
+          </div>
+          <Deadline>
+            On successful registration, attendees will get a confirmation email.
+            However the transaction receipt is enough. In case of any queries
+            please email{" "}
+            <a
+              href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
+              target="_blank"
+            >
+              support@compilertech.org
+            </a>
           </Deadline>
         </Body>
       </ModalContent>
@@ -172,6 +227,7 @@ const Body = styled.div`
 const Deadline = styled.p`
   text-align: center;
   color: black;
+  padding: 10px;
   span,
   a {
     color: ${({ theme }) => theme.primary};
