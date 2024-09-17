@@ -141,15 +141,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
               </div>
             </div>
           </div>
-          <Deadline>
-            <div
-              style={{
-                borderTop: "1px solid gray",
-                paddingBottom: "12px",
-                marginTop: "10px",
-              }}
-            ></div>
-          </Deadline>
+          <Divider />
           <div
             style={{
               flex: 1,
@@ -170,7 +162,17 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
             >
               Last Minute Saver Registration
             </h3>
-            <p>minimum 5 people/ 1500 INR per person</p>
+            <RegistrationText>
+              Minimum 5 people (1500 INR per person). Please email the list of
+              attendees to{" "}
+              <a
+                href="mailto:support@compilertech.org?subject=Support%20for%20bulk%20registration"
+                target="_blank"
+              >
+                support@compilertech.org
+              </a>{" "}
+              after successful payment
+            </RegistrationText>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <form
                 id="rzp_payment_form_lateBird"
@@ -178,17 +180,18 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
               ></form>
             </div>
           </div>
-          <Deadline>
+          <Divider />
+          <RegistrationText>
             On successful registration, attendees will get a confirmation email.
             However the transaction receipt is enough. In case of any queries
             please email{" "}
             <a
-              href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
+              href="mailto:support@compilertech.org?subject=Support%20for%20registration"
               target="_blank"
             >
               support@compilertech.org
             </a>
-          </Deadline>
+          </RegistrationText>
         </Body>
       </ModalContent>
     </Backdrop>
@@ -224,7 +227,7 @@ const Body = styled.div`
   font-family: Satoshi;
 `;
 
-const Deadline = styled.p`
+const RegistrationText = styled.p`
   text-align: center;
   color: black;
   padding: 10px;
@@ -238,6 +241,12 @@ const Deadline = styled.p`
   a:hover {
     text-decoration: underline;
   }
+`;
+
+const Divider = styled.div`
+  border-top: 1px solid gray;
+  padding-bottom: 24px;
+  margin-top: 22px;
 `;
 
 export default RegisterModal;
