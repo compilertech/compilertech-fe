@@ -142,9 +142,12 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
             </div>
           </div>
           <Deadline>
-            Late Bird Special
+            <p style={{ paddingBottom: "15px" }}>Late Bird Special</p>
             <div
-              style={{ borderTop: "1px solid gray", marginTop: "5px" }}
+              style={{
+                borderTop: "1px solid gray",
+                paddingBottom: "10px",
+              }}
             ></div>
             {/* <span>September 15</span>{" "} */}
             {/* <a href="https://time.is/Anywhere_on_Earth">(AoE)</a> */}
@@ -164,8 +167,6 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, hidden }) => {
                 fontFamily: "Bebas Neue",
                 letterSpacing: "0.3px",
                 fontSize: "20px",
-                paddingTop: "3px",
-                paddingBottom: "3px",
               }}
             >
               Last Minute Saver Registration
