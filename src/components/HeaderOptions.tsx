@@ -70,9 +70,9 @@ function HeaderOptions() {
           >
             {option}
             {option === "Schedule" && (
-              <span style={{ display: "inline-block", marginLeft: "8px" }}>
+              <PillContainer>
                 <Pill position="inherit">New</Pill>
-              </span>
+              </PillContainer>
             )}
           </OptionText>
         ))}
@@ -82,3 +82,11 @@ function HeaderOptions() {
 }
 
 export default HeaderOptions;
+
+const PillContainer = styled.span`
+  display: inline-block;
+  margin-left: 8px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
+`;

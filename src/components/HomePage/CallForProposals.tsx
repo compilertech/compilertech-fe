@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
-// import { Button } from "../shared/Button";
 import InterestCard from "./Interests/InterestCard";
 
 function CallForProposals() {
@@ -24,10 +23,6 @@ function CallForProposals() {
     },
   ];
 
-  // const handleCallForProposalClick = () => {
-  //   window.open("https://easychair.org/conferences/?conf=compilertech2024");
-  // };
-
   return (
     <Section id="call-for-proposals">
       <TextWrapper>
@@ -47,10 +42,6 @@ function CallForProposals() {
         </Description>
       </TextWrapper>
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>
-        {/* <InterestCard
-          title="About the proposals:"
-          description="Proposals should provide sufficient information for the review committee to be able to judge the quality of the submission. Proposals can be submitted under the form of an abstract(for example https://llvm.org/devmtg/2023-02-25/), full paper, or slides. Accepted presentations must be presented in-person. The presentations and recordings may be publicly available in future."
-        /> */}
         <CardGroupContainerRow>
           {data.map((element) => {
             return (
@@ -58,11 +49,6 @@ function CallForProposals() {
             );
           })}
         </CardGroupContainerRow>
-        {/* <ButtonContainer>
-          <Button onClick={handleCallForProposalClick}>
-            Abstract Submission Link
-          </Button>
-        </ButtonContainer> */}
       </CardGroupContainerColumn>
     </Section>
   );
@@ -120,16 +106,6 @@ const Description = styled.p`
   text-align: justify;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    flex-direction: row;
   }
 `;
 
