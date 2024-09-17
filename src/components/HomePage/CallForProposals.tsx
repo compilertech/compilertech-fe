@@ -4,15 +4,15 @@ import InterestCard from "./Interests/InterestCard";
 
 function CallForProposals() {
   const data = [
-    {
-      title: "What we are looking for?",
-      content: [
-        "Keynote speakers (30-60minutes)",
-        "Technical presentations: 20 minutes plus questions and discussion",
-        "Tutorials (30-60minutes)",
-        "Poster presentations",
-      ],
-    },
+    // {
+    //   title: "What we are looking for?",
+    //   content: [
+    //     "Keynote speakers (30-60minutes)",
+    //     "Technical presentations: 20 minutes plus questions and discussion",
+    //     "Tutorials (30-60minutes)",
+    //     "Poster presentations",
+    //   ],
+    // },
     {
       title: "What types of people attend?",
       content: [
@@ -110,11 +110,14 @@ const Description = styled.p`
 `;
 
 const CardGroupContainerRow = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-row-gap: 24px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: flex;
