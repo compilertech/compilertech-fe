@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "../shared/Button";
 import Modal from "../shared/Modal";
-import { TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const About: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,7 +46,7 @@ const Section = styled.section`
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 7.5rem;
+  margin-top: 4.5rem;
   padding: 0 180px;
   background-color: ${({ theme }) => theme.body};
   height: auto !important;
@@ -56,6 +56,9 @@ const Section = styled.section`
     padding: revert;
     margin-top: 3.75rem;
     width: 90%;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 1.5rem;
   }
 `;
 

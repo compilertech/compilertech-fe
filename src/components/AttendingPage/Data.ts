@@ -22,6 +22,7 @@ export const attendingText = {
     title: "ON THE DAY OF THE WORKSHOP",
     description: [
       "Please bring identity proof (Driver's License, Student Id, Aadhaar, or Passport)",
+      "If you have registered as a student please bring your student ID for verification",
       "Email confirmation of the registration",
       "If you don't have the confirmation please email support@compilertech.org or see someone at the checkin counter on the date of the registration.",
     ],

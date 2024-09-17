@@ -99,7 +99,7 @@ const HeaderBox = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1001;
+  z-index: 100;
   background: ${({ theme }) => theme.body};
   border-bottom: 1px solid ${({ theme }) => theme.imageborder};
   height: fit-content;
