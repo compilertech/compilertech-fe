@@ -22,11 +22,12 @@ const Sponsors: React.FC = () => {
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
           innovations in compiler technology. Join us in making this event a
-          remarkable success. Three sponsorship tiers are available Platinum, Gold, and Silver. Please reach out
-          to know more about different tiers.
-          Every sponsor will get their names listed on our website.
-          Sponsors can also put booths to showcase their products, talk about their offerings, and share open job opportunities. You can directly donate using the link below or
-          email{" "}
+          remarkable success. Three sponsorship tiers are available Platinum,
+          Gold, and Silver. Please reach out to know more about different tiers.
+          Every sponsor will get their names listed on our website. Sponsors can
+          also put booths to showcase their products, talk about their
+          offerings, and share open job opportunities. You can directly donate
+          using the link below or email{" "}
           <Email
             href="mailto:support@compilertech.org?subject=Support%20for%20sponsorship"
             target="_blank"
@@ -46,14 +47,14 @@ const Section = styled.section`
   align-items: center;
   justify-content: space-around;
   height: auto;
-  margin-top: 3.5rem;
+  margin-top: 6rem;
   padding: 0 11.75rem;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 90%;
-    padding: 0;
+    padding: 2rem 0 0 0;
     margin-top: 1.5rem;
   }
 `;

@@ -56,7 +56,7 @@ const Section = styled.section`
   margin-top: 7.5rem;
   gap: 4rem;
   width: 100%;
-  padding: 0 11.25rem;
+  padding: 1rem 11.25rem 4rem 11.25rem;
   flex-direction: row;
   @media (min-width: ${MOBILE_BREAKPOINT}) and (max-width: ${TABLET_BREAKPOINT}) {
     padding: 0 4rem;

@@ -36,7 +36,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 `;
-const Pill = styled.div`
+const Pill = styled.div<{ position?: string }>`
   display: inline-block;
   padding: 2px 8px;
   background-color: #f5d6f5;
@@ -45,7 +45,7 @@ const Pill = styled.div`
   color: black;
   font-size: 14px;
   font-weight: 700;
-  position: absolute;
+  position: ${({ position }) => position || "absolute"};
   top: 112px;
   left: 785px;
 `;
@@ -69,11 +69,13 @@ function HeaderOptions() {
             selected={selectedOption === option.toLowerCase()}
           >
             {option}
+            {option === "Schedule" && (
+              <span style={{ display: "inline-block", marginLeft: "8px" }}>
+                <Pill position="inherit">New</Pill>
+              </span>
+            )}
           </OptionText>
         ))}
-        <div>
-          <Pill>New</Pill>
-        </div>
       </Wrapper>
     </Section>
   );
