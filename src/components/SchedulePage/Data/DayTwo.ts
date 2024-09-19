@@ -227,13 +227,6 @@ const dayTwoData: ScheduleTable = {
           ],
           color: "#FAEDEB",
         },
-        {
-          time: "16:30 - 16:50",
-          heading:
-            "Machine Learning Based Compiler Verification using Mutation Technique",
-          presenters: [{ name: "Sushil Kr Soni" }],
-          color: "#FAEDEB",
-        },
       ],
       color: "#F5DBD6",
     },
