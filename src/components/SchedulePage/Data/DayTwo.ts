@@ -229,12 +229,6 @@ const dayTwoData: ScheduleTable = {
         },
         {
           time: "16:30 - 16:50",
-          heading: "Live Code EMI Mutation: A Practical Approach",
-          presenters: [{ name: "Kshitij Roodkee" }],
-          color: "#FAEDEB",
-        },
-        {
-          time: "16:50 - 17:10",
           heading:
             "Machine Learning Based Compiler Verification using Mutation Technique",
           presenters: [{ name: "Sushil Kr Soni" }],

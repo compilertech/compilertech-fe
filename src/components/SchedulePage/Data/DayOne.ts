@@ -190,7 +190,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "16:00 - 16:20",
           heading: "What is Dyalog APL and What Can It Do For You?",
-          presenters: [{ name: "Aarush Bhat" }],
+          presenters: [{ name: "Aarush Bhat", link: "https://sloorush.com" }],
           color: "#E8EEF8",
         },
       ],
