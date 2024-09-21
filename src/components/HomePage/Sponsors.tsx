@@ -17,7 +17,27 @@ const Sponsors: React.FC = () => {
   return (
     <>
       <Section id="sponsors">
-        <Title>SPONSOR US</Title>
+        <Title>SPONSORS</Title>
+        <SponsorTypeSectionList>
+          <SponsorTypeSection>
+            <SponsorType>Platinum</SponsorType>
+            <SponsorListing>
+              <p>Contact us for sponsorship</p>
+            </SponsorListing>
+          </SponsorTypeSection>
+          <SponsorTypeSection>
+            <SponsorType>Gold</SponsorType>
+            <SponsorListing>
+              <p>Contact us for sponsorship</p>
+            </SponsorListing>
+          </SponsorTypeSection>
+          <SponsorTypeSection>
+            <SponsorType>Silver</SponsorType>
+            <SponsorListing>
+              <DarkSponsorImage src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp" />
+            </SponsorListing>
+          </SponsorTypeSection>
+        </SponsorTypeSectionList>
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
@@ -71,6 +91,63 @@ const Title = styled.p`
   }
 `;
 
+const SponsorTypeSectionList = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 60px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  width: 100%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+
+const SponsorTypeSection = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.lightText};
+`;
+
+const SponsorType = styled.h4`
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: ${({ theme }) => theme.primary};
+`;
+
+const SponsorListing = styled.div`
+  display: flex;
+  gap: 20px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    align-items: flex-start;
+    p {
+      margin-top: 12px;
+    }
+  }
+`;
+
+const DarkSponsorImage = styled.img`
+  height: 60px;
+  ${({ theme }) =>
+    theme.name === "light" &&
+    "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
+`;
+
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
   text-align: center;
@@ -89,6 +166,14 @@ const Description = styled.p`
     text-align: center;
     form {
       margin-top: 16px;
+    }
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: justify;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 `;

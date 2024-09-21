@@ -107,6 +107,9 @@ const Description = styled.p`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
   }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: justify;
+  }
 `;
 
 const CardGroupContainerRow = styled.div`
