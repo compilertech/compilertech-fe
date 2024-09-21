@@ -50,11 +50,11 @@ const Sponsors: React.FC = () => {
           <Divider />
           <SponsorTypeSectionList>
             <SponsorTypeSection>
-              <SponsorType>Sponsorship Trustee</SponsorType>
+              <SponsorType>Financial partner</SponsorType>
               <SponsorImage src="quick-silver.png" />
             </SponsorTypeSection>
             <SponsorTypeSection>
-              <SponsorType>Hospitality Supporter</SponsorType>
+              <SponsorType>Hospitality partner</SponsorType>
               <SponsorListing>
                 <SponsorImage height={80} src="dsce-logo.webp" />
               </SponsorListing>
