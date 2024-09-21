@@ -19,7 +19,7 @@ const Sponsors: React.FC = () => {
   return (
     <>
       <Section id="sponsors">
-        <Title>ACKNOWLEDGEMENT OF SUPPORT</Title>
+        <Title>SPONSORS & PARTNERS</Title>
         <SupporterDetails>
           <SponsorTypeSectionList>
             {/* <SponsorTypeSection>
@@ -61,7 +61,6 @@ const Sponsors: React.FC = () => {
             </SponsorTypeSection>
           </SponsorTypeSectionList>
         </SupporterDetails>
-        <Title>SPONSOR US</Title>
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
@@ -108,7 +107,7 @@ const Title = styled.p`
   font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   letter-spacing: 2px;
-  text-align: left;
+  text-align: center;
   color: ${({ theme }) => theme.primary};
   @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-bottom: 0.5rem;
@@ -122,17 +121,23 @@ const Divider = styled.div`
 const SupporterDetails = styled.div`
   padding: 16px;
   margin-top: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 20px;
+  }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 32px;
+    gap: 0px;
   }
 `;
 
 const SponsorTypeSectionList = styled.div`
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,7 +165,7 @@ const SponsorType = styled.h4`
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.04em;
-  text-align: left;
+  text-align: center;
   color: ${({ theme }) => theme.primary};
 `;
 
