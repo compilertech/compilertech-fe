@@ -19,33 +19,49 @@ const Sponsors: React.FC = () => {
   return (
     <>
       <Section id="sponsors">
-        <Title>SPONSORS</Title>
-        <SponsorTypeSectionList>
-          <SponsorTypeSection>
-            <SponsorType>Platinum</SponsorType>
-            <SponsorListing>
-              <p>Contact us for sponsorship</p>
-            </SponsorListing>
-          </SponsorTypeSection>
-          <SponsorTypeSection>
-            <SponsorType>Gold</SponsorType>
-            <SponsorListing>
-              <SponsorImage
-                src={
-                  theme.name === "light"
-                    ? "nvidia-logo-horz-dark.png"
-                    : "nvidia-logo-horz-light.png"
-                }
-              />
-            </SponsorListing>
-          </SponsorTypeSection>
-          <SponsorTypeSection>
-            <SponsorType>Silver</SponsorType>
-            <SponsorListing>
-              <p>Contact us for sponsorship</p>
-            </SponsorListing>
-          </SponsorTypeSection>
-        </SponsorTypeSectionList>
+        <Title>ACKNOWLEDGEMENT OF SUPPORT</Title>
+        <SupporterDetails>
+          <SponsorTypeSectionList>
+            {/* <SponsorTypeSection>
+              <SponsorType>Platinum</SponsorType>
+              <SponsorListing>
+                <p>Contact us for sponsorship</p>
+              </SponsorListing>
+            </SponsorTypeSection> */}
+            <SponsorTypeSection>
+              <SponsorType>Gold Sponsor</SponsorType>
+              <SponsorListing>
+                <SponsorImage
+                  src={
+                    theme.name === "light"
+                      ? "nvidia-logo-horz-dark.png"
+                      : "nvidia-logo-horz-light.png"
+                  }
+                />
+              </SponsorListing>
+            </SponsorTypeSection>
+            {/* <SponsorTypeSection>
+              <SponsorType>Silver</SponsorType>
+              <SponsorListing>
+                <p>Contact us for sponsorship</p>
+              </SponsorListing>
+            </SponsorTypeSection> */}
+          </SponsorTypeSectionList>
+          <Divider />
+          <SponsorTypeSectionList>
+            <SponsorTypeSection>
+              <SponsorType>Sponsorship Trustee</SponsorType>
+              <SponsorImage src="quick-silver.png" />
+            </SponsorTypeSection>
+            <SponsorTypeSection>
+              <SponsorType>Hospitality Supporter</SponsorType>
+              <SponsorListing>
+                <SponsorImage height="80" src="dsce-logo.webp" />
+              </SponsorListing>
+            </SponsorTypeSection>
+          </SponsorTypeSectionList>
+        </SupporterDetails>
+        <Title>SPONSOR US</Title>
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
@@ -98,18 +114,32 @@ const Title = styled.p`
     margin-bottom: 0.5rem;
   }
 `;
+const Divider = styled.div`
+  width: 1px;
+  border: 1px solid ${({ theme }) => theme.imageborder};
+`;
+
+const SupporterDetails = styled.div`
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 32px;
+  }
+`;
 
 const SponsorTypeSectionList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 60px;
-  margin-top: 16px;
-  margin-bottom: 32px;
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-top: 24px;
     flex-direction: column;
     gap: 20px;
   }
@@ -157,8 +187,8 @@ const SponsorListing = styled.div`
 //     "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
 // `;
 
-const SponsorImage = styled.img`
-  height: 60px;
+const SponsorImage = styled.img<{ height?: number }>`
+  height: ${({ height }) => height ?? 60}px;
 `;
 
 const Description = styled.p`
