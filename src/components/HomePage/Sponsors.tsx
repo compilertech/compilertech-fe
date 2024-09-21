@@ -56,7 +56,7 @@ const Sponsors: React.FC = () => {
             <SponsorTypeSection>
               <SponsorType>Hospitality Supporter</SponsorType>
               <SponsorListing>
-                <SponsorImage height="80" src="dsce-logo.webp" />
+                <SponsorImage height={80} src="dsce-logo.webp" />
               </SponsorListing>
             </SponsorTypeSection>
           </SponsorTypeSectionList>
