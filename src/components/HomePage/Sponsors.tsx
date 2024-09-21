@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const Sponsors: React.FC = () => {
+  const theme = useTheme();
+
   useEffect(() => {
     const rzpPaymentForm = document.getElementById("rzp_payment_form");
 
@@ -28,13 +30,19 @@ const Sponsors: React.FC = () => {
           <SponsorTypeSection>
             <SponsorType>Gold</SponsorType>
             <SponsorListing>
-              <p>Contact us for sponsorship</p>
+              <SponsorImage
+                src={
+                  theme.name === "light"
+                    ? "nvidia-logo-horz-dark.png"
+                    : "nvidia-logo-horz-light.png"
+                }
+              />
             </SponsorListing>
           </SponsorTypeSection>
           <SponsorTypeSection>
             <SponsorType>Silver</SponsorType>
             <SponsorListing>
-              <DarkSponsorImage src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp" />
+              <p>Contact us for sponsorship</p>
             </SponsorListing>
           </SponsorTypeSection>
         </SponsorTypeSectionList>
@@ -141,11 +149,16 @@ const SponsorListing = styled.div`
   }
 `;
 
-const DarkSponsorImage = styled.img`
+// PeakXV might require this
+// const DarkSponsorImage = styled.img`
+//   height: 60px;
+//   ${({ theme }) =>
+//     theme.name === "light" &&
+//     "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
+// `;
+
+const SponsorImage = styled.img`
   height: 60px;
-  ${({ theme }) =>
-    theme.name === "light" &&
-    "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
 `;
 
 const Description = styled.p`
