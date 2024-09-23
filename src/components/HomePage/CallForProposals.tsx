@@ -37,8 +37,7 @@ function CallForProposals() {
           esteemed Program Committee along with invited talks by experts from
           both academia and industry. This is a novel opportunity to interact
           and learn from experts and enthusiasts from both academia and
-          industry. Late bird registrations are still available! Register and
-          attend to make the best of this opportunity!
+          industry.
         </Description>
       </TextWrapper>
       <CardGroupContainerColumn style={{ marginTop: "24px" }}>

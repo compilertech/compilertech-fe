@@ -72,10 +72,6 @@ const Hero: React.FC = () => {
                 Dayananda Sagar College of Engineering, BANGALORE
               </a>
             </h3>
-            {/* <ResitrationLine>Registration Deadline: September 15 <a href="https://www.timeanddate.com/time/zones/aoe">anywhere on earth</a></ResitrationLine> */}
-            <ResitrationLine>
-              Late Bird registration still available!
-            </ResitrationLine>
           </div>
         </CarouselOverlay>
       </CarouselWrapper>
@@ -232,11 +228,6 @@ const CarouselOverlay = styled.div`
       max-width: 550px;
     }
   }
-`;
-const ResitrationLine = styled.p`
-  text-align: center;
-  font-size: 16px;
-  color: white;
 `;
 
 export default Hero;
