@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  MOBILE_BREAKPOINT,
-  SMALL_MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import { LuCalendarRange } from "react-icons/lu";
 import { TiLocationArrow } from "react-icons/ti";
-import { Button } from "../shared/Button";
-import RegisterModal from "../shared/RegisterModal";
 
 const Hero: React.FC = () => {
   const settings: Settings = {
@@ -31,25 +25,6 @@ const Hero: React.FC = () => {
       </DotsWrapper>
     ),
   };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <StyledSection id="hero">
@@ -101,55 +76,12 @@ const Hero: React.FC = () => {
             <ResitrationLine>
               Late Bird registration still available!
             </ResitrationLine>
-            <ButtonContainer>
-              <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
-            </ButtonContainer>
           </div>
         </CarouselOverlay>
       </CarouselWrapper>
-      {width <= 786 && (
-        <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
-      )}
     </StyledSection>
   );
 };
-
-const ButtonContainer = styled.div`
-  display: none;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    width: 100%;
-    margin-top: 4px;
-    justify-content: center;
-  }
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    gap: 8px;
-    margin-top: 8px;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  color: white !important;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  flex: 1;
-  max-width: 220px;
-  text-wrap: nowrap;
-  font-size: 20px;
-  padding: 6px 10px !important;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    max-width: 200px;
-    padding: 4px 6px !important;
-    font-size: 18px;
-  }
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 16px;
-    padding: 3px 6px !important;
-  }
-`;
 
 const StyledSection = styled.section`
   display: flex;

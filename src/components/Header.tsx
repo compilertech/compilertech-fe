@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ThemeToggle from "./ThemeToggle";
-import RegisterModal from "./shared/RegisterModal";
-import { Button } from "./shared/Button";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../styles/GlobalStyle";
 import CraftedBy from "./shared/CraftedBy";
 import HeaderOptions from "./HeaderOptions";
@@ -16,8 +14,6 @@ type Props = {
 const Header: React.FC<Props> = (props: Props) => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
   const allLinks = [
     { id: "/#about", desc: "about" },
     { id: "/#interests", desc: "topics of interests" },
@@ -28,26 +24,9 @@ const Header: React.FC<Props> = (props: Props) => {
     { id: "/#travel-assistance", desc: "travel assistance" },
   ];
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
       <HeaderBox>
@@ -72,7 +51,6 @@ const Header: React.FC<Props> = (props: Props) => {
             {isOpen && <CraftedBy />}
           </NavLinks>
           <Action isOpen={isOpen}>
-            <StyledButton onClick={toggleModal}>REGISTER NOW</StyledButton>
             <ThemeToggle theme={props.theme} toggleTheme={props.onClick} />
           </Action>
           <Hamburger isOpen={isOpen} onClick={handleToggle}>
@@ -83,10 +61,6 @@ const Header: React.FC<Props> = (props: Props) => {
         </NavBar>
         <HeaderOptions />
       </HeaderBox>
-
-      {width > 786 && (
-        <RegisterModal onClose={toggleModal} hidden={!isModalOpen} />
-      )}
     </>
   );
 };
@@ -129,12 +103,6 @@ const HeaderBox = styled.header`
   }
 `;
 
-const StyledButton = styled(Button)`
-  color: white !important;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-`;
 const Action = styled.div<{ isOpen: boolean }>`
   display: flex;
   align-items: center;
