@@ -20,7 +20,6 @@ const Sponsors: React.FC = () => {
     <>
       <Section id="sponsors">
         <Title>SPONSORS & PARTNERS</Title>
-        {/* <Title>SPONSOR US</Title> */}
         <SupporterDetails>
           <SponsorTypeSectionList>
             <SponsorTypeSection>
