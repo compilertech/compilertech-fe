@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const Sponsors: React.FC = () => {
-  // const theme = useTheme();
+  const theme = useTheme();
 
   useEffect(() => {
     const rzpPaymentForm = document.getElementById("rzp_payment_form");
@@ -19,18 +19,19 @@ const Sponsors: React.FC = () => {
   return (
     <>
       <Section id="sponsors">
-        {/* <Title>SPONSORS & PARTNERS</Title> */}
-        <Title>SPONSOR US</Title>
-        {/* <SupporterDetails>
+        <Title>SPONSORS & PARTNERS</Title>
+        {/* <Title>SPONSOR US</Title> */}
+        <SupporterDetails>
           <SponsorTypeSectionList>
             <SponsorTypeSection>
               <SponsorType>Gold Sponsor</SponsorType>
               <SponsorListing>
                 <SponsorImage
+                  height={70}
                   src={
                     theme.name === "light"
-                      ? "nvidia-logo-horz-dark.png"
-                      : "nvidia-logo-horz-light.png"
+                      ? "nvidia-logo-vert-light.png"
+                      : "nvidia-logo-vert-dark.png"
                   }
                 />
               </SponsorListing>
@@ -49,7 +50,7 @@ const Sponsors: React.FC = () => {
               </SponsorListing>
             </SponsorTypeSection>
           </SponsorTypeSectionList>
-        </SupporterDetails> */}
+        </SupporterDetails>
         <Description>
           We are looking for sponsors! Your support will help us deliver a
           high-quality, impactful workshop, fostering the next wave of
@@ -102,76 +103,76 @@ const Title = styled.p`
     margin-bottom: 0.5rem;
   }
 `;
-// const Divider = styled.div`
-//   width: 1px;
-//   border: 1px solid ${({ theme }) => theme.imageborder};
-// `;
+const Divider = styled.div`
+  width: 1px;
+  border: 1px solid ${({ theme }) => theme.imageborder};
+`;
 
-// const SupporterDetails = styled.div`
-//   padding: 16px;
-//   margin-top: 16px;
-//   margin-bottom: 32px;
-//   display: flex;
-//   width: 100%;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   @media (max-width: ${TABLET_BREAKPOINT}) {
-//     flex-direction: column;
-//     gap: 20px;
-//   }
-//   @media (max-width: ${MOBILE_BREAKPOINT}) {
-//     margin-bottom: 32px;
-//     gap: 0px;
-//   }
-// `;
+const SupporterDetails = styled.div`
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 32px;
+    gap: 0px;
+  }
+`;
 
-// const SponsorTypeSectionList = styled.div`
-//   margin-top: 16px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   gap: 60px;
-//   width: 100%;
-//   @media (max-width: ${MOBILE_BREAKPOINT}) {
-//     flex-direction: column;
-//     gap: 20px;
-//   }
-// `;
+const SponsorTypeSectionList = styled.div`
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
 
-// const SponsorTypeSection = styled.div`
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   color: ${({ theme }) => theme.lightText};
-// `;
+const SponsorTypeSection = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.lightText};
+`;
 
-// const SponsorType = styled.h4`
-//   font-family: monospace;
-//   font-size: 24px;
-//   font-weight: 600;
-//   line-height: 40px;
-//   letter-spacing: 0.04em;
-//   text-align: center;
-//   color: ${({ theme }) => theme.primary};
-// `;
+const SponsorType = styled.h4`
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: ${({ theme }) => theme.primary};
+`;
 
-// const SponsorListing = styled.div`
-//   display: flex;
-//   gap: 20px;
-//   height: 72px;
-//   align-items: center;
-//   justify-content: center;
-//   text-align: center;
-//   @media (max-width: ${MOBILE_BREAKPOINT}) {
-//     align-items: flex-start;
-//     p {
-//       margin-top: 12px;
-//     }
-//   }
-// `;
+const SponsorListing = styled.div`
+  display: flex;
+  gap: 20px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    align-items: flex-start;
+    p {
+      margin-top: 12px;
+    }
+  }
+`;
 
 // PeakXV might require this
 // const DarkSponsorImage = styled.img`
@@ -181,9 +182,9 @@ const Title = styled.p`
 //     "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
 // `;
 
-// const SponsorImage = styled.img<{ height?: number }>`
-//   height: ${({ height }) => height ?? 60}px;
-// `;
+const SponsorImage = styled.img<{ height?: number }>`
+  height: ${({ height }) => height ?? 60}px;
+`;
 
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
