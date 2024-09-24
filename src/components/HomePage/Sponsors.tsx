@@ -26,11 +26,11 @@ const Sponsors: React.FC = () => {
               <SponsorType>Gold Sponsor</SponsorType>
               <SponsorListing>
                 <SponsorImage
-                  height={70}
+                  height={80}
                   src={
                     theme.name === "light"
-                      ? "nvidia-logo-vert-light.png"
-                      : "nvidia-logo-vert-dark.png"
+                      ? "nvidia-logo-vert-rgb-blk-for-screen.png"
+                      : "nvidia-logo-vert-rgb-wht-for-screen.png"
                   }
                 />
               </SponsorListing>
@@ -40,12 +40,16 @@ const Sponsors: React.FC = () => {
           <SponsorTypeSectionList>
             <SponsorTypeSection>
               <SponsorType>Financial partner</SponsorType>
-              <SponsorImage src="quick-silver.png" />
+              <SponsorImage
+                height={55}
+                style={{ marginTop: "6px" }}
+                src="quick-silver.png"
+              />
             </SponsorTypeSection>
             <SponsorTypeSection>
               <SponsorType>Hospitality partner</SponsorType>
               <SponsorListing>
-                <SponsorImage height={80} src="dsce-logo.webp" />
+                <SponsorImage height={75} src="dsce-logo.webp" />
               </SponsorListing>
             </SponsorTypeSection>
           </SponsorTypeSectionList>
