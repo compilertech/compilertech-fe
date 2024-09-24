@@ -42,7 +42,7 @@ const dayTwoData: ScheduleTable = {
             },
             {
               name: "Aditya Pradhan",
-              link: "https://adityaanand7.github.io/",
+              link: "https://www.linkedin.com/in/aditya-pradhan-911b94121/",
             },
           ],
           color: "#EDEFFA",
@@ -93,6 +93,7 @@ const dayTwoData: ScheduleTable = {
             },
             {
               name: "Aditya Pradhan",
+              link: "https://www.linkedin.com/in/aditya-pradhan-911b94121/",
             },
             {
               name: "Akshat Oke",
@@ -170,7 +171,7 @@ const dayTwoData: ScheduleTable = {
           presenters: [
             {
               name: "Hari Varsha",
-              link: "linkedin.com/in/harivarshav/",
+              link: "https://linkedin.com/in/harivarshav/",
             },
           ],
           color: "#F8EFE7",
