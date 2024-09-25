@@ -13,7 +13,7 @@ export const attendingText = {
   documents: {
     title: "DOCUMENTS",
     description:
-      "Information provided in these documents would be helpful all involved in the IICT 2024 workshop. This includes an attendees manual and a speakers manual.",
+      "The information provided in these documents will be valuable for all participants involved in the IICT 2024 workshop, including both the speaker's manual and the attendee guide.",
   },
 
   location: {
