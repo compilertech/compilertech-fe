@@ -4,9 +4,12 @@ import { attendingText, vectors } from "./Data";
 import { useLayoutEffect } from "react";
 
 function Attending() {
-  const { location, accommodation, advices } = attendingText;
-  const { location: locationVectors, accomodation: accommodationVectors } =
-    vectors;
+  const { location, accommodation, advices, documents } = attendingText;
+  const {
+    location: locationVectors,
+    accomodation: accommodationVectors,
+    documents: documentVectors,
+  } = vectors;
   const height: number = 40;
   const onClickIcon = (href: string) => {
     window.open(href, "_blank");
@@ -20,6 +23,27 @@ function Attending() {
     <Section>
       <Heading>{attendingText.heading}</Heading>
       <WrapperOutside>
+        <Wrapper>
+          <TextWrapper style={{ flex: 1 }}>
+            <Title>{documents.title}</Title>
+          </TextWrapper>
+          <Body style={{ flex: 1, alignItems: "center" }}>
+            <Description style={{ flex: 1 }}>
+              {documents.description}
+            </Description>
+            {documentVectors.map((value, index) => (
+              <IconWrapper
+                key={index}
+                style={{ flex: 1 }}
+                onClick={() => onClickIcon(value.href)}
+              >
+                <img src={value.icon} height={height} alt="document-icon" />
+                <IconDescription>{value.details}</IconDescription>
+              </IconWrapper>
+            ))}
+            <Description style={{ flex: 1 }}></Description>
+          </Body>
+        </Wrapper>
         <Wrapper>
           <TextWrapper style={{ flex: 1 }}>
             <Title>{location.title}</Title>

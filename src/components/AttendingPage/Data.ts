@@ -4,9 +4,17 @@ import vector3 from "../../assets/attending/Vector3.svg";
 import vector4 from "../../assets/attending/Vector4.svg";
 import vector5 from "../../assets/attending/Vector5.svg";
 import vector6 from "../../assets/attending/Vector6.svg";
+import attendeeManualSvg from "../../assets/attending/attending-manual.svg";
+import speakerManualSvg from "../../assets/attending/speaker-manual.svg";
 
 export const attendingText = {
   heading: "Venue: Dayananda Sagar College of Engineering, BANGALORE",
+
+  documents: {
+    title: "DOCUMENTS",
+    description:
+      "Information provided in these documents would be helpful all involved in the IICT 2024 workshop. This includes an attendees manual and a speakers manual.",
+  },
 
   location: {
     title: "LOCATION",
@@ -30,6 +38,18 @@ export const attendingText = {
 } as const;
 
 export const vectors = {
+  documents: [
+    {
+      icon: speakerManualSvg,
+      details: "Speaker's manual",
+      href: "https://docs.google.com/document/d/1Fxj_BZ2JO-vCFrbphYjrmsyBAKuiCpn2ptQLT2OKqSQ/edit#heading=h.103k0c1w6500",
+    },
+    {
+      icon: attendeeManualSvg,
+      details: "Attendee's manual",
+      href: "https://docs.google.com/document/d/1_iIHd0P8XYMwigJsZa8OaYVEmjcPa3VB-SPl-7PL3vo/edit#heading=h.103k0c1w6500",
+    },
+  ],
   location: [
     {
       icon: vector1,
