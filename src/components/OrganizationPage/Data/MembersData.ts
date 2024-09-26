@@ -152,7 +152,7 @@ export const organizingCommitteeMemberData: MemberCardProps[] = [
       image: img4_OC,
       name: "Prerona Chaudhuri",
       institute: "Nvidia",
-      position: "(Volunteer)",
+      position: "(Co-chair)",
       link:"https://www.linkedin.com/in/prerona-chaudhuri-893091141/",
     },
     {
