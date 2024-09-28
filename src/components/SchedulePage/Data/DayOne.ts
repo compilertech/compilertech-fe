@@ -85,7 +85,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "12:20 - 12:40",
           heading:
-            "Finite-State Machine Detection of Hardware Description Language via Static Analysis",
+            "Towards Higher First Silicon Success via Improved Finite-State Machine Detection",
           presenters: [
             { name: "Ian D. Taras" },
             { name: "Nicholas V. Giamblanco" },
