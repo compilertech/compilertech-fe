@@ -35,6 +35,27 @@ const Sponsors: React.FC = () => {
                 />
               </SponsorListing>
             </SponsorTypeSection>
+            <SponsorTypeSection>
+              <SponsorType>Silver Sponsor</SponsorType>
+              <SponsorListing>
+                <SponsorImage
+                  height={60}
+                  src="PEAK-XV_PARTNERS_Formerly_Logo_NEG-Updated.webp"
+                  style={
+                    theme.name === "light"
+                      ? {
+                          backgroundColor: "black",
+                          padding: "4px",
+                          borderRadius: "4px",
+                        }
+                      : {
+                          padding: "4px",
+                          borderRadius: "4px",
+                        }
+                  }
+                />
+              </SponsorListing>
+            </SponsorTypeSection>
           </SponsorTypeSectionList>
           <Divider />
           <SponsorTypeSectionList>
@@ -176,14 +197,6 @@ const SponsorListing = styled.div`
     }
   }
 `;
-
-// PeakXV might require this
-// const DarkSponsorImage = styled.img`
-//   height: 60px;
-//   ${({ theme }) =>
-//     theme.name === "light" &&
-//     "background-color: black; border-radius: 8px; padding: 8px; margin: 8px;"}
-// `;
 
 const SponsorImage = styled.img<{ height?: number }>`
   height: ${({ height }) => height ?? 60}px;
