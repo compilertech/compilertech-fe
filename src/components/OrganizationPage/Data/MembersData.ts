@@ -101,7 +101,7 @@ export const programCommitteeMemberData: MemberCardProps[] = [
     name: "Dr. Saurabh Joshi",
     institute: "Principal Researcher, Supra Research",
     position: "(PC Member)",
-    link:"https://supra.com/research-team/saurabh-joshi/",
+    link:"https://sbjoshi.github.io/",
   },
   {
     id: "program_committee_m11",
