@@ -11,6 +11,7 @@ import Home from "./components/HomePage";
 import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";
+import Home2 from "./components/2025Page";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -52,7 +53,8 @@ function App() {
       <Wrapper>
         <Header onClick={toggleTheme} theme={theme} />
         <Routes>
-          <Route path="/2024" element={<Home />} />
+          {/* <Route path="/" element={<Home2 />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/organization" element={<Organization />} />
           <Route path="/attending" element={<Attending />} />
           <Route path="/schedule" element={<Schedule />} />
