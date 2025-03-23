@@ -12,14 +12,14 @@ const dayOneData: ScheduleTable = {
           time: "8:00 - 9:00",
           heading: "Registration and Breakfast",
           color: "#FAEBEB",
-          YTLink: null,
+          ytLink: null,
           presenters: []
         },
         {
           time: "9:00 - 9:30",
           heading: "Welcome and General Address",
           color: "#FAEBEB",
-          YTLink: null,
+          ytLink: null,
           presenters: []
         },
       ],
@@ -39,7 +39,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "10:30 - 10:50",
           heading: "FireDucks: Pandas Accelerator using MLIR",
-          YTLink: "https://youtu.be/66HU88aZZoc",
+          ytLink: "https://youtu.be/66HU88aZZoc",
           presenters: [
             {
               name: "Sourav Saha",
@@ -53,7 +53,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "10:50 - 11:10",
           heading: "STGraph: A Framework for Temporal Graph Neural Networks",
-          YTLink: "https://youtu.be/X6GBpO07yHs",
+          ytLink: "https://youtu.be/X6GBpO07yHs",
           presenters: [
             { name: "Joel Mathew Cherian" },
             { name: "Nithin Puthalath Manoj" },
@@ -73,14 +73,14 @@ const dayOneData: ScheduleTable = {
         {
           time: "11:40 - 12:00",
           heading: "New Age of compilation for AI HPC",
-          YTLink: "https://youtu.be/kgRGQfwLkqc",
+          ytLink: "https://youtu.be/kgRGQfwLkqc",
           presenters: [{ name: "Srihari Karnam" }, { name: "Judhajit Dutta" }],
           color: "#F5FAE5",
         },
         {
           time: "12:00 - 12:20",
           heading: "No-ISA is the Best ISA",
-          YTLink: "https://youtu.be/G4fxdHozm5I",
+          ytLink: "https://youtu.be/G4fxdHozm5I",
           presenters: [
             {
               name: "Shreeyash Pandey",
@@ -97,7 +97,7 @@ const dayOneData: ScheduleTable = {
           time: "12:20 - 12:40",
           heading:
             "Towards Higher First Silicon Success via Improved Finite-State Machine Detection",
-          YTLink: "https://youtu.be/taPgiRXyrvo",
+          ytLink: "https://youtu.be/taPgiRXyrvo",
           presenters: [
             { name: "Ian D. Taras" },
             { name: "Nicholas V. Giamblanco" },
@@ -111,7 +111,7 @@ const dayOneData: ScheduleTable = {
           time: "12:40 - 13:00",
           heading:
             "Unveiling the Future: A Glimpse into the Emerging Landscape of Quantum Compilers",
-          YTLink: "https://youtu.be/igidoLf4Exk",
+          ytLink: "https://youtu.be/igidoLf4Exk",
           presenters: [
             {
               name: "Tanmay Sarkar",
@@ -165,7 +165,7 @@ const dayOneData: ScheduleTable = {
           time: "14:30 - 14:50",
           heading:
             "Techniques for IDE-friendly Compiler Construction and Applications in Blockchain",
-          YTLink: "https://youtu.be/4u3uNgtO8TU",
+          ytLink: "https://youtu.be/4u3uNgtO8TU",
           presenters: [
             {
               name: "Bhavya Bhatt",
@@ -177,14 +177,14 @@ const dayOneData: ScheduleTable = {
         {
           time: "14:50 - 15:10",
           heading: "Formal verification of smart contracts",
-          YTLink: "https://youtu.be/cJOEvSnjuH8",
+          ytLink: "https://youtu.be/cJOEvSnjuH8",
           presenters: [{ name: "Vikramaditya Kokil" }],
           color: "#EBFAEB",
         },
         {
           time: "15:10 - 15:30",
           heading: "C-lisp and Flexible Macro Programming with S-expressions",
-          YTLink: "https://youtu.be/FeML_j7pdNY",
+          ytLink: "https://youtu.be/FeML_j7pdNY",
           presenters: [
             {
               name: "Vedanth Padmaraman",
@@ -208,7 +208,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "16:00 - 16:20",
           heading: "What is Dyalog APL and What Can It Do For You?",
-          YTLink: "https://youtu.be/d584-WA2rA0",
+          ytLink: "https://youtu.be/d584-WA2rA0",
           presenters: [{ name: "Aarush Bhat", link: "https://sloorush.com" }],
           color: "#E8EEF8",
         },
