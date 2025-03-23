@@ -6,11 +6,14 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: null,
       leading: null,
+      sessionLink: null,
       subChildren: [
         {
           time: "8:00 - 9:00",
           heading: "Breakfast",
           color: "#FAEBEB",
+          ytLink: null,
+          presenters: []
         },
       ],
       color: "#F5D6D6",
@@ -18,6 +21,7 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "9:00 - 10:00",
       leading: "Optimizations for Object Oriented Programs",
+      sessionLink: "https://youtu.be/blwSVSpjmcs",
       presenters: [
         { name: "Manas Thakur", link: "https://www.cse.iitb.ac.in/~manas/" },
       ],
@@ -26,6 +30,7 @@ const dayTwoData: ScheduleTable = {
           time: "10:00 - 10:20",
           heading:
             "CoS-SSA: SSA for Context-Sensitive Interprocedural Analysis",
+          ytLink: "https://youtu.be/icK--QqG4V0",
           presenters: [
             {
               name: "Pritam Gharat",
@@ -51,6 +56,7 @@ const dayTwoData: ScheduleTable = {
           time: "10:20 - 10:40",
           heading:
             "A Correspondence Between ϕ-function Placement in SSA and Reaching Definitions Analysis",
+          ytLink: "https://youtu.be/AmG1RU5lNdI",
           presenters: [
             {
               name: "Supriya Bhide",
@@ -68,6 +74,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "10:40 - 11:00",
           heading: "pliron: An Extensible IR Framework in Rust",
+          ytLink: "https://youtu.be/LobYuwcUaZA",
           presenters: [
             {
               name: "Vaivaswatha Nagaraj",
@@ -82,11 +89,14 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "11:00 - 11:30",
       leading: "Tea break",
+      sessionLink: null,
+      presenters: [],
       subChildren: [
         {
           time: "11:30-11:50",
           heading:
             "SLIM: A High-Level Abstraction on LLVM IR Suitable for Program Analysis",
+          ytLink: "https://youtu.be/3dQnFYSSSTA",
           presenters: [
             {
               name: "Aditi Raste",
@@ -109,6 +119,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "11:50 - 12:10",
           heading: "Why generating Three Address Code for Javascript is hard",
+          ytLink: "https://youtu.be/5yYm6mYRiO8",
           presenters: [{ name: "Meetesh Kalpesh Mehta" }],
           color: "#F8EFE7",
         },
@@ -116,6 +127,7 @@ const dayTwoData: ScheduleTable = {
           time: "12:10-12:30",
           heading:
             "Program Analysis for Managed Runtimes in Presence of Dynamic Features",
+          ytLink: "https://youtu.be/6i00s4rlj0c",
           presenters: [
             { name: "Aditya Anand", link: "https://adityaanand7.github.io/" },
           ],
@@ -124,6 +136,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "12:30-12:50",
           heading: "Engineering behind OCaml's Effect handlers",
+          ytLink: "https://youtu.be/ArSqBnGCXHU",
           presenters: [
             { name: "Manas Jayanth", link: "https://x.com/ManasJayanth/" },
           ],
@@ -135,6 +148,8 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "12:50 - 14:00",
       leading: "Lunch",
+      sessionLink: null,
+      presenters: [],
       subChildren: [
         // {
         //   time: "11.00 15m",
@@ -157,6 +172,7 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "14:00-15:00",
       leading: "Translation Validation",
+      sessionLink: "https://youtu.be/GVKoRN0OgLA",
       presenters: [
         {
           name: "Supratik Chakraborty",
@@ -168,6 +184,7 @@ const dayTwoData: ScheduleTable = {
           time: "15:00-15:20",
           heading:
             "Memspect: Tiny Static Analysis Framework for Real-World C Codebases",
+          ytLink: "https://youtu.be/aBAtV2W9BN0",
           presenters: [
             {
               name: "Hari Varsha",
@@ -176,7 +193,7 @@ const dayTwoData: ScheduleTable = {
           ],
           color: "#F8EFE7",
         },
-        // {
+         // {
         //   time: "12.10 25m",
         //   heading: "Keynote of tracks 4",
         //   description: "Dr. Saurabh Joshi",
@@ -198,11 +215,14 @@ const dayTwoData: ScheduleTable = {
     {
       mainTime: "15:20 - 15:50",
       leading: "Tea break",
+      sessionLink: null,
+      presenters: [],
       subChildren: [
         {
           time: "15:50 - 16:10",
           heading:
             "Fuzzing Programs with Structure-aware Fuzzers: An Industrial Case Study",
+          ytLink: null,
           presenters: [
             {
               name: "Das K Darshana",
@@ -222,6 +242,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "16:10 - 16:30",
           heading: "Automated Verification of Concurrent Programs",
+          ytLink: "https://youtu.be/ZqruxxtTXh4",
           presenters: [
             { name: "Divyanjali Sharma" },
             { name: "Subodh Sharma" },
@@ -231,7 +252,7 @@ const dayTwoData: ScheduleTable = {
       ],
       color: "#F5DBD6",
     },
-    // {
+     // {
     //   mainTime: "14.00-15.00",
     //   leading: "Session 5",
 

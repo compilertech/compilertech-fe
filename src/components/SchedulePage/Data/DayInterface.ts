@@ -1,6 +1,7 @@
 export interface SubChild {
   time: string;
   heading: string;
+  ytLink?: string|null;
   presenters?: {
     name: string;
     link?: string;
@@ -11,6 +12,7 @@ export interface SubChild {
 export interface ScheduleTableChild {
   mainTime: string | null;
   leading: string | null;
+  sessionLink?: string | null;
   presenters?: {
     name: string;
     link?: string;

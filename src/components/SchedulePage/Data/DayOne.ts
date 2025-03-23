@@ -6,16 +6,21 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: null,
       leading: null,
+      sessionLink: null,
       subChildren: [
         {
           time: "8:00 - 9:00",
           heading: "Registration and Breakfast",
           color: "#FAEBEB",
+          ytLink: null,
+          presenters: []
         },
         {
           time: "9:00 - 9:30",
           heading: "Welcome and General Address",
           color: "#FAEBEB",
+          ytLink: null,
+          presenters: []
         },
       ],
       color: "#F5D6D6",
@@ -23,6 +28,7 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "9:30 - 10:30",
       leading: "Building compilers for AI programming frameworks",
+      sessionLink: "https://youtu.be/-ZxDqcSCrhg",
       presenters: [
         {
           name: "Uday Reddy Bondhugula",
@@ -33,6 +39,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "10:30 - 10:50",
           heading: "FireDucks: Pandas Accelerator using MLIR",
+          ytLink: "https://youtu.be/66HU88aZZoc",
           presenters: [
             {
               name: "Sourav Saha",
@@ -46,6 +53,7 @@ const dayOneData: ScheduleTable = {
         {
           time: "10:50 - 11:10",
           heading: "STGraph: A Framework for Temporal Graph Neural Networks",
+          ytLink: "https://youtu.be/X6GBpO07yHs",
           presenters: [
             { name: "Joel Mathew Cherian" },
             { name: "Nithin Puthalath Manoj" },
@@ -60,16 +68,19 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "11:10 - 11:40",
       leading: "Tea break",
+      sessionLink: null,
       subChildren: [
         {
           time: "11:40 - 12:00",
           heading: "New Age of compilation for AI HPC",
+          ytLink: "https://youtu.be/kgRGQfwLkqc",
           presenters: [{ name: "Srihari Karnam" }, { name: "Judhajit Dutta" }],
           color: "#F5FAE5",
         },
         {
           time: "12:00 - 12:20",
           heading: "No-ISA is the Best ISA",
+          ytLink: "https://youtu.be/G4fxdHozm5I",
           presenters: [
             {
               name: "Shreeyash Pandey",
@@ -86,6 +97,7 @@ const dayOneData: ScheduleTable = {
           time: "12:20 - 12:40",
           heading:
             "Towards Higher First Silicon Success via Improved Finite-State Machine Detection",
+          ytLink: "https://youtu.be/taPgiRXyrvo",
           presenters: [
             { name: "Ian D. Taras" },
             { name: "Nicholas V. Giamblanco" },
@@ -99,6 +111,7 @@ const dayOneData: ScheduleTable = {
           time: "12:40 - 13:00",
           heading:
             "Unveiling the Future: A Glimpse into the Emerging Landscape of Quantum Compilers",
+          ytLink: "https://youtu.be/igidoLf4Exk",
           presenters: [
             {
               name: "Tanmay Sarkar",
@@ -113,6 +126,7 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "13:00 - 14:00",
       leading: "Lunch",
+      sessionLink: null,
       color: "#E0F7F1",
       subChildren: [
         //     {
@@ -143,6 +157,7 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "14:00 - 14:30",
       leading: "Web3 and Program Analysis",
+      sessionLink: "https://youtu.be/CZLJ28Sw9nw",
       presenters: [{ name: "Saurabh Joshi" }],
       color: "#D6F5D6",
       subChildren: [
@@ -150,6 +165,7 @@ const dayOneData: ScheduleTable = {
           time: "14:30 - 14:50",
           heading:
             "Techniques for IDE-friendly Compiler Construction and Applications in Blockchain",
+          ytLink: "https://youtu.be/4u3uNgtO8TU",
           presenters: [
             {
               name: "Bhavya Bhatt",
@@ -161,12 +177,14 @@ const dayOneData: ScheduleTable = {
         {
           time: "14:50 - 15:10",
           heading: "Formal verification of smart contracts",
+          ytLink: "https://youtu.be/cJOEvSnjuH8",
           presenters: [{ name: "Vikramaditya Kokil" }],
           color: "#EBFAEB",
         },
         {
           time: "15:10 - 15:30",
           heading: "C-lisp and Flexible Macro Programming with S-expressions",
+          ytLink: "https://youtu.be/FeML_j7pdNY",
           presenters: [
             {
               name: "Vedanth Padmaraman",
@@ -184,12 +202,13 @@ const dayOneData: ScheduleTable = {
     {
       mainTime: "15:30 - 16:00",
       leading: "Tea break",
-
+      sessionLink: null,
       color: "#DBE8F7",
       subChildren: [
         {
           time: "16:00 - 16:20",
           heading: "What is Dyalog APL and What Can It Do For You?",
+          ytLink: "https://youtu.be/d584-WA2rA0",
           presenters: [{ name: "Aarush Bhat", link: "https://sloorush.com" }],
           color: "#E8EEF8",
         },
@@ -199,6 +218,7 @@ const dayOneData: ScheduleTable = {
       mainTime: "16:20 - 17:35",
       leading:
         "DL4Compilers - Turbo-charging compiler optimizations via Deep Learning",
+      sessionLink: "https://youtu.be/o1XXac_jaLk",
       presenters: [
         {
           name: "Dibyendu Das",
@@ -251,6 +271,7 @@ const dayOneData: ScheduleTable = {
     //     },
     //   ],
     // },
+   
   ],
 };
 
