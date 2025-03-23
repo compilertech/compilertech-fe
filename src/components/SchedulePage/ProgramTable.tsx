@@ -34,7 +34,14 @@ function ProgramTable({ day }: ProgramTableProps) {
                     <Pill>Invited talk</Pill>
                   </div>
                 )}
-                <SessionType>{sessionData.leading}</SessionType>
+                <SessionType>
+                  {sessionData.leading}
+                  {sessionData.sessionLink && (
+                    <SessionLink href={sessionData.sessionLink}>
+                      <LuLink size="14px" />
+                    </SessionLink>
+                  )}
+                </SessionType>
                 <SessionDescription>
                   {sessionData.presenters?.length &&
                     sessionData.presenters.map((presenter, currentIdx) =>
@@ -53,7 +60,14 @@ function ProgramTable({ day }: ProgramTableProps) {
             <Section key={keyIndex} bgColor="white">
               <Duration>{subChild.time}</Duration>
               <Content>
-                <SectionHeading>{subChild.heading}</SectionHeading>
+                <SectionHeading>
+                  {subChild.heading}
+                  {subChild.YTLink && (
+                    <SessionLink href={subChild.YTLink}>
+                      <LuLink size="14px" />
+                    </SessionLink>
+                  )}
+                </SectionHeading>
                 <div>
                   {subChild.presenters?.map((presenter, currentIdx) =>
                     Presenter(
@@ -107,6 +121,13 @@ function Presenter(
 }
 
 export default ProgramTable;
+
+// New styled components for links
+const SessionLink = styled.a`
+  display: inline-block;
+  margin-left: 4px;
+  color: inherit;
+`;
 
 const Pill = styled.div`
   display: inline-block;

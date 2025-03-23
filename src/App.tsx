@@ -52,7 +52,7 @@ function App() {
       <Wrapper>
         <Header onClick={toggleTheme} theme={theme} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/2024" element={<Home />} />
           <Route path="/organization" element={<Organization />} />
           <Route path="/attending" element={<Attending />} />
           <Route path="/schedule" element={<Schedule />} />
