@@ -62,8 +62,8 @@ function ProgramTable({ day }: ProgramTableProps) {
               <Content>
                 <SectionHeading>
                   {subChild.heading}
-                  {subChild.YTLink && (
-                    <SessionLink href={subChild.YTLink}>
+                  {subChild.ytLink && (
+                    <SessionLink href={subChild.ytLink}>
                       <LuLink size="14px" />
                     </SessionLink>
                   )}
