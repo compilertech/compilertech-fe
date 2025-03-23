@@ -1,7 +1,7 @@
 export interface SubChild {
   time: string;
   heading: string;
-  YTLink?: string|null;
+  ytLink?: string|null;
   presenters?: {
     name: string;
     link?: string;
