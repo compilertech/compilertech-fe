@@ -12,7 +12,7 @@ const dayTwoData: ScheduleTable = {
           time: "8:00 - 9:00",
           heading: "Breakfast",
           color: "#FAEBEB",
-          YTLink: null,
+          ytLink: null,
           presenters: []
         },
       ],
@@ -30,7 +30,7 @@ const dayTwoData: ScheduleTable = {
           time: "10:00 - 10:20",
           heading:
             "CoS-SSA: SSA for Context-Sensitive Interprocedural Analysis",
-          YTLink: "https://youtu.be/icK--QqG4V0",
+          ytLink: "https://youtu.be/icK--QqG4V0",
           presenters: [
             {
               name: "Pritam Gharat",
@@ -56,7 +56,7 @@ const dayTwoData: ScheduleTable = {
           time: "10:20 - 10:40",
           heading:
             "A Correspondence Between ϕ-function Placement in SSA and Reaching Definitions Analysis",
-          YTLink: "https://youtu.be/AmG1RU5lNdI",
+          ytLink: "https://youtu.be/AmG1RU5lNdI",
           presenters: [
             {
               name: "Supriya Bhide",
@@ -74,7 +74,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "10:40 - 11:00",
           heading: "pliron: An Extensible IR Framework in Rust",
-          YTLink: "https://youtu.be/LobYuwcUaZA",
+          ytLink: "https://youtu.be/LobYuwcUaZA",
           presenters: [
             {
               name: "Vaivaswatha Nagaraj",
@@ -96,7 +96,7 @@ const dayTwoData: ScheduleTable = {
           time: "11:30-11:50",
           heading:
             "SLIM: A High-Level Abstraction on LLVM IR Suitable for Program Analysis",
-          YTLink: "https://youtu.be/3dQnFYSSSTA",
+          ytLink: "https://youtu.be/3dQnFYSSSTA",
           presenters: [
             {
               name: "Aditi Raste",
@@ -119,7 +119,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "11:50 - 12:10",
           heading: "Why generating Three Address Code for Javascript is hard",
-          YTLink: "https://youtu.be/5yYm6mYRiO8",
+          ytLink: "https://youtu.be/5yYm6mYRiO8",
           presenters: [{ name: "Meetesh Kalpesh Mehta" }],
           color: "#F8EFE7",
         },
@@ -127,7 +127,7 @@ const dayTwoData: ScheduleTable = {
           time: "12:10-12:30",
           heading:
             "Program Analysis for Managed Runtimes in Presence of Dynamic Features",
-          YTLink: "https://youtu.be/6i00s4rlj0c",
+          ytLink: "https://youtu.be/6i00s4rlj0c",
           presenters: [
             { name: "Aditya Anand", link: "https://adityaanand7.github.io/" },
           ],
@@ -136,7 +136,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "12:30-12:50",
           heading: "Engineering behind OCaml's Effect handlers",
-          YTLink: "https://youtu.be/ArSqBnGCXHU",
+          ytLink: "https://youtu.be/ArSqBnGCXHU",
           presenters: [
             { name: "Manas Jayanth", link: "https://x.com/ManasJayanth/" },
           ],
@@ -184,7 +184,7 @@ const dayTwoData: ScheduleTable = {
           time: "15:00-15:20",
           heading:
             "Memspect: Tiny Static Analysis Framework for Real-World C Codebases",
-          YTLink: "https://youtu.be/aBAtV2W9BN0",
+          ytLink: "https://youtu.be/aBAtV2W9BN0",
           presenters: [
             {
               name: "Hari Varsha",
@@ -222,7 +222,7 @@ const dayTwoData: ScheduleTable = {
           time: "15:50 - 16:10",
           heading:
             "Fuzzing Programs with Structure-aware Fuzzers: An Industrial Case Study",
-          YTLink: null,
+          ytLink: null,
           presenters: [
             {
               name: "Das K Darshana",
@@ -242,7 +242,7 @@ const dayTwoData: ScheduleTable = {
         {
           time: "16:10 - 16:30",
           heading: "Automated Verification of Concurrent Programs",
-          YTLink: "https://youtu.be/ZqruxxtTXh4",
+          ytLink: "https://youtu.be/ZqruxxtTXh4",
           presenters: [
             { name: "Divyanjali Sharma" },
             { name: "Subodh Sharma" },
