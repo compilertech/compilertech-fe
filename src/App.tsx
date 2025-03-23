@@ -11,7 +11,7 @@ import Home from "./components/HomePage";
 import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";
-import Home2 from "./components/2025Page";
+// import Home2 from "./components/2025Page";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
