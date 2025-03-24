@@ -29,22 +29,22 @@ export default function Home2() {
   }, []);
 
   // Set the event date to March 25, 2025 at 10:00 AM
-  // const eventDate = new Date("2025-03-30T10:00:00");
+  const eventDate = new Date("2025-03-30T10:00:00");
 
   return (
     <Main>
       <Hero2 />
-      {/* <CountdownTimer eventDate={eventDate} /> */}
-      {/* <Testimonial /> */}
-      {/* <KeyTopics /> */}
-      {/* <Highlights /> */}
-      {/* <Collab /> */}
-      {/* <Venue /> */}
-      {/* <QAndA /> */}
+      <CountdownTimer eventDate={eventDate} />
+      <Testimonial />
+      <KeyTopics />
+      <Highlights />
+      <Collab />
+      <Venue />
+      <QAndA />
       <Agenda />
       <Agenda2 />
       <Agenda3 />
-      {/* <AnimatedBanner /> */}
+      <AnimatedBanner />
     </Main>
   );
 }

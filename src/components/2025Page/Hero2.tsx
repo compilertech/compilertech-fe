@@ -35,14 +35,14 @@ function Hero2() {
         {/* <ComingSoonBox>{heroData.comingSoonText}</ComingSoonBox> */}
 
         {/* Decorative circles */}
-        {/* <YellowCircle1 />
+        <YellowCircle1 />
         <YellowCircle2 />
-        <YellowCircle3 /> */}
-        {/* <PurpleCircle2 />
+        <YellowCircle3 />
+        <PurpleCircle2 />
         <PurpleCircle3 />
         <BlueCircle1 />
-        <BlueCircle2 /> */}
-        {/* <GradientCircle /> */}
+        <BlueCircle2 />
+        <GradientCircle />
 
         {/* Main gradient circle container */}
         <CircleContainer />
