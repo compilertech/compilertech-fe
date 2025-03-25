@@ -13,6 +13,7 @@ import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";
 import Home2 from "./components/2025Page";
 import NewHeader from "./components/2025Page/NewHeader";
+import NewFooter from "./components/2025Page/NewFooter";
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -62,6 +63,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
         {/* <Footer /> */}
+        <NewFooter />
       </Wrapper>
     </ThemeProvider>
   );
