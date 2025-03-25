@@ -1,12 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import AgendaVector from "../../assets/2025/agenda.svg";
 
 function Agenda() {
   const timelineItems = [
-    { number: 1, date: "25th March", description: "Registrations starts" },
-    { number: 2, date: "4th April", description: "Registrations ends" },
-    { number: 3, date: "25th March", description: "Registrations starts" },
-    { number: 4, date: "4th April", description: "Registrations ends" },
+    {
+      number: 1,
+      date: "25th March",
+      description: "Registrations starts",
+    },
+    {
+      number: 2,
+      date: "4th April",
+      description: "Registrations ends",
+    },
+    {
+      number: 3,
+      date: "25th March",
+      description: "Registrations starts",
+    },
+    {
+      number: 4,
+      date: "4th April",
+      description: "Registrations ends",
+    },
   ];
 
   return (
@@ -21,47 +38,56 @@ function Agenda() {
 
       <Divider />
 
-      <TimelineSection>
+      <ContentSection>
         <TimelineContent>
           {timelineItems.map((item, index) => (
             <TimelineItem key={index}>
               <NumberCircle>{item.number}</NumberCircle>
               <TimelineDetails>
-                <Date>{item.date}</Date>
-                <Description>{item.description}</Description>
+                <DateContainer>
+                  <Date>{item.date}</Date>
+                  <Description>{item.description}</Description>
+                </DateContainer>
               </TimelineDetails>
             </TimelineItem>
           ))}
           <TimelineLine />
         </TimelineContent>
 
-        <GraphicSection>
-          <CircleGold />
-          <CirclePurple />
-          <CircleBlue />
-          <BlockDark />
-          <CircleBlueBottom />
-          <CirclePurpleBottom />
-        </GraphicSection>
-      </TimelineSection>
+        <VectorSection>
+          <BackgroundVector src={AgendaVector} alt="Agenda Background" />
+        </VectorSection>
+      </ContentSection>
     </AgendaContainer>
   );
 }
 
-export default Agenda;
+// const Tag = styled.div`
+//   background-color: rgba(30, 58, 138, 0.5);
+//   color: #4169e1;
+//   font-size: 12px;
+//   padding: 2px 4px;
+//   border-radius: 4px;
+//   margin-left: 10px;
+// `;
 
-// Styled Components
+// ... (rest of the previous styled components remain the same)
+
+const DateContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  /* gap: 30px; */
+`;
+
 const AgendaContainer = styled.div`
   background-color: #0a0a0a;
   color: white;
   padding: 3rem;
   width: 100%;
   position: relative;
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-  }
+  min-height: 100vh;
 `;
 
 const HeaderSection = styled.div`
@@ -69,12 +95,6 @@ const HeaderSection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
 `;
 
 const TitleWrapper = styled.div`
@@ -86,10 +106,7 @@ const Title = styled.h2`
   font-size: 2.2rem;
   font-weight: 400;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
+  color: white;
 `;
 
 const Subtitle = styled.h3`
@@ -98,10 +115,6 @@ const Subtitle = styled.h3`
   font-style: italic;
   color: #d83bd2;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
 `;
 
 const DownloadButton = styled.button`
@@ -126,13 +139,9 @@ const Divider = styled.hr`
   margin: 0 0 2.5rem 0;
 `;
 
-const TimelineSection = styled.div`
+const ContentSection = styled.div`
   display: flex;
-  position: relative;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  align-items: center;
 `;
 
 const TimelineContent = styled.div`
@@ -154,7 +163,7 @@ const TimelineLine = styled.div`
 
 const TimelineItem = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 3rem;
   position: relative;
   z-index: 2;
@@ -188,90 +197,26 @@ const Date = styled.h4`
   font-size: 1.8rem;
   font-weight: 400;
   margin: 0 0 0.5rem 0;
+  color: white;
 `;
 
 const Description = styled.p`
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  margin-left: 60px;
 `;
 
-const GraphicSection = styled.div`
+const VectorSection = styled.div`
   flex: 1;
-  position: relative;
-  min-height: 400px;
-
-  @media (max-width: 768px) {
-    min-height: 200px;
-    margin-top: 2rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-// Decorative elements
-const CircleGold = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 250px;
-  background-color: #d4af37;
-  border-bottom-left-radius: 250px;
-  border-radius: 0;
-  opacity: 0.8;
+const BackgroundVector = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 `;
 
-const CirclePurple = styled.div`
-  position: absolute;
-  top: 25%;
-  right: 30%;
-  width: 200px;
-  height: 200px;
-  background-color: #9c27b0;
-  border-radius: 50%;
-  opacity: 0.8;
-`;
-
-const CircleBlue = styled.div`
-  position: absolute;
-  top: 40%;
-  right: 50%;
-  width: 150px;
-  height: 150px;
-  background-color: #1e3a8a;
-  border-radius: 50%;
-  opacity: 0.8;
-`;
-
-const BlockDark = styled.div`
-  position: absolute;
-  top: 30%;
-  right: 30%;
-  width: 120px;
-  height: 120px;
-  background-color: #0a0a0a;
-  opacity: 0.9;
-  z-index: 3;
-`;
-
-const CircleBlueBottom = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 40%;
-  width: 250px;
-  height: 250px;
-  background-color: #1e3a8a;
-  border-radius: 50%;
-  opacity: 0.8;
-`;
-
-const CirclePurpleBottom = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 10%;
-  width: 200px;
-  height: 200px;
-  background-color: #9c27b0;
-  border-top-left-radius: 200px;
-  border-radius: 0;
-  opacity: 0.8;
-`;
+export default Agenda;

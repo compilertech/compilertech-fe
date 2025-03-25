@@ -49,9 +49,9 @@ const Header: React.FC = () => {
           <PartnerButton onClick={() => navigate("/partner")}>
             Partner With Us
           </PartnerButton>
-          <RegisterButton onClick={() => navigate("/register")}>
+          {/* <RegisterButton onClick={() => navigate("/register")}>
             Register
-          </RegisterButton>
+          </RegisterButton> */}
         </ActionButtons>
 
         {/* Mobile Menu Button */}
@@ -103,7 +103,7 @@ const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2rem;
+  /* padding: 0.75rem 2rem; */
   max-width: 1440px;
   margin: 0 auto;
 

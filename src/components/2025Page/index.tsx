@@ -34,17 +34,17 @@ export default function Home2() {
   return (
     <Main>
       <Hero2 />
-      <CountdownTimer eventDate={eventDate} />
-      <Testimonial />
-      <KeyTopics />
-      <Highlights />
-      <Collab />
-      <Venue />
-      <QAndA />
+      {/* <CountdownTimer eventDate={eventDate} /> */}
+      {/* <Testimonial /> */}
+      {/* <KeyTopics /> */}
+      {/* <Highlights /> */}
+      {/* <Collab /> */}
+      {/* <Venue /> */}
+      {/* <QAndA /> */}
       <Agenda />
       <Agenda2 />
       <Agenda3 />
-      <AnimatedBanner />
+      {/* <AnimatedBanner /> */}
     </Main>
   );
 }

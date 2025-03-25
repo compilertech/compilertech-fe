@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import AgendaVector from "../../assets/2025/agenda2.svg";
 
 function Agenda2() {
   const timelineItems = [
@@ -36,22 +37,14 @@ function Agenda2() {
           ))}
         </TimelineContainer>
 
-        <GraphicsContainer>
-          <BlueCircle />
-          <PurpleCircle />
-          <BlackSquare />
-          <LargeBlueCircle />
-          <GoldSemicircle />
-          <PurpleSemicircleBottom />
-        </GraphicsContainer>
+        <VectorSection>
+          <BackgroundVector src={AgendaVector} alt="Agenda Background" />
+        </VectorSection>
       </ContentSection>
     </AgendaContainer>
   );
 }
 
-export default Agenda2;
-
-// Styled Components
 const AgendaContainer = styled.div`
   background-color: #0a0a0a;
   color: white;
@@ -71,12 +64,6 @@ const HeaderSection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
 `;
 
 const TitleWrapper = styled.div`
@@ -89,10 +76,7 @@ const Title = styled.h2`
   font-weight: 400;
   margin: 0;
   line-height: 1.2;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  color: white;
 `;
 
 const Subtitle = styled.span`
@@ -102,10 +86,6 @@ const Subtitle = styled.span`
   font-style: italic;
   margin: 0;
   line-height: 1.2;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
 `;
 
 const DownloadButton = styled.button`
@@ -189,6 +169,7 @@ const ItemDate = styled.h3`
   font-size: 1.8rem;
   font-weight: 400;
   margin: 0 0 0.3rem 0;
+  color: white;
 `;
 
 const ItemDescription = styled.p`
@@ -197,89 +178,21 @@ const ItemDescription = styled.p`
   margin: 0;
 `;
 
-const GraphicsContainer = styled.div`
+const VectorSection = styled.div`
   flex: 1;
-  position: relative;
-  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-// Decorative elements
-const BlueCircle = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 150px;
-  background-color: #1a3c80;
-  border-radius: 50%;
-  opacity: 0.9;
-  z-index: 1;
+const BackgroundVector = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 `;
 
-const PurpleCircle = styled.div`
-  position: absolute;
-  top: 0;
-  left: 100px;
-  width: 300px;
-  height: 300px;
-  background-color: #9c27b0;
-  border-radius: 50%;
-  opacity: 0.8;
-  z-index: 2;
-`;
-
-const BlackSquare = styled.div`
-  position: absolute;
-  top: 100px;
-  left: 150px;
-  width: 100px;
-  height: 100px;
-  background-color: #0a0a0a;
-  z-index: 3;
-`;
-
-const LargeBlueCircle = styled.div`
-  position: absolute;
-  top: 200px;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  background-color: #1a3c80;
-  border-radius: 50%;
-  opacity: 0.8;
-  z-index: 1;
-`;
-
-const GoldSemicircle = styled.div`
-  position: absolute;
-  top: 150px;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background-color: #d4af37;
-  border-top-left-radius: 300px;
-  border-bottom-left-radius: 300px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  opacity: 0.8;
-  z-index: 2;
-`;
-
-const PurpleSemicircleBottom = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 200px;
-  width: 300px;
-  height: 300px;
-  background-color: #9c27b0;
-  border-top-left-radius: 300px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  opacity: 0.8;
-  z-index: 1;
-`;
+export default Agenda2;
