@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AgendaVector from "../../assets/2025/agenda.svg";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 function Agenda() {
   const timelineItems = [
@@ -28,66 +29,60 @@ function Agenda() {
 
   return (
     <AgendaContainer>
-      <HeaderSection>
-        <TitleWrapper>
-          <Title>Agenda at a</Title>
-          <Subtitle>Glance</Subtitle>
-        </TitleWrapper>
-        <DownloadButton>Download brochure</DownloadButton>
-      </HeaderSection>
+      <InnerContainer>
+        <HeaderSection>
+          <TitleWrapper>
+            <Title>Agenda at a</Title>
+            <Subtitle>Glance</Subtitle>
+          </TitleWrapper>
+          <DownloadButton>Download brochure</DownloadButton>
+        </HeaderSection>
 
-      <Divider />
+        <Divider />
 
-      <ContentSection>
-        <TimelineContent>
-          {timelineItems.map((item, index) => (
-            <TimelineItem key={index}>
-              <NumberCircle>{item.number}</NumberCircle>
-              <TimelineDetails>
-                <DateContainer>
+        <ContentSection>
+          <TimelineContent>
+            {timelineItems.map((item, index) => (
+              <TimelineItem key={index}>
+                <NumberCircle>{item.number}</NumberCircle>
+                <ItemContent>
                   <Date>{item.date}</Date>
                   <Description>{item.description}</Description>
-                </DateContainer>
-              </TimelineDetails>
-            </TimelineItem>
-          ))}
-          <TimelineLine />
-        </TimelineContent>
+                </ItemContent>
+              </TimelineItem>
+            ))}
+            <TimelineLine />
+          </TimelineContent>
 
-        <VectorSection>
-          <BackgroundVector src={AgendaVector} alt="Agenda Background" />
-        </VectorSection>
-      </ContentSection>
+          <VectorSection />
+        </ContentSection>
+      </InnerContainer>
     </AgendaContainer>
   );
 }
 
-// const Tag = styled.div`
-//   background-color: rgba(30, 58, 138, 0.5);
-//   color: #4169e1;
-//   font-size: 12px;
-//   padding: 2px 4px;
-//   border-radius: 4px;
-//   margin-left: 10px;
-// `;
-
-// ... (rest of the previous styled components remain the same)
-
-const DateContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-  /* gap: 30px; */
-`;
-
 const AgendaContainer = styled.div`
   background-color: #0a0a0a;
   color: white;
-  padding: 3rem;
   width: 100%;
   position: relative;
   min-height: 100vh;
+  font-family: "poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+`;
+
+const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1440px;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 3rem 2rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 2rem 1.5rem;
+  }
 `;
 
 const HeaderSection = styled.div`
@@ -95,6 +90,12 @@ const HeaderSection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -103,18 +104,29 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.2rem;
+  font-size: 40px;
   font-weight: 400;
   margin: 0;
   color: white;
+  line-height: 1.2;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 32px;
+  }
 `;
 
 const Subtitle = styled.h3`
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: 40px;
+  font-weight: 500;
   font-style: italic;
-  color: #d83bd2;
+  color: #fb4dd8;
   margin: 0;
+  line-height: 1.2;
+  font-family: Spectral;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 32px;
+  }
 `;
 
 const DownloadButton = styled.button`
@@ -122,10 +134,11 @@ const DownloadButton = styled.button`
   border: 1px solid white;
   border-radius: 50px;
   color: white;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -136,12 +149,17 @@ const Divider = styled.hr`
   border: none;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 3rem 0;
+  width: 100%;
 `;
 
 const ContentSection = styled.div`
   display: flex;
-  align-items: center;
+  position: relative;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `;
 
 const TimelineContent = styled.div`
@@ -149,14 +167,18 @@ const TimelineContent = styled.div`
   position: relative;
   padding-right: 2rem;
   z-index: 5;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding-right: 0;
+  }
 `;
 
 const TimelineLine = styled.div`
   position: absolute;
-  top: 30px;
+  top: 36px;
   left: 35px;
   width: 2px;
-  height: calc(100% - 60px);
+  height: calc(100% - 72px);
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 1;
 `;
@@ -164,7 +186,7 @@ const TimelineLine = styled.div`
 const TimelineItem = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   position: relative;
   z-index: 2;
 
@@ -182,41 +204,64 @@ const NumberCircle = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 2rem;
+  font-size: 36px;
   font-weight: bold;
   margin-right: 2rem;
   flex-shrink: 0;
   box-shadow: 0 0 20px rgba(30, 58, 138, 0.5);
 `;
 
-const TimelineDetails = styled.div`
-  padding-top: 0.5rem;
+const ItemContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    gap: 4rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `;
 
 const Date = styled.h4`
-  font-size: 1.8rem;
+  font-size: 36px;
   font-weight: 400;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   color: white;
+  line-height: 1.2;
+  min-width: 200px;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
 `;
 
 const Description = styled.p`
-  font-size: 1.1rem;
+  font-size: 20px;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
-  margin-left: 60px;
+  margin: 0;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 14px;
+  }
 `;
 
 const VectorSection = styled.div`
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+  height: 700px;
+  background-image: url(${AgendaVector});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
-const BackgroundVector = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    display: none;
+  }
 `;
 
 export default Agenda;

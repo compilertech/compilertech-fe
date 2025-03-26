@@ -14,6 +14,7 @@ import Schedule from "./components/SchedulePage";
 import Home2 from "./components/2025Page";
 import NewHeader from "./components/2025Page/NewHeader";
 import NewFooter from "./components/2025Page/NewFooter";
+
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
@@ -48,13 +49,19 @@ function App() {
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
 
+  const is2024Page =
+    location.pathname.includes("/2024") ||
+    location.pathname.includes("/organization") ||
+    location.pathname.includes("/attending") ||
+    location.pathname.includes("/schedule");
+
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyle />
 
       <Wrapper>
-        {/* <Header onClick={toggleTheme} theme={theme} /> */}
-        <NewHeader />
+        {is2024Page && <Header onClick={toggleTheme} theme={theme} />}
+        {!is2024Page && <NewHeader />}
         <Routes>
           <Route path="/" element={<Home2 />} />
           <Route path="/2024" element={<Home />} />
@@ -62,8 +69,8 @@ function App() {
           <Route path="/attending" element={<Attending />} />
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
-        {/* <Footer /> */}
-        <NewFooter />
+        {is2024Page && <Footer />}
+        {/* {!is2024Page && <NewFooter />} */}
       </Wrapper>
     </ThemeProvider>
   );

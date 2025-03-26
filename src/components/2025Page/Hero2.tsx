@@ -28,7 +28,6 @@ function Hero2() {
 
       <VectorContainer>
         <ComingSoonBox>Coming soon</ComingSoonBox>
-        <BackgroundVector src={vectorImage} alt="Background Vector" />
       </VectorContainer>
     </HeroContainer>
   );
@@ -40,10 +39,8 @@ const HeroContainer = styled.div`
   color: white;
   min-height: 100vh;
   width: 100%;
-  padding: 2rem 5rem;
   position: relative;
-  overflow: hidden;
-
+  font-family: "Poppins", sans-serif;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 2rem 4rem;
     flex-direction: column;
@@ -59,8 +56,7 @@ const ContentSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 10;
-  padding-right: 2rem;
+  padding-left: 5rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding-right: 0;
@@ -71,26 +67,24 @@ const ContentSection = styled.div`
 
 const VectorContainer = styled.div`
   position: relative;
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(${vectorImage});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
 
-const BackgroundVector = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-`;
-
 const ComingSoonBox = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 47%;
+  right: 65%;
   transform: translate(-50%, -50%);
   width: 237px;
   height: 112px;
@@ -103,7 +97,7 @@ const ComingSoonBox = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-family: "Poppins", sans-serif;
+  font-family: "" Poppins ", sans-serif", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
@@ -116,10 +110,8 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 36px;
   font-weight: 400;
-  margin: 0;
-  line-height: 1.2;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 2.5rem;
@@ -131,12 +123,12 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  font-size: 4rem;
-  font-weight: 400;
+  font-size: 70px;
+  font-weight: 500;
   font-style: italic;
-  color: #a93d9d;
-  margin: 0;
-  line-height: 1.2;
+  /* line-height: 120%; */
+  font-family: Spectral;
+  color: #fb4dd8;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 3.5rem;
@@ -148,9 +140,10 @@ const Subtitle = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 2rem;
+
   max-width: 650px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -167,8 +160,7 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 650px;
   border-radius: 1.5rem;
-  overflow: hidden;
-  border: 2px solid #4169e1;
+
   margin-bottom: 1.5rem;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {

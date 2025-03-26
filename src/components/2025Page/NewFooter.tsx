@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import LogoImage from "/icons/logo_dark-cropped.png";
-
+import CraftedBy from "../shared/CraftedBy";
 const NewFooter: React.FC = () => {
   const navigate = useNavigate();
 
@@ -41,6 +41,7 @@ const NewFooter: React.FC = () => {
       <CopyrightSection>
         ©2024 Compiler Technology | Terms and conditions
       </CopyrightSection>
+      <CraftedBy />
     </FooterContainer>
   );
 };

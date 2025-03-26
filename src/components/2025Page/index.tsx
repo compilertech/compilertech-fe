@@ -43,7 +43,7 @@ export default function Home2() {
       {/* <QAndA /> */}
       <Agenda />
       <Agenda2 />
-      <Agenda3 />
+      {/* <Agenda3 /> */}
       {/* <AnimatedBanner /> */}
     </Main>
   );
