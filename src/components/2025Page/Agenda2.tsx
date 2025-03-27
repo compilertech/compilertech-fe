@@ -39,7 +39,12 @@ function Agenda2() {
             ))}
           </TimelineContainer>
 
-          <VectorSection />
+          <VectorWrapper>
+            <VectorImage
+              src={AgendaVector}
+              alt="Agenda visual representation"
+            />
+          </VectorWrapper>
         </ContentSection>
       </InnerContainer>
     </AgendaContainer>
@@ -89,7 +94,7 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
   margin: 0;
   color: white;
@@ -123,7 +128,15 @@ const DownloadButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  width: 191;
+  height: 48;
+  border-width: 1px;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  gap: 12px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -139,6 +152,7 @@ const Divider = styled.hr`
 `;
 
 const ContentSection = styled.div`
+  min-height: 100vh;
   display: flex;
   position: relative;
 
@@ -164,10 +178,10 @@ const TimelineItem = styled.div`
 `;
 
 const NumberCircle = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 88px;
+  height: 87px;
   border-radius: 50%;
-  background-color: #1e3a8a;
+  background: linear-gradient(216.94deg, #2850b6 13.55%, #0d1929 86.55%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +197,7 @@ const NumberCircle = styled.div`
 const VerticalLine = styled.div`
   position: absolute;
   top: 70px;
-  left: 35px;
+  left: 40px;
   width: 2px;
   height: calc(100% + 15px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -198,10 +212,14 @@ const ItemContent = styled.div`
 
 const ItemDate = styled.h3`
   font-size: 36px;
-  font-weight: 400;
-  margin: 0 0 0.2rem 0;
+  /* margin: 0 0 0.2rem 0; */
   color: white;
   line-height: 1.2;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 28px;
@@ -212,24 +230,51 @@ const ItemDescription = styled.p`
   font-size: 20px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 16px;
   }
 `;
 
-const VectorSection = styled.div`
+const VectorWrapper = styled.div`
   flex: 1.5;
-  height: 700px;
-  background-image: url(${AgendaVector});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 2rem; // Adjust this to align with your timeline items
+  height: 100%;
+  overflow: hidden;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
+`;
+
+const VectorImage = styled.img`
+  height: calc(100% - 4rem);
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  max-width: 100%;
+  margin-top: -100px;
+  align-self: center;
+  transform: translateY(-1rem);
+
+  /* Responsive adjustments */
+  @media (min-width: ${TABLET_BREAKPOINT}) and (max-width: 1200px) {
+    height: calc(100% - 3.5rem);
+    transform: translateY(-0.5rem);
+  }
+
+  @media (min-width: 1201px) and (max-width: 1440px) {
+    height: calc(100% - 3rem);
+  }
+
+  /* Optional: Add smooth scaling */
+  transition: height 0.3s ease, transform 0.3s ease;
 `;
 
 export default Agenda2;

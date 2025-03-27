@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import vectorImage from "../../assets/2025/vector.svg";
 import heroImage from "../../assets/2025/hero.svg";
@@ -8,31 +9,80 @@ const heroData = {
   subtitle: "Bengaluru, Karnataka",
   description:
     "The IICT (Innovations in Compiler Technology) workshop unites researchers, practitioners, and enthusiasts to explore cutting-edge advancements in compiler design, implementation, and optimization for emerging software.",
+  cta: "About Us →",
+  comingSoon: "Coming soon",
 };
 
 function Hero2() {
+  const navigate = useNavigate();
+
+  const handleCTAClick = () => {
+    navigate("/2024");
+  };
+
   return (
     <HeroContainer>
       <ContentSection>
-        <TitleContainer>
-          <Title>{heroData.title}</Title>
-          <Subtitle>{heroData.subtitle}</Subtitle>
-        </TitleContainer>
-
-        <Description>{heroData.description}</Description>
-
+        <TextContent>
+          <TitleContainer>
+            <Title>{heroData.title}</Title>
+            <Subtitle>{heroData.subtitle}</Subtitle>
+          </TitleContainer>
+          <Description>{heroData.description}</Description>
+          <CTAText onClick={handleCTAClick}>{heroData.cta}</CTAText>
+        </TextContent>
         <ImageContainer>
-          <ConferenceImage src={heroImage} alt="Conference hall" />
+          <ConferenceImage src={heroImage} alt="Conference illustration" />
         </ImageContainer>
+        <ComingSoonTextMobile>{heroData.comingSoon}</ComingSoonTextMobile>
       </ContentSection>
 
       <VectorContainer>
-        <ComingSoonBox>Coming soon</ComingSoonBox>
+        <ComingSoonBox>
+          <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+        </ComingSoonBox>
       </VectorContainer>
     </HeroContainer>
   );
 }
 
+// Added components
+const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  margin-bottom: 2rem;
+`;
+
+const CTAText = styled.span`
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fb4dd8;
+  }
+`;
+
+const ComingSoonTextMobile = styled.div`
+  display: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  margin-top: 2rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    display: block;
+  }
+`;
+
+// All existing styled components remain exactly the same
 const HeroContainer = styled.div`
   display: flex;
   background-color: #000000;
@@ -40,6 +90,7 @@ const HeroContainer = styled.div`
   min-height: 100vh;
   width: 100%;
   position: relative;
+  padding: 2rem;
   font-family: "Poppins", sans-serif;
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 2rem 4rem;
@@ -84,7 +135,7 @@ const VectorContainer = styled.div`
 const ComingSoonBox = styled.div`
   position: absolute;
   top: 47%;
-  right: 65%;
+  right: 20vw;
   transform: translate(-50%, -50%);
   width: 237px;
   height: 112px;
@@ -94,10 +145,14 @@ const ComingSoonBox = styled.div`
   backdrop-filter: blur(10px);
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+`;
 
-  font-family: "" Poppins ", sans-serif", sans-serif;
+const ComingSoonText = styled.span`
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
@@ -126,7 +181,6 @@ const Subtitle = styled.h2`
   font-size: 70px;
   font-weight: 500;
   font-style: italic;
-  /* line-height: 120%; */
   font-family: Spectral;
   color: #fb4dd8;
 
@@ -142,8 +196,7 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   font-size: 20px;
   line-height: 1.6;
-  margin-bottom: 2rem;
-
+  margin-bottom: 1rem;
   max-width: 650px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -160,7 +213,6 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 650px;
   border-radius: 1.5rem;
-
   margin-bottom: 1.5rem;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {

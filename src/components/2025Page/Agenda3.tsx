@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 function Agenda3() {
@@ -44,11 +43,13 @@ export default Agenda3;
 // Styled Components
 const AgendaContainer = styled.div`
   background-color: #0a0a0a;
+  font-family: "Poppins", sans-serif;
   color: white;
   padding: 4rem 5rem;
   position: relative;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden; // Added to contain the vector image
 
   @media (max-width: 768px) {
     padding: 2rem;
@@ -74,10 +75,10 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
   font-weight: 400;
-  margin: 0;
-  line-height: 1.2;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -85,7 +86,8 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.span`
-  font-size: 2.5rem;
+  font-size: 40px;
+  font-family: Spectral;
   font-weight: 500;
   color: #d83bd2;
   font-style: italic;
@@ -99,11 +101,11 @@ const Subtitle = styled.span`
 
 const DownloadButton = styled.button`
   background: transparent;
-  border: 1px solid white;
-  border-radius: 100px;
+  border: 1px solid white; //dont change
+  border-radius: 8px; //dont change
   color: white;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+
   cursor: pointer;
   transition: all 0.2s ease;
 
@@ -125,6 +127,9 @@ const TimelineSection = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
+  width: 1083;
+  height: 100;
+  border-radius: 16px;
 `;
 
 const TimelineRow = styled.div`
@@ -139,10 +144,10 @@ const TimelineRow = styled.div`
 `;
 
 const NumberCircle = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 88px; //dont change
+  height: 87px; //dont change
   border-radius: 50%;
-  background-color: #1a3c80;
+  background: linear-gradient(216.94deg, #2850b6 13.55%, #0d1929 86.55%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,7 +163,7 @@ const NumberCircle = styled.div`
 const VerticalLine = styled.div`
   position: absolute;
   top: 70px;
-  left: 35px;
+  left: 40px;
   width: 1px;
   height: calc(100% + 15px);
   background-color: rgba(255, 255, 255, 0.3);
@@ -186,7 +191,6 @@ const CardContent = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
-
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -195,8 +199,8 @@ const CardContent = styled.div`
 `;
 
 const CardDate = styled.h3`
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 24px; //dont change
+  font-weight: 400; //dont change
   margin: 0;
 
   @media (max-width: 768px) {
@@ -205,7 +209,7 @@ const CardDate = styled.h3`
 `;
 
 const CardDescription = styled.p`
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: 400;
   margin: 0;
 
@@ -216,11 +220,12 @@ const CardDescription = styled.p`
 
 const RegisterButton = styled.button`
   background: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
+  border: 1px solid white; //dont change
+  border-radius: 8px; //dont change
   color: white;
   padding: 0.7rem 1.5rem;
-  font-size: 1rem;
+  width: 133px; //dont change
+  height: 48px; //dont change
   cursor: pointer;
   transition: all 0.2s ease;
 

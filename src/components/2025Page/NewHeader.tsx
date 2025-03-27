@@ -49,9 +49,6 @@ const Header: React.FC = () => {
           <PartnerButton onClick={() => navigate("/partner")}>
             Partner With Us
           </PartnerButton>
-          {/* <RegisterButton onClick={() => navigate("/register")}>
-            Register
-          </RegisterButton> */}
         </ActionButtons>
 
         {/* Mobile Menu Button */}
@@ -103,7 +100,6 @@ const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 0.75rem 2rem; */
   max-width: 1440px;
   margin: 0 auto;
 
@@ -129,20 +125,15 @@ const NavLink = styled.div<{ isActive: boolean }>`
   color: ${(props) => (props.isActive ? "#000000" : "#333333")};
   padding: 0.5rem 0;
   position: relative;
+  transition: color 0.3s ease;
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #000000;
-    transition: width 0.3s ease;
+  &:hover {
+    color: #fb4dd8;
   }
 
-  &:hover:after {
-    width: 100%;
+  /* Remove the border animation */
+  &:after {
+    display: none;
   }
 `;
 
@@ -189,6 +180,8 @@ const PartnerButton = styled.button`
 
   &:hover {
     background: rgba(0, 0, 0, 0.05);
+    color: #fb4dd8;
+    border-color: #fb4dd8;
   }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -285,6 +278,11 @@ const MobileNavLink = styled.div<{ isActive: boolean }>`
   text-align: center;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fb4dd8;
+  }
 `;
 
 const HeaderBorder = styled.div`
