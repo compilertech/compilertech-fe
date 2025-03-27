@@ -98,7 +98,7 @@ const HeroContainer = styled.div`
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 1.5rem;
+    padding-left: 0;
   }
 `;
 
@@ -134,21 +134,38 @@ const VectorContainer = styled.div`
 
 const ComingSoonBox = styled.div`
   position: absolute;
-  top: 47%;
-  right: 20vw;
-  transform: translate(-50%, -50%);
   width: 237px;
   height: 112px;
   border-radius: 16px;
   border: 0.5px solid #ffffff;
   background: rgba(249, 248, 245, 0.06);
   backdrop-filter: blur(10px);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  /* Default positioning */
+  top: 47%;
+  right: 20vw;
+  transform: translate(-50%, -50%);
+
+  /* Specific adjustment for 1350-1435px screens */
+  @media (min-width: 1350px) and (max-width: 1435px) {
+    right: 10vw;
+    top: 50%;
+  }
+
+  /* Adjust for very large screens */
+  @media (min-width: 1920px) {
+    right: 15vw;
+  }
+
+  /* Hide on tablet and mobile */
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    display: none;
+  }
 `;
 
 const ComingSoonText = styled.span`

@@ -60,6 +60,7 @@ const AgendaContainer = styled.div`
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
+  padding: 4rem 5rem;
 `;
 
 const InnerContainer = styled.div`

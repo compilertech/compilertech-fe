@@ -59,6 +59,7 @@ const AgendaContainer = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
+  padding: 4rem 5rem;
 `;
 
 const InnerContainer = styled.div`
@@ -176,8 +177,7 @@ const TimelineContainer = styled.div`
   flex: 1;
   position: relative;
   z-index: 4;
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(2px);
+
   padding: 2rem;
   border-radius: 8px;
   max-width: 800px;
@@ -215,13 +215,8 @@ const BackgroundVector = styled.div`
   z-index: 1;
   opacity: 0.8;
 
+  /* Hide on tablet and mobile devices */
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    width: 100%;
-    background-position: center;
-    opacity: 0.3;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: none;
   }
 `;
@@ -296,14 +291,6 @@ const ItemDate = styled.h3`
   line-height: 1;
   font-weight: 400;
   margin: 0 0 0.5rem 0;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 20px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 18px;
-  }
 `;
 
 const ItemDescription = styled.p`
@@ -312,14 +299,6 @@ const ItemDescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.2;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 13px;
-  }
 `;
 
 export default Agenda;
