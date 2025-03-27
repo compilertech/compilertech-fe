@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import vectorImage from "../../assets/2025/vector.svg";
 import heroImage from "../../assets/2025/hero.svg";
@@ -9,17 +9,11 @@ const heroData = {
   subtitle: "Bengaluru, Karnataka",
   description:
     "The IICT (Innovations in Compiler Technology) workshop unites researchers, practitioners, and enthusiasts to explore cutting-edge advancements in compiler design, implementation, and optimization for emerging software.",
-  cta: "About Us →",
+  cta: "Previous Year CTA →",
   comingSoon: "Coming soon",
 };
 
 function Hero2() {
-  const navigate = useNavigate();
-
-  const handleCTAClick = () => {
-    navigate("/2024");
-  };
-
   return (
     <HeroContainer>
       <ContentSection>
@@ -29,7 +23,9 @@ function Hero2() {
             <Subtitle>{heroData.subtitle}</Subtitle>
           </TitleContainer>
           <Description>{heroData.description}</Description>
-          <CTAText onClick={handleCTAClick}>{heroData.cta}</CTAText>
+          <ExternalLink href="/2024" target="_blank" rel="noopener noreferrer">
+            Previous Year CTA →
+          </ExternalLink>
         </TextContent>
         <ImageContainer>
           <ConferenceImage src={heroImage} alt="Conference illustration" />
@@ -54,15 +50,16 @@ const TextContent = styled.div`
   margin-bottom: 2rem;
 `;
 
-const CTAText = styled.span`
+const ExternalLink = styled.a`
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     color: #fb4dd8;
