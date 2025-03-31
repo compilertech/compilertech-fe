@@ -27,12 +27,12 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo className="logo" onClick={() => navigate("/")}>
-          <img src={"./icons/logo_light-cropped.png"} />
+        <Logo onClick={() => navigate("/")}>
+          <img src="./icons/logo_light-cropped.png" alt="IICT Logo" />
         </Logo>
 
         {/* Desktop Navigation */}
-        {/* <Navigation>
+        <Navigation>
           {navigationLinks.map((link, index) => (
             <NavLink
               key={index}
@@ -42,13 +42,16 @@ const Header: React.FC = () => {
               {link.text}
             </NavLink>
           ))}
-        </Navigation> */}
+        </Navigation>
 
         {/* Action Buttons */}
         <ActionButtons>
-          {/* <PartnerButton onClick={() => navigate("/partner")}>
-            Partner With Us
-          </PartnerButton> */}
+          <VisitButton onClick={() => window.open("/2024", "_blank")}>
+            Visit IICT'24
+          </VisitButton>
+          <PartnerButton onClick={() => navigate("/partner")}>
+            Partner with us
+          </PartnerButton>
         </ActionButtons>
 
         {/* Mobile Menu Button */}
@@ -61,6 +64,11 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       <MobileNavigation isOpen={isMenuOpen}>
+        <MenuHeader>
+          {/* <MenuTitle>
+            <GradientX>✕</GradientX>
+          </MenuTitle> */}
+        </MenuHeader>
         {navigationLinks.map((link, index) => (
           <MobileNavLink
             key={index}
@@ -73,14 +81,6 @@ const Header: React.FC = () => {
             {link.text}
           </MobileNavLink>
         ))}
-        <MobileActionButtons>
-          <PartnerButton onClick={() => navigate("/partner")}>
-            Partner With Us
-          </PartnerButton>
-          <RegisterButton onClick={() => navigate("/register")}>
-            Register
-          </RegisterButton>
-        </MobileActionButtons>
       </MobileNavigation>
 
       <HeaderBorder />
@@ -94,6 +94,7 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 0 5vw;
 `;
 
 const HeaderContent = styled.div`
@@ -102,15 +103,26 @@ const HeaderContent = styled.div`
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+  height: 80px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0;
+  }
+`;
+
+const Logo = styled.div`
+  cursor: pointer;
+
+  img {
+    height: 45px;
+    vertical-align: middle;
   }
 `;
 
 const Navigation = styled.nav`
   display: flex;
   gap: 2rem;
+  margin-left: auto;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
@@ -128,12 +140,7 @@ const NavLink = styled.div<{ isActive: boolean }>`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #fb4dd8;
-  }
-
-  /* Remove the border animation */
-  &:after {
-    display: none;
+    color: #a93d9d;
   }
 `;
 
@@ -141,37 +148,21 @@ const ActionButtons = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-left: 2rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
 
-const MobileActionButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  margin-top: 2rem;
-`;
-
-const Logo = styled.div`
-  img {
-    height: 70px;
-    margin-top: 15px;
-    margin-bottom: 7px;
-  }
-  cursor: pointer;
-`;
-
-const PartnerButton = styled.button`
-  width: 153px;
-  height: 48px;
+const VisitButton = styled.button`
+  height: 45px;
   background: transparent;
   color: #000000;
-  border: 1px solid #000000;
+  border: 1px solid;
+  border-image-slice: 1;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 10px 20px;
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -180,23 +171,17 @@ const PartnerButton = styled.button`
 
   &:hover {
     background: rgba(0, 0, 0, 0.05);
-    color: #fb4dd8;
-    border-color: #fb4dd8;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    width: 100%;
   }
 `;
 
-const RegisterButton = styled.button`
-  width: 153px;
-  height: 48px;
-  background: linear-gradient(95.98deg, #3779fe -7.3%, #fc4dd8 113.41%);
-  color: white;
-  border: none;
+const PartnerButton = styled.button`
+  height: 45px;
+  background: transparent;
+  color: #ffffff;
+  background: linear-gradient(90deg, #367aff 0%, #ff4dd8 100%);
+  border-image-slice: 1;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 10px 20px;
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -204,11 +189,7 @@ const RegisterButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.9;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
   }
 `;
 
@@ -224,7 +205,7 @@ const MobileMenuButton = styled.div<{ isOpen: boolean }>`
   span {
     height: 2px;
     width: 100%;
-    background-color: #000000;
+    background: linear-gradient(90deg, #367aff 0%, #ff4dd8 100%);
     transition: all 0.3s ease;
   }
 
@@ -247,6 +228,31 @@ const MobileMenuButton = styled.div<{ isOpen: boolean }>`
   }
 `;
 
+const MenuHeader = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+`;
+
+const MenuTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Satoshi", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+`;
+
+const GradientX = styled.span`
+  background: linear-gradient(90deg, #367aff 0%, #ff4dd8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+  font-weight: bold;
+`;
+
 const MobileNavigation = styled.div<{ isOpen: boolean }>`
   display: none;
   position: fixed;
@@ -254,8 +260,9 @@ const MobileNavigation = styled.div<{ isOpen: boolean }>`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: white;
-  padding: 5rem 2rem 2rem;
+  background-color: #000;
+  color: white;
+  padding: 2rem;
   transform: translateX(${({ isOpen }) => (isOpen ? "0" : "100%")});
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -264,7 +271,6 @@ const MobileNavigation = styled.div<{ isOpen: boolean }>`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 `;
 
@@ -272,16 +278,13 @@ const MobileNavLink = styled.div<{ isActive: boolean }>`
   font-family: "Satoshi", sans-serif;
   font-size: 24px;
   font-weight: ${(props) => (props.isActive ? "700" : "500")};
-  color: #000000;
+  color: #ffffff;
   padding: 1rem 0;
-  width: 100%;
-  text-align: center;
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: color 0.3s ease;
 
   &:hover {
-    color: #fb4dd8;
+    color: #a93d9d;
   }
 `;
 

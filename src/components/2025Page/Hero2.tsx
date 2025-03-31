@@ -62,7 +62,7 @@ function Hero2() {
           </SubmitButton>
         </EmailSubscriptionContainer>
 
-        {/* Replace the static image with carousel */}
+        {/* Carousel */}
         <CarouselContainer>
           <Slide
             src={images[currentIndex]}
@@ -101,27 +101,42 @@ const CarouselContainer = styled.div`
   position: relative;
   height: 360px; /* Match the height of slides */
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    max-width: 90%;
+    height: 300px;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     max-width: 100%;
+    height: 250px;
+    border-radius: 1rem;
   }
 `;
 
 const Slide = styled.img`
   width: 100%;
-  height: 360px; /* Set fixed height for all slides */
+  height: 100%;
   display: block;
   object-fit: contain;
   object-position: center;
   border-radius: 1.5rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    border-radius: 1rem;
+  }
 `;
 
 const DotsContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 12px;
   position: absolute;
   bottom: 15px;
   width: 100%;
+  z-index: 10;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    bottom: 8px;
+  }
 `;
 
 // Using "as" syntax for TypeScript compatibility
@@ -138,11 +153,22 @@ const Dot = styled.div<DotProps>`
   background: ${(props) =>
     props.$active ? "#a93d9d" : "rgba(169, 61, 157, 0.3)"};
   transition: background 0.3s ease;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
 `;
 
 // New components for the updated design
 const ForMoreUpdates = styled.p`
   margin-bottom: 1rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
 `;
 
 const EmailSubscriptionContainer = styled.div`
@@ -150,6 +176,17 @@ const EmailSubscriptionContainer = styled.div`
   margin-bottom: 2rem;
   max-width: 500px;
   gap: 1rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
 `;
 
 const EmailInput = styled.input`
@@ -164,6 +201,12 @@ const EmailInput = styled.input`
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
   }
 `;
 
@@ -183,6 +226,16 @@ const SubmitButton = styled.button`
   &:hover {
     background-color: #e6e6e6;
   }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 const ExternalLink = styled.a`
@@ -195,6 +248,11 @@ const ExternalLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+  }
 `;
 
 const ComingSoonTextMobile = styled.div`
@@ -205,6 +263,8 @@ const ComingSoonTextMobile = styled.div`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: block;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
   }
 `;
 
@@ -220,12 +280,13 @@ const HeroContainer = styled.div`
   font-family: "Poppins", sans-serif;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 2rem 4rem;
+    padding: 2rem;
     flex-direction: column;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding-left: 0;
+    padding: 1.5rem;
+    min-height: 100vh;
   }
 `;
 
@@ -237,9 +298,14 @@ const ContentSection = styled.div`
   padding-left: 5rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding-left: 0;
     padding-right: 0;
     align-items: center;
     text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 0;
   }
 `;
 
@@ -261,6 +327,10 @@ const VectorContainer = styled.div`
 
 const TitleContainer = styled.div`
   margin-bottom: 1.5rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -272,7 +342,7 @@ const Title = styled.h1`
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -288,7 +358,7 @@ const Subtitle = styled.h2`
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 `;
 
@@ -301,10 +371,13 @@ const Description = styled.p`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 1.1rem;
     text-align: center;
+    max-width: 90%;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
   }
 `;
 
