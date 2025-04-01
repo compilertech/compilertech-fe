@@ -99,7 +99,7 @@ const CarouselContainer = styled.div`
   overflow: hidden;
   margin-bottom: 1.5rem;
   position: relative;
-  height: 360px; /* Match the height of slides */
+  height: 400px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     max-width: 90%;

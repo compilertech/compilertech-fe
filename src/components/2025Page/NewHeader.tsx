@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         </Logo>
 
         {/* Desktop Navigation */}
-        <Navigation>
+        {/* <Navigation>
           {navigationLinks.map((link, index) => (
             <NavLink
               key={index}
@@ -42,24 +42,24 @@ const Header: React.FC = () => {
               {link.text}
             </NavLink>
           ))}
-        </Navigation>
+        </Navigation> */}
 
         {/* Action Buttons */}
         <ActionButtons>
           <VisitButton onClick={() => window.open("/2024", "_blank")}>
             Visit IICT'24
           </VisitButton>
-          <PartnerButton onClick={() => navigate("/partner")}>
+          {/* <PartnerButton onClick={() => navigate("/partner")}>
             Partner with us
-          </PartnerButton>
+          </PartnerButton> */}
         </ActionButtons>
 
         {/* Mobile Menu Button */}
-        <MobileMenuButton onClick={toggleMenu} isOpen={isMenuOpen}>
+        {/* <MobileMenuButton onClick={toggleMenu} isOpen={isMenuOpen}>
           <span></span>
           <span></span>
           <span></span>
-        </MobileMenuButton>
+        </MobileMenuButton> */}
       </HeaderContent>
 
       {/* Mobile Navigation */}
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
               setIsMenuOpen(false);
             }}
           >
-            {link.text}
+            {/* {link.text} */}
           </MobileNavLink>
         ))}
       </MobileNavigation>
@@ -101,8 +101,7 @@ const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
-  margin: 0 auto;
+  margin: 0;
   height: 80px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -116,6 +115,7 @@ const Logo = styled.div`
   img {
     height: 45px;
     vertical-align: middle;
+    margin-left: 2rem;
   }
 `;
 
@@ -148,7 +148,7 @@ const ActionButtons = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 4rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
