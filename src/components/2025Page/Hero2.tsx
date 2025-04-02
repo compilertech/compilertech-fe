@@ -2,14 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import vectorImage from "../../assets/2025/vector.svg";
-// import heroImage from "../../assets/2025/hero.svg";
+
 import { IoMdArrowForward } from "react-icons/io";
 import img1 from "../../assets/2025/img1.svg";
 import img2 from "../../assets/2025/img2.svg";
 import img3 from "../../assets/2025/img3.svg";
 import img4 from "../../assets/2025/img4.png";
 
-// Data object containing all the text content
 const heroData = {
   title: "Innovations in compiler technology 2025",
   subtitle: "workshop at Bengaluru",
@@ -24,10 +23,17 @@ const heroData = {
 function Hero2() {
   // Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
+
+  // Email subscription state
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const images = [img1, img2, img3, img4];
 
-  const goToSlide = useCallback((index: any) => {
+  const goToSlide = useCallback((index) => {
     setCurrentIndex(index);
   }, []);
 
@@ -37,11 +43,107 @@ function Hero2() {
     );
   }, [images.length]);
 
+  // Check if current view is tablet or mobile
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsTabletOrMobile(
+        window.innerWidth <= parseInt(TABLET_BREAKPOINT.replace("px", ""))
+      );
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener for resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, [nextSlide]);
+
+  // Function to detect if we're running in development environment
+  const isDevelopmentMode = () => {
+    return (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+    );
+  };
+
+  // Function to encode form data for Netlify
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  // Handle email subscription form submission
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setSubmitSuccess(false);
+    setSubmitError(false);
+
+    // Check if we're in development mode
+    if (isDevelopmentMode()) {
+      // Simulate a successful submission in development
+      console.log("DEV MODE: Form submission simulated for email:", email);
+
+      // Simulate network delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setEmail(""); // Clear email field after successful submission
+
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 3000);
+      }, 800);
+
+      return;
+    }
+
+    // Production code - actual Netlify form submission
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "get-updates-form",
+        email: email,
+      }),
+    })
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setEmail(""); // Clear email field after successful submission
+
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        setIsSubmitting(false);
+        setSubmitError(true);
+
+        // Reset error message after 3 seconds
+        setTimeout(() => {
+          setSubmitError(false);
+        }, 3000);
+      });
+  };
 
   return (
     <HeroContainer>
@@ -55,14 +157,58 @@ function Hero2() {
 
         <ForMoreUpdates>{heroData.forMoreUpdates}</ForMoreUpdates>
 
-        <EmailSubscriptionContainer>
-          <EmailInput placeholder={heroData.emailPlaceholder} />
-          <SubmitButton>
-            <IoMdArrowForward size={24} />
-          </SubmitButton>
-        </EmailSubscriptionContainer>
+        <form
+          name="get-updates-form"
+          method="post"
+          data-netlify="true"
+          onSubmit={handleEmailSubmit}
+          style={{ width: "100%", maxWidth: "500px" }}
+        >
+          {/* Hidden input for Netlify form identification */}
+          <input type="hidden" name="form-name" value="get-updates-form" />
 
-        {/* Carousel */}
+          {/* Honeypot field to reduce spam */}
+          <p style={{ display: "none" }}>
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+
+          <EmailSubscriptionContainer>
+            <EmailInput
+              type="email"
+              name="email"
+              placeholder={heroData.emailPlaceholder}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
+              required
+            />
+            <SubmitButton type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <span
+                  style={{ width: "24px", height: "24px", display: "block" }}
+                >
+                  ·
+                </span>
+              ) : (
+                <IoMdArrowForward size={24} />
+              )}
+            </SubmitButton>
+          </EmailSubscriptionContainer>
+
+          {/* Form status messages */}
+          {submitSuccess && (
+            <SubmitMessage success>Thank you for subscribing!</SubmitMessage>
+          )}
+          {submitError && (
+            <SubmitMessage>
+              Something went wrong. Please try again.
+            </SubmitMessage>
+          )}
+        </form>
+
+        {/* Carousel with conditional placement of Coming Soon box */}
         <CarouselContainer>
           <Slide
             src={images[currentIndex]}
@@ -77,39 +223,69 @@ function Hero2() {
               />
             ))}
           </DotsContainer>
-        </CarouselContainer>
 
-        <ComingSoonTextMobile>{heroData.comingSoon}</ComingSoonTextMobile>
+          {/* Coming Soon Box positioned here only for tablet and mobile */}
+          {isTabletOrMobile && (
+            <ComingSoonBoxMobile>
+              <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+            </ComingSoonBoxMobile>
+          )}
+        </CarouselContainer>
       </ContentSection>
 
       <VectorContainer>
-        <ComingSoonBox>
-          <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-        </ComingSoonBox>
+        {/* Original Coming Soon Box for desktop */}
+        {!isTabletOrMobile && (
+          <ComingSoonBox>
+            <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+          </ComingSoonBox>
+        )}
       </VectorContainer>
     </HeroContainer>
   );
 }
+
+// New styled component for form submission messages
+const SubmitMessage = styled.p`
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  color: ${(props) => (props.success ? "#4caf50" : "#f44336")};
+  text-align: left;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+`;
 
 // Carousel components
 const CarouselContainer = styled.div`
   width: 100%;
   max-width: 650px;
   border-radius: 1.5rem;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
   position: relative;
   height: 400px;
+  margin-bottom: 1.5rem;
 
+  /* Allow overflow on tablet/mobile for the overlap effect */
   @media (max-width: ${TABLET_BREAKPOINT}) {
+    overflow: visible;
     max-width: 90%;
     height: 300px;
+    margin-bottom: 60px; /* Extra space for overlapping box */
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     max-width: 100%;
     height: 250px;
     border-radius: 1rem;
+    margin-bottom: 50px;
   }
 `;
 
@@ -164,6 +340,7 @@ const Dot = styled.div<DotProps>`
 // New components for the updated design
 const ForMoreUpdates = styled.p`
   margin-bottom: 1rem;
+  font-size: 16px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 0.5rem;
@@ -227,6 +404,11 @@ const SubmitButton = styled.button`
     background-color: #e6e6e6;
   }
 
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 8px 12px;
     border-radius: 6px;
@@ -252,19 +434,6 @@ const ExternalLink = styled.a`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 0.9rem;
     margin-top: 0.75rem;
-  }
-`;
-
-const ComingSoonTextMobile = styled.div`
-  display: none;
-  font-size: 2rem;
-  margin-top: 2rem;
-  text-align: center;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: block;
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
   }
 `;
 
@@ -363,7 +532,7 @@ const Subtitle = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 1rem;
   max-width: 650px;
@@ -381,10 +550,9 @@ const Description = styled.p`
   }
 `;
 
+// Keep the original Coming Soon Box for desktop
 const ComingSoonBox = styled.div`
-  position: absolute;
-  width: 237px;
-  height: 112px;
+  /* Desktop styling (unchanged) */
   border-radius: 16px;
   border: 0.5px solid #ffffff;
   background: rgba(249, 248, 245, 0.06);
@@ -394,8 +562,12 @@ const ComingSoonBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 8px;
+  width: 237px;
+  height: 112px;
+  z-index: 10;
 
-  /* Default positioning */
+  /* Desktop positioning */
+  position: absolute;
   top: 47%;
   right: 20vw;
   transform: translate(-50%, -50%);
@@ -410,10 +582,37 @@ const ComingSoonBox = styled.div`
   @media (min-width: 1920px) {
     right: 15vw;
   }
+`;
 
-  /* Hide on tablet and mobile */
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    display: none;
+// New mobile/tablet-specific Coming Soon Box with overlap
+const ComingSoonBoxMobile = styled.div`
+  /* Common styling */
+  border-radius: 16px;
+  border: 0.5px solid #ffffff;
+  background: rgba(249, 248, 245, 0.06);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  /* Positioning - absolute relative to carousel container */
+  position: absolute;
+  bottom: -45px; /* Create overlap */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  /* Sizing */
+  width: 200px;
+  height: 90px;
+
+  /* Mobile-specific adjustments */
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 180px;
+    height: 80px;
+    bottom: -40px;
   }
 `;
 
@@ -424,6 +623,14 @@ const ComingSoonText = styled.span`
   line-height: 100%;
   letter-spacing: 0%;
   color: #ffffff;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 export default Hero2;
