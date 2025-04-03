@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import { useEffect, useState, FC } from "react";
 import styled from "styled-components";
 
 // Create a styled component for the gradient text

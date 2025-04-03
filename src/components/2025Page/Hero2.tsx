@@ -33,7 +33,7 @@ function Hero2() {
 
   const images = [img1, img2, img3, img4];
 
-  const goToSlide = useCallback((index) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentIndex(index);
   }, []);
 
@@ -76,7 +76,7 @@ function Hero2() {
   };
 
   // Function to encode form data for Netlify
-  const encode = (data) => {
+  const encode = (data: Record<string, string>) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
@@ -85,7 +85,7 @@ function Hero2() {
   };
 
   // Handle email subscription form submission
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!email) return;
@@ -218,7 +218,7 @@ function Hero2() {
             {images.map((_, index) => (
               <Dot
                 key={index}
-                $active={index === currentIndex}
+                active={index === currentIndex}
                 onClick={() => goToSlide(index)}
               />
             ))}
@@ -245,8 +245,13 @@ function Hero2() {
   );
 }
 
+// Define interface for props that use success
+interface SubmitMessageProps {
+  success?: boolean;
+}
+
 // New styled component for form submission messages
-const SubmitMessage = styled.p`
+const SubmitMessage = styled.p<SubmitMessageProps>`
   margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 14px;
@@ -315,9 +320,9 @@ const DotsContainer = styled.div`
   }
 `;
 
-// Using "as" syntax for TypeScript compatibility
+// Define interface for props that require active flag
 interface DotProps {
-  $active: boolean;
+  active: boolean;
 }
 
 const Dot = styled.div<DotProps>`
@@ -327,7 +332,7 @@ const Dot = styled.div<DotProps>`
   margin: 0 5px;
   cursor: pointer;
   background: ${(props) =>
-    props.$active ? "#a93d9d" : "rgba(169, 61, 157, 0.3)"};
+    props.active ? "#a93d9d" : "rgba(169, 61, 157, 0.3)"};
   transition: background 0.3s ease;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -420,22 +425,22 @@ const SubmitButton = styled.button`
   }
 `;
 
-const ExternalLink = styled.a`
-  font-size: 1rem;
-  color: white;
-  text-decoration: none;
-  margin-top: 1rem;
-  display: inline-block;
+// const ExternalLink = styled.a`
+//   font-size: 1rem;
+//   color: white;
+//   text-decoration: none;
+//   margin-top: 1rem;
+//   display: inline-block;
 
-  &:hover {
-    text-decoration: underline;
-  }
+//   &:hover {
+//     text-decoration: underline;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 0.9rem;
-    margin-top: 0.75rem;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     font-size: 0.9rem;
+//     margin-top: 0.75rem;
+//   }
+// `;
 
 // Existing styled components
 const HeroContainer = styled.div`

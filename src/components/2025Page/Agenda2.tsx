@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import AgendaVector from "../../assets/2025/agenda2.svg";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
