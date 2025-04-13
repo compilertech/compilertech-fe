@@ -1,13 +1,6 @@
 import styled from "styled-components";
-
+import img from "../../assets/2025/kt.svg";
 function KeyTopics() {
-  const stats = [
-    { number: "20+", description: "Key note Speakers" },
-    { number: "300+", description: "Attendees from various domains" },
-    { number: "50+", description: "Partners and sponsors" },
-    { number: "200+", description: "Presenters" },
-  ];
-
   const topics = [
     {
       icon: "🔍",
@@ -61,19 +54,6 @@ function KeyTopics() {
 
   return (
     <TopicsContainer>
-      <StatsSection>
-        <SectionTitle>Our stats</SectionTitle>
-        <Divider />
-        <StatsContainer>
-          {stats.map((stat, index) => (
-            <StatItem key={index}>
-              <StatNumber>{stat.number}</StatNumber>
-              <StatDescription>{stat.description}</StatDescription>
-            </StatItem>
-          ))}
-        </StatsContainer>
-      </StatsSection>
-
       <KeyTopicsSection>
         <TopicsHeader>
           <Title>Key Topics Shaping</Title>
@@ -82,7 +62,7 @@ function KeyTopics() {
 
         <GlobeImage>
           <img
-            src="/globe-circuit.jpg"
+            src={img}
             alt="Digital globe with circuit connections"
             width="100%"
           />
@@ -114,13 +94,11 @@ function KeyTopics() {
             pulvinar dignissim. Faucibus est in tincidunt cras egestas duis dui
             eros. Velit tempus scelerisque facilisis at amet habitant mattis
             aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
+            <SubmissionDeadline>
+              Submission Deadline : <i>To be announced</i>
+            </SubmissionDeadline>
+            <SubmitButton>Submit Now</SubmitButton>
           </SubmissionText>
-
-          <SubmissionDeadline>
-            Submission Deadline : <i>To be announced</i>
-          </SubmissionDeadline>
-
-          <SubmitButton>Submit Now</SubmitButton>
         </SubmissionContent>
       </SubmissionSection>
     </TopicsContainer>
@@ -133,64 +111,13 @@ export default KeyTopics;
 const TopicsContainer = styled.div`
   background-color: #0a0a0a;
   color: white;
-  padding: 3rem;
+  padding: 6rem;
   position: relative;
   width: 100%;
 
   @media (max-width: 768px) {
     padding: 2rem 1.5rem;
   }
-`;
-
-const SectionTitle = styled.h3`
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
-`;
-
-const Divider = styled.hr`
-  border: none;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 1rem 0 2rem 0;
-  width: 100%;
-`;
-
-const StatsSection = styled.div`
-  margin-bottom: 3rem;
-`;
-
-const StatsContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const StatItem = styled.div`
-  text-align: center;
-  flex: 1;
-  min-width: 150px;
-
-  @media (max-width: 768px) {
-    text-align: left;
-  }
-`;
-
-const StatNumber = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin: 0 0 0.5rem 0;
-`;
-
-const StatDescription = styled.p`
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
 `;
 
 const KeyTopicsSection = styled.div`
@@ -230,7 +157,8 @@ const GlobeImage = styled.div`
 
 const TopicsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column: 4;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 1.5rem;
 `;
 
@@ -274,8 +202,10 @@ const SubmissionSection = styled.div`
 `;
 
 const SubmissionContent = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+  /* max-width: 800px; */
 `;
 
 const SubmissionHeader = styled.div`
@@ -283,16 +213,17 @@ const SubmissionHeader = styled.div`
 `;
 
 const SubmissionTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 36px;
   font-weight: 400;
   margin: 0;
 `;
 
 const SubmissionSubtitle = styled.h3`
-  font-size: 2rem;
+  font-size: 36px;
   font-weight: 500;
   font-style: italic;
   color: #d83bd2;
+  font-family: spectral;
   margin: 0;
 `;
 
@@ -305,7 +236,9 @@ const SubmissionText = styled.p`
 
 const SubmissionDeadline = styled.p`
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   i {
     font-style: italic;

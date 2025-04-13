@@ -11,7 +11,7 @@ import AnimatedBanner from "./AnimatedBanner";
 import CountdownTimer from "./CountdownTimer";
 import Collab from "./Collab";
 import QAndA from "./QAndA";
-// import Venue from "./Venue";
+import Venue from "./Venue";
 import { useLayoutEffect } from "react";
 
 const Main = styled.main`
@@ -36,15 +36,22 @@ export default function Home2() {
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
       <Testimonial />
-      {/*  <KeyTopics />
+      <KeyTopics />
       <Highlights />
+      <Venue />
       <QAndA />
-      <Collab /> */}
-      {/* <Venue /> */}
-      {/* <Agenda /> */}
-      {/* <Agenda2 /> */}
-      {/* <Agenda3 /> */}
-      {/* <AnimatedBanner /> */}
+      <Collab />
+      <AnimatedBanner />
     </Main>
   );
+}
+
+{
+  /* <Agenda /> */
+}
+{
+  /* <Agenda2 /> */
+}
+{
+  /* <Agenda3 /> */
 }
