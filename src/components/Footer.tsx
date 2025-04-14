@@ -9,6 +9,7 @@ import {
 import { Button } from "./shared/Button";
 import Modal from "./shared/Modal";
 import CraftedBy from "./shared/CraftedBy";
+import { useLocation } from "react-router-dom";
 
 const tracks = [
   {
@@ -33,10 +34,18 @@ const tracks = [
 
 const Footer: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
+
+  const is2024Page =
+    location.pathname.includes("/2024") ||
+    location.pathname.includes("/organization") ||
+    location.pathname.includes("/attending") ||
+    location.pathname.includes("/schedule");
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
   return (
     <Container>
       <FooterContainer>
@@ -117,7 +126,7 @@ const Footer: React.FC = () => {
           </Section>
         </Links>
       </FooterContainer>
-      <CraftedBy />
+      {is2024Page && <CraftedBy />}
     </Container>
   );
 };

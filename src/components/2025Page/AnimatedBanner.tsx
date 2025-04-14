@@ -1,4 +1,4 @@
-import { useEffect, useState, FC } from "react";
+import { useEffect, useState, useRef, FC } from "react";
 import styled from "styled-components";
 
 // Create a styled component for the gradient text
@@ -14,7 +14,7 @@ const GradientText = styled.div`
   background-clip: text;
   text-fill-color: transparent;
   white-space: nowrap;
-  width: max-content;
+  padding: 0 100px; // Add some padding between repeated texts
 `;
 
 const Banner = styled.div`
@@ -22,29 +22,43 @@ const Banner = styled.div`
   background-color: #000000;
   overflow: hidden;
   padding: 40px 0;
+  position: relative;
+`;
+
+const InfiniteScrollContainer = styled.div`
+  display: flex;
+  white-space: nowrap;
 `;
 
 const AnimatedContainer = styled.div<{ position: number }>`
+  display: flex;
   transform: translateX(${(props) => props.position}px);
   transition: transform 0.1s linear;
 `;
 
 interface AnimatedBannerProps {
   text?: string;
+  speed?: number;
 }
 
 const AnimatedBanner: FC<AnimatedBannerProps> = ({
   text = "Innovating Compilers, Transforming Technology",
+  speed = 100,
 }) => {
   const [position, setPosition] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const [textWidth, setTextWidth] = useState<number>(0);
 
   useEffect(() => {
-    const animationSpeed: number = 50; // pixels per second
-    const screenWidth: number = window.innerWidth;
-    const textElement = document.querySelector(".gradient-text") as HTMLElement;
-    const textWidth: number = textElement
-      ? textElement.offsetWidth
-      : text.length * 80;
+    // Measure the width of a single text element
+    if (textRef.current) {
+      setTextWidth(textRef.current.offsetWidth);
+    }
+  }, [text]);
+
+  useEffect(() => {
+    if (!textWidth) return;
 
     let animationFrameId: number;
     let lastTimestamp: number | null = null;
@@ -56,26 +70,27 @@ const AnimatedBanner: FC<AnimatedBannerProps> = ({
 
       // Update position
       setPosition((prevPosition: number) => {
-        const newPosition: number =
-          prevPosition - (animationSpeed * deltaTime) / 1000;
-        // Reset position when text has moved completely off-screen to the left
-        return newPosition < -textWidth ? screenWidth : newPosition;
+        // Calculate new position with the specified speed
+        const newPosition = prevPosition - (speed * deltaTime) / 1000;
+
+        // Reset position when text has moved by one full width to create seamless loop
+        // We use modulo to create a looping effect
+        return newPosition <= -textWidth
+          ? newPosition + textWidth
+          : newPosition;
       });
 
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    // Start animation after a short delay to ensure the text element is measured correctly
-    setTimeout(() => {
-      animationFrameId = requestAnimationFrame(animate);
-    }, 100);
+    // Start animation
+    animationFrameId = requestAnimationFrame(animate);
 
     // Handle window resize
     const handleResize = (): void => {
-      // Reset animation when window size changes
-      cancelAnimationFrame(animationFrameId);
-      setPosition(window.innerWidth);
-      animationFrameId = requestAnimationFrame(animate);
+      if (textRef.current) {
+        setTextWidth(textRef.current.offsetWidth);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -84,13 +99,28 @@ const AnimatedBanner: FC<AnimatedBannerProps> = ({
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
     };
-  }, [text]);
+  }, [textWidth, speed]);
+
+  // Generate multiple copies of the text to ensure seamless looping
+  // We need at least enough copies to cover the screen width
+  const renderMultipleTexts = () => {
+    // Determine how many copies we need to fill the screen width plus a buffer
+    const numCopies = 3; // Start with 3 copies minimum
+
+    return Array.from({ length: numCopies }).map((_, index) => (
+      <GradientText key={index} ref={index === 0 ? textRef : undefined}>
+        {text}
+      </GradientText>
+    ));
+  };
 
   return (
     <Banner>
-      <AnimatedContainer position={position}>
-        <GradientText className="gradient-text">{text}</GradientText>
-      </AnimatedContainer>
+      <InfiniteScrollContainer ref={containerRef}>
+        <AnimatedContainer position={position}>
+          {renderMultipleTexts()}
+        </AnimatedContainer>
+      </InfiniteScrollContainer>
     </Banner>
   );
 };

@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// Define prop types for styled components
 interface AccordionContentProps {
   isOpen: boolean;
 }
 
-// Styled components
 const Container = styled.div`
   background-color: #000000;
   color: white;
-  padding: 50px 80px;
   width: 100%;
+  padding: 6rem;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
 `;
@@ -30,16 +27,22 @@ const RightColumn = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 0;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  margin-left: 80px;
 `;
 
 const Subtitle = styled.h3`
-  font-size: 42px;
-  color: #d14ed5; /* Purple/magenta color */
+  color: #d14ed5;
   font-style: italic;
-  margin-top: 0;
+  font-family: Spectral, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 36px;
+  margin-left: 80px;
 `;
 
 const Divider = styled.hr`
@@ -72,7 +75,6 @@ const PlusIcon = styled.span`
   font-weight: 300;
 `;
 
-// Use the defined prop interface
 const AccordionContent = styled.div<AccordionContentProps>`
   padding-bottom: ${({ isOpen }) => (isOpen ? "20px" : "0")};
   max-height: ${({ isOpen }) => (isOpen ? "1000px" : "0")};
@@ -94,7 +96,7 @@ interface FaqItem {
 }
 
 const QAndA: React.FC = () => {
-  const [openItem, setOpenItem] = useState<number | null>(0); // First item open by default
+  const [openItem, setOpenItem] = useState<number | null>(0);
 
   const faqItems: FaqItem[] = [
     {

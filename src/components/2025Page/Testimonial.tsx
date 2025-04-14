@@ -118,8 +118,7 @@ const LeftContent = styled.div`
 const RightContent = styled.div`
   flex: 1.5;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 `;
 
 const Title = styled.h2`
@@ -166,7 +165,6 @@ const Description = styled.p`
 
 const SubscriptionSection = styled.div`
   display: flex;
-  width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem;
@@ -177,10 +175,9 @@ const SubscriptionSection = styled.div`
 const SubscriptionText = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  margin: 0;
+  margin-right: 250px;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
-  flex: 1;
-  padding-right: 1rem;
   @media (max-width: 768px) {
     padding-right: 0;
   }
@@ -198,7 +195,6 @@ const SubscribeButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
-  gap: 12px;
   white-space: nowrap;
 
   &:hover {

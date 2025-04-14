@@ -3,9 +3,9 @@ import styled from "styled-components";
 const CollabContainer = styled.div`
   width: 100%;
   min-height: 500px;
-  background: linear-gradient(90deg, #4169e1 0%, #9370db 100%);
+  background: linear-gradient(97.09deg, #367aff 0%, #f150da 100%);
   display: flex;
-  padding: 60px;
+  padding: 6rem;
   position: relative;
   overflow: hidden;
 `;
@@ -18,26 +18,31 @@ const ContentSection = styled.div`
 
 const Heading = styled.h2`
   color: white;
-  font-size: 28px;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
-  margin-bottom: 0;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
 `;
 
 const SubHeading = styled.h3`
   color: white;
-  font-size: 50px;
-  font-weight: 400;
-  font-style: italic;
   margin-top: 5px;
-  margin-bottom: 40px;
+  font-family: Spectral, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 70px;
+  line-height: 120%;
+  letter-spacing: 0%;
 `;
 
 const Divider = styled.hr`
-  width: 80px;
-  height: 2px;
+  width: 90vw;
+  height: 0.5px;
   background-color: white;
   border: none;
-  margin: 30px 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
 `;
 
 const Description = styled.p`
@@ -59,11 +64,11 @@ const EmailHighlight = styled.span`
 
 const Button = styled.a`
   display: inline-block;
-  padding: 12px 30px;
+  padding: 10px 20px;
   background-color: transparent;
   color: white;
   border: 2px solid white;
-  border-radius: 30px;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
@@ -77,7 +82,7 @@ const Button = styled.a`
 const CirclesContainer = styled.div`
   position: absolute;
   right: 60px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   z-index: 1;
 `;
