@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import venueImg from "../../assets/2025/venue.svg";
 const Container = styled.div`
   display: flex;
   background-color: #000000;
@@ -48,7 +48,7 @@ const Button = styled.button`
   background-color: transparent;
   color: white;
   border: 2px solid white;
-  border-radius: 25px;
+  border-radius: 8px;
   padding: 12px 28px;
   font-size: 18px;
   cursor: pointer;
@@ -65,7 +65,7 @@ function Venue() {
     <Container>
       <ImageContainer>
         <VenueImage
-          src="/api/placeholder/800/500"
+          src={venueImg}
           alt="Historic building with tall tower and landscaped grounds"
         />
       </ImageContainer>

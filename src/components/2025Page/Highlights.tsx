@@ -1,36 +1,42 @@
 import styled from "styled-components";
+import image1 from "../../assets/2025/image1.svg";
+import image2 from "../../assets/2025/image2.svg";
+import image3 from "../../assets/2025/image3.svg";
+import image4 from "../../assets/2025/image4.svg";
+import image5 from "../../assets/2025/image5.svg";
+import image6 from "../../assets/2025/image6.svg";
 
 function Highlights() {
   // Image data with placeholder images
   const highlightImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2670&auto=format&fit=crop",
+      src: image1,
       alt: "Speaker presenting to audience at conference",
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=2670&auto=format&fit=crop",
+      src: image2,
       alt: "Panel discussion with industry experts",
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2670&auto=format&fit=crop",
+      src: image3,
       alt: "Award ceremony at technology conference",
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1560523160-754a9e25c68f?q=80&w=2670&auto=format&fit=crop",
+      src: image4,
       alt: "Speaker at compiler technology workshop",
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=2670&auto=format&fit=crop",
+      src: image5,
       alt: "Inauguration ceremony with traditional lamp lighting",
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1526925539332-aa3b66e35444?q=80&w=2670&auto=format&fit=crop",
+      src: image6,
       alt: "Keynote presentation on compiler advancements",
     },
   ];
@@ -144,9 +150,13 @@ const VisitButton = styled.button`
 `;
 
 const ImageGrid = styled.div`
+  max-width: full;
+  align-items: center;
+  justify-content: center;
+  background-color: pink;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 10px;
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -160,7 +170,8 @@ const ImageGrid = styled.div`
 const ImageCard = styled.div`
   border-radius: 10px;
   overflow: hidden;
-  height: 250px;
+  height: 350px;
+  width: 416px;
 
   @media (max-width: 768px) {
     height: 200px;

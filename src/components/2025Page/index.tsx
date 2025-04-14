@@ -37,11 +37,11 @@ export default function Home2() {
       <Hero2 />
       <Testimonial />
       <KeyTopics />
-      <Highlights />
-      <Venue />
-      <QAndA />
-      <Collab />
-      <AnimatedBanner />
+      {/* <Highlights /> */}
+      {/* <Venue /> */}
+      {/* <QAndA /> */}
+      {/* <Collab /> */}
+      {/* <AnimatedBanner /> */}
     </Main>
   );
 }

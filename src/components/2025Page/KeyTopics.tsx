@@ -1,51 +1,60 @@
 import styled from "styled-components";
 import img from "../../assets/2025/kt.svg";
+import icon1 from "../../assets/2025/icon1.svg";
+import icon2 from "../../assets/2025/icon2.png";
+import icon3 from "../../assets/2025/icon3.svg";
+import icon4 from "../../assets/2025/icon4.svg";
+import icon5 from "../../assets/2025/icon5.svg";
+import icon6 from "../../assets/2025/icon6.svg";
+import icon7 from "../../assets/2025/icon7.svg";
+import icon8 from "../../assets/2025/icon8.svg";
+
 function KeyTopics() {
   const topics = [
     {
-      icon: "🔍",
+      icon: icon1,
       title: "Novel Compiler Optimizations",
       description:
         "Techniques for improving performance, energy efficiency, code size, and security.",
     },
     {
-      icon: "🎯",
+      icon: icon2,
       title: "Domain-Specific Compilers",
       description:
         "Design and implementation of compilers tailored for specific applications or hardware architectures (e.g. AI, machine learning, high-performance computing).",
     },
     {
-      icon: "🔧",
+      icon: icon3,
       title: "Compiler Frameworks and Tools",
       description:
         "Advancements in compiler infrastructure, intermediate representations, program analysis, and transformation tools.",
     },
     {
-      icon: "💡",
+      icon: icon4,
       title: "Just-in-Time (JIT) Compilation",
       description:
         "Techniques for dynamic code generation and optimization, adaptive compilation, and runtime feedback.",
     },
     {
-      icon: "📚",
+      icon: icon5,
       title: "Programming Language Design & Implementation",
       description:
         "Compiler support for new or evolving programming languages, including type systems, concurrency models, and memory management.",
     },
     {
-      icon: "🔄",
+      icon: icon6,
       title: "Hardware-Software Co-design",
       description:
         "Compiler optimizations and techniques for emerging hardware architectures, such as heterogeneous systems, FPGAs, and accelerators.",
     },
     {
-      icon: "🔐",
+      icon: icon7,
       title: "Compiler Verification and Correctness",
       description:
         "Methods for ensuring the reliability and safety of compiler transformations and optimizations.",
     },
     {
-      icon: "🎓",
+      icon: icon8,
       title: "Compiler Education and Outreach",
       description:
         "Approaches for teaching compiler concepts, promoting diversity and inclusion in the compiler community, and fostering collaboration.",
@@ -71,7 +80,7 @@ function KeyTopics() {
         <TopicsGrid>
           {topics.map((topic, index) => (
             <TopicCard key={index}>
-              <TopicIcon>{topic.icon}</TopicIcon>
+              <TopicIcon src={topic.icon} alt={topic.title} />
               <TopicTitle>{topic.title}</TopicTitle>
               <TopicDescription>{topic.description}</TopicDescription>
             </TopicCard>
@@ -109,9 +118,10 @@ export default KeyTopics;
 
 // Styled Components
 const TopicsContainer = styled.div`
-  background-color: #0a0a0a;
+  background-color: #000;
   color: white;
   padding: 6rem;
+  padding-top: 4rem;
   position: relative;
   width: 100%;
 
@@ -129,17 +139,26 @@ const TopicsHeader = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.2rem;
-  font-weight: 400;
   margin: 0;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
 `;
 
 const Subtitle = styled.h3`
   font-size: 2.2rem;
-  font-weight: 500;
+
   font-style: italic;
   color: #d83bd2;
-  margin: 0;
+  margin-top: 10px;
+  font-family: Spectral;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0%;
 `;
 
 const GlobeImage = styled.div`
@@ -169,12 +188,19 @@ const TopicCard = styled.div`
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 `;
 
-const TopicIcon = styled.div`
+const TopicIcon = styled.img`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  background-color: #232928;
+  width: 45px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const TopicTitle = styled.h4`
@@ -194,7 +220,7 @@ const SubmissionSection = styled.div`
   background-color: rgba(20, 20, 20, 0.5);
   border: 1px solid #1e3a8a;
   border-radius: 12px;
-  padding: 2rem;
+  border: 0.5px solid #ffffff;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -205,7 +231,10 @@ const SubmissionContent = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 200px;
-  /* max-width: 800px; */
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: #f9f8f50d;
 `;
 
 const SubmissionHeader = styled.div`
@@ -213,9 +242,9 @@ const SubmissionHeader = styled.div`
 `;
 
 const SubmissionTitle = styled.h2`
-  font-size: 36px;
+  font-family: Poppins;
   font-weight: 400;
-  margin: 0;
+  font-size: 36px;
 `;
 
 const SubmissionSubtitle = styled.h3`
@@ -224,13 +253,13 @@ const SubmissionSubtitle = styled.h3`
   font-style: italic;
   color: #d83bd2;
   font-family: spectral;
-  margin: 0;
+  margin-top: 10px;
 `;
 
 const SubmissionText = styled.p`
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
 `;
 
@@ -238,7 +267,7 @@ const SubmissionDeadline = styled.p`
   font-size: 1rem;
 
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   i {
     font-style: italic;
