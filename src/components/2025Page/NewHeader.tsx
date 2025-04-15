@@ -128,8 +128,6 @@ const ActionButtons = styled.div`
   @media (min-width: ${TABLET_BREAKPOINT}) {
     margin-left: 4rem;
   }
-
-  /* Remove display: none for smaller screens */
 `;
 
 const VisitButton = styled.button`

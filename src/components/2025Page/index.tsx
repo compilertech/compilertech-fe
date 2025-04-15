@@ -38,10 +38,10 @@ export default function Home2() {
       <Testimonial />
       <KeyTopics />
       <Highlights />
-      {/* <Venue />
+      <Venue />
       <QAndA />
       <Collab />
-      <AnimatedBanner /> */}
+      <AnimatedBanner />
     </Main>
   );
 }

@@ -1,22 +1,40 @@
 import styled from "styled-components";
 import venueImg from "../../assets/2025/venue.svg";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+
 const Container = styled.div`
   background-color: #000000;
   color: white;
   width: 100%;
   position: relative;
 `;
+
 const ContainerTwo = styled.div`
   flex: 1;
   display: flex;
   justify-content: space-evenly;
   padding: 6rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 4rem 3rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column-reverse;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
 `;
+
 const ImageContainer = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 2rem;
+  }
 `;
 
 const VenueImage = styled.img`
@@ -30,6 +48,16 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 40px;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding-left: 30px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Heading = styled.h1`
@@ -39,6 +67,14 @@ const Heading = styled.h1`
   font-size: 36px;
   line-height: 100%;
   letter-spacing: 0%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
 `;
 
 const SubHeading = styled.h2`
@@ -51,6 +87,16 @@ const SubHeading = styled.h2`
   font-size: 36px;
   line-height: 120%;
   letter-spacing: 0%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
 `;
 
 const Button = styled.button`
@@ -71,12 +117,20 @@ const Button = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 16px;
+    width: 130px;
+    height: 44px;
+  }
 `;
+
 const TopBorder = styled.div`
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, #367aff 0%, #ff4dd8 100%);
 `;
+
 function Venue() {
   return (
     <Container>

@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 import LogoImage from "/icons/logo_dark-cropped.png";
-import CraftedBy from "../shared/CraftedBy";
+
 const NewFooter: React.FC = () => {
   const navigate = useNavigate();
 
@@ -62,6 +66,8 @@ const FooterContainer = styled.footer`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 1.5rem;
+    width: 100%;
+    overflow: hidden;
   }
 `;
 
@@ -71,9 +77,21 @@ const FooterContent = styled.div`
   padding: 6rem;
   margin-bottom: 2rem;
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    gap: 15vw;
+    padding: 4rem 3rem;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 2rem 1rem;
   }
 `;
 
@@ -85,6 +103,10 @@ const Logo = styled.img`
   width: 200px;
   height: auto;
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 180px;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 150px;
   }
@@ -92,15 +114,31 @@ const Logo = styled.img`
 
 const QuickLinksSection = styled.div`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    width: 100%;
+    text-align: center;
   }
 `;
+
 const QuickLinks = styled.div`
   display: flex;
   gap: 3rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    gap: 2rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
 `;
+
 const QuickLinksContainer = styled.div`
   font-family: Poppins, sans-serif;
   font-weight: 600;
@@ -108,7 +146,19 @@ const QuickLinksContainer = styled.div`
   padding-bottom: 30px;
   line-height: 100%;
   letter-spacing: 0%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 28px;
+    padding-bottom: 25px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
 `;
+
 const QuickLinksColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -135,7 +185,12 @@ const QuickLink = styled.a`
     opacity: 1;
   }
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 18px;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 16px;
     text-align: center;
   }
 `;
@@ -144,9 +199,17 @@ const CopyrightSection = styled.div`
   text-align: center;
   font-size: 0.875rem;
   opacity: 0.6;
-  width: 100vw;
+  width: 100%;
   border-top: 1px solid white;
   padding: 1.5rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    /* padding: 1rem; */
+    border-top: 1px solid white;
+
+    font-size: 0.8rem;
+  }
 `;
 
 export default NewFooter;
