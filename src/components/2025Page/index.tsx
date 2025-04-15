@@ -36,9 +36,9 @@ export default function Home2() {
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
       <Testimonial />
-      {/* <KeyTopics />
+      <KeyTopics />
       <Highlights />
-      <Venue />
+      {/* <Venue />
       <QAndA />
       <Collab />
       <AnimatedBanner /> */}

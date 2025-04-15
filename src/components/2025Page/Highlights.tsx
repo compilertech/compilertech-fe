@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 import image1 from "../../assets/2025/image1.svg";
 import image2 from "../../assets/2025/image2.svg";
 import image3 from "../../assets/2025/image3.svg";
@@ -49,7 +54,9 @@ function Highlights() {
             <Title>Highlights from Last Year</Title>
             <Subtitle>A Look Back</Subtitle>
           </TitleWrapper>
-          <VisitButton>Visit website</VisitButton>
+          <ButtonWrapper>
+            <VisitButton>Visit website</VisitButton>
+          </ButtonWrapper>
         </HeaderSection>
 
         <ImageGrid>
@@ -84,25 +91,52 @@ const HighlightsContainer = styled.div`
   min-height: 100vh;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 4rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 2rem;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 1.5rem;
   }
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
   z-index: 2;
-`;
+  max-width: 1400px;
+  margin: 0 auto;
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    max-width: 100%;
+  }
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: flex-end;
+  }
+`;
 const HeaderSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 2.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -116,9 +150,25 @@ const Title = styled.h2`
   font-family: Poppins, sans-serif;
   font-weight: 400;
   font-size: 36px;
+  margin: 0;
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    margin: 12px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
   }
 `;
 
@@ -131,9 +181,24 @@ const Subtitle = styled.span`
   font-size: 36px;
   line-height: 120%;
   letter-spacing: 0%;
+  margin: 0;
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
   }
 `;
 
@@ -159,33 +224,37 @@ const VisitButton = styled.button`
 `;
 
 const ImageGrid = styled.div`
-  max-width: full;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
-  /* background-color: pink; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 16px;
   border-radius: 8px;
-  /* background-color: pink; */
 
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
 `;
 
 const ImageCard = styled.div`
   border-radius: 10px;
   overflow: hidden;
-  height: 450px;
-  width: 490px;
+  height: auto;
+  aspect-ratio: 16/9;
 
-  @media (max-width: 768px) {
-    height: 200px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    aspect-ratio: 4/3;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    aspect-ratio: 16/9;
   }
 `;
 
@@ -204,6 +273,16 @@ const ViewMoreButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
 `;
 
 const ViewMoreButton = styled.button`
@@ -213,8 +292,8 @@ const ViewMoreButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  width: 110;
-  height: 48;
+  width: 110px;
+  height: 48px;
   border-width: 1px;
   border-radius: 8px;
   padding-top: 10px;
@@ -225,9 +304,11 @@ const ViewMoreButton = styled.button`
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    align-self: center;
   }
 `;
 
+// Keeping the exact same decorative elements
 const PurpleCircle = styled.div`
   position: absolute;
   width: 249px;
@@ -245,6 +326,17 @@ const PurpleCircle = styled.div`
   border-radius: 50%;
   opacity: 0.8;
   z-index: 1;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    top: 800px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 200px;
+    height: 200px;
+    top: 1000px;
+    left: 20px;
+  }
 `;
 
 const GoldCircle = styled.div`
@@ -265,4 +357,10 @@ const GoldCircle = styled.div`
   border-bottom-left-radius: 100%;
   opacity: 0.8;
   z-index: 1;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 140px;
+    height: 140px;
+    top: 120px;
+  }
 `;

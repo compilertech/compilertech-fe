@@ -1,4 +1,10 @@
+import React from "react";
 import styled from "styled-components";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 import img from "../../assets/2025/kt.svg";
 import icon1 from "../../assets/2025/icon1.svg";
 import icon2 from "../../assets/2025/icon2.png";
@@ -95,19 +101,22 @@ function KeyTopics() {
             <SubmissionSubtitle>Guidelines</SubmissionSubtitle>
           </SubmissionHeader>
 
-          <SubmissionText>
-            Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-            vivamus mauris elit. Hendrerit a donec platea nulla pretium
-            venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-            egestas. Sit eget integer consequat odio fringilla massa sed
-            pulvinar dignissim. Faucibus est in tincidunt cras egestas duis dui
-            eros. Velit tempus scelerisque facilisis at amet habitant mattis
-            aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
+          <div>
+            <SubmissionText>
+              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
+              vivamus mauris elit. Hendrerit a donec platea nulla pretium
+              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
+              egestas. Sit eget integer consequat odio fringilla massa sed
+              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
+              dui eros. Velit tempus scelerisque facilisis at amet habitant
+              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
+              vestibulum.
+            </SubmissionText>
             <SubmissionDeadline>
               Submission Deadline : <i>To be announced</i>
             </SubmissionDeadline>
             <SubmitButton>Submit Now</SubmitButton>
-          </SubmissionText>
+          </div>
         </SubmissionContent>
       </SubmissionSection>
     </TopicsContainer>
@@ -125,17 +134,34 @@ const TopicsContainer = styled.div`
   position: relative;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 4rem 3rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 1.5rem 1rem;
   }
 `;
 
 const KeyTopicsSection = styled.div`
   margin-bottom: 3rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const TopicsHeader = styled.div`
   margin-bottom: 2rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -145,11 +171,22 @@ const Title = styled.h2`
   font-size: 36px;
   line-height: 100%;
   letter-spacing: 0%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 const Subtitle = styled.h3`
   font-size: 2.2rem;
-
   font-style: italic;
   color: #d83bd2;
   margin-top: 10px;
@@ -159,6 +196,18 @@ const Subtitle = styled.h3`
   font-size: 36px;
   line-height: 120%;
   letter-spacing: 0%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 const GlobeImage = styled.div`
@@ -172,13 +221,25 @@ const GlobeImage = styled.div`
     width: 100%;
     height: auto;
   }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const TopicsGrid = styled.div`
   display: grid;
-  grid-column: 4;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 1.5rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const TopicCard = styled.div`
@@ -188,6 +249,10 @@ const TopicCard = styled.div`
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 1.25rem;
+  }
 `;
 
 const TopicIcon = styled.img`
@@ -201,12 +266,23 @@ const TopicIcon = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const TopicTitle = styled.h4`
   font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 1.1rem;
+  }
 `;
 
 const TopicDescription = styled.p`
@@ -214,6 +290,10 @@ const TopicDescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.5;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 0.85rem;
+  }
 `;
 
 const SubmissionSection = styled.div`
@@ -222,29 +302,70 @@ const SubmissionSection = styled.div`
   border-radius: 12px;
   border: 0.5px solid #ffffff;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    border-radius: 8px;
   }
 `;
 
 const SubmissionContent = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 200px;
   width: 100%;
   height: 100%;
   padding: 2rem;
   background-color: #f9f8f50d;
+
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 1.25rem;
+  }
 `;
 
 const SubmissionHeader = styled.div`
-  margin-bottom: 1.5rem;
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    width: 25%;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const SubmissionTitle = styled.h2`
   font-family: Poppins;
   font-weight: 400;
   font-size: 36px;
+  margin: 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 const SubmissionSubtitle = styled.h3`
@@ -254,6 +375,19 @@ const SubmissionSubtitle = styled.h3`
   color: #d83bd2;
   font-family: spectral;
   margin-top: 10px;
+  margin-bottom: 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 const SubmissionText = styled.p`
@@ -261,16 +395,35 @@ const SubmissionText = styled.p`
   line-height: 1.6;
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
+
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    text-align: left;
+    width: 75%;
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
 `;
 
 const SubmissionDeadline = styled.p`
   font-size: 1rem;
-
   margin-top: 1rem;
   margin-bottom: 2rem;
 
   i {
     font-style: italic;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -284,7 +437,22 @@ const SubmitButton = styled.button`
   cursor: pointer;
   transition: all 0.2s ease;
 
+  @media (min-width: ${TABLET_BREAKPOINT}) {
+    display: inline-block;
+    margin: 0;
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin: 0 auto;
+    display: inline-block;
+  }
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.9rem;
   }
 `;
