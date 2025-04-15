@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         </Logo>
 
         {/* Desktop Navigation */}
-        <Navigation>
+        {/* <Navigation>
           {navigationLinks.map((link, index) => (
             <NavLink
               key={index}
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
               {link.text}
             </NavLink>
           ))}
-        </Navigation>
+        </Navigation> */}
 
         {/* Action Buttons - Now visible on all screen sizes */}
         <ActionButtons>
