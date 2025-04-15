@@ -12,7 +12,6 @@ const GradientText = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
   white-space: nowrap;
   padding: 0 100px; // Add some padding between repeated texts
 `;
