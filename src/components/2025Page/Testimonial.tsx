@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 
 const TestimonialSection = () => {
   const stats = [
-    { number: "20+", description: "Key note Speakers", width: "140px" },
-    {
-      number: "300+",
-      description: "Attendees from various domains",
-      width: "140px",
-    },
-    { number: "50+", description: "Partners and sponsors", width: "100px" },
-    { number: "200+", description: "Presenters", width: "100px" },
+    { number: "20+", description: "Key note Speakers" },
+    { number: "300+", description: "Attendees from various domains" },
+    { number: "50+", description: "Partners and sponsors" },
+    { number: "200+", description: "Presenters" },
   ];
 
   return (
@@ -17,31 +18,37 @@ const TestimonialSection = () => {
       <TopBorder />
 
       <TestimonialCard>
-        <LeftContent>
-          <Title>
-            Exploring the Future of
-            <HighlightText>Compiler Technology</HighlightText>
-          </Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-            vivamus mauris elit. Hendrerit a donec platea nulla pretium
-            venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-            egestas. Sit eget integer consequat odio fringilla massa sed
-            pulvinar dignissim. Faucibus est in tincidunt cras egestas duis dui
-            eros. Velit tempus scelerisque facilisis at amet habitant mattis
-            aenean. Vitae quisque enim laoreet urna dictum nunc vestibulum.
-          </Description>
-        </LeftContent>
+        <ContentWrapper>
+          <LeftContent>
+            <Title>
+              Exploring the Future of
+              <HighlightText>Compiler Technology</HighlightText>
+            </Title>
+          </LeftContent>
+
+          <RightContent>
+            <Description>
+              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
+              vivamus mauris elit. Hendrerit a donec platea nulla pretium
+              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
+              egestas. Sit eget integer consequat odio fringilla massa sed
+              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
+              dui eros. Velit tempus scelerisque facilisis at amet habitant
+              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
+              vestibulum.
+            </Description>
+          </RightContent>
+        </ContentWrapper>
+
         <Divider />
-        <RightContent>
-          <SubscriptionSection>
-            <SubscriptionText>
-              Subscribe now and stay informed with the latest <br /> updates and
-              important announcements
-            </SubscriptionText>
-            <SubscribeButton>Subscribe</SubscribeButton>
-          </SubscriptionSection>
-        </RightContent>
+
+        <SubscriptionWrapper>
+          <SubscriptionText>
+            Subscribe now and stay informed with the latest updates and
+            important announcements
+          </SubscriptionText>
+          <SubscribeButton>Subscribe</SubscribeButton>
+        </SubscriptionWrapper>
       </TestimonialCard>
 
       <StatsSection>
@@ -52,9 +59,7 @@ const TestimonialSection = () => {
           {stats.map((stat, index) => (
             <StatItem key={index}>
               <StatNumber>{stat.number}</StatNumber>
-              <StatDescription style={{ width: stat.width }}>
-                {stat.description}
-              </StatDescription>
+              <StatDescription>{stat.description}</StatDescription>
             </StatItem>
           ))}
         </StatsList>
@@ -78,8 +83,16 @@ const Container = styled.div`
   font-size: 16px;
   overflow: hidden;
 
-  @media (max-width: 768px) {
-    padding: 2rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 4rem 3rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 2rem 1rem;
   }
 `;
 
@@ -90,35 +103,59 @@ const TopBorder = styled.div`
   position: absolute;
   top: 10px;
   right: -300px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    visibility: hidden;
+  }
 `;
 
 const TestimonialCard = styled.div`
   background-color: #151515;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 3rem;
   position: relative;
   z-index: 2;
 
-  @media (max-width: 992px) {
-    flex-direction: column;
-    gap: 2rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 2.5rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 2rem;
+    border-radius: 0;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    padding: 1.5rem;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  width: 100%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `;
 
 const LeftContent = styled.div`
-  display: flex;
+  flex: 1;
   padding-right: 2rem;
 
-  @media (max-width: 992px) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     padding-right: 0;
+    margin-bottom: 1.5rem;
   }
 `;
 
 const RightContent = styled.div`
   flex: 1.5;
-  display: flex;
-  justify-content: flex-end;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h2`
@@ -126,10 +163,19 @@ const Title = styled.h2`
   font-size: 36px;
   font-weight: 400;
   line-height: 1.2;
-  margin: 0 0 1rem 0;
-  width: 50%;
-  @media (max-width: 768px) {
-    font-size: 28px;
+  margin: 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 20px;
   }
 `;
 
@@ -141,8 +187,17 @@ const HighlightText = styled.div`
   font-weight: 500;
   margin-top: 0.5rem;
 
-  @media (max-width: 768px) {
-    font-size: 28px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 24px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 20px;
   }
 `;
 
@@ -150,7 +205,7 @@ const Divider = styled.hr`
   border: none;
   height: 0.5px;
   background-color: #cfcbc4;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   width: 100%;
 `;
 
@@ -158,33 +213,57 @@ const Description = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  margin: 0 0 2rem 0;
-  width: 50%;
+  margin: 0;
   color: rgba(255, 255, 255, 0.9);
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 15px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 14px;
+  }
 `;
 
-const SubscriptionSection = styled.div`
+const SubscriptionWrapper = styled.div`
   display: flex;
-  @media (max-width: 768px) {
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
-    align-items: flex-start;
   }
 `;
 
 const SubscriptionText = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  margin-right: 250px;
   line-height: 1.6;
+  margin: 0;
   color: rgba(255, 255, 255, 0.9);
-  @media (max-width: 768px) {
-    padding-right: 0;
+  flex: 1;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 15px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 14px;
   }
 `;
 
 const SubscribeButton = styled.button`
-  width: 107px;
+  width: 140px;
   height: 48px;
   background: transparent;
   border: 1px solid white;
@@ -200,10 +279,16 @@ const SubscribeButton = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 14px;
+    height: 40px;
+  }
 `;
 
+// Stats Section
 const StatsSection = styled.div`
-  padding-top: 8rem;
+  margin-top: 6rem;
 `;
 
 const StatsHeader = styled.div`
@@ -213,37 +298,39 @@ const StatsHeader = styled.div`
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 2rem;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const StatsLine = styled.div`
   flex: 1;
-  height: 0.5px;
+  height: 1px;
   background-color: #cfcbc4;
   margin-left: 1rem;
 `;
 
 const StatsList = styled.div`
   display: flex;
-  width: 100%; // Added to ensure full width
-  margin-left: 200px; // Changed from 30%
-  padding: 2rem 0; // Added some padding
+  justify-content: space-around;
+  width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
+    gap: 2rem;
   }
 `;
 
 const StatItem = styled.div`
   text-align: center;
-  min-width: 150px;
-  display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  align-items: center;
-  @media (max-width: 768px) {
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     text-align: left;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
   }
 `;
 
@@ -252,20 +339,37 @@ const StatNumber = styled.h2`
   font-size: 48px;
   font-weight: 400;
   margin: 0 0 0.5rem 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 40px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 30px;
+  }
 `;
 
 const StatDescription = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   color: #cfcbc4;
-  line-height: 25px;
-  letter-spacing: 0.5px;
-  text-align: center;
-  @media (max-width: 768px) {
-    text-align: left;
+  margin: 0;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 15px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 14px;
   }
 `;
 
+/* Decorative elements - kept as instructed */
 const PurpleCircle = styled.div`
   position: absolute;
   top: 360px;
@@ -280,6 +384,14 @@ const PurpleCircle = styled.div`
   border-radius: 0;
   opacity: 0.8;
   z-index: 1;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    top: 480px;
+    left: -40px;
+
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const GoldBlueCircle = styled.div`
@@ -293,6 +405,18 @@ const GoldBlueCircle = styled.div`
   border-radius: 50%;
   opacity: 0.8;
   z-index: 1;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 200px;
+    height: 200px;
+    top: 0;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 150px;
+    height: 150px;
+    top: 0;
+  }
 `;
 
 export default TestimonialSection;

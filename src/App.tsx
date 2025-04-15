@@ -70,7 +70,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
         {is2024Page && <Footer />}
-        {!is2024Page && <NewFooter />}
+        {/* {!is2024Page && <NewFooter />} */}
       </Wrapper>
     </ThemeProvider>
   );
