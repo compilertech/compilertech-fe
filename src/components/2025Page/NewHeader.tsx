@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-// import {  useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
@@ -128,8 +128,6 @@ const ActionButtons = styled.div`
   @media (min-width: ${TABLET_BREAKPOINT}) {
     margin-left: 4rem;
   }
-
-  /* Remove display: none for smaller screens */
 `;
 
 const VisitButton = styled.button`

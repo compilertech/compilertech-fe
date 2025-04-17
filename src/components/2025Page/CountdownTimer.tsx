@@ -1,5 +1,6 @@
 import { useState, useEffect, FC } from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const CountdownContainer = styled.div`
   width: 100%;
@@ -8,6 +9,14 @@ const CountdownContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 12px 0;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 10px 15px;
+  }
 `;
 
 const CountdownText = styled.div`
@@ -16,6 +25,17 @@ const CountdownText = styled.div`
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
+  text-align: center;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+  }
 `;
 
 interface CountdownTimerProps {
@@ -70,29 +90,3 @@ const CountdownTimer: FC<CountdownTimerProps> = ({ eventDate }) => {
 };
 
 export default CountdownTimer;
-
-// Example usage in another file:
-/*
-import React from 'react';
-import CountdownTimer from './CountdownTimer';
-
-const EventPage: React.FC = () => {
-  // Set event date to April 30, 2025 at 10:00 AM
-  const eventDate = new Date('2025-04-30T10:00:00');
-  
-  // OR calculate from current date
-  // const eventDate = new Date();
-  // eventDate.setDate(eventDate.getDate() + 36); // 36 days from now
-  // eventDate.setHours(eventDate.getHours() + 12); // Add 12 hours
-  
-  return (
-    <div>
-      <h1>Conference 2025</h1>
-      <CountdownTimer eventDate={eventDate} />
-      <div>Event details...</div>
-    </div>
-  );
-};
-
-export default EventPage;
-*/

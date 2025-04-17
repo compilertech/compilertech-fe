@@ -1,45 +1,95 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
-// Define prop types for styled components
 interface AccordionContentProps {
   isOpen: boolean;
 }
 
-// Styled components
 const Container = styled.div`
   background-color: #000000;
   color: white;
-  padding: 50px 80px;
   width: 100%;
+  padding: 6rem;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 4rem 3rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 3rem 1.5rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    gap: 30px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const LeftColumn = styled.div`
   flex: 0 0 30%;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const RightColumn = styled.div`
   flex: 0 0 70%;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 1;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 0;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  margin-left: 80px;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    margin-left: 40px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+    margin-left: 0;
+  }
 `;
 
 const Subtitle = styled.h3`
-  font-size: 42px;
-  color: #d14ed5; /* Purple/magenta color */
+  color: #d14ed5;
   font-style: italic;
-  margin-top: 0;
+  font-family: Spectral, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 36px;
+  margin-left: 80px;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 32px;
+    margin-left: 40px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 28px;
+    margin-left: 0;
+  }
 `;
 
 const Divider = styled.hr`
@@ -59,20 +109,35 @@ const AccordionHeader = styled.div`
   align-items: center;
   padding: 20px 0;
   cursor: pointer;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 16px 0;
+  }
 `;
 
 const Question = styled.h4`
   font-size: 20px;
   font-weight: 500;
   margin: 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 18px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 16px;
+  }
 `;
 
 const PlusIcon = styled.span`
   font-size: 24px;
   font-weight: 300;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 22px;
+  }
 `;
 
-// Use the defined prop interface
 const AccordionContent = styled.div<AccordionContentProps>`
   padding-bottom: ${({ isOpen }) => (isOpen ? "20px" : "0")};
   max-height: ${({ isOpen }) => (isOpen ? "1000px" : "0")};
@@ -86,6 +151,11 @@ const Answer = styled.p`
   font-size: 16px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 `;
 
 interface FaqItem {
@@ -94,7 +164,7 @@ interface FaqItem {
 }
 
 const QAndA: React.FC = () => {
-  const [openItem, setOpenItem] = useState<number | null>(0); // First item open by default
+  const [openItem, setOpenItem] = useState<number | null>(0);
 
   const faqItems: FaqItem[] = [
     {
