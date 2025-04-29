@@ -10,13 +10,14 @@ import img3 from "../../assets/2025/img3.svg";
 import img4 from "../../assets/2025/img4.png";
 
 const heroData = {
-  title: "Innovations in compiler technology 2025",
-  subtitle: "workshop at Bengaluru",
+  title: "Innovations in compiler technology at",
+  subtitle: "Bengaluru, Karnataka",
   description:
-    "The IICT 2025 (Innovations in Compiler Technology) workshop unites researchers, practitioners, and enthusiasts to explore cutting-edge advancements in compiler design, implementation, and optimization for emerging software.",
+    "The IICT (Innovations In Compiler Technology) workshop aims to bring together researchers, practitioners, and enthusiasts in the field of compiler technologies. This year's theme focuses on the cutting-edge advancements in compiler design, implementation, and optimization, and their impact on emerging software and hardware platforms. We invite presentation proposals for our upcoming workshop",
   emailPlaceholder: "Enter your email ID for updates",
   forMoreUpdates: "For more updates",
-  comingSoon: "Coming soon",
+  comingSoon: "27, 28th September 2025",
+  comingSoonSubText: "AV Ramo Rao auditorium, Chemical Sciences building, IISC",
   previousYearCta: "Previous Year CTA →",
 };
 
@@ -228,6 +229,9 @@ function Hero2() {
           {isTabletOrMobile && (
             <ComingSoonBoxMobile>
               <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+              <ComingSoonSubText>
+                {heroData.comingSoonSubText}
+              </ComingSoonSubText>
             </ComingSoonBoxMobile>
           )}
         </CarouselContainer>
@@ -238,6 +242,8 @@ function Hero2() {
         {!isTabletOrMobile && (
           <ComingSoonBox>
             <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+
+            <ComingSoonText>{heroData.comingSoonSubText}</ComingSoonText>
           </ComingSoonBox>
         )}
       </VectorContainer>
@@ -566,9 +572,8 @@ const ComingSoonBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 237px;
-  height: 112px;
+  gap: 10px;
+  padding: 15px;
   z-index: 10;
 
   /* Desktop positioning */
@@ -624,18 +629,34 @@ const ComingSoonBoxMobile = styled.div`
 const ComingSoonText = styled.span`
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
   color: #ffffff;
-
+  text-align: center;
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 28px;
+    font-size: 14px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 24px;
+    font-size: 12px;
   }
 `;
+const ComingSoonSubText = styled.span`
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
 
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 14px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 12px;
+  }
+`;
 export default Hero2;

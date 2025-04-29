@@ -12,7 +12,6 @@ import image5 from "../../assets/2025/image5.svg";
 import image6 from "../../assets/2025/image6.svg";
 
 function Highlights() {
-  // Image data with placeholder images
   const highlightImages = [
     {
       id: 1,
@@ -142,6 +141,7 @@ const HeaderSection = styled.div`
 
 const TitleWrapper = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
 `;
 

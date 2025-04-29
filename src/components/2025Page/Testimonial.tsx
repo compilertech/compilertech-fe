@@ -7,10 +7,10 @@ import {
 
 const TestimonialSection = () => {
   const stats = [
-    { number: "20+", description: "Key note Speakers" },
-    { number: "300+", description: "Attendees from various domains" },
-    { number: "50+", description: "Partners and sponsors" },
-    { number: "200+", description: "Presenters" },
+    { number: "5", description: "Key note Speakers" },
+    { number: "200", description: "Attendees from various domains" },
+    { number: "4", description: "Partners and sponsors" },
+    { number: "20", description: "Presenters" },
   ];
 
   return (
@@ -21,21 +21,24 @@ const TestimonialSection = () => {
         <ContentWrapper>
           <LeftContent>
             <Title>
-              Exploring the Future of
+              Innovations in
               <HighlightText>Compiler Technology</HighlightText>
+              for a rapidly evolving landscape
             </Title>
           </LeftContent>
 
           <RightContent>
             <Description>
-              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-              vivamus mauris elit. Hendrerit a donec platea nulla pretium
-              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-              egestas. Sit eget integer consequat odio fringilla massa sed
-              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
-              dui eros. Velit tempus scelerisque facilisis at amet habitant
-              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
-              vestibulum.
+              The IICT (Innovations In Compiler Technology) workshop aims to
+              bring together researchers, practitioners, and enthusiasts in the
+              field of compiler technologies. This year's theme focuses on the
+              cutting-edge advancements in design, implementation, and
+              optimization of compiler techniques as well as their applications
+              in emerging software and hardware platforms. The workshop consists
+              of accepted talks by our esteemed Program Committee along with
+              invited talks by experts from both academia and industry. This is
+              a novel opportunity to interact and learn from experts and
+              enthusiasts from both academia and industry.
             </Description>
           </RightContent>
         </ContentWrapper>

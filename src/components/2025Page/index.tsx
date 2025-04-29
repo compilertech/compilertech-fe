@@ -13,7 +13,8 @@ import Collab from "./Collab";
 import QAndA from "./QAndA";
 import Venue from "./Venue";
 import { useLayoutEffect } from "react";
-
+// import ProgramCommittee from "./ProgramCommittee";
+// import SponsorsComponent from "./Sponser";
 const Main = styled.main`
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -28,13 +29,15 @@ export default function Home2() {
     document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
-  // Set the event date to March 25, 2025 at 10:00 AM
+  // Set the event date to April 30, 2025 at 10:00 AM
   const eventDate = new Date("2025-04-30T10:00:00");
 
   return (
     <Main>
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
+      {/* <SponsorsComponent />
+      <ProgramCommittee /> */}
       <Testimonial />
       <KeyTopics />
       <Highlights />
@@ -44,14 +47,4 @@ export default function Home2() {
       <AnimatedBanner />
     </Main>
   );
-}
-
-{
-  /* <Agenda /> */
-}
-{
-  /* <Agenda2 /> */
-}
-{
-  /* <Agenda3 /> */
 }
