@@ -4,7 +4,7 @@ import {
   SMALL_MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../styles/GlobalStyle";
-
+import logo from "../../assets/2025/logo_acm.png";
 const Container = styled.div`
   background-color: #000;
   color: white;
@@ -134,17 +134,17 @@ const SponsorsComponent = () => {
     {
       id: 1,
       name: "Association for Computing Machinery",
-      logo: "/src/assets/2025/logo_acm.png",
+      logo: logo,
     },
     {
       id: 2,
       name: "Association for Computing Machinery",
-      logo: "/src/assets/2025/logo_acm.png",
+      logo: logo,
     },
     {
       id: 3,
       name: "Association for Computing Machinery",
-      logo: "/src/assets/2025/logo_acm.png",
+      logo: logo,
     },
   ];
 
