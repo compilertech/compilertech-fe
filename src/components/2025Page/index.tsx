@@ -13,8 +13,8 @@ import Collab from "./Collab";
 import QAndA from "./QAndA";
 import Venue from "./Venue";
 import { useLayoutEffect } from "react";
-// import ProgramCommittee from "./ProgramCommittee";
-// import SponsorsComponent from "./Sponser";
+import ProgramCommittee from "./ProgramCommittee";
+import SponsorsComponent from "./Sponser";
 const Main = styled.main`
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -35,9 +35,9 @@ export default function Home2() {
   return (
     <Main>
       <CountdownTimer eventDate={eventDate} />
-      <Hero2 />
-      {/* <SponsorsComponent />
-      <ProgramCommittee /> */}
+      {/* <Hero2 /> */}
+      {/* <SponsorsComponent /> */}
+      <ProgramCommittee />
       {/* <Testimonial />
       <KeyTopics />
       <Highlights />
