@@ -38,13 +38,13 @@ export default function Home2() {
       <Hero2 />
       {/* <SponsorsComponent />
       <ProgramCommittee /> */}
-      <Testimonial />
+      {/* <Testimonial />
       <KeyTopics />
       <Highlights />
       <Venue />
       <QAndA />
       <Collab />
-      <AnimatedBanner />
+      <AnimatedBanner /> */}
     </Main>
   );
 }

@@ -1,13 +1,37 @@
+// Add a wrapper for the carousel and dots
+const CarouselWrapper = styled.div`
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  /* Fixed width for medium-large screens to prevent zooming */
+  @media (min-width: 796px) and (max-width: 1340px) {
+    max-width: 650px;
+    width: 650px; /* Force exact width in this range */
+  }
+
+  /* Custom width for screens between 520px and 796px */
+  @media (min-width: 520px) and (max-width: 796px) {
+    max-width: 500px; /* Increased width for this specific range */
+  }
+
+  @media (max-width: 520px) {
+    max-width: 341px; /* Square-ish shape for mobile */
+  }
+`;
 import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import vectorImage from "../../assets/2025/vector.svg";
 
 import { IoMdArrowForward } from "react-icons/io";
-import img1 from "../../assets/2025/img1.svg";
-import img2 from "../../assets/2025/img2.svg";
-import img3 from "../../assets/2025/img3.svg";
-import img4 from "../../assets/2025/img4.png";
+import img1 from "../../assets/2025/img1.webp";
+import img2 from "../../assets/2025/img2.webp";
+import img3 from "../../assets/2025/img3.webp";
+import img4 from "../../assets/2025/img4.webp";
 
 const heroData = {
   title: "Innovations in compiler technology at",
@@ -156,65 +180,81 @@ function Hero2() {
 
         <Description>{heroData.description}</Description>
 
-        <ForMoreUpdates>{heroData.forMoreUpdates}</ForMoreUpdates>
+        <UpdatesSection>
+          <ForMoreUpdates>{heroData.forMoreUpdates}</ForMoreUpdates>
 
-        <form
-          name="get-updates-form"
-          method="post"
-          data-netlify="true"
-          onSubmit={handleEmailSubmit}
-          style={{ width: "100%", maxWidth: "500px" }}
-        >
-          {/* Hidden input for Netlify form identification */}
-          <input type="hidden" name="form-name" value="get-updates-form" />
+          <form
+            name="get-updates-form"
+            method="post"
+            data-netlify="true"
+            onSubmit={handleEmailSubmit}
+            style={{ width: "100%" }}
+          >
+            {/* Hidden input for Netlify form identification */}
+            <input type="hidden" name="form-name" value="get-updates-form" />
 
-          {/* Honeypot field to reduce spam */}
-          <p style={{ display: "none" }}>
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
+            {/* Honeypot field to reduce spam */}
+            <p style={{ display: "none" }}>
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
 
-          <EmailSubscriptionContainer>
-            <EmailInput
-              type="email"
-              name="email"
-              placeholder={heroData.emailPlaceholder}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={isSubmitting}
-              required
+            <EmailSubscriptionContainer>
+              <EmailInput
+                type="email"
+                name="email"
+                placeholder={heroData.emailPlaceholder}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                required
+              />
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <span
+                    style={{ width: "24px", height: "24px", display: "block" }}
+                  >
+                    ·
+                  </span>
+                ) : (
+                  <IoMdArrowForward size={24} />
+                )}
+              </SubmitButton>
+            </EmailSubscriptionContainer>
+
+            {/* Form status messages */}
+            {submitSuccess && (
+              <SubmitMessage success>Thank you for subscribing!</SubmitMessage>
+            )}
+            {submitError && (
+              <SubmitMessage>
+                Something went wrong. Please try again.
+              </SubmitMessage>
+            )}
+          </form>
+        </UpdatesSection>
+
+        {/* Carousel component */}
+        <CarouselWrapper>
+          <CarouselContainer>
+            <Slide
+              src={images[currentIndex]}
+              alt={`Conference slide ${currentIndex + 1}`}
             />
-            <SubmitButton type="submit" disabled={isSubmitting}>
-              {isSubmitting ? (
-                <span
-                  style={{ width: "24px", height: "24px", display: "block" }}
-                >
-                  ·
-                </span>
-              ) : (
-                <IoMdArrowForward size={24} />
-              )}
-            </SubmitButton>
-          </EmailSubscriptionContainer>
 
-          {/* Form status messages */}
-          {submitSuccess && (
-            <SubmitMessage success>Thank you for subscribing!</SubmitMessage>
-          )}
-          {submitError && (
-            <SubmitMessage>
-              Something went wrong. Please try again.
-            </SubmitMessage>
-          )}
-        </form>
+            {/* Coming Soon Box positioned here only for tablet and mobile */}
+            {isTabletOrMobile && (
+              <ComingSoonBoxMobile>
+                <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+                <ComingSoonSubText>
+                  {heroData.comingSoonSubText}
+                </ComingSoonSubText>
+              </ComingSoonBoxMobile>
+            )}
+          </CarouselContainer>
 
-        {/* Carousel with conditional placement of Coming Soon box */}
-        <CarouselContainer>
-          <Slide
-            src={images[currentIndex]}
-            alt={`Conference slide ${currentIndex + 1}`}
-          />
+          {/* Dots moved outside of CarouselContainer */}
           <DotsContainer>
             {images.map((_, index) => (
               <Dot
@@ -224,17 +264,7 @@ function Hero2() {
               />
             ))}
           </DotsContainer>
-
-          {/* Coming Soon Box positioned here only for tablet and mobile */}
-          {isTabletOrMobile && (
-            <ComingSoonBoxMobile>
-              <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-              <ComingSoonSubText>
-                {heroData.comingSoonSubText}
-              </ComingSoonSubText>
-            </ComingSoonBoxMobile>
-          )}
-        </CarouselContainer>
+        </CarouselWrapper>
       </ContentSection>
 
       <VectorContainer>
@@ -242,8 +272,7 @@ function Hero2() {
         {!isTabletOrMobile && (
           <ComingSoonBox>
             <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-
-            <ComingSoonText>{heroData.comingSoonSubText}</ComingSoonText>
+            <ComingSoonSubText>{heroData.comingSoonSubText}</ComingSoonSubText>
           </ComingSoonBox>
         )}
       </VectorContainer>
@@ -279,23 +308,39 @@ const SubmitMessage = styled.p<SubmitMessageProps>`
 const CarouselContainer = styled.div`
   width: 100%;
   max-width: 650px;
-  border-radius: 1.5rem;
+  border-radius: 16px;
   position: relative;
-  height: 400px;
+  height: 300px; /* Fixed consistent height */
   margin-bottom: 1.5rem;
 
+  /* Specific width for large screens */
+  @media (min-width: 1340px) {
+    max-width: 650px;
+  }
+
+  /* Fixed width for medium-large screens to prevent zooming */
+  @media (min-width: 796px) and (max-width: 1340px) {
+    max-width: 650px;
+    width: 650px; /* Force exact width in this range */
+  }
+
   /* Allow overflow on tablet/mobile for the overlap effect */
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: 796px) {
     overflow: visible;
     max-width: 90%;
-    height: 300px;
+    height: 300px; /* Maintain consistent height */
     margin-bottom: 60px; /* Extra space for overlapping box */
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    max-width: 100%;
-    height: 250px;
-    border-radius: 1rem;
+  /* Custom width for screens between 520px and 796px */
+  @media (min-width: 520px) and (max-width: 796px) {
+    max-width: 500px; /* Increased width for this specific range */
+  }
+
+  @media (max-width: 520px) {
+    max-width: 341px; /* Square-ish shape for mobile */
+    height: 300px; /* Maintain consistent height */
+    border-radius: 16px; /* Consistent border radius */
     margin-bottom: 50px;
   }
 `;
@@ -304,25 +349,32 @@ const Slide = styled.img`
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover; /* Changed from contain to cover for consistent appearance */
   object-position: center;
-  border-radius: 1.5rem;
+  border-radius: 16px; /* Consistent border radius */
+
+  /* Ensure images don't get stretched in the problematic range */
+  @media (min-width: 796px) and (max-width: 1340px) {
+    object-fit: cover;
+    max-height: 300px;
+  }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    border-radius: 1rem;
+    border-radius: 16px; /* Consistent border radius */
   }
 `;
 
 const DotsContainer = styled.div`
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 15px;
+  margin-top: 20px; /* Space between carousel and dots */
+  position: static; /* Remove absolute positioning */
   width: 100%;
   z-index: 10;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    bottom: 8px;
+  /* Hide dots on tablet and mobile screens */
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    display: none;
   }
 `;
 
@@ -348,53 +400,72 @@ const Dot = styled.div<DotProps>`
   }
 `;
 
+// Updates section wrapper to center everything on mobile
+const UpdatesSection = styled.div`
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    align-items: center;
+    text-align: center;
+  }
+`;
+
 // New components for the updated design
 const ForMoreUpdates = styled.p`
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 16px;
+  text-align: left;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    display: none; /* Hide "For more updates" on tablet and smaller screens */
   }
 `;
 
 const EmailSubscriptionContainer = styled.div`
   display: flex;
-  margin-bottom: 2rem;
-  max-width: 500px;
-  gap: 1rem;
+  margin-bottom: 0; /* Removed bottom margin since it's managed by the parent */
+  width: 100%;
+  gap: 0.75rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     max-width: 90%;
-    margin-bottom: 1.5rem;
+    margin-top: 0.5rem; /* Add some space at the top when "For more updates" is hidden */
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     max-width: 100%;
-    margin-bottom: 1.5rem;
     gap: 0.5rem;
+    flex-direction: row;
   }
 `;
 
 const EmailInput = styled.input`
   flex: 1;
   padding: 0.75rem 1rem;
-  border: 1px solid #333;
+  border: 1px solid white;
   border-radius: 8px;
   background-color: transparent;
   color: white;
   font-size: 1rem;
-  border: 1px solid white;
+  width: 200px;
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 0.95rem;
+    width: 200px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 0.6rem 0.8rem;
     font-size: 0.9rem;
     border-radius: 6px;
+    width: 200px;
   }
 `;
 
@@ -404,12 +475,13 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 8px;
   padding: 10px 15px;
-  font-size: 1.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
+  min-width: 48px;
+  height: 48px;
 
   &:hover {
     background-color: #e6e6e6;
@@ -421,8 +493,10 @@ const SubmitButton = styled.button`
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 8px 12px;
     border-radius: 6px;
+    min-width: 42px;
+    height: 42px;
+    padding: 8px;
 
     svg {
       width: 20px;
@@ -430,23 +504,6 @@ const SubmitButton = styled.button`
     }
   }
 `;
-
-// const ExternalLink = styled.a`
-//   font-size: 1rem;
-//   color: white;
-//   text-decoration: none;
-//   margin-top: 1rem;
-//   display: inline-block;
-
-//   &:hover {
-//     text-decoration: underline;
-//   }
-
-//   @media (max-width: ${MOBILE_BREAKPOINT}) {
-//     font-size: 0.9rem;
-//     margin-top: 0.75rem;
-//   }
-// `;
 
 // Existing styled components
 const HeroContainer = styled.div`
@@ -545,19 +602,20 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem; /* Consistent spacing after description */
   max-width: 650px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 1.1rem;
     text-align: center;
     max-width: 90%;
+    margin-bottom: 1.5rem; /* Slightly reduced spacing for tablet */
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.25rem; /* Even more reduced spacing for mobile */
   }
 `;
 
@@ -573,8 +631,9 @@ const ComingSoonBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px;
+  padding: 20px; /* Increased padding for better spacing */
   z-index: 10;
+  width: 280px; /* Fixed width */
 
   /* Desktop positioning */
   position: absolute;
@@ -582,14 +641,32 @@ const ComingSoonBox = styled.div`
   right: 20vw;
   transform: translate(-50%, -50%);
 
+  /* Common positioning for 1341-1553px screens */
+  @media (min-width: 1341px) and (max-width: 1553px) {
+    right: 15%;
+    top: 50%;
+  }
+
+  /* Specific adjustment for 1350px screens to match */
+  @media (min-width: 1350px) and (max-width: 1350px) {
+    right: 15%;
+    top: 50%;
+  }
+
+  /* Specific adjustment for 1435px screens to match */
+  @media (min-width: 1435px) and (max-width: 1435px) {
+    right: 15%;
+    top: 50%;
+  }
+
   /* Specific adjustment for 1350-1435px screens */
   @media (min-width: 1350px) and (max-width: 1435px) {
-    right: 10vw;
+    right: 15%;
     top: 50%;
   }
 
   /* Adjust for very large screens */
-  @media (min-width: 1920px) {
+  @media (min-width: 1554px) {
     right: 15vw;
   }
 `;
@@ -605,7 +682,8 @@ const ComingSoonBoxMobile = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px; /* Increased gap for better line spacing */
+  padding: 15px; /* Added padding for better spacing */
 
   /* Positioning - absolute relative to carousel container */
   position: absolute;
@@ -615,13 +693,11 @@ const ComingSoonBoxMobile = styled.div`
   z-index: 20;
 
   /* Sizing */
-  width: 200px;
-  height: 90px;
+  width: 250px; /* Increased width */
 
-  /* Mobile-specific adjustments */
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 180px;
-    height: 80px;
+    width: 220px;
+    padding: 12px;
     bottom: -40px;
   }
 `;
@@ -630,33 +706,40 @@ const ComingSoonText = styled.span`
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 24px; /* Fixed line height */
+  letter-spacing: 0.5px; /* Added letter spacing */
   color: #ffffff;
   text-align: center;
+
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
+
 const ComingSoonSubText = styled.span`
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: 0.3px; /* Added letter spacing */
   text-align: center;
   color: #ffffff;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 14px;
+    line-height: 20px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 12px;
+    line-height: 18px;
   }
 `;
+
 export default Hero2;
