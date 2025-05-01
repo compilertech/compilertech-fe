@@ -162,16 +162,14 @@ const ColumnLeft = styled.div`
 `;
 
 const ColumnRight = styled.div`
-  flex: 1; /* Take remaining space */
+  flex: 1;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     width: 100%;
   }
 `;
 
-const EmptySpace = styled.div`
-  /* This is just an empty div to maintain the same width as the left column in ContentWrapper */
-`;
+const EmptySpace = styled.div``;
 
 const Title = styled.h2`
   font-family: "Poppins", sans-serif;
@@ -225,8 +223,16 @@ const Divider = styled.hr`
   border: none;
   height: 0.5px;
   background-color: #cfcbc4;
-  margin: 2rem 0;
+  margin: 1.5rem 0 0.4rem 0;
   width: 100%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin: 1.25rem 0 0.3rem 0;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin: 1rem 0 0.25rem 0;
+  }
 `;
 
 const Description = styled.p`
@@ -252,10 +258,17 @@ const Description = styled.p`
 const SubscriptionWrapper = styled.div`
   display: flex;
   width: 100%;
+  margin-top: -0.2rem;
+  padding-top: 0;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
     align-items: center;
+    margin-top: -0.15rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: -0.1rem;
   }
 `;
 
@@ -268,7 +281,7 @@ const SubscriptionContent = styled.div`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
   }
 `;
 
@@ -284,11 +297,12 @@ const SubscriptionText = styled.p`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
     margin-right: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 15px;
+    margin-bottom: 0;
   }
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
@@ -323,6 +337,16 @@ const SubscribeButton = styled.button`
 // Stats Section
 const StatsSection = styled.div`
   margin-top: 6rem;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `;
 
 const StatsHeader = styled.div`
@@ -332,10 +356,14 @@ const StatsHeader = styled.div`
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 18px;
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 5;
   }
 `;
 
@@ -350,21 +378,29 @@ const StatsList = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  position: relative;
+  z-index: 5;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+    z-index: 5;
   }
 `;
 
 const StatItem = styled.div`
   text-align: center;
+  position: relative;
+  z-index: 5;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     text-align: left;
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    z-index: 5;
   }
 `;
 
@@ -425,6 +461,7 @@ const PurpleCircle = styled.div`
     width: 150px;
     height: 150px;
     visibility: hidden;
+    z-index: 1;
   }
 `;
 
@@ -444,12 +481,14 @@ const GoldBlueCircle = styled.div`
     width: 200px;
     height: 200px;
     top: 0;
+    z-index: 1;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 150px;
     height: 150px;
     top: 0;
+    z-index: 1;
   }
 `;
 
