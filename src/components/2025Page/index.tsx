@@ -39,8 +39,8 @@ export default function Home2() {
       <SponsorsComponent />
       <ProgramCommittee />
       <Testimonial />
-      {/*  <KeyTopics />
-      <Highlights />
+      <KeyTopics />
+      {/* <Highlights />
       <Venue />
       <QAndA />
       <Collab />

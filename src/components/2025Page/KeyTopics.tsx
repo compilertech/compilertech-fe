@@ -95,12 +95,12 @@ function KeyTopics() {
 
       <SubmissionSection>
         <SubmissionContent>
-          <SubmissionHeader>
+          <ColumnLeft>
             <SubmissionTitle>Submission</SubmissionTitle>
             <SubmissionSubtitle>Guidelines</SubmissionSubtitle>
-          </SubmissionHeader>
+          </ColumnLeft>
 
-          <div>
+          <ColumnRight>
             <SubmissionText>
               Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
               vivamus mauris elit. Hendrerit a donec platea nulla pretium
@@ -112,10 +112,10 @@ function KeyTopics() {
               vestibulum.
             </SubmissionText>
             <SubmissionDeadline>
-              Submission Deadline : <i>To be announced</i>
+              Submission Deadline : <em>To be announced</em>
             </SubmissionDeadline>
             <SubmitButton>Submit Now</SubmitButton>
-          </div>
+          </ColumnRight>
         </SubmissionContent>
       </SubmissionSection>
     </TopicsContainer>
@@ -300,6 +300,7 @@ const SubmissionSection = styled.div`
   border: 1px solid #1e3a8a;
   border-radius: 12px;
   border: 0.5px solid #ffffff;
+  overflow: hidden;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     border-radius: 8px;
@@ -309,14 +310,8 @@ const SubmissionSection = styled.div`
 const SubmissionContent = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
   padding: 2rem;
   background-color: #f9f8f50d;
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    flex-direction: row;
-    text-align: left;
-  }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex-direction: column;
@@ -333,18 +328,24 @@ const SubmissionContent = styled.div`
   }
 `;
 
-const SubmissionHeader = styled.div`
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    width: 25%;
-    padding-right: 2rem;
-  }
+const ColumnLeft = styled.div`
+  flex: 0 0 316px; /* Fixed width for the left column */
+  margin-right: 43px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex: 1 1 100%;
+    margin-right: 0;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
+`;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-bottom: 1rem;
+const ColumnRight = styled.div`
+  flex: 1; /* Take remaining space */
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 100%;
+    text-align: center;
   }
 `;
 
@@ -372,7 +373,7 @@ const SubmissionSubtitle = styled.h3`
   font-weight: 500;
   font-style: italic;
   color: #d83bd2;
-  font-family: spectral;
+  font-family: Spectral;
   margin-top: 10px;
   margin-bottom: 0;
 
@@ -394,11 +395,7 @@ const SubmissionText = styled.p`
   line-height: 1.6;
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    text-align: left;
-    width: 75%;
-  }
+  text-align: left;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
@@ -415,9 +412,14 @@ const SubmissionDeadline = styled.p`
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
+  text-align: left;
 
-  i {
+  em {
     font-style: italic;
+  }
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -429,22 +431,13 @@ const SubmissionDeadline = styled.p`
 const SubmitButton = styled.button`
   background-color: transparent;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    display: inline-block;
-    margin: 0;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin: 0 auto;
-    display: inline-block;
-  }
+  display: inline-block;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
