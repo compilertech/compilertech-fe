@@ -523,7 +523,7 @@ const HeroContainer = styled.div`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 1.5rem;
-    min-height: 100vh;
+    min-height: 80vh;
   }
 `;
 

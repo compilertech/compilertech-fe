@@ -19,38 +19,45 @@ const TestimonialSection = () => {
 
       <TestimonialCard>
         <ContentWrapper>
-          <LeftContent>
-            <Title>
-              Innovations in
-              <HighlightText>Compiler Technology</HighlightText>
-              for a rapidly evolving landscape
-            </Title>
-          </LeftContent>
+          {/* First part: Left Column */}
+          <ColumnLeft>
+            <Title>Exploring the Future of</Title>
+            <HighlightText>Compiler Technology</HighlightText>
+          </ColumnLeft>
 
-          <RightContent>
+          {/* Second part: Right Column */}
+          <ColumnRight>
             <Description>
-              The IICT (Innovations In Compiler Technology) workshop aims to
-              bring together researchers, practitioners, and enthusiasts in the
-              field of compiler technologies. This year's theme focuses on the
-              cutting-edge advancements in design, implementation, and
-              optimization of compiler techniques as well as their applications
-              in emerging software and hardware platforms. The workshop consists
-              of accepted talks by our esteemed Program Committee along with
-              invited talks by experts from both academia and industry. This is
-              a novel opportunity to interact and learn from experts and
-              enthusiasts from both academia and industry.
+              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
+              vivamus mauris elit. Hendrerit a donec platea nulla pretium
+              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
+              egestas. Sit eget integer consequat odio fringilla massa sed
+              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
+              dui eros. Velit tempus scelerisque facilisis at amet habitant
+              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
+              vestibulum.
             </Description>
-          </RightContent>
+          </ColumnRight>
         </ContentWrapper>
 
         <Divider />
 
         <SubscriptionWrapper>
-          <SubscriptionText>
-            Subscribe now and stay informed with the latest updates and
-            important announcements
-          </SubscriptionText>
-          <SubscribeButton>Subscribe</SubscribeButton>
+          {/* First part: Left Column */}
+          <ColumnLeft>
+            <EmptySpace />
+          </ColumnLeft>
+
+          {/* Second part: Right Column */}
+          <ColumnRight>
+            <SubscriptionContent>
+              <SubscriptionText>
+                Subscribe now and stay informed with the latest updates and
+                important announcements
+              </SubscriptionText>
+              <SubscribeButton>Subscribe</SubscribeButton>
+            </SubscriptionContent>
+          </ColumnRight>
         </SubscriptionWrapper>
       </TestimonialCard>
 
@@ -143,22 +150,27 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const LeftContent = styled.div`
-  flex: 1;
-  padding-right: 2rem;
+const ColumnLeft = styled.div`
+  flex: 0 0 316px; /* Fixed width for the left column */
+  margin-right: 43px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding-right: 0;
-    margin-bottom: 1.5rem;
+    flex: 1 1 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
 `;
 
-const RightContent = styled.div`
-  flex: 1.5;
+const ColumnRight = styled.div`
+  flex: 1; /* Take remaining space */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     width: 100%;
   }
+`;
+
+const EmptySpace = styled.div`
+  /* This is just an empty div to maintain the same width as the left column in ContentWrapper */
 `;
 
 const Title = styled.h2`
@@ -167,6 +179,7 @@ const Title = styled.h2`
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
+  color: white;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
@@ -184,11 +197,15 @@ const Title = styled.h2`
 
 const HighlightText = styled.div`
   font-family: "Spectral", serif;
-  color: #fb4dd8;
+  background: #fb4dd8;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-style: italic;
   font-size: 36px;
   font-weight: 500;
   margin-top: 0.5rem;
+  display: block;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
@@ -234,8 +251,19 @@ const Description = styled.p`
 
 const SubscriptionWrapper = styled.div`
   display: flex;
+  width: 100%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const SubscriptionContent = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
@@ -251,9 +279,12 @@ const SubscriptionText = styled.p`
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
   flex: 1;
+  margin-right: 2rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -372,7 +403,7 @@ const StatDescription = styled.p`
   }
 `;
 
-/* Decorative elements - kept as instructed */
+/* Decorative elements */
 const PurpleCircle = styled.div`
   position: absolute;
   top: 360px;
@@ -388,12 +419,12 @@ const PurpleCircle = styled.div`
   opacity: 0.8;
   z-index: 1;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     top: 480px;
     left: -40px;
-
     width: 150px;
     height: 150px;
+    visibility: hidden;
   }
 `;
 
@@ -403,7 +434,7 @@ const GoldBlueCircle = styled.div`
   right: -50px;
   width: 250px;
   height: 250px;
-  background: linear-gradient(310.99deg, #fcbf00 16.53%, #367aff 86.21%);
+  background: linear-gradient(180.99deg, #fcbf00 16.53%, #367aff 86.21%);
   border-bottom-left-radius: 250px;
   border-radius: 50%;
   opacity: 0.8;

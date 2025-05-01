@@ -36,10 +36,10 @@ export default function Home2() {
     <Main>
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
-      {/* <SponsorsComponent /> */}
+      <SponsorsComponent />
       <ProgramCommittee />
-      {/* <Testimonial />
-      <KeyTopics />
+      <Testimonial />
+      {/*  <KeyTopics />
       <Highlights />
       <Venue />
       <QAndA />

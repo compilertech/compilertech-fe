@@ -44,6 +44,9 @@ const SectionHeader = styled.h3`
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 24px;
+  }
 `;
 
 const Committee = styled.div`
@@ -101,7 +104,6 @@ const CommitteeLabel = styled.div`
   line-height: 120%;
   letter-spacing: 1px;
   text-transform: uppercase;
-
   @media (max-width: 1340px) {
     text-align: center;
     margin: 15px 0;
