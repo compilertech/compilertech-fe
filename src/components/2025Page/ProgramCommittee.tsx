@@ -12,8 +12,12 @@ const ProgramSection = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding: 3rem 2rem;
+  @media (max-width: 950px) {
+    padding: 3rem 2.5rem;
+  }
+
+  @media (max-width: 660px) {
+    padding: 2.5rem 1.5rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -28,7 +32,7 @@ const SectionTitle = styled.div`
   @media (max-width: ${TABLET_BREAKPOINT}) {
     text-align: center;
     margin-left: 0;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 `;
 
@@ -63,19 +67,26 @@ const Grid = styled.div`
   gap: 30px;
   margin-bottom: 50px;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: 1024px) {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 660px) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 30px;
     gap: 20px;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
   @media (max-width: 500px) {
-    grid-template-columns: 1fr;
     max-width: 350px;
-    margin: 0 auto 40px;
   }
 `;
 
@@ -91,10 +102,15 @@ const CommitteeLabel = styled.div`
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: 1340px) {
     text-align: center;
-    margin: 10px 0;
+    margin: 15px 0;
     width: 100%;
+  }
+
+  @media (max-width: 660px) {
+    margin: 15px 0;
+    font-size: 18px;
   }
 `;
 
@@ -105,10 +121,15 @@ const MemberCard = styled.div`
   display: flex;
   flex-direction: column;
   background-color: black;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     align-items: center;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 660px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -119,14 +140,14 @@ const MemberImageContainer = styled.div`
   position: relative;
   border-radius: 10px;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: 950px) {
     margin-bottom: 0;
     border-radius: 10px;
+    height: 340px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 660px) {
     height: 350px;
-    border-radius: 10px;
   }
 
   @media (max-width: 370px) {
@@ -157,21 +178,114 @@ const Role = styled.div`
   color: white;
   z-index: 10;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: 950px) {
     top: 20px;
     right: 20px;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: 660px) {
     width: 120px;
     height: 38px;
     font-size: 14px;
+    top: 20px;
+    right: 30px;
   }
-
+  @media (min-width: 661px) and (max-width: 680px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 5vw;
+    right: 3vw;
+  }
+  @media (min-width: 680px) and (max-width: 708px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 5vw;
+    right: 4vw;
+  }
+  @media (min-width: 709px) and (max-width: 750px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 5vw;
+    right: 5vw;
+  }
+  @media (min-width: 751px) and (max-width: 830px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 4vw;
+    right: 5vw;
+  }
+  @media (min-width: 831px) and (max-width: 860px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 5vw;
+  }
+  @media (min-width: 861px) and (max-width: 950px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 2vw;
+    right: 5vw;
+  }
+  @media (min-width: 951px) and (max-width: 1140px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 1vw;
+  }
+  @media (min-width: 1141px) and (max-width: 1200px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 20px;
+  }
+  @media (min-width: 1201px) and (max-width: 1230px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 25px;
+  }
+  @media (min-width: 1231px) and (max-width: 1250px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 30px;
+  }
+  @media (min-width: 1251px) and (max-width: 1300px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 3vw;
+    right: 3vw;
+  }
+  @media (min-width: 1301px) and (max-width: 1340px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 30px;
+    right: 3vw;
+  }
+  @media (min-width: 1341px) {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    top: 20px;
+    right: 3vw;
+  }
   @media (max-width: 500px) {
     top: 7.5vw;
     right: 7.5vw;
   }
+
   @media (max-width: 400px) {
     top: 30px;
     right: 8vw;
@@ -182,6 +296,10 @@ const MemberInfo = styled.div`
   padding: 15px 0;
   text-align: center;
   width: 100%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    padding: 10px 0;
+  }
 `;
 
 const MemberName = styled.div`
@@ -190,17 +308,26 @@ const MemberName = styled.div`
   font-family: Poppins, sans-serif;
   color: white;
   font-size: 18px;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
 `;
 
 const MemberTitle = styled.div`
   font-size: 14px;
   color: #aaa;
   font-family: Poppins, sans-serif;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 13px;
+  }
 `;
 
 const Divider = styled.div`
   border: 0.5px solid #cfcbc4;
-  margin: 50px 0;
+  margin: 40px 0;
   width: 96%;
   margin-left: 35px;
 
