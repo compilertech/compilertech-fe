@@ -302,10 +302,10 @@ const ViewMoreButton = styled.button`
 // Decorative elements
 const PurpleCircle = styled.div`
   position: absolute;
-  width: 249px;
-  height: 248px;
-  top: 706px;
-  left: 40px;
+  width: 300px;
+  height: 200px;
+  top: 650px;
+  left: 30px;
   transform: translate(-50%, 50%);
 
   background: radial-gradient(
@@ -333,10 +333,10 @@ const PurpleCircle = styled.div`
 
 const GoldCircle = styled.div`
   position: absolute;
-  top: 170px;
-  right: -20px;
-  width: 200px;
-  height: 200px;
+  top: 150px;
+  right: -30px;
+  width: 300px;
+  height: 250px;
   background: linear-gradient(
     219.17deg,
     rgba(244, 210, 103, 0) 24.33%,

@@ -1,4 +1,3 @@
-// Add a wrapper for the carousel and dots
 const CarouselWrapper = styled.div`
   width: 100%;
   max-width: 650px;
@@ -7,19 +6,17 @@ const CarouselWrapper = styled.div`
   align-items: center;
   margin-bottom: 2rem;
 
-  /* Fixed width for medium-large screens to prevent zooming */
   @media (min-width: 796px) and (max-width: 1340px) {
     max-width: 650px;
-    width: 650px; /* Force exact width in this range */
+    width: 650px;
   }
 
-  /* Custom width for screens between 520px and 796px */
   @media (min-width: 520px) and (max-width: 796px) {
-    max-width: 500px; /* Increased width for this specific range */
+    max-width: 500px;
   }
 
   @media (max-width: 520px) {
-    max-width: 341px; /* Square-ish shape for mobile */
+    max-width: 341px;
   }
 `;
 import { useState, useEffect, useCallback } from "react";
@@ -46,11 +43,9 @@ const heroData = {
 };
 
 function Hero2() {
-  // Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
 
-  // Email subscription state
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -68,7 +63,6 @@ function Hero2() {
     );
   }, [images.length]);
 
-  // Check if current view is tablet or mobile
   useEffect(() => {
     const checkScreenSize = () => {
       setIsTabletOrMobile(
@@ -76,23 +70,18 @@ function Hero2() {
       );
     };
 
-    // Initial check
     checkScreenSize();
 
-    // Add event listener for resize
     window.addEventListener("resize", checkScreenSize);
 
-    // Cleanup
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  // Function to detect if we're running in development environment
   const isDevelopmentMode = () => {
     return (
       window.location.hostname === "localhost" ||
@@ -100,7 +89,6 @@ function Hero2() {
     );
   };
 
-  // Function to encode form data for Netlify
   const encode = (data: Record<string, string>) => {
     return Object.keys(data)
       .map(
@@ -109,7 +97,6 @@ function Hero2() {
       .join("&");
   };
 
-  // Handle email subscription form submission
   const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -119,18 +106,14 @@ function Hero2() {
     setSubmitSuccess(false);
     setSubmitError(false);
 
-    // Check if we're in development mode
     if (isDevelopmentMode()) {
-      // Simulate a successful submission in development
       console.log("DEV MODE: Form submission simulated for email:", email);
 
-      // Simulate network delay
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
-        setEmail(""); // Clear email field after successful submission
+        setEmail("");
 
-        // Reset success message after 3 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 3000);
@@ -139,7 +122,6 @@ function Hero2() {
       return;
     }
 
-    // Production code - actual Netlify form submission
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -151,9 +133,8 @@ function Hero2() {
       .then(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
-        setEmail(""); // Clear email field after successful submission
+        setEmail("");
 
-        // Reset success message after 3 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 3000);
@@ -163,7 +144,6 @@ function Hero2() {
         setIsSubmitting(false);
         setSubmitError(true);
 
-        // Reset error message after 3 seconds
         setTimeout(() => {
           setSubmitError(false);
         }, 3000);
@@ -190,10 +170,8 @@ function Hero2() {
             onSubmit={handleEmailSubmit}
             style={{ width: "100%" }}
           >
-            {/* Hidden input for Netlify form identification */}
             <input type="hidden" name="form-name" value="get-updates-form" />
 
-            {/* Honeypot field to reduce spam */}
             <p style={{ display: "none" }}>
               <label>
                 Don't fill this out if you're human: <input name="bot-field" />
@@ -223,7 +201,6 @@ function Hero2() {
               </SubmitButton>
             </EmailSubscriptionContainer>
 
-            {/* Form status messages */}
             {submitSuccess && (
               <SubmitMessage success>Thank you for subscribing!</SubmitMessage>
             )}
@@ -235,7 +212,6 @@ function Hero2() {
           </form>
         </UpdatesSection>
 
-        {/* Carousel component */}
         <CarouselWrapper>
           <CarouselContainer>
             <Slide
@@ -243,7 +219,6 @@ function Hero2() {
               alt={`Conference slide ${currentIndex + 1}`}
             />
 
-            {/* Coming Soon Box positioned here only for tablet and mobile */}
             {isTabletOrMobile && (
               <ComingSoonBoxMobile>
                 <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
@@ -254,7 +229,6 @@ function Hero2() {
             )}
           </CarouselContainer>
 
-          {/* Dots moved outside of CarouselContainer */}
           <DotsContainer>
             {images.map((_, index) => (
               <Dot
@@ -268,7 +242,6 @@ function Hero2() {
       </ContentSection>
 
       <VectorContainer>
-        {/* Original Coming Soon Box for desktop */}
         {!isTabletOrMobile && (
           <ComingSoonBox>
             <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
@@ -280,12 +253,10 @@ function Hero2() {
   );
 }
 
-// Define interface for props that use success
 interface SubmitMessageProps {
   success?: boolean;
 }
 
-// New styled component for form submission messages
 const SubmitMessage = styled.p<SubmitMessageProps>`
   margin-top: -1rem;
   margin-bottom: 1rem;
@@ -304,43 +275,38 @@ const SubmitMessage = styled.p<SubmitMessageProps>`
   }
 `;
 
-// Carousel components
 const CarouselContainer = styled.div`
   width: 100%;
   max-width: 650px;
   border-radius: 16px;
   position: relative;
-  height: 300px; /* Fixed consistent height */
+  height: 300px;
   margin-bottom: 1.5rem;
 
-  /* Specific width for large screens */
   @media (min-width: 1340px) {
     max-width: 650px;
   }
 
-  /* Fixed width for medium-large screens to prevent zooming */
   @media (min-width: 796px) and (max-width: 1340px) {
     max-width: 650px;
-    width: 650px; /* Force exact width in this range */
+    width: 650px;
   }
 
-  /* Allow overflow on tablet/mobile for the overlap effect */
   @media (max-width: 796px) {
     overflow: visible;
     max-width: 90%;
-    height: 300px; /* Maintain consistent height */
-    margin-bottom: 60px; /* Extra space for overlapping box */
+    height: 300px;
+    margin-bottom: 60px;
   }
 
-  /* Custom width for screens between 520px and 796px */
   @media (min-width: 520px) and (max-width: 796px) {
-    max-width: 500px; /* Increased width for this specific range */
+    max-width: 500px;
   }
 
   @media (max-width: 520px) {
-    max-width: 341px; /* Square-ish shape for mobile */
-    height: 300px; /* Maintain consistent height */
-    border-radius: 16px; /* Consistent border radius */
+    max-width: 341px;
+    height: 300px;
+    border-radius: 16px;
     margin-bottom: 50px;
   }
 `;
@@ -349,36 +315,33 @@ const Slide = styled.img`
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover; /* Changed from contain to cover for consistent appearance */
+  object-fit: cover;
   object-position: center;
-  border-radius: 16px; /* Consistent border radius */
+  border-radius: 16px;
 
-  /* Ensure images don't get stretched in the problematic range */
   @media (min-width: 796px) and (max-width: 1340px) {
     object-fit: cover;
     max-height: 300px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    border-radius: 16px; /* Consistent border radius */
+    border-radius: 16px;
   }
 `;
 
 const DotsContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Space between carousel and dots */
-  position: static; /* Remove absolute positioning */
+  margin-top: 20px;
+  position: static;
   width: 100%;
   z-index: 10;
 
-  /* Hide dots on tablet and mobile screens */
   @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
 
-// Define interface for props that require active flag
 interface DotProps {
   active: boolean;
 }
@@ -400,7 +363,6 @@ const Dot = styled.div<DotProps>`
   }
 `;
 
-// Updates section wrapper to center everything on mobile
 const UpdatesSection = styled.div`
   width: 100%;
   max-width: 500px;
@@ -413,26 +375,25 @@ const UpdatesSection = styled.div`
   }
 `;
 
-// New components for the updated design
 const ForMoreUpdates = styled.p`
   margin-bottom: 0.75rem;
   font-size: 16px;
   text-align: left;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    display: none; /* Hide "For more updates" on tablet and smaller screens */
+    display: none;
   }
 `;
 
 const EmailSubscriptionContainer = styled.div`
   display: flex;
-  margin-bottom: 0; /* Removed bottom margin since it's managed by the parent */
+  margin-bottom: 0;
   width: 100%;
   gap: 0.75rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     max-width: 90%;
-    margin-top: 0.5rem; /* Add some space at the top when "For more updates" is hidden */
+    margin-top: 0.5rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -505,7 +466,6 @@ const SubmitButton = styled.button`
   }
 `;
 
-// Existing styled components
 const HeroContainer = styled.div`
   display: flex;
   background-color: #000000;
@@ -602,26 +562,24 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 2rem; /* Consistent spacing after description */
+  margin-bottom: 2rem;
   max-width: 650px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 1.1rem;
     text-align: center;
     max-width: 90%;
-    margin-bottom: 1.5rem; /* Slightly reduced spacing for tablet */
+    margin-bottom: 1.5rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin-bottom: 1.25rem; /* Even more reduced spacing for mobile */
+    margin-bottom: 1.25rem;
   }
 `;
 
-// Keep the original Coming Soon Box for desktop
 const ComingSoonBox = styled.div`
-  /* Desktop styling (unchanged) */
   border-radius: 16px;
   border: 0.5px solid #ffffff;
   background: rgba(249, 248, 245, 0.06);
@@ -631,49 +589,31 @@ const ComingSoonBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 20px; /* Increased padding for better spacing */
+  padding: 20px;
   z-index: 10;
-  width: 280px; /* Fixed width */
+  width: 280px;
 
-  /* Desktop positioning */
   position: absolute;
-  top: 47%;
-  right: 20vw;
+  top: 50%;
+  right: 30vw;
   transform: translate(-50%, -50%);
 
-  /* Common positioning for 1341-1553px screens */
   @media (min-width: 1341px) and (max-width: 1553px) {
-    right: 15%;
+    right: 30%;
     top: 50%;
   }
 
-  /* Specific adjustment for 1350px screens to match */
   @media (min-width: 1350px) and (max-width: 1350px) {
-    right: 15%;
-    top: 50%;
+    right: 25%;
+    top: 60%;
   }
 
-  /* Specific adjustment for 1435px screens to match */
-  @media (min-width: 1435px) and (max-width: 1435px) {
-    right: 15%;
-    top: 50%;
-  }
-
-  /* Specific adjustment for 1350-1435px screens */
-  @media (min-width: 1350px) and (max-width: 1435px) {
-    right: 15%;
-    top: 50%;
-  }
-
-  /* Adjust for very large screens */
   @media (min-width: 1554px) {
-    right: 15vw;
+    right: 20vw;
   }
 `;
 
-// New mobile/tablet-specific Coming Soon Box with overlap
 const ComingSoonBoxMobile = styled.div`
-  /* Common styling */
   border-radius: 16px;
   border: 0.5px solid #ffffff;
   background: rgba(249, 248, 245, 0.06);
@@ -682,18 +622,16 @@ const ComingSoonBoxMobile = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Increased gap for better line spacing */
-  padding: 15px; /* Added padding for better spacing */
+  gap: 10px;
+  padding: 15px;
 
-  /* Positioning - absolute relative to carousel container */
   position: absolute;
-  bottom: -45px; /* Create overlap */
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
 
-  /* Sizing */
-  width: 250px; /* Increased width */
+  width: 250px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 220px;
@@ -706,8 +644,8 @@ const ComingSoonText = styled.span`
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 24px; /* Fixed line height */
-  letter-spacing: 0.5px; /* Added letter spacing */
+  line-height: 24px;
+  letter-spacing: 0.5px;
   color: #ffffff;
   text-align: center;
 
@@ -727,7 +665,7 @@ const ComingSoonSubText = styled.span`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.3px; /* Added letter spacing */
+  letter-spacing: 0.3px;
   text-align: center;
   color: #ffffff;
 

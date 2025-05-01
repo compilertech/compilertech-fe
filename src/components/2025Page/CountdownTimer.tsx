@@ -69,13 +69,10 @@ const CountdownTimer: FC<CountdownTimerProps> = ({ eventDate }) => {
       }
     };
 
-    // Calculate initially
     calculateTimeLeft();
 
-    // Update every second
     const timerId = setInterval(calculateTimeLeft, 1000);
 
-    // Cleanup
     return () => clearInterval(timerId);
   }, [eventDate]);
 

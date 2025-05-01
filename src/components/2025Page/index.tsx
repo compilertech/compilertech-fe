@@ -13,7 +13,7 @@ import Collab from "./Collab";
 import QAndA from "./QAndA";
 import Venue from "./Venue";
 import { useLayoutEffect } from "react";
-import ProgramCommittee from "./ProgramCommittee";
+// import ProgramCommittee from "./ProgramCommittee";
 import SponsorsComponent from "./Sponser";
 const Main = styled.main`
   width: 100%;
@@ -24,24 +24,21 @@ const Main = styled.main`
 `;
 
 export default function Home2() {
-  // scroll to top of page after a page transition.
   useLayoutEffect(() => {
     document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
-  // Set the event date to April 30, 2025 at 10:00 AM
-  const eventDate = new Date("2025-04-30T10:00:00");
+  const eventDate = new Date("2025-09-27T10:00:00");
 
   return (
     <Main>
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
-      <ProgramCommittee />
+      {/* <ProgramCommittee /> */}
       <Testimonial />
       <KeyTopics />
       <Highlights />
       <SponsorsComponent />
-
       <Venue />
       <QAndA />
       <Collab />
