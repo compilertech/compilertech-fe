@@ -259,9 +259,9 @@ const Image = styled.img`
   object-fit: cover;
   transition: transform 0.3s ease;
 
-  &:hover {
+  /* &:hover {
     transform: scale(1.05);
-  }
+  } */
 `;
 
 const ViewMoreButtonWrapper = styled.div`
