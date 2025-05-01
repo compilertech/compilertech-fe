@@ -482,6 +482,7 @@ const GoldBlueCircle = styled.div`
     height: 200px;
     top: 0;
     z-index: 1;
+    visibility: hidden;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
