@@ -80,7 +80,7 @@ const Heading = styled.h1`
 const SubHeading = styled.h2`
   color: #d14ed5;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-family: Spectral;
   font-weight: 500;
   font-style: italic;
@@ -90,12 +90,30 @@ const SubHeading = styled.h2`
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 28px;
+    margin-bottom: 12px;
+  }
+`;
+
+const Address = styled.p`
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 25px;
+    font-size: 14px;
   }
 `;
 
@@ -145,7 +163,10 @@ function Venue() {
         <ContentContainer>
           <Heading>Where Innovation Meets</Heading>
           <SubHeading>Collaboration</SubHeading>
-          <Button>Venue details</Button>
+          <Address>
+            Address : IISc, CV Raman Rd, Bengaluru, Karnataka 560012
+          </Address>
+          <Button>View in Map</Button>
         </ContentContainer>
       </ContainerTwo>
       <TopBorder />

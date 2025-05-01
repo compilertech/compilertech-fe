@@ -87,7 +87,6 @@ const HighlightsContainer = styled.div`
   padding: 6rem;
   position: relative;
   width: 100%;
-  min-height: 100vh;
   overflow: hidden;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -108,41 +107,53 @@ const ContentWrapper = styled.div`
   z-index: 2;
   max-width: 1400px;
   margin: 0 auto;
+  text-align: left;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     max-width: 100%;
   }
 `;
+
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-end;
+  width: auto;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    justify-content: flex-end;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: center;
+    width: 100%;
   }
 `;
+
 const HeaderSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
+  text-align: left;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
   }
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -151,24 +162,16 @@ const Title = styled.h2`
   font-weight: 400;
   font-size: 36px;
   margin: 0;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 32px;
-    text-align: center;
-    width: 100%;
-  }
+  text-align: left;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 28px;
     text-align: center;
-    width: 100%;
-    margin: 12px;
+    margin: 0;
   }
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     font-size: 24px;
-    text-align: center;
-    width: 100%;
   }
 `;
 
@@ -179,26 +182,16 @@ const Subtitle = styled.span`
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
-  line-height: 120%;
-  letter-spacing: 0%;
   margin: 0;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 32px;
-    text-align: center;
-    width: 100%;
-  }
+  text-align: left;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 28px;
     text-align: center;
-    width: 100%;
   }
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     font-size: 24px;
-    text-align: center;
-    width: 100%;
   }
 `;
 
@@ -206,16 +199,11 @@ const VisitButton = styled.button`
   background: transparent;
   border: 1px solid white;
   color: white;
-  padding: 0.8rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-width: 1px;
   border-radius: 8px;
-  padding-top: 10px;
-  padding-right: 12px;
-  padding-bottom: 10px;
-  padding-left: 12px;
+  padding: 10px 12px;
   gap: 12px;
 
   &:hover {
@@ -224,38 +212,45 @@ const VisitButton = styled.button`
 `;
 
 const ImageGrid = styled.div`
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 16px;
-  border-radius: 8px;
+  grid-template-columns: repeat(3, 416px);
+  grid-template-rows: repeat(2, 350px);
+  gap: 32px;
+  justify-content: center;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 12px;
+  @media (max-width: 1350px) {
+    grid-template-columns: repeat(3, 330px);
+    grid-template-rows: repeat(2, 280px);
+    gap: 20px;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(2, 380px);
+    grid-template-rows: repeat(3, 320px);
+    gap: 30px;
+  }
+
+  @media (max-width: 830px) {
+    grid-template-columns: repeat(2, 320px);
+    grid-template-rows: repeat(3, 270px);
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 342px;
+    grid-template-rows: repeat(6, 350px);
+    gap: 30px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    grid-template-columns: 100%;
   }
 `;
 
 const ImageCard = styled.div`
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
   overflow: hidden;
-  height: auto;
-  aspect-ratio: 16/9;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    aspect-ratio: 4/3;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    aspect-ratio: 16/9;
-  }
 `;
 
 const Image = styled.img`
@@ -296,19 +291,15 @@ const ViewMoreButton = styled.button`
   height: 48px;
   border-width: 1px;
   border-radius: 8px;
-  padding-top: 10px;
-  padding-right: 12px;
-  padding-bottom: 10px;
-  padding-left: 12px;
+  padding: 10px 12px;
   gap: 12px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    align-self: center;
   }
 `;
 
-// Keeping the exact same decorative elements
+// Decorative elements
 const PurpleCircle = styled.div`
   position: absolute;
   width: 249px;
@@ -329,6 +320,7 @@ const PurpleCircle = styled.div`
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     top: 800px;
+    visibility: hidden;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -341,10 +333,10 @@ const PurpleCircle = styled.div`
 
 const GoldCircle = styled.div`
   position: absolute;
-  top: 177px;
+  top: 170px;
   right: -20px;
-  width: 163px;
-  height: 161px;
+  width: 200px;
+  height: 200px;
   background: linear-gradient(
     219.17deg,
     rgba(244, 210, 103, 0) 24.33%,
@@ -358,9 +350,10 @@ const GoldCircle = styled.div`
   opacity: 0.8;
   z-index: 1;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     width: 140px;
     height: 140px;
     top: 120px;
+    visibility: hidden;
   }
 `;

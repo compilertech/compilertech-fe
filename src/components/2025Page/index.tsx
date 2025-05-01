@@ -36,15 +36,16 @@ export default function Home2() {
     <Main>
       <CountdownTimer eventDate={eventDate} />
       <Hero2 />
-      <SponsorsComponent />
       <ProgramCommittee />
       <Testimonial />
       <KeyTopics />
-      {/* <Highlights />
+      <Highlights />
+      <SponsorsComponent />
+
       <Venue />
       <QAndA />
       <Collab />
-      <AnimatedBanner /> */}
+      <AnimatedBanner />
     </Main>
   );
 }

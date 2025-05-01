@@ -12,8 +12,8 @@ import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";
 import Home2 from "./components/2025Page";
-// import NewHeader from "./components/2025Page/NewHeader";
-// import NewFooter from "./components/2025Page/NewFooter";
+import NewHeader from "./components/2025Page/NewHeader";
+import NewFooter from "./components/2025Page/NewFooter";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
@@ -61,7 +61,7 @@ function App() {
 
       <Wrapper>
         {is2024Page && <Header onClick={toggleTheme} theme={theme} />}
-        {/* {!is2024Page && <NewHeader />} */}
+        {!is2024Page && <NewHeader />}
         <Routes>
           <Route path="/" element={<Home2 />} />
           <Route path="/2024" element={<Home />} />
@@ -70,7 +70,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
         {is2024Page && <Footer />}
-        {/* {!is2024Page && <NewFooter />} */}
+        {!is2024Page && <NewFooter />}
       </Wrapper>
     </ThemeProvider>
   );

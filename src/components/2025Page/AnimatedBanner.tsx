@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, FC } from "react";
 import styled from "styled-components";
 
-// Create a styled component for the gradient text
+// Create a styled component for the gradient text with responsive font sizes
 const GradientText = styled.div`
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -14,6 +14,27 @@ const GradientText = styled.div`
   background-clip: text;
   white-space: nowrap;
   padding: 0 100px; // Add some padding between repeated texts
+
+  // Responsive font sizes
+  @media (max-width: 1440px) {
+    font-size: 100px;
+    padding: 0 80px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 80px;
+    padding: 0 60px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+    padding: 0 20px;
+  }
 `;
 
 const Banner = styled.div`
@@ -22,6 +43,15 @@ const Banner = styled.div`
   overflow: hidden;
   padding: 40px 0;
   position: relative;
+
+  // Responsive padding
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 0;
+  }
 `;
 
 const InfiniteScrollContainer = styled.div`
@@ -48,13 +78,16 @@ const AnimatedBanner: FC<AnimatedBannerProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const [textWidth, setTextWidth] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   useEffect(() => {
     // Measure the width of a single text element
     if (textRef.current) {
       setTextWidth(textRef.current.offsetWidth);
     }
-  }, [text]);
+  }, [text, windowWidth]); // Re-measure when text or window width changes
 
   useEffect(() => {
     if (!textWidth) return;
@@ -87,6 +120,7 @@ const AnimatedBanner: FC<AnimatedBannerProps> = ({
 
     // Handle window resize
     const handleResize = (): void => {
+      setWindowWidth(window.innerWidth);
       if (textRef.current) {
         setTextWidth(textRef.current.offsetWidth);
       }
@@ -98,13 +132,19 @@ const AnimatedBanner: FC<AnimatedBannerProps> = ({
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
     };
-  }, [textWidth, speed]);
+  }, [textWidth, speed, windowWidth]);
+
+  // Adapt speed based on screen size
+  // const responsiveSpeed = windowWidth < 768 ? speed * 0.7 : speed;
 
   // Generate multiple copies of the text to ensure seamless looping
-  // We need at least enough copies to cover the screen width
+  // We need at least enough copies to cover the screen width plus a buffer
   const renderMultipleTexts = () => {
-    // Determine how many copies we need to fill the screen width plus a buffer
-    const numCopies = 3; // Start with 3 copies minimum
+    // Determine how many copies we need based on screen width
+    const numCopies = Math.max(
+      3,
+      Math.ceil((windowWidth * 2) / (textWidth || 1000))
+    );
 
     return Array.from({ length: numCopies }).map((_, index) => (
       <GradientText key={index} ref={index === 0 ? textRef : undefined}>
