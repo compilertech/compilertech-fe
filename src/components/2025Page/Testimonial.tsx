@@ -197,7 +197,7 @@ const Title = styled.h2`
 `;
 
 const HighlightText = styled.div`
-  font-family: "Spectral", serif;
+  font-family: serif;
   background: #fb4dd8;
   -webkit-background-clip: text;
   background-clip: text;

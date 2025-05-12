@@ -81,7 +81,7 @@ const SubHeading = styled.h2`
   color: #d14ed5;
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -166,7 +166,11 @@ function Venue() {
           <Address>
             Address : IISc, CV Raman Rd, Bengaluru, Karnataka 560012
           </Address>
-          <Button>View in Map</Button>
+          <Button
+            onClick={() => window.open("https://g.co/kgs/vCEbtJ7", "_blank")}
+          >
+            View in Map
+          </Button>
         </ContentContainer>
       </ContainerTwo>
       <TopBorder />

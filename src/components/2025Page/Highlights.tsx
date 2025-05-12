@@ -10,8 +10,10 @@ import image3 from "../../assets/2025/image3.svg";
 import image4 from "../../assets/2025/image4.svg";
 import image5 from "../../assets/2025/image5.svg";
 import image6 from "../../assets/2025/image6.svg";
+import { useState } from "react";
 
 function Highlights() {
+  const [imageCount, setImageCount] = useState(6);
   const highlightImages = [
     {
       id: 1,
@@ -54,21 +56,29 @@ function Highlights() {
             <Subtitle>A Look Back</Subtitle>
           </TitleWrapper>
           <ButtonWrapper>
-            <VisitButton>Visit website</VisitButton>
+            <VisitButton onClick={() => window.open("/2024", "_blank")}>
+              Visit website
+            </VisitButton>
           </ButtonWrapper>
         </HeaderSection>
 
         <ImageGrid>
-          {highlightImages.map((image) => (
+          {highlightImages.slice(0, imageCount).map((image) => (
             <ImageCard key={image.id}>
               <Image src={image.src} alt={image.alt} />
             </ImageCard>
           ))}
         </ImageGrid>
 
-        <ViewMoreButtonWrapper>
-          <ViewMoreButton>View More</ViewMoreButton>
-        </ViewMoreButtonWrapper>
+        {highlightImages.length < imageCount && (
+          <ViewMoreButtonWrapper>
+            <ViewMoreButton
+              onClick={() => setImageCount((prevCount) => prevCount + 6)}
+            >
+              View More
+            </ViewMoreButton>
+          </ViewMoreButtonWrapper>
+        )}
       </ContentWrapper>
 
       {/* Decorative elements */}
@@ -178,11 +188,12 @@ const Title = styled.h2`
 const Subtitle = styled.span`
   color: #d83bd2;
   line-height: 1.2;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
   margin: 0;
+  margin-top: 10px;
   text-align: left;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -212,34 +223,10 @@ const VisitButton = styled.button`
 `;
 
 const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 416px);
-  grid-template-rows: repeat(2, 350px);
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
   justify-content: center;
-
-  @media (max-width: 1350px) {
-    grid-template-columns: repeat(3, 330px);
-    grid-template-rows: repeat(2, 280px);
-    gap: 20px;
-  }
-
-  @media (max-width: 950px) {
-    grid-template-columns: repeat(2, 380px);
-    grid-template-rows: repeat(3, 320px);
-    gap: 30px;
-  }
-
-  @media (max-width: 830px) {
-    grid-template-columns: repeat(2, 320px);
-    grid-template-rows: repeat(3, 270px);
-  }
-
-  @media (max-width: 700px) {
-    grid-template-columns: 342px;
-    grid-template-rows: repeat(6, 350px);
-    gap: 30px;
-  }
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     grid-template-columns: 100%;
@@ -247,10 +234,16 @@ const ImageGrid = styled.div`
 `;
 
 const ImageCard = styled.div`
-  width: 100%;
+  width: calc(33.33% - 28px);
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: calc(50% - 16px);
+  }
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    width: 100%;
+  }
 `;
 
 const Image = styled.img`

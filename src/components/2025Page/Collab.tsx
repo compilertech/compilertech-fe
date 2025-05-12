@@ -55,7 +55,7 @@ const Heading = styled.h2`
 const SubHeading = styled.h3`
   color: white;
   margin-top: 5px;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 70px;

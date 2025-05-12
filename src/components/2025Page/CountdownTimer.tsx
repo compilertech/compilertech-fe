@@ -4,7 +4,7 @@ import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const CountdownContainer = styled.div`
   width: 100%;
-  padding: 15px 0;
+  height: 70px;
   background: linear-gradient(90deg, #4169e1 0%, #da70d6 100%);
   display: flex;
   justify-content: center;

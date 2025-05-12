@@ -62,10 +62,10 @@ const Header: React.FC = () => {
 const HeaderContainer = styled.header`
   width: 100%;
   background: white;
-  position: sticky;
   top: 0;
   z-index: 100;
   padding: 0 5vw;
+  height: 80px;
 `;
 
 const HeaderContent = styled.div`

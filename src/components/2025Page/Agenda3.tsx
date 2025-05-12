@@ -87,7 +87,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.span`
   font-size: 40px;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   color: #d83bd2;
   font-style: italic;

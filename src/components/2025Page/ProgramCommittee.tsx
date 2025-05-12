@@ -53,7 +53,7 @@ const Committee = styled.div`
   color: #fb4dd8;
   font-size: 14px;
   margin-top: 5px;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;

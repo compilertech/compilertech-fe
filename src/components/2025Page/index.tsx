@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
-import Hero2 from "./Hero2";
+import Hero from "./Hero";
 // import Agenda from "./Agenda";
 // import Agenda2 from "./Agenda2";
 // import Agenda3 from "./Agenda3";
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Main>
       <CountdownTimer eventDate={eventDate} />
-      <Hero2 />
+      <Hero />
       {/* <ProgramCommittee /> */}
       <Testimonial />
       <KeyTopics />

@@ -147,7 +147,7 @@ const TopicsContainer = styled.div`
 `;
 
 const KeyTopicsSection = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 2rem;
@@ -189,7 +189,7 @@ const Subtitle = styled.h3`
   font-style: italic;
   color: #d83bd2;
   margin-top: 10px;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -373,7 +373,7 @@ const SubmissionSubtitle = styled.h3`
   font-weight: 500;
   font-style: italic;
   color: #d83bd2;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   margin-top: 10px;
   margin-bottom: 0;
 

@@ -26,8 +26,3 @@ section {
   font-family: "Satoshi";
   src: url("./assets/fonts/Satoshi-Variable.ttf");
 }
-
-@font-face {
-  font-family: "Spectral";
-  src: url("/assets/fonts/Spectral-Regular.ttf");
-}

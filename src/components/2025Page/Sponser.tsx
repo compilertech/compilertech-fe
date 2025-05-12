@@ -52,7 +52,7 @@ const MainTitle = styled.h2`
 `;
 
 const SubTitle = styled.h3`
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -155,7 +155,7 @@ const SponsorsComponent = () => {
       <Container>
         <SponsorSection>
           <SectionTitle>
-            <MainTitle>Making It Possible:</MainTitle>
+            <MainTitle>Making It Possible</MainTitle>
             <SubTitle>Our Sponsors</SubTitle>
           </SectionTitle>
           <Divider />

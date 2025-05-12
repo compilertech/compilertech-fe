@@ -29,6 +29,7 @@ import img1 from "../../assets/2025/img1.webp";
 import img2 from "../../assets/2025/img2.webp";
 import img3 from "../../assets/2025/img3.webp";
 import img4 from "../../assets/2025/img4.webp";
+import { FaCircleNotch } from "react-icons/fa";
 
 const heroData = {
   title: "Innovations in compiler technology at",
@@ -42,7 +43,7 @@ const heroData = {
   previousYearCta: "Previous Year CTA →",
 };
 
-function Hero2() {
+function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
 
@@ -190,11 +191,7 @@ function Hero2() {
               />
               <SubmitButton type="submit" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  <span
-                    style={{ width: "24px", height: "24px", display: "block" }}
-                  >
-                    ·
-                  </span>
+                  <Loader size={24} />
                 ) : (
                   <IoMdArrowForward size={24} />
                 )}
@@ -258,7 +255,6 @@ interface SubmitMessageProps {
 }
 
 const SubmitMessage = styled.p<SubmitMessageProps>`
-  margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 14px;
   color: ${(props) => (props.success ? "#4caf50" : "#f44336")};
@@ -389,7 +385,7 @@ const EmailSubscriptionContainer = styled.div`
   display: flex;
   margin-bottom: 0;
   width: 100%;
-  gap: 0.75rem;
+  gap: 4px;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     max-width: 90%;
@@ -547,7 +543,7 @@ const Subtitle = styled.h2`
   font-size: 70px;
   font-weight: 500;
   font-style: italic;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   color: #fb4dd8;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -680,4 +676,16 @@ const ComingSoonSubText = styled.span`
   }
 `;
 
-export default Hero2;
+const Loader = styled(FaCircleNotch)`
+  animation: heartbeat 1s linear infinite;
+  @keyframes heartbeat {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+export default Hero;

@@ -122,7 +122,7 @@ const Subtitle = styled.h3`
   color: #fb4dd8;
   margin: 0;
   line-height: 1.2;
-  font-family: "Spectral", serif;
+  font-family: serif;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 32px;

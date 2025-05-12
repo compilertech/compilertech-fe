@@ -75,7 +75,7 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
   color: #d14ed5;
   font-style: italic;
-  font-family: "Spectral", sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -100,14 +100,13 @@ const Divider = styled.hr`
 `;
 
 const AccordionItem = styled.div`
-  margin-bottom: 10px;
+  padding: 25px 0;
 `;
 
 const AccordionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
   cursor: pointer;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -139,11 +138,11 @@ const PlusIcon = styled.span`
 `;
 
 const AccordionContent = styled.div<AccordionContentProps>`
-  padding-bottom: ${({ isOpen }) => (isOpen ? "20px" : "0")};
   max-height: ${({ isOpen }) => (isOpen ? "1000px" : "0")};
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  margin-top: ${({ isOpen }) => (isOpen ? "10px" : "0")};
 `;
 
 const Answer = styled.p`
@@ -206,16 +205,18 @@ const QAndA: React.FC = () => {
         <RightColumn>
           {faqItems.map((item, index) => (
             <React.Fragment key={index}>
-              <AccordionItem>
+              <AccordionItem
+                style={index === 0 ? { padding: "0 0 25px 0" } : {}}
+              >
                 <AccordionHeader onClick={() => toggleAccordion(index)}>
                   <Question>{item.question}</Question>
-                  <PlusIcon>{openItem === index ? "−" : "+"}</PlusIcon>
+                  <PlusIcon>{openItem === index ? "-" : "+"}</PlusIcon>
                 </AccordionHeader>
                 <AccordionContent isOpen={openItem === index}>
                   <Answer>{item.answer}</Answer>
                 </AccordionContent>
               </AccordionItem>
-              <Divider />
+              {index !== faqItems.length - 1 && <Divider />}
             </React.Fragment>
           ))}
         </RightColumn>
