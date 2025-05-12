@@ -55,10 +55,10 @@ function HeaderOptions() {
   const options: string[] = ["Organization", "Attending", "Schedule"];
 
   function handleOnClick(path: string) {
-    navigate(`/${path.toLowerCase()}`);
+    navigate(`/2024/${path.toLowerCase()}`);
   }
 
-  const selectedOption = window.location.pathname.split("/")[1];
+  const selectedOption = window.location.pathname.split("/2024/")[1];
   return (
     <Section>
       <Wrapper>
@@ -69,11 +69,11 @@ function HeaderOptions() {
             selected={selectedOption === option.toLowerCase()}
           >
             {option}
-            {option === "Schedule" && (
+            {/* {option === "Schedule" && (
               <PillContainer>
                 <Pill position="inherit">New</Pill>
               </PillContainer>
-            )}
+            )} */}
           </OptionText>
         ))}
       </Wrapper>

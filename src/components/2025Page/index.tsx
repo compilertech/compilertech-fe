@@ -23,7 +23,7 @@ const Main = styled.main`
   }
 `;
 
-export default function Home2() {
+export default function Home() {
   useLayoutEffect(() => {
     document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
