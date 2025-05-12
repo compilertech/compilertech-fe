@@ -205,7 +205,7 @@ const SmallCircle = styled.div`
 
 function Collab() {
   return (
-    <CollabContainer>
+    <CollabContainer id="sponsorship-opportunities">
       <ContentSection>
         <Heading>Partner with Us to</Heading>
         <SubHeading>Shape the Future</SubHeading>

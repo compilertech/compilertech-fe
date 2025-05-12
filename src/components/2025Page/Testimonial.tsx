@@ -17,7 +17,7 @@ const TestimonialSection = () => {
     <Container>
       <TopBorder />
 
-      <TestimonialCard>
+      <AboutCard id="about">
         <ContentWrapper>
           {/* First part: Left Column */}
           <ColumnLeft>
@@ -62,9 +62,9 @@ const TestimonialSection = () => {
             </SubscriptionContent>
           </ColumnRight>
         </SubscriptionWrapper>
-      </TestimonialCard>
+      </AboutCard>
 
-      <StatsSection>
+      <StatsSection id="stats">
         <StatsHeader>
           Our stats <StatsLine />
         </StatsHeader>
@@ -121,7 +121,7 @@ const TopBorder = styled.div`
   }
 `;
 
-const TestimonialCard = styled.div`
+const AboutCard = styled.div`
   background-color: #151515;
   border-radius: 20px;
   padding: 3rem;

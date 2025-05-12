@@ -152,7 +152,7 @@ const SponsorsComponent = () => {
     const limitedSponsors = sponsors.slice(0, count);
 
     return (
-      <Container>
+      <Container id="sponsors">
         <SponsorSection>
           <SectionTitle>
             <MainTitle>Making It Possible</MainTitle>

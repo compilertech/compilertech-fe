@@ -1,35 +1,36 @@
 import { useEffect, useState, useRef, FC } from "react";
 import styled from "styled-components";
+import {
+  MOBILE_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 
 // Create a styled component for the gradient text with responsive font sizes
 const GradientText = styled.div`
   font-family: "Satoshi", sans-serif;
   font-weight: 600;
   font-size: 128px;
-  line-height: 100%;
+  line-height: 180px;
   letter-spacing: 0%;
   background: linear-gradient(97.15deg, #367aff -7.35%, #f150da 99.89%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   white-space: nowrap;
-  padding: 0 20px; // Reduced padding between repeated texts
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 34px;
 
-  // Responsive font sizes
-  @media (max-width: 1440px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 1024px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    line-height: 100px;
     font-size: 80px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    line-height: 80px;
     font-size: 60px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 40px;
   }
 `;
 
@@ -37,7 +38,6 @@ const Banner = styled.div`
   width: 100%;
   background-color: #000000;
   overflow: hidden;
-  padding: 40px 0;
   position: relative;
 
   // Responsive padding

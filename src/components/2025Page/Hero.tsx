@@ -152,7 +152,7 @@ function Hero() {
   };
 
   return (
-    <HeroContainer>
+    <HeroContainer id="overview">
       <ContentSection>
         <TitleContainer>
           <Title>{heroData.title}</Title>

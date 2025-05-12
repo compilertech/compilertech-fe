@@ -67,7 +67,7 @@ function KeyTopics() {
   ];
 
   return (
-    <TopicsContainer>
+    <TopicsContainer id="tracks">
       <KeyTopicsSection>
         <TopicsHeader>
           <Title>Key Topics Shaping</Title>

@@ -196,7 +196,7 @@ const QAndA: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container id="faqs">
       <ContentWrapper>
         <LeftColumn>
           <Title>Your Questions,</Title>

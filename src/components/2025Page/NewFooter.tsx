@@ -11,13 +11,18 @@ import LogoImage from "/icons/logo_dark-cropped.png";
 const NewFooter: React.FC = () => {
   const navigate = useNavigate();
 
-  const quickLinks1 = ["Overview", "About us", "Our Stats", "Tracks & themes"];
+  const quickLinks1 = [
+    { label: "Overview", href: "/#overview" },
+    { label: "About us", href: "/#about" },
+    { label: "Our Stats", href: "/#stats" },
+    { label: "Tracks & themes", href: "/#tracks" },
+  ];
 
   const quickLinks2 = [
-    "Past Highlights",
-    "Venue",
-    "FAQs",
-    "Sponsorship opportunities",
+    { label: "Past Highlights", href: "/#past-highlights" },
+    { label: "Venue", href: "/#venue" },
+    { label: "FAQs", href: "/#faqs" },
+    { label: "Sponsorship opportunities", href: "/#sponsorship-opportunities" },
   ];
 
   return (
@@ -32,20 +37,24 @@ const NewFooter: React.FC = () => {
           <QuickLinks>
             <QuickLinksColumn>
               {quickLinks1.map((link, index) => (
-                <QuickLink key={index}>{link}</QuickLink>
+                <QuickLink key={index} href={link.href}>
+                  {link.label}
+                </QuickLink>
               ))}
             </QuickLinksColumn>
 
             <QuickLinksColumn>
               {quickLinks2.map((link, index) => (
-                <QuickLink key={index}>{link}</QuickLink>
+                <QuickLink key={index} href={link.href}>
+                  {link.label}
+                </QuickLink>
               ))}
             </QuickLinksColumn>
           </QuickLinks>
         </QuickLinksSection>
       </FooterContent>
 
-      <CopyrightSection>©2025 Compiler Technology</CopyrightSection>
+      <CopyrightSection>© 2025 Compiler Technology</CopyrightSection>
     </FooterContainer>
   );
 };

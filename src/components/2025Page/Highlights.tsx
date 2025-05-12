@@ -48,7 +48,7 @@ function Highlights() {
   ];
 
   return (
-    <HighlightsContainer>
+    <HighlightsContainer id="past-highlights">
       <ContentWrapper>
         <HeaderSection>
           <TitleWrapper>
