@@ -92,7 +92,7 @@ const Container = styled.div`
   padding: 6rem;
   position: relative;
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   overflow: hidden;
 
@@ -175,7 +175,7 @@ const ColumnRight = styled.div`
 const EmptySpace = styled.div``;
 
 const Title = styled.h2`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 1.2;
@@ -239,7 +239,7 @@ const Divider = styled.hr`
 `;
 
 const Description = styled.p`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
@@ -289,7 +289,7 @@ const SubscriptionContent = styled.div`
 `;
 
 const SubscriptionText = styled.p`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
@@ -320,7 +320,7 @@ const SubscribeButton = styled.button`
   border-radius: 8px;
   color: white;
   padding: 10px 12px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -354,7 +354,7 @@ const StatsSection = styled.div`
 const StatsHeader = styled.div`
   display: flex;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -407,7 +407,7 @@ const StatItem = styled.div`
 `;
 
 const StatNumber = styled.h2`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 48px;
   font-weight: 400;
   margin: 0 0 0.5rem 0;
@@ -427,7 +427,7 @@ const StatNumber = styled.h2`
 `;
 
 const StatDescription = styled.p`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   color: #cfcbc4;
   margin: 0;

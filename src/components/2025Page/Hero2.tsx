@@ -474,7 +474,7 @@ const HeroContainer = styled.div`
   width: 100%;
   position: relative;
   padding: 2rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     padding: 2rem;
@@ -547,7 +547,7 @@ const Subtitle = styled.h2`
   font-size: 70px;
   font-weight: 500;
   font-style: italic;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   color: #fb4dd8;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -641,7 +641,7 @@ const ComingSoonBoxMobile = styled.div`
 `;
 
 const ComingSoonText = styled.span`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -661,7 +661,7 @@ const ComingSoonText = styled.span`
 `;
 
 const ComingSoonSubText = styled.span`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

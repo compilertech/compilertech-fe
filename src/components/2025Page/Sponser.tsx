@@ -37,7 +37,7 @@ const MainTitle = styled.h2`
   color: white;
   margin: 0;
   font-weight: normal;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -52,7 +52,7 @@ const MainTitle = styled.h2`
 `;
 
 const SubTitle = styled.h3`
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;

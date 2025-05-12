@@ -43,7 +43,7 @@ export default Agenda3;
 // Styled Components
 const AgendaContainer = styled.div`
   background-color: #0a0a0a;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   color: white;
   padding: 4rem 5rem;
   position: relative;
@@ -87,7 +87,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.span`
   font-size: 40px;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   color: #d83bd2;
   font-style: italic;

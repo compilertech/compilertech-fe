@@ -56,7 +56,7 @@ const AgendaContainer = styled.div`
   width: 100%;
   position: relative;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   display: flex;
   justify-content: center;
   padding: 4rem 5rem;

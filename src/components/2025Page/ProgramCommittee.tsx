@@ -40,7 +40,7 @@ const SectionHeader = styled.h3`
   margin: 0;
   padding: 0;
   font-size: 18px;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -53,7 +53,7 @@ const Committee = styled.div`
   color: #fb4dd8;
   font-size: 14px;
   margin-top: 5px;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -98,7 +98,7 @@ const CommitteeLabel = styled.div`
   font-size: 12px;
   margin: 30px 0;
   margin-left: 35px;
-  font-family: Poppins;
+  font-family: "Satoshi", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -175,7 +175,7 @@ const Role = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 500;
   color: white;
   z-index: 10;
@@ -307,7 +307,7 @@ const MemberInfo = styled.div`
 const MemberName = styled.div`
   font-weight: 600;
   margin-bottom: 5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   color: white;
   font-size: 18px;
 
@@ -320,7 +320,7 @@ const MemberName = styled.div`
 const MemberTitle = styled.div`
   font-size: 14px;
   color: #aaa;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 13px;

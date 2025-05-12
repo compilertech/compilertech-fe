@@ -62,7 +62,7 @@ const ContentContainer = styled.div`
 
 const Heading = styled.h1`
   margin-bottom: 10px;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -81,7 +81,7 @@ const SubHeading = styled.h2`
   color: #d14ed5;
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -102,7 +102,7 @@ const SubHeading = styled.h2`
 const Address = styled.p`
   margin-top: 0;
   margin-bottom: 40px;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   line-height: 140%;
 

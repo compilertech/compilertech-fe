@@ -54,7 +54,7 @@ const RightColumn = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -75,7 +75,7 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
   color: #d14ed5;
   font-style: italic;
-  font-family: Spectral, sans-serif;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;

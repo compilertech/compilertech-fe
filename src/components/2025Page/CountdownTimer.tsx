@@ -20,9 +20,9 @@ const CountdownContainer = styled.div`
 `;
 
 const CountdownText = styled.div`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
   text-align: center;

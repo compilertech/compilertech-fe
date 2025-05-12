@@ -138,7 +138,7 @@ const QuickLinks = styled.div`
 `;
 
 const QuickLinksContainer = styled.div`
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 600;
   font-size: 32px;
   padding-bottom: 30px;
@@ -173,7 +173,7 @@ const QuickLink = styled.a`
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;

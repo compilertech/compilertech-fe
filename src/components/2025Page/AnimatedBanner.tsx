@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Create a styled component for the gradient text with responsive font sizes
 const GradientText = styled.div`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 600;
   font-size: 128px;
   line-height: 100%;

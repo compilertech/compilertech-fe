@@ -1,11 +1,13 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   border: 0;
 }
 
-html{
-	scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 section {
@@ -17,17 +19,12 @@ section {
 
 @font-face {
   font-family: "Bebas Neue";
-  src: url("./assets/fonts/BebasNeue-Regular.ttf")
+  src: url("./assets/fonts/BebasNeue-Regular.ttf");
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("./assets/fonts/Satoshi-Variable.ttf")
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/assets/fonts/Poppins-Regular.ttf");
+  src: url("./assets/fonts/Satoshi-Variable.ttf");
 }
 
 @font-face {

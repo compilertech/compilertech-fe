@@ -158,7 +158,7 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h2`
   line-height: 1.2;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   margin: 0;
@@ -178,7 +178,7 @@ const Title = styled.h2`
 const Subtitle = styled.span`
   color: #d83bd2;
   line-height: 1.2;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;

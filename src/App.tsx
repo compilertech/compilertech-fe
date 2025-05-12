@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
-import { default as Home2024 } from "./components/HomePage";
+import Home2024 from "./components/HomePage";
 import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";

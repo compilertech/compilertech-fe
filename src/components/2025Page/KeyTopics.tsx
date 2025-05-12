@@ -165,7 +165,7 @@ const TopicsHeader = styled.div`
 
 const Title = styled.h2`
   margin: 0;
-  font-family: Poppins;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -189,7 +189,7 @@ const Subtitle = styled.h3`
   font-style: italic;
   color: #d83bd2;
   margin-top: 10px;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -350,7 +350,7 @@ const ColumnRight = styled.div`
 `;
 
 const SubmissionTitle = styled.h2`
-  font-family: Poppins;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   margin: 0;
@@ -373,7 +373,7 @@ const SubmissionSubtitle = styled.h3`
   font-weight: 500;
   font-style: italic;
   color: #d83bd2;
-  font-family: Spectral;
+  font-family: "Spectral", sans-serif;
   margin-top: 10px;
   margin-bottom: 0;
 
