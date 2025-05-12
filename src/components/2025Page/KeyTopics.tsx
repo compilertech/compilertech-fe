@@ -390,23 +390,23 @@ const SubmissionSubtitle = styled.h3`
   }
 `;
 
-const SubmissionText = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: left;
+// const SubmissionText = styled.p`
+//   font-size: 1rem;
+//   line-height: 1.6;
+//   margin-bottom: 2rem;
+//   color: rgba(255, 255, 255, 0.9);
+//   text-align: left;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+//   @media (max-width: ${TABLET_BREAKPOINT}) {
+//     text-align: center;
+//     margin-bottom: 1.5rem;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     font-size: 0.9rem;
+//     line-height: 1.5;
+//   }
+// `;
 
 const SubmissionDeadline = styled.p`
   font-size: 1rem;
@@ -428,23 +428,23 @@ const SubmissionDeadline = styled.p`
   }
 `;
 
-const SubmitButton = styled.button`
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 8px;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: inline-block;
+// const SubmitButton = styled.button`
+//   background-color: transparent;
+//   border: 1px solid white;
+//   border-radius: 8px;
+//   color: white;
+//   padding: 0.8rem 1.5rem;
+//   font-size: 1rem;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   display: inline-block;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+//   &:hover {
+//     background-color: rgba(255, 255, 255, 0.1);
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 0.7rem 1.25rem;
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     padding: 0.7rem 1.25rem;
+//     font-size: 0.9rem;
+//   }
+// `;
