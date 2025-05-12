@@ -34,7 +34,7 @@ const heroData = {
   title: "Innovations in compiler technology at",
   subtitle: "Bengaluru, Karnataka",
   description:
-    "The IICT (Innovations In Compiler Technology) workshop aims to bring together researchers, practitioners, and enthusiasts in the field of compiler technologies. This year's theme focuses on the cutting-edge advancements in compiler design, implementation, and optimization, and their impact on emerging software and hardware platforms. We invite presentation proposals for our upcoming workshop",
+    "Innovations in Compiler Technology (IICT) is a workshop dedicated to bringing together researchers, practitioners, and enthusiasts in the field of compiler technologies. Our inaugural edition, IICT 2024, was met with an enthusiastic response, drawing over 200 participants from across the compiler community. Building on that success, we're excited to announce that IICT 2025 is set to be even bigger — now an ACM-sponsored event, hosted at IISc Bangalore!",
   emailPlaceholder: "Enter your email ID for updates",
   forMoreUpdates: "For more updates",
   comingSoon: "27, 28th September 2025",

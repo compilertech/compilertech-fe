@@ -101,7 +101,7 @@ function KeyTopics() {
           </ColumnLeft>
 
           <ColumnRight>
-            <SubmissionText>
+            {/* <SubmissionText>
               Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
               vivamus mauris elit. Hendrerit a donec platea nulla pretium
               venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
@@ -110,11 +110,11 @@ function KeyTopics() {
               dui eros. Velit tempus scelerisque facilisis at amet habitant
               mattis aenean. Vitae quisque enim laoreet urna dictum nunc
               vestibulum.
-            </SubmissionText>
+            </SubmissionText> */}
             <SubmissionDeadline>
-              Submission Deadline : <em>To be announced</em>
+              Submission Deadline : <em>To be announced. Coming soon…</em>
             </SubmissionDeadline>
-            <SubmitButton>Submit Now</SubmitButton>
+            {/* <SubmitButton>Submit Now</SubmitButton> */}
           </ColumnRight>
         </SubmissionContent>
       </SubmissionSection>

@@ -169,28 +169,26 @@ const QAndA: React.FC = () => {
   const faqItems: FaqItem[] = [
     {
       question: "Are there any travel or accommodation recommendations?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus vivamus mauris elit. Hendrerit a donec platea nulla pretium venenatis enim",
+      answer: "To be shared soon.",
     },
     {
       question: "Is there a virtual participation option?",
       answer:
-        "Yes, we offer virtual participation through our dedicated event platform. Attendees can join live sessions, participate in Q&As, and network with other participants remotely.",
+        "This ACM event is an in-person and not a hybrid event. We recommend the participants to be present in person to make the best out of this unique networking opportunity.",
     },
     {
       question: "Are there any sponsorship or exhibitor opportunities?",
       answer:
-        "We offer various sponsorship packages and exhibitor booths to showcase your products and services. Please contact our sponsorship team for more information.",
+        "Absolutely! We see IICT as a valuable platform to strengthen collaboration between industry and academia, and to help grow the compiler community in India and beyond. Your support plays a crucial role in making this initiative more impactful and smoothly executed.\nFor details on sponsorship tiers and associated benefits, please contact us at support@compilertech.org.",
     },
     {
       question: "Who do I contact for more information?",
-      answer:
-        "For general inquiries, please contact our event team at events@example.com or call our helpline at +1-555-123-4567.",
+      answer: "Please send your queries to support@compilertech.org",
     },
     {
-      question: "Will meals be provided during the event?",
+      question: "What is included in the tickets?",
       answer:
-        "Yes, we provide breakfast, lunch, and refreshments during coffee breaks. Dinner is included on the main conference day. We accommodate dietary restrictions with advance notice.",
+        "While final details are still being confirmed, your ticket currently includes breakfast, tea breaks, lunch, and evening snacks on both days of the event. Additionally, attendees will receive some fun souvenirs — including custom laptop stickers — as a memento of the experience!",
     },
   ];
 

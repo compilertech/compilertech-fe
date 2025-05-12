@@ -45,9 +45,7 @@ const NewFooter: React.FC = () => {
         </QuickLinksSection>
       </FooterContent>
 
-      <CopyrightSection>
-        ©2024 Compiler Technology | Terms and conditions
-      </CopyrightSection>
+      <CopyrightSection>©2025 Compiler Technology</CopyrightSection>
     </FooterContainer>
   );
 };
