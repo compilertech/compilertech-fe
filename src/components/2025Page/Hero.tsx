@@ -30,6 +30,7 @@ import img2 from "../../assets/2025/img2.webp";
 import img3 from "../../assets/2025/img3.webp";
 import img4 from "../../assets/2025/img4.webp";
 import { FaCircleNotch } from "react-icons/fa";
+import acmLogo from "../../assets/2025/logo_acm.png";
 
 const heroData = {
   title: "Innovations in compiler technology at",
@@ -160,6 +161,14 @@ function Hero() {
         </TitleContainer>
 
         <Description>{heroData.description}</Description>
+        {isTabletOrMobile && (
+          <img
+            src={acmLogo}
+            alt="ACM Logo"
+            height={"80px"}
+            style={{ marginBottom: "20px" }}
+          />
+        )}
 
         <UpdatesSection>
           <ForMoreUpdates>{heroData.forMoreUpdates}</ForMoreUpdates>
@@ -240,10 +249,23 @@ function Hero() {
 
       <VectorContainer>
         {!isTabletOrMobile && (
-          <ComingSoonBox>
-            <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-            <ComingSoonSubText>{heroData.comingSoonSubText}</ComingSoonSubText>
-          </ComingSoonBox>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            <img
+              style={{ display: "block", margin: "0 auto" }}
+              src={acmLogo}
+              height={70}
+              width={210}
+              alt="ACM Logo"
+            />
+            <ComingSoonBox>
+              <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
+              <ComingSoonSubText>
+                {heroData.comingSoonSubText}
+              </ComingSoonSubText>
+            </ComingSoonBox>
+          </div>
         )}
       </VectorContainer>
     </HeroContainer>
@@ -588,25 +610,6 @@ const ComingSoonBox = styled.div`
   padding: 20px;
   z-index: 10;
   width: 280px;
-
-  position: absolute;
-  top: 50%;
-  right: 30vw;
-  transform: translate(-50%, -50%);
-
-  @media (min-width: 1341px) and (max-width: 1553px) {
-    right: 30%;
-    top: 50%;
-  }
-
-  @media (min-width: 1350px) and (max-width: 1350px) {
-    right: 25%;
-    top: 60%;
-  }
-
-  @media (min-width: 1554px) {
-    right: 20vw;
-  }
 `;
 
 const ComingSoonBoxMobile = styled.div`
@@ -621,10 +624,9 @@ const ComingSoonBoxMobile = styled.div`
   gap: 10px;
   padding: 15px;
 
-  position: absolute;
-  bottom: -45px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: -50px;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 20;
 
   width: 250px;
