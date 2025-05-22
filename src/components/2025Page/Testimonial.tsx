@@ -43,16 +43,16 @@ const TestimonialSection = () => {
           </ColumnRight>
         </ContentWrapper>
 
-        <Divider />
+        {/* <Divider /> */}
 
-        <SubscriptionWrapper>
-          {/* First part: Left Column */}
-          <ColumnLeft>
+        {/* <SubscriptionWrapper> */}
+        {/* First part: Left Column */}
+        {/* <ColumnLeft>
             <EmptySpace />
-          </ColumnLeft>
+          </ColumnLeft> */}
 
-          {/* Second part: Right Column */}
-          <ColumnRight>
+        {/* Second part: Right Column */}
+        {/* <ColumnRight>
             <SubscriptionContent>
               <SubscriptionText>
                 Subscribe now and stay informed with the latest updates and
@@ -61,7 +61,7 @@ const TestimonialSection = () => {
               <SubscribeButton>Subscribe</SubscribeButton>
             </SubscriptionContent>
           </ColumnRight>
-        </SubscriptionWrapper>
+        </SubscriptionWrapper> */}
       </AboutCard>
 
       <StatsSection id="stats">
@@ -154,7 +154,7 @@ const ContentWrapper = styled.div`
 `;
 
 const ColumnLeft = styled.div`
-  flex: 0 0 316px; /* Fixed width for the left column */
+  flex: 0 0 370 px; /* Fixed width for the left column */
   margin-right: 43px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {

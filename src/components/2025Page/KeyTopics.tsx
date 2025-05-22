@@ -96,8 +96,8 @@ function KeyTopics() {
       <SubmissionSection>
         <SubmissionContent>
           <ColumnLeft>
-            <SubmissionTitle>Submission</SubmissionTitle>
-            <SubmissionSubtitle>Guidelines</SubmissionSubtitle>
+            {/* <SubmissionTitle>Submission</SubmissionTitle> */}
+            <SubmissionSubtitle>Submission Guidelines</SubmissionSubtitle>
           </ColumnLeft>
 
           <ColumnRight>
@@ -329,7 +329,7 @@ const SubmissionContent = styled.div`
 `;
 
 const ColumnLeft = styled.div`
-  flex: 0 0 316px; /* Fixed width for the left column */
+  flex: 0 0 370px; /* Fixed width for the left column */
   margin-right: 43px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
