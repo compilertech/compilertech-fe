@@ -167,7 +167,9 @@ function Venue() {
             Address : IISc, CV Raman Rd, Bengaluru, Karnataka 560012
           </Address>
           <Button
-            onClick={() => window.open("https://g.co/kgs/vCEbtJ7", "_blank")}
+            onClick={() =>
+              window.open("https://maps.app.goo.gl/TjPoMzQyJysDPiAi8", "_blank")
+            }
           >
             View in Map
           </Button>

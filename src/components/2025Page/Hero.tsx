@@ -234,7 +234,7 @@ function Hero() {
                   {heroData.comingSoon}
                 </ComingSoonText>
                 <ComingSoonSubText
-                  href="https://g.co/kgs/vYhPH7F"
+                  href="https://maps.app.goo.gl/TjPoMzQyJysDPiAi8"
                   target="_blank"
                 >
                   {heroData.comingSoonSubText}
@@ -276,7 +276,7 @@ function Hero() {
               </ComingSoonText>
               <ComingSoonSubText
                 target="_blank"
-                href="https://g.co/kgs/vYhPH7F"
+                href="https://maps.app.goo.gl/TjPoMzQyJysDPiAi8"
               >
                 {heroData.comingSoonSubText}
               </ComingSoonSubText>

@@ -65,7 +65,6 @@ const HeaderContainer = styled.header`
   top: 0;
   z-index: 100;
   padding: 0 5vw;
-  height: 80px;
 `;
 
 const HeaderContent = styled.div`
@@ -73,24 +72,21 @@ const HeaderContent = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0;
-  height: 80px;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 0.75rem 0;
-  }
 `;
 
 const Logo = styled.div`
   cursor: pointer;
 
   img {
-    height: 45px;
+    height: 86px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     vertical-align: middle;
     margin-left: 2rem;
 
     @media (max-width: ${MOBILE_BREAKPOINT}) {
       margin-left: 0;
-      height: 40px;
+      height: 70px;
     }
   }
 `;
