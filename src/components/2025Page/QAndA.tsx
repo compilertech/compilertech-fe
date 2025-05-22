@@ -185,9 +185,9 @@ const QAndA: React.FC = () => {
       answer: "Please send your queries to support@compilertech.org",
     },
     {
-      question: "What is included in the tickets?",
+      question: "What is included in the registration?",
       answer:
-        "While final details are still being confirmed, your ticket currently includes breakfast, tea breaks, lunch, and evening snacks on both days of the event. Additionally, attendees will receive some fun souvenirs — including custom laptop stickers — as a memento of the experience!",
+        "While final details are still being confirmed, your registration currently includes breakfast, tea breaks, lunch, and evening snacks on both days of the event. Additionally, attendees will receive some fun souvenirs — including custom laptop stickers — as a memento of the experience!",
     },
   ];
 

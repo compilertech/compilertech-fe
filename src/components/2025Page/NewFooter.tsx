@@ -7,6 +7,9 @@ import {
   SMALL_MOBILE_BREAKPOINT,
 } from "../../styles/GlobalStyle";
 import LogoImage from "/icons/logo_dark-cropped.png";
+import TwitterIcon from "../../assets/2025/twitter.svg";
+import LinkedInIcon from "../../assets/2025/linkedin.svg";
+import EmailIcon from "../../assets/2025/email.svg";
 
 const NewFooter: React.FC = () => {
   const navigate = useNavigate();
@@ -51,6 +54,29 @@ const NewFooter: React.FC = () => {
               ))}
             </QuickLinksColumn>
           </QuickLinks>
+          <SocialMediaContainer>
+            <a
+              href="https://www.linkedin.com/company/compiler-technology"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={LinkedInIcon} alt="LinkedIn" height={36} width={36} />
+            </a>
+            <a
+              href="https://x.com/compiler_tech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={TwitterIcon} alt="Twitter" height={36} width={36} />
+            </a>
+            <a
+              href="mailto:support@compilertechnology.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={EmailIcon} alt="Email" height={36} width={36} />
+            </a>
+          </SocialMediaContainer>
         </QuickLinksSection>
       </FooterContent>
 
@@ -99,6 +125,15 @@ const FooterContent = styled.div`
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     padding: 2rem 1rem;
+  }
+`;
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: center;
   }
 `;
 
