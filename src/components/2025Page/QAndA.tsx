@@ -199,7 +199,7 @@ const QAndA: React.FC = () => {
     <Container id="faqs">
       <ContentWrapper>
         <LeftColumn>
-          <Title>Your Questions,</Title>
+          <Title>Your Questions</Title>
           <Subtitle>Answered</Subtitle>
         </LeftColumn>
         <RightColumn>

@@ -36,7 +36,7 @@ const NewFooter: React.FC = () => {
         </LogoContainer>
 
         <QuickLinksSection>
-          <QuickLinksContainer>Quick Links</QuickLinksContainer>
+          <FooterSectionHeader>Quick Links</FooterSectionHeader>
           <QuickLinks>
             <QuickLinksColumn>
               {quickLinks1.map((link, index) => (
@@ -54,6 +54,26 @@ const NewFooter: React.FC = () => {
               ))}
             </QuickLinksColumn>
           </QuickLinks>
+        </QuickLinksSection>
+        <GetInTouchSection>
+          <FooterSectionHeader>Get in touch</FooterSectionHeader>
+          <p>
+            In case of any queries please reach out to the workshop
+            organizers&nbsp;
+            <Email href="mailto:aditya.kumar@compilertech.org">
+              Aditya Kumar
+            </Email>
+            ,&nbsp;
+            <Email href="mailto:ashutosh@compilertech.org">
+              Ashutosh Pandey
+            </Email>
+            ,&nbsp;
+            <Email href="mailto:pradeep.kumar@compilertech.org">
+              Pradeep Kumar
+            </Email>
+            .
+          </p>
+
           <SocialMediaContainer>
             <a
               href="https://www.linkedin.com/company/compiler-technology"
@@ -77,13 +97,18 @@ const NewFooter: React.FC = () => {
               <img src={EmailIcon} alt="Email" height={36} width={36} />
             </a>
           </SocialMediaContainer>
-        </QuickLinksSection>
+        </GetInTouchSection>
       </FooterContent>
 
       <CopyrightSection>© 2025 Compiler Technology</CopyrightSection>
     </FooterContainer>
   );
 };
+const Email = styled.a`
+  color: ${({ theme }) => theme.primary};
+  font-weight: bold;
+  text-decoration: none;
+`;
 
 const FooterContainer = styled.footer`
   background-color: #000000;
@@ -106,19 +131,17 @@ const FooterContainer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
-  gap: 30vw;
+  justify-content: space-between;
   padding: 6rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    gap: 15vw;
     padding: 4rem 3rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
     padding: 3rem 1.5rem;
     margin-bottom: 1rem;
   }
@@ -160,6 +183,21 @@ const QuickLinksSection = styled.div`
     text-align: center;
   }
 `;
+const GetInTouchSection = styled.div`
+  width: 280px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 200px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+`;
 
 const QuickLinks = styled.div`
   display: flex;
@@ -181,7 +219,7 @@ const QuickLinks = styled.div`
   }
 `;
 
-const QuickLinksContainer = styled.div`
+const FooterSectionHeader = styled.div`
   font-family: "Satoshi", sans-serif;
   font-weight: 600;
   font-size: 32px;
@@ -219,8 +257,7 @@ const QuickLink = styled.a`
   transition: opacity 0.3s ease;
   font-family: "Satoshi", sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 120%;
+  font-size: 16px;
   letter-spacing: 0%;
 
   &:hover {
@@ -228,12 +265,7 @@ const QuickLink = styled.a`
   }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 18px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px;
   }
 `;
 
