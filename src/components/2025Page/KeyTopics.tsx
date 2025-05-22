@@ -349,24 +349,24 @@ const ColumnRight = styled.div`
   }
 `;
 
-const SubmissionTitle = styled.h2`
-  font-family: "Satoshi", sans-serif;
-  font-weight: 400;
-  font-size: 36px;
-  margin: 0;
+// const SubmissionTitle = styled.h2`
+//   font-family: "Satoshi", sans-serif;
+//   font-weight: 400;
+//   font-size: 36px;
+//   margin: 0;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 32px;
-  }
+//   @media (max-width: ${TABLET_BREAKPOINT}) {
+//     font-size: 32px;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 28px;
-  }
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     font-size: 28px;
+//   }
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 24px;
-  }
-`;
+//   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+//     font-size: 24px;
+//   }
+// `;
 
 const SubmissionSubtitle = styled.h3`
   font-size: 36px;

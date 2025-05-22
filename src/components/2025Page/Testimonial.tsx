@@ -172,7 +172,7 @@ const ColumnRight = styled.div`
   }
 `;
 
-const EmptySpace = styled.div``;
+// const EmptySpace = styled.div``;
 
 const Title = styled.h2`
   font-family: "Satoshi", sans-serif;
@@ -222,21 +222,21 @@ const HighlightText = styled.div`
   }
 `;
 
-const Divider = styled.hr`
-  border: none;
-  height: 0.5px;
-  background-color: #cfcbc4;
-  margin: 1.5rem 0;
-  width: 100%;
+// const Divider = styled.hr`
+//   border: none;
+//   height: 0.5px;
+//   background-color: #cfcbc4;
+//   margin: 1.5rem 0;
+//   width: 100%;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin: 1.25rem 0;
-  }
+//   @media (max-width: ${TABLET_BREAKPOINT}) {
+//     margin: 1.25rem 0;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin: 1rem 0;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     margin: 1rem 0;
+//   }
+// `;
 
 const Description = styled.p`
   font-family: "Satoshi", sans-serif;
@@ -258,83 +258,83 @@ const Description = styled.p`
   }
 `;
 
-const SubscriptionWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  margin-top: -0.2rem;
-  padding-top: 0;
+// const SubscriptionWrapper = styled.div`
+//   display: flex;
+//   width: 100%;
+//   margin-top: -0.2rem;
+//   padding-top: 0;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    flex-direction: column;
-    align-items: center;
-    margin-top: -0.15rem;
-  }
+//   @media (max-width: ${TABLET_BREAKPOINT}) {
+//     flex-direction: column;
+//     align-items: center;
+//     margin-top: -0.15rem;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-top: -0.1rem;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     margin-top: -0.1rem;
+//   }
+// `;
 
-const SubscriptionContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+// const SubscriptionContent = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 100%;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 0.75rem;
+//   }
+// `;
 
-const SubscriptionText = styled.p`
-  font-family: "Satoshi", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  flex: 1;
-  margin-right: 2rem;
+// const SubscriptionText = styled.p`
+//   font-family: "Satoshi", sans-serif;
+//   font-size: 16px;
+//   line-height: 1.6;
+//   margin: 0;
+//   color: rgba(255, 255, 255, 0.9);
+//   flex: 1;
+//   margin-right: 2rem;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 0.75rem;
-  }
+//   @media (max-width: ${TABLET_BREAKPOINT}) {
+//     text-align: center;
+//     margin-right: 0;
+//     margin-bottom: 0.75rem;
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 15px;
-    margin-bottom: 0;
-  }
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     font-size: 15px;
+//     margin-bottom: 0;
+//   }
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-  }
-`;
+//   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+//     font-size: 14px;
+//   }
+// `;
 
-const SubscribeButton = styled.button`
-  height: 48px;
-  background: transparent;
-  border: 1px solid white;
-  border-radius: 8px;
-  color: white;
-  padding: 10px 12px;
-  font-family: "Satoshi", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
+// const SubscribeButton = styled.button`
+//   height: 48px;
+//   background: transparent;
+//   border: 1px solid white;
+//   border-radius: 8px;
+//   color: white;
+//   padding: 10px 12px;
+//   font-family: "Satoshi", sans-serif;
+//   font-size: 16px;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   white-space: nowrap;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+//   &:hover {
+//     background-color: rgba(255, 255, 255, 0.1);
+//   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-    height: 40px;
-  }
-`;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     font-size: 14px;
+//     height: 40px;
+//   }
+// `;
 
 // Stats Section
 const StatsSection = styled.div`
