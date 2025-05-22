@@ -4,48 +4,73 @@ import {
   TABLET_BREAKPOINT,
   SMALL_MOBILE_BREAKPOINT,
 } from "../../styles/GlobalStyle";
-import image1 from "../../assets/2025/image1.svg";
-import image2 from "../../assets/2025/image2.svg";
-import image3 from "../../assets/2025/image3.svg";
-import image4 from "../../assets/2025/image4.svg";
-import image5 from "../../assets/2025/image5.svg";
-import image6 from "../../assets/2025/image6.svg";
+import image1 from "../../assets/highlights/1.webp";
+import image2 from "../../assets/highlights/2.webp";
+import image3 from "../../assets/highlights/3.webp";
+import image4 from "../../assets/highlights/4.webp";
+import image5 from "../../assets/highlights/5.webp";
+import image6 from "../../assets/highlights/6.webp";
+import image7 from "../../assets/highlights/7.webp";
+import image8 from "../../assets/highlights/8.webp";
+import image9 from "../../assets/highlights/9.webp";
+import image10 from "../../assets/highlights/10.webp";
 import { useState } from "react";
+
+const highlightImages = [
+  {
+    id: 1,
+    src: image1,
+    alt: "Highlight 1",
+  },
+  {
+    id: 2,
+    src: image2,
+    alt: "Highlight 2",
+  },
+  {
+    id: 3,
+    src: image3,
+    alt: "Highlight 3",
+  },
+  {
+    id: 4,
+    src: image4,
+    alt: "Highlight 4",
+  },
+  {
+    id: 5,
+    src: image5,
+    alt: "Highlight 5",
+  },
+  {
+    id: 6,
+    src: image6,
+    alt: "Highlight 6",
+  },
+  {
+    id: 7,
+    src: image7,
+    alt: "Highlight 7",
+  },
+  {
+    id: 8,
+    src: image8,
+    alt: "Highlight 8",
+  },
+  {
+    id: 9,
+    src: image9,
+    alt: "Highlight 9",
+  },
+  {
+    id: 10,
+    src: image10,
+    alt: "Highlight 10",
+  },
+];
 
 function Highlights() {
   const [imageCount, setImageCount] = useState(6);
-  const highlightImages = [
-    {
-      id: 1,
-      src: image1,
-      alt: "Speaker presenting to audience at conference",
-    },
-    {
-      id: 2,
-      src: image2,
-      alt: "Panel discussion with industry experts",
-    },
-    {
-      id: 3,
-      src: image3,
-      alt: "Award ceremony at technology conference",
-    },
-    {
-      id: 4,
-      src: image4,
-      alt: "Speaker at compiler technology workshop",
-    },
-    {
-      id: 5,
-      src: image5,
-      alt: "Inauguration ceremony with traditional lamp lighting",
-    },
-    {
-      id: 6,
-      src: image6,
-      alt: "Keynote presentation on compiler advancements",
-    },
-  ];
 
   return (
     <HighlightsContainer id="past-highlights">
@@ -65,12 +90,12 @@ function Highlights() {
         <ImageGrid>
           {highlightImages.slice(0, imageCount).map((image) => (
             <ImageCard key={image.id}>
-              <Image src={image.src} alt={image.alt} />
+              <Image src={image.src} alt={image.alt} loading="lazy" />
             </ImageCard>
           ))}
         </ImageGrid>
 
-        {highlightImages.length < imageCount && (
+        {highlightImages.length > imageCount && (
           <ViewMoreButtonWrapper>
             <ViewMoreButton
               onClick={() => setImageCount((prevCount) => prevCount + 6)}
@@ -234,8 +259,7 @@ const ImageGrid = styled.div`
 `;
 
 const ImageCard = styled.div`
-  width: calc(33.33% - 28px);
-  height: 100%;
+  width: 30%;
   border-radius: 8px;
   overflow: hidden;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -252,9 +276,9 @@ const Image = styled.img`
   object-fit: cover;
   transition: transform 0.3s ease;
 
-  /* &:hover {
+  &:hover {
     transform: scale(1.05);
-  } */
+  }
 `;
 
 const ViewMoreButtonWrapper = styled.div`
