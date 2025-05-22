@@ -33,8 +33,8 @@ import { FaCircleNotch } from "react-icons/fa";
 import acmLogo from "../../assets/2025/logo_acm.png";
 
 const heroData = {
-  title: "Innovations in compiler technology at",
-  subtitle: "Bengaluru, Karnataka",
+  title: "Innovations in compiler technology",
+  subtitle: "at Bengaluru, Karnataka",
   description:
     "Innovations in Compiler Technology (IICT) is a workshop dedicated to bringing together researchers, practitioners, and enthusiasts in the field of compiler technologies. Our inaugural edition, IICT 2024, was met with an enthusiastic response, drawing over 200 participants from across the compiler community. Building on that success, we're excited to announce that IICT 2025 is set to be even bigger — now an ACM-sponsored event, hosted at IISc Bangalore!",
   emailPlaceholder: "Enter your email ID for updates",
@@ -156,8 +156,8 @@ function Hero() {
     <HeroContainer id="overview">
       <ContentSection>
         <TitleContainer>
-          <Title>{heroData.title}</Title>
-          <Subtitle>{heroData.subtitle}</Subtitle>
+          <Subtitle>{heroData.title}</Subtitle>
+          <Title>{heroData.subtitle}</Title>
         </TitleContainer>
 
         <Description>{heroData.description}</Description>
@@ -227,8 +227,16 @@ function Hero() {
 
             {isTabletOrMobile && (
               <ComingSoonBoxMobile>
-                <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-                <ComingSoonSubText>
+                <ComingSoonText
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250927T033000Z%2F20250927T233000Z&details=The%202025%20Innovations%20In%20Compiler%20Technology%20%28IICT%29%20Workshop%20will%20be%20held%20at%20Indian%20Institute%20of%20Science%2C%20Bengaluru%2C%20India.%20The%20two-day%20workshop%20will%20be%20in-person.%20More%20details%20can%20be%20accessed%20in%20compilertech.org&location=Indian%20Institute%20of%20Science%20%28Bengaluru%29&text=Innovations%20in%20compiler%20technology"
+                  target="_blank"
+                >
+                  {heroData.comingSoon}
+                </ComingSoonText>
+                <ComingSoonSubText
+                  href="https://g.co/kgs/vYhPH7F"
+                  target="_blank"
+                >
                   {heroData.comingSoonSubText}
                 </ComingSoonSubText>
               </ComingSoonBoxMobile>
@@ -260,8 +268,16 @@ function Hero() {
               alt="ACM Logo"
             />
             <ComingSoonBox>
-              <ComingSoonText>{heroData.comingSoon}</ComingSoonText>
-              <ComingSoonSubText>
+              <ComingSoonText
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250927T033000Z%2F20250927T233000Z&details=The%202025%20Innovations%20In%20Compiler%20Technology%20%28IICT%29%20Workshop%20will%20be%20held%20at%20Indian%20Institute%20of%20Science%2C%20Bengaluru%2C%20India.%20The%20two-day%20workshop%20will%20be%20in-person.%20More%20details%20can%20be%20accessed%20in%20compilertech.org&location=Indian%20Institute%20of%20Science%20%28Bengaluru%29&text=Innovations%20in%20compiler%20technology"
+                target="_blank"
+              >
+                {heroData.comingSoon}
+              </ComingSoonText>
+              <ComingSoonSubText
+                target="_blank"
+                href="https://g.co/kgs/vYhPH7F"
+              >
                 {heroData.comingSoonSubText}
               </ComingSoonSubText>
             </ComingSoonBox>
@@ -562,7 +578,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  font-size: 70px;
+  font-size: 45px;
   font-weight: 500;
   font-style: italic;
   font-family: serif;
@@ -638,7 +654,8 @@ const ComingSoonBoxMobile = styled.div`
   }
 `;
 
-const ComingSoonText = styled.span`
+const ComingSoonText = styled.a`
+  text-decoration: none;
   font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -646,6 +663,11 @@ const ComingSoonText = styled.span`
   letter-spacing: 0.5px;
   color: #ffffff;
   text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 18px;
@@ -658,7 +680,8 @@ const ComingSoonText = styled.span`
   }
 `;
 
-const ComingSoonSubText = styled.span`
+const ComingSoonSubText = styled.a`
+  text-decoration: none;
   font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -666,6 +689,11 @@ const ComingSoonSubText = styled.span`
   letter-spacing: 0.3px;
   text-align: center;
   color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 14px;
