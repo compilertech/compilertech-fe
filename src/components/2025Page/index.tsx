@@ -8,7 +8,6 @@ import Testimonial from "./Testimonial";
 import KeyTopics from "./KeyTopics";
 import Highlights from "./Highlights";
 import AnimatedBanner from "./AnimatedBanner";
-import CountdownTimer from "./CountdownTimer";
 import Collab from "./Collab";
 import QAndA from "./QAndA";
 import Venue from "./Venue";
@@ -27,11 +26,8 @@ export default function Home() {
     document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
-  const eventDate = new Date("2025-09-27T10:00:00");
-
   return (
     <Main>
-      <CountdownTimer eventDate={eventDate} />
       <Hero />
       <Testimonial />
       <KeyTopics />

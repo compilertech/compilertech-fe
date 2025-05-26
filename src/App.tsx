@@ -16,6 +16,7 @@ import NewHeader from "./components/2025Page/NewHeader";
 import NewFooter from "./components/2025Page/NewFooter";
 import { useIs2024 } from "./utils/is2024";
 import ProgramCommittee from "./components/2025Page/ProgramCommittee";
+import CountdownTimer from "./components/2025Page/CountdownTimer";
 
 function App() {
   // TODO: Lazy loading
@@ -60,7 +61,12 @@ function App() {
 
       <Wrapper>
         {is2024Page && <Header onClick={toggleTheme} theme={theme} />}
-        {!is2024Page && <NewHeader />}
+        {!is2024Page && (
+          <>
+            <NewHeader />
+            <CountdownTimer eventDate={new Date("2025-09-27T10:00:00")} />
+          </>
+        )}
         <Routes>
           <Route path="/committee" element={<ProgramCommittee />} />
           {/* <Route path="/important-dates" element={<ImportantDates />} /> */}

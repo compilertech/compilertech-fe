@@ -1,5 +1,9 @@
 import { styled } from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
+import {
+  MOBILE_BREAKPOINT,
+  SMALL_MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../styles/GlobalStyle";
 import {
   programCommitteeMemberData,
   organizingCommitteeMemberData,
@@ -9,20 +13,12 @@ import {
 const ProgramSection = styled.div`
   background-color: #000;
   color: white;
-  padding: 4rem 5rem;
+  padding: 3rem 5rem;
   width: 100%;
   box-sizing: border-box;
 
   @media (max-width: 950px) {
-    padding: 3rem 2.5rem;
-  }
-
-  @media (max-width: 660px) {
-    padding: 2.5rem 1.5rem;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 2rem 1rem;
+    padding: 2rem 2.5rem;
   }
 `;
 
@@ -30,7 +26,7 @@ const SectionTitle = styled.div`
   margin-bottom: 20px;
   margin-left: 35px;
 
-  @media (max-width: ${TABLET_BREAKPOINT}) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     text-align: center;
     margin-left: 0;
     margin-bottom: 25px;
@@ -66,73 +62,32 @@ const Committee = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
-
-  @media (max-width: 1024px) {
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: 950px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-bottom: 35px;
-  }
-
-  @media (max-width: 660px) {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto 30px;
-    gap: 20px;
-  }
-
-  @media (max-width: 500px) {
-    max-width: 350px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 const MemberCard = styled.div`
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-color: black;
-  margin-bottom: 0px;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    align-items: center;
-    margin-bottom: 5px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 33.3333%;
+  align-self: stretch;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-basis: 50%;
   }
-
-  @media (max-width: 660px) {
-    margin-bottom: 0;
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    flex-basis: 100%;
   }
 `;
 
 const MemberImageContainer = styled.div`
-  height: 350px;
   width: 100%;
-  overflow: hidden;
-  position: relative;
-  border-radius: 10px;
-
-  @media (max-width: 950px) {
-    margin-bottom: 0;
-    border-radius: 10px;
-    height: 340px;
-  }
-
-  @media (max-width: 660px) {
-    height: 350px;
-  }
-
-  @media (max-width: 370px) {
-    height: 320px;
-  }
+  border-radius: 8px;
 `;
 
 const MemberImg = styled.img`
@@ -305,17 +260,6 @@ const MemberTitle = styled.div`
   }
 `;
 
-const Divider = styled.div`
-  border: 0.5px solid #cfcbc4;
-  margin: 40px 0;
-  width: 96%;
-  margin-left: 35px;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    display: none;
-  }
-`;
-
 const MemberLink = styled.a`
   text-decoration: none;
   color: inherit;
@@ -353,9 +297,7 @@ const ProgramCommittee = () => {
         ))}
       </Grid>
 
-      <Divider />
-
-      <SectionTitle>
+      <SectionTitle style={{ marginTop: "50px" }}>
         <SectionHeader>Meet the</SectionHeader>
         <Committee>Steering Committee</Committee>
       </SectionTitle>
@@ -365,7 +307,7 @@ const ProgramCommittee = () => {
         ))}
       </Grid>
 
-      <SectionTitle>
+      <SectionTitle style={{ marginTop: "50px" }}>
         <SectionHeader>Meet the</SectionHeader>
         <Committee>Organizing Committee</Committee>
       </SectionTitle>
