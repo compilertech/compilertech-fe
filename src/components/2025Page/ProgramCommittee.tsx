@@ -94,29 +94,6 @@ const Grid = styled.div`
   }
 `;
 
-const CommitteeLabel = styled.div`
-  text-transform: uppercase;
-  font-size: 12px;
-  margin: 30px 0;
-  margin-left: 35px;
-  font-family: "Satoshi", sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 120%;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  @media (max-width: 1340px) {
-    text-align: center;
-    margin: 15px 0;
-    width: 100%;
-  }
-
-  @media (max-width: 660px) {
-    margin: 15px 0;
-    font-size: 18px;
-  }
-`;
-
 const MemberCard = styled.div`
   position: relative;
   border-radius: 10px;
@@ -366,11 +343,10 @@ const ProgramCommittee = () => {
   return (
     <ProgramSection>
       <SectionTitle>
-        <SectionHeader>Meet the Program</SectionHeader>
-        <Committee>Committee</Committee>
+        <SectionHeader>Meet the</SectionHeader>
+        <Committee>Program Committee</Committee>
       </SectionTitle>
 
-      <CommitteeLabel>PROGRAM COMMITTEE</CommitteeLabel>
       <Grid>
         {programCommitteeMemberData.map((member) => (
           <MemberComponent key={member.id} member={member} />
@@ -379,14 +355,20 @@ const ProgramCommittee = () => {
 
       <Divider />
 
-      <CommitteeLabel>STEERING COMMITTEE</CommitteeLabel>
+      <SectionTitle>
+        <SectionHeader>Meet the</SectionHeader>
+        <Committee>Steering Committee</Committee>
+      </SectionTitle>
       <Grid>
         {steeringCommitteeMemberData.map((member) => (
           <MemberComponent key={member.id} member={member} />
         ))}
       </Grid>
 
-      <CommitteeLabel>ORGANIZING COMMITTEE</CommitteeLabel>
+      <SectionTitle>
+        <SectionHeader>Meet the</SectionHeader>
+        <Committee>Organizing Committee</Committee>
+      </SectionTitle>
       <Grid>
         {organizingCommitteeMemberData.map((member) => (
           <MemberComponent key={member.id} member={member} />
