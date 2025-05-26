@@ -6,6 +6,8 @@ import {
   SMALL_MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../styles/GlobalStyle";
+import { useState } from "react";
+import { FiExternalLink } from "react-icons/fi";
 // import { useState } from "react";
 
 const navigationLinks = [
@@ -16,11 +18,11 @@ const navigationLinks = [
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const isActivePath = (path: string) => {
     return location.pathname === path;
@@ -50,20 +52,62 @@ const Header: React.FC = () => {
             Visit IICT'24
           </VisitButton>
         </ActionButtons>
+        <Hamburger onClick={toggleMenu} isOpen={isMenuOpen}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </Hamburger>
+
+        <MobileMenu isOpen={isMenuOpen}>
+          <div style={{ flex: 1 }}>
+            {navigationLinks.map((link, index) => (
+              <MobileNavLink
+                style={
+                  index === 0
+                    ? {
+                        marginTop: "40px",
+                      }
+                    : {}
+                }
+                key={index}
+                isActive={isActivePath(link.path)}
+                onClick={() => {
+                  navigate(link.path);
+                  toggleMenu();
+                }}
+              >
+                {link.text}
+              </MobileNavLink>
+            ))}
+          </div>
+          <div
+            onClick={() => window.open("/2024", "_blank")}
+            style={{
+              cursor: "pointer",
+              fontFamily: "Satoshi",
+              fontSize: "16px",
+              fontWeight: "500",
+              color: "#fff",
+              backgroundColor: "#a93d9d",
+              padding: "12px 24px",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            Visit IICT'24 <FiExternalLink />
+          </div>
+        </MobileMenu>
       </HeaderContent>
-      {/* <HeaderContent>
-        <Navigation border="1px solid rgba(0, 0, 0, 0.1)">
-          {navigationLinks.map((link, index) => (
-            <NavLink
-              key={index}
-              isActive={isActivePath(link.path)}
-              onClick={() => navigate(link.path)}
-            >
-              {link.text}
-            </NavLink>
-          ))}
-        </Navigation>
-      </HeaderContent> */}
+
+      <style>
+        {`
+          @media (min-width: ${MOBILE_BREAKPOINT}) {
+            .mobile-only {
+              display: none;
+            }
+          }
+        `}
+      </style>
       <HeaderBorder />
     </HeaderContainer>
   );
@@ -82,6 +126,54 @@ const HeaderContent = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0;
+`;
+
+const Hamburger = styled.div<{ isOpen: boolean }>`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  span {
+    height: 4px;
+    width: 25px;
+    background: #000;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+
+    // Animate hamburger to close icon
+    span:nth-child(1) {
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(45deg) translate(7px, 5px)" : "rotate(0)"};
+    }
+    span:nth-child(2) {
+      opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
+    }
+    span:nth-child(3) {
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(-45deg) translate(6px, -5px)" : "rotate(0)"};
+    }
+  }
+`;
+
+const MobileMenu = styled.div<{ isOpen: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: ${({ isOpen }) => (isOpen ? "100vh" : "0")};
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1000;
+  margin-top: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
+  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  transition: all 0.3s ease;
 `;
 
 const Logo = styled.div`
@@ -133,6 +225,15 @@ const NavLink = styled.div<{ isActive: boolean }>`
   }
 `;
 
+const MobileNavLink = styled.div<{ isActive: boolean }>`
+  cursor: pointer;
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: ${(props) => (props.isActive ? "700" : "500")};
+  color: ${(props) => (props.isActive ? "#a93d9d" : "#333333")};
+  padding: 10px 0;
+  text-align: center;
+`;
 const ActionButtons = styled.div`
   display: flex;
   gap: 1rem;
@@ -141,6 +242,9 @@ const ActionButtons = styled.div`
 
   @media (min-width: ${TABLET_BREAKPOINT}) {
     margin-left: 4rem;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
   }
 `;
 
