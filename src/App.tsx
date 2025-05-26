@@ -17,6 +17,7 @@ import NewFooter from "./components/2025Page/NewFooter";
 import { useIs2024 } from "./utils/is2024";
 import ProgramPage from "./components/2025Page/CommitteePage";
 import CountdownTimer from "./components/2025Page/CountdownTimer";
+import SubmissionsPage from "./components/2025Page/SubmissionsPage";
 
 function App() {
   // TODO: Lazy loading
@@ -68,6 +69,7 @@ function App() {
           </>
         )}
         <Routes>
+          <Route path="/submissions" element={<SubmissionsPage />} />
           <Route path="/committee" element={<ProgramPage />} />
           {/* <Route path="/important-dates" element={<ImportantDates />} /> */}
           <Route path="/" element={<Home />} />
