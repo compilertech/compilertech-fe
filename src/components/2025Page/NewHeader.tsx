@@ -1,18 +1,14 @@
 // import React, { useState } from "react";
 import styled from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  MOBILE_BREAKPOINT,
-  SMALL_MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
-// import { useState } from "react";
 
 const navigationLinks = [
   { text: "Overview", path: "/" },
   { text: "Committee", path: "/committee" },
+  { text: "Submissions", path: "/submissions" },
   // { text: "Attending", path: "/attending" },
 ];
 const Header: React.FC = () => {
@@ -204,7 +200,7 @@ const Navigation = styled.nav<{
   border-top: ${(props) => props.border || "none"};
   gap: ${(props) => props.gap || "0"};
 
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: none;
   }
 `;
