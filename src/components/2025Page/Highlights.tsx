@@ -93,6 +93,31 @@ function Highlights() {
           </ButtonWrapper>
         </HeaderSection>
 
+        <VideoWrapper>
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/llQB1dX3dIQ"
+            title="IICT 2024 Highlights"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </VideoWrapper>
+        <p>
+          The event consisted of talks given by invited keynote speakers and a
+          selected set of presenters. The presentations were shortlisted through
+          review by the program committee from submitted abstracts through CFA.
+          In these two days, the audience got to learn about various compiler
+          technologies including importance of polyhedral optimizations and MLIR
+          for Deep Learning, research work around scalability of interprocedural
+          compiler optimizations, program analysis to reduce gas units in Web3,
+          application of AI/ML techniques to optimize register allocation and
+          other backend optimizations, optimizing OOPs, translation validation
+          and more… The talks ranged from Frontend (MLIR, Rust, JVM) to the
+          Backend (R.A) as well as applications of Compiler technology.
+        </p>
+
         <ImageGrid>
           {highlightImages.slice(0, imageCount).map((image) => (
             <ImageCard key={image.id}>
@@ -333,6 +358,13 @@ const ViewMoreButton = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+`;
+
+const VideoWrapper = styled.div`
+  width: 100%;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 2;
 `;
 
 // Stats Section
