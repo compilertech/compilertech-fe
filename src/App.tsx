@@ -15,7 +15,7 @@ import Home from "./components/2025Page";
 import NewHeader from "./components/2025Page/NewHeader";
 import NewFooter from "./components/2025Page/NewFooter";
 import { useIs2024 } from "./utils/is2024";
-import ProgramCommittee from "./components/2025Page/ProgramCommittee";
+import ProgramPage from "./components/2025Page/CommitteePage";
 import CountdownTimer from "./components/2025Page/CountdownTimer";
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
           </>
         )}
         <Routes>
-          <Route path="/committee" element={<ProgramCommittee />} />
+          <Route path="/committee" element={<ProgramPage />} />
           {/* <Route path="/important-dates" element={<ImportantDates />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />

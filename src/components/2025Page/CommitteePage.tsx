@@ -10,7 +10,7 @@ import {
   steeringCommitteeMemberData,
 } from "./Data/MembersData";
 
-const ProgramSection = styled.div`
+const CommiteeSection = styled.div`
   background-color: #000;
   color: white;
   padding: 3rem 5rem;
@@ -283,9 +283,9 @@ const MemberComponent = ({ member }: { member: Member }) => (
   </MemberCard>
 );
 
-const ProgramCommittee = () => {
+const CommitteePage = () => {
   return (
-    <ProgramSection>
+    <CommiteeSection>
       <SectionTitle>
         <SectionHeader>Meet the</SectionHeader>
         <Committee>Program Committee</Committee>
@@ -316,11 +316,11 @@ const ProgramCommittee = () => {
           <MemberComponent key={member.id} member={member} />
         ))}
       </Grid>
-    </ProgramSection>
+    </CommiteeSection>
   );
 };
 
-export default ProgramCommittee;
+export default CommitteePage;
 interface Member {
   id: string;
   name: string;
