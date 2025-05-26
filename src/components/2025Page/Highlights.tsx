@@ -13,8 +13,7 @@ import image6 from "../../assets/highlights/6.webp";
 import image7 from "../../assets/highlights/7.webp";
 import image8 from "../../assets/highlights/8.webp";
 import image9 from "../../assets/highlights/9.webp";
-import image10 from "../../assets/highlights/10.webp";
-import { useState } from "react";
+import Slider, { Settings } from "react-slick";
 
 const highlightImages = [
   {
@@ -62,11 +61,6 @@ const highlightImages = [
     src: image9,
     alt: "Highlight 9",
   },
-  {
-    id: 10,
-    src: image10,
-    alt: "Highlight 10",
-  },
 ];
 
 const stats = [
@@ -77,7 +71,38 @@ const stats = [
   { number: "4", description: "Partners and sponsors" },
 ];
 function Highlights() {
-  const [imageCount, setImageCount] = useState(6);
+  const settings: Settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    accessibility: true,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    lazyLoad: "anticipated",
+    responsive: [
+      {
+        breakpoint: Number(TABLET_BREAKPOINT.slice(0, 4)),
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: Number(MOBILE_BREAKPOINT.slice(0, 3)),
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    appendDots: (dots: React.ReactNode) => (
+      <DotsWrapper>
+        <ul>{dots}</ul>
+      </DotsWrapper>
+    ),
+  };
 
   return (
     <HighlightsContainer id="past-highlights">
@@ -94,28 +119,27 @@ function Highlights() {
           </ButtonWrapper>
         </HeaderSection>
 
-        <ImageGrid>
-          {highlightImages.slice(0, imageCount).map((image) => (
-            <ImageCard key={image.id}>
-              <Image src={image.src} alt={image.alt} loading="lazy" />
-            </ImageCard>
-          ))}
-        </ImageGrid>
-
-        {highlightImages.length > imageCount && (
-          <ViewMoreButtonWrapper>
-            <ViewMoreButton
-              onClick={() => setImageCount((prevCount) => prevCount + 6)}
-            >
-              View More
-            </ViewMoreButton>
-          </ViewMoreButtonWrapper>
-        )}
-
-        <StatsSection id="stats">
+        <div style={{ width: "100%", height: "500px" }}>
+          <iframe
+            style={{ borderRadius: "8px", width: "100%", height: "100%" }}
+            src="https://www.youtube.com/embed/llQB1dX3dIQ"
+            title="Highlights Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <StatsSection id="stats" style={{ marginBottom: "80px" }}>
           <StatsHeader>
             Our stats <StatsLine />
           </StatsHeader>
+
+          <HighlightsDescription>
+            The event consisted of talks given by invited keynote speakers and a
+            selected set of presenters with topics ranging from Frontend (MLIR,
+            Rust, JVM) to the Backend (R.A) as well as applications of Compiler
+            technology. It was attended by 114 professionals and 93 students,
+            including 175 male attendees and 32 female attendees.
+          </HighlightsDescription>
           <StatsList>
             {stats.map((stat, index) => (
               <StatItem key={index}>
@@ -125,6 +149,15 @@ function Highlights() {
             ))}
           </StatsList>
         </StatsSection>
+        <CarouselWrapper>
+          <Slider {...settings}>
+            {highlightImages.map((image) => (
+              <div key={image.id}>
+                <img src={image.src} alt={image.alt} />
+              </div>
+            ))}
+          </Slider>
+        </CarouselWrapper>
       </ContentWrapper>
 
       {/* Decorative elements */}
@@ -156,6 +189,16 @@ const HighlightsContainer = styled.div`
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     padding: 1.5rem;
   }
+`;
+
+const HighlightsDescription = styled.p`
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
+  text-align: justify;
 `;
 
 const ContentWrapper = styled.div`
@@ -267,73 +310,42 @@ const VisitButton = styled.button`
     background-color: rgba(255, 255, 255, 0.1);
   }
 `;
+const CarouselWrapper = styled.div`
+  .slick-slider {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .slick-slide {
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
 
-const ImageGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    grid-template-columns: 100%;
+  .slick-dots {
+    li button:before {
+      font-size: 10px;
+      color: white;
+    }
+    li.slick-active button:before {
+      color: #fb4dd8;
+    }
   }
 `;
 
-const ImageCard = styled.div`
-  width: 30%;
-  border-radius: 8px;
-  overflow: hidden;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: calc(50% - 16px);
-  }
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    width: 100%;
-  }
-`;
-
-const Image = styled.img`
+const DotsWrapper = styled.div`
+  position: absolute;
+  bottom: 20px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-const ViewMoreButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 2.5rem;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin-top: 2rem;
-    width: 100%;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-top: 1.5rem;
-    width: 100%;
-  }
-`;
-
-const ViewMoreButton = styled.button`
-  background: transparent;
-  border: 1px solid white;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  width: 110px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 8px;
-  padding: 10px 12px;
-  gap: 12px;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+  ul {
+    padding: 0;
   }
 `;
 
@@ -345,10 +357,6 @@ const StatsSection = styled.div`
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     margin-top: 4rem;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: none;
   }
 `;
 
