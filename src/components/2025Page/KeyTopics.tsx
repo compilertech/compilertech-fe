@@ -70,8 +70,8 @@ function KeyTopics() {
     <TopicsContainer id="tracks">
       <KeyTopicsSection>
         <TopicsHeader>
-          <Title>Key Topics Shaping</Title>
-          <Subtitle>Compiler Advancements</Subtitle>
+          <Title>Key Topics Shaping Compiler Advancements</Title>
+          <Subtitle>Topics of Interest</Subtitle>
         </TopicsHeader>
 
         <GlobeImage>

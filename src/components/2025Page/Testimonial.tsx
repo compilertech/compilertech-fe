@@ -14,8 +14,10 @@ const TestimonialSection = () => {
         <ContentWrapper>
           {/* First part: Left Column */}
           <ColumnLeft>
-            <Title>Exploring the Future of</Title>
-            <HighlightText>Compiler Technology</HighlightText>
+            <Title>Vision of IICT</Title>
+            <HighlightText>
+              Exploring the Future of Compiler Technology
+            </HighlightText>
           </ColumnLeft>
 
           {/* Second part: Right Column */}
@@ -133,8 +135,8 @@ const ContentWrapper = styled.div`
 `;
 
 const ColumnLeft = styled.div`
-  flex: 0 0 370 px; /* Fixed width for the left column */
-  margin-right: 43px; /* Space between columns */
+  flex: 0 0 370px; /* Fixed width for the left column */
+  margin-right: 32px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     flex: 1 1 100%;
@@ -223,10 +225,7 @@ const Description = styled.p`
   line-height: 1.6;
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-  }
+  text-align: justify;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 15px;

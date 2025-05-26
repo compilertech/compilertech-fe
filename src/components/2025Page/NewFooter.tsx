@@ -17,12 +17,12 @@ const NewFooter: React.FC = () => {
   const quickLinks1 = [
     { label: "Overview", href: "/#overview" },
     { label: "About us", href: "/#about" },
-    { label: "Our Stats", href: "/#stats" },
     { label: "Tracks & themes", href: "/#tracks" },
+    { label: "Past Highlights", href: "/#past-highlights" },
   ];
 
   const quickLinks2 = [
-    { label: "Past Highlights", href: "/#past-highlights" },
+    { label: "Our Stats", href: "/#stats" },
     { label: "Venue", href: "/#venue" },
     { label: "FAQs", href: "/#faqs" },
     { label: "Sponsorship opportunities", href: "/#sponsorship-opportunities" },

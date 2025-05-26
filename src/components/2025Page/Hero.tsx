@@ -33,7 +33,7 @@ import { FaCircleNotch } from "react-icons/fa";
 import acmLogo from "../../assets/2025/logo_acm.png";
 
 const heroData = {
-  title: "Innovations in compiler technology",
+  title: "Innovations in Compiler Technology",
   subtitle: "at Bengaluru, Karnataka",
   description:
     "Innovations in Compiler Technology (IICT) is a workshop dedicated to bringing together researchers, practitioners, and enthusiasts in the field of compiler technologies. Our inaugural edition, IICT 2024, was met with an enthusiastic response, drawing over 200 participants from across the compiler community. Building on that success, we're excited to announce that IICT 2025 is set to be even bigger — now an ACM-sponsored event, hosted at IISc Bangalore!",
@@ -598,6 +598,7 @@ const Description = styled.p`
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 650px;
+  text-align: justify;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 1.1rem;
