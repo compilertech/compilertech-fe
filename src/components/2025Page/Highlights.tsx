@@ -69,6 +69,13 @@ const highlightImages = [
   },
 ];
 
+const stats = [
+  { number: "5", description: "Key notes" },
+  { number: "19", description: "Presentations" },
+  { number: "4", description: "Woman presenters" },
+  { number: "200", description: "Attendees" },
+  { number: "4", description: "Partners and sponsors" },
+];
 function Highlights() {
   const [imageCount, setImageCount] = useState(6);
 
@@ -104,6 +111,20 @@ function Highlights() {
             </ViewMoreButton>
           </ViewMoreButtonWrapper>
         )}
+
+        <StatsSection id="stats">
+          <StatsHeader>
+            Our stats <StatsLine />
+          </StatsHeader>
+          <StatsList>
+            {stats.map((stat, index) => (
+              <StatItem key={index}>
+                <StatNumber>{stat.number}</StatNumber>
+                <StatDescription>{stat.description}</StatDescription>
+              </StatItem>
+            ))}
+          </StatsList>
+        </StatsSection>
       </ContentWrapper>
 
       {/* Decorative elements */}
@@ -313,6 +334,111 @@ const ViewMoreButton = styled.button`
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+// Stats Section
+const StatsSection = styled.div`
+  margin-top: 6rem;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
+`;
+
+const StatsHeader = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 5;
+  }
+`;
+
+const StatsLine = styled.div`
+  flex: 1;
+  height: 1px;
+  background-color: #cfcbc4;
+  margin-left: 1rem;
+`;
+
+const StatsList = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 5;
+  }
+`;
+
+const StatItem = styled.div`
+  text-align: center;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 5;
+  }
+`;
+
+const StatNumber = styled.h2`
+  font-family: "Satoshi", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    font-size: 40px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 30px;
+  }
+`;
+
+const StatDescription = styled.p`
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  color: #cfcbc4;
+  margin: 0;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 15px;
+  }
+
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    font-size: 14px;
   }
 `;
 
