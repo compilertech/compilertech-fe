@@ -3,7 +3,8 @@ import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import {
   programCommitteeMemberData,
   organizingCommitteeMemberData,
-} from "../OrganizationPage/Data/MembersData";
+  steeringCommitteeMemberData,
+} from "./Data/MembersData";
 
 const ProgramSection = styled.div`
   background-color: #000;
@@ -377,6 +378,13 @@ const ProgramCommittee = () => {
       </Grid>
 
       <Divider />
+
+      <CommitteeLabel>STEERING COMMITTEE</CommitteeLabel>
+      <Grid>
+        {steeringCommitteeMemberData.map((member) => (
+          <MemberComponent key={member.id} member={member} />
+        ))}
+      </Grid>
 
       <CommitteeLabel>ORGANIZING COMMITTEE</CommitteeLabel>
       <Grid>

@@ -15,6 +15,7 @@ import Home from "./components/2025Page";
 import NewHeader from "./components/2025Page/NewHeader";
 import NewFooter from "./components/2025Page/NewFooter";
 import { useIs2024 } from "./utils/is2024";
+import ProgramCommittee from "./components/2025Page/ProgramCommittee";
 
 function App() {
   // TODO: Lazy loading
@@ -61,6 +62,8 @@ function App() {
         {is2024Page && <Header onClick={toggleTheme} theme={theme} />}
         {!is2024Page && <NewHeader />}
         <Routes>
+          <Route path="/committee" element={<ProgramCommittee />} />
+          {/* <Route path="/important-dates" element={<ImportantDates />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />
           <Route path="/2024/organization" element={<Organization />} />

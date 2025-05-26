@@ -13,7 +13,6 @@ import Collab from "./Collab";
 import QAndA from "./QAndA";
 import Venue from "./Venue";
 import { useLayoutEffect } from "react";
-// import ProgramCommittee from "./ProgramCommittee";
 import SponsorsComponent from "./Sponser";
 const Main = styled.main`
   width: 100%;
@@ -34,7 +33,6 @@ export default function Home() {
     <Main>
       <CountdownTimer eventDate={eventDate} />
       <Hero />
-      {/* <ProgramCommittee /> */}
       <Testimonial />
       <KeyTopics />
       <Highlights />
