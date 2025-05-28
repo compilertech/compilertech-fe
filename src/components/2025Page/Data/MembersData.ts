@@ -194,7 +194,7 @@ export const steeringCommitteeMemberData: MemberCardData[] = [
     id: "steering_committee_m4",
     image: professor_sorav_bansal,
     name: "Prof. Sorav Bansal",
-    institute: "IIT Delhi | Graviton Fellow at Graviton Research LLP",
+    institute: "Graviton Fellow at Graviton Research LLP | IIT Delhi",
     position: "(SC Member)",
     link: "https://sorav.compiler.ai/",
   },
