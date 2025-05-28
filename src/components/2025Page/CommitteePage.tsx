@@ -42,6 +42,7 @@ const SectionHeader = styled.h3`
   font-size: 36px;
   line-height: 100%;
   @media (max-width: ${TABLET_BREAKPOINT}) {
+    text-align: center;
     font-size: 24px;
   }
 `;
@@ -87,13 +88,13 @@ const MemberCard = styled.div`
 
 const MemberImageContainer = styled.div`
   width: 100%;
-  border-radius: 8px;
 `;
 
 const MemberImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 14px;
 `;
 
 const Role = styled.div`
@@ -272,7 +273,20 @@ const MemberComponent = ({ member }: { member: Member }) => (
   <MemberCard>
     <MemberLink href={member.link} target="_blank" rel="noopener noreferrer">
       <MemberImageContainer>
-        <MemberImg src={member.image} alt={member.name} />
+        <span
+          style={{
+            display: "block",
+            ...(member.image.endsWith(".webp")
+              ? { padding: "25px", borderRadius: "14px" }
+              : {}),
+          }}
+        >
+          <MemberImg
+            src={member.image}
+            alt={member.name}
+            style={{ borderRadius: "14px" }}
+          />
+        </span>
         <Role>{member.position.replace(/[()]/g, "")}</Role>
       </MemberImageContainer>
       <MemberInfo>

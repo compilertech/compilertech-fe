@@ -11,6 +11,11 @@ import img7 from "../../../assets/organisation/img7_MT.svg";
 import img8 from "../../../assets/organisation/img8_RU.svg";
 import img9 from "../../../assets/organisation/img9_RR.svg";
 
+//steering commitee
+import prof_krishna_nandivada from "../../../assets/organisation/prof_krishna_nandivada.webp";
+import professor_sorav_bansal from "../../../assets/organisation/professor_sorav_bansal.webp";
+import sameer_sahasrabuddhe from "../../../assets/organisation/sameer_sahasrabuddhe.webp";
+
 //organizing commitee
 import img1_OC from "../../../assets/organisation/image1_OC_AK.svg";
 import img2_OC from "../../../assets/organisation/image2_OC_AP.svg";
@@ -163,7 +168,7 @@ export const organizingCommitteeMemberData: MemberCardData[] = [
 export const steeringCommitteeMemberData: MemberCardData[] = [
   {
     id: "steering_committee_m1",
-    image: img1_OC,
+    image: prof_krishna_nandivada,
     name: "Prof. Krishna Nandivada",
     institute: "IIT Madras",
     position: "(SC Member)",
@@ -171,7 +176,7 @@ export const steeringCommitteeMemberData: MemberCardData[] = [
   },
   {
     id: "steering_committee_m2",
-    image: img2_OC,
+    image: img9,
     name: "Ramana Radhakrishnan",
     institute: "Director - CPU Compilers, Nvidia",
     position: "(SC Member)",
@@ -179,7 +184,7 @@ export const steeringCommitteeMemberData: MemberCardData[] = [
   },
   {
     id: "steering_committee_m3",
-    image: img3_OC,
+    image: sameer_sahasrabuddhe,
     name: "Sameer Sahasrabuddhe",
     institute: "Principal Member Of Technical Staff at AMD",
     position: "(SC Member)",
@@ -187,15 +192,15 @@ export const steeringCommitteeMemberData: MemberCardData[] = [
   },
   {
     id: "steering_committee_m4",
-    image: img4_OC,
+    image: professor_sorav_bansal,
     name: "Prof. Sorav Bansal",
-    institute: "IIT Delhi",
+    institute: "IIT Delhi | Graviton Fellow at Graviton Research LLP",
     position: "(SC Member)",
     link: "https://sorav.compiler.ai/",
   },
   {
     id: "steering_committee_m5",
-    image: img5_OC,
+    image: img1,
     name: "Prof. Uday Khedker",
     institute: "IIT Bombay",
     position: "(SC Member)",

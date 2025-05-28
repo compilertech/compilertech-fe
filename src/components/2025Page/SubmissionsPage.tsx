@@ -48,7 +48,7 @@ const PageWrapper = styled.div`
   padding: 3rem 5rem;
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 80px;
 
   width: 100%;
   box-sizing: border-box;
@@ -58,6 +58,7 @@ const PageWrapper = styled.div`
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
+    gap: 40px;
   }
 `;
 
