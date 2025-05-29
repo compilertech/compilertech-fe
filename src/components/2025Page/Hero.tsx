@@ -40,7 +40,8 @@ const heroData = {
   emailPlaceholder: "Enter your email ID for updates",
   forMoreUpdates: "For more updates",
   comingSoon: "27, 28th September 2025",
-  comingSoonSubText: "AV Ramo Rao auditorium, Chemical Sciences building, IISC",
+  comingSoonSubText:
+    "A.V Ramana Rao Auditorium, Chemical Sciences Building, IISC",
   previousYearCta: "Previous Year CTA →",
 };
 
