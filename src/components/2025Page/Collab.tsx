@@ -37,7 +37,7 @@ const ContentSection = styled.div`
 
 const Heading = styled.h2`
   color: white;
-  font-family: Poppins, sans-serif;
+  font-family: Satoshi, sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -55,7 +55,7 @@ const Heading = styled.h2`
 const SubHeading = styled.h3`
   color: white;
   margin-top: 5px;
-  font-family: Spectral, sans-serif;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 70px;
@@ -205,7 +205,7 @@ const SmallCircle = styled.div`
 
 function Collab() {
   return (
-    <CollabContainer>
+    <CollabContainer id="sponsorship-opportunities">
       <ContentSection>
         <Heading>Partner with Us to</Heading>
         <SubHeading>Shape the Future</SubHeading>

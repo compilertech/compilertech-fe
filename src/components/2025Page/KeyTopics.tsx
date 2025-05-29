@@ -67,11 +67,11 @@ function KeyTopics() {
   ];
 
   return (
-    <TopicsContainer>
+    <TopicsContainer id="tracks">
       <KeyTopicsSection>
         <TopicsHeader>
-          <Title>Key Topics Shaping</Title>
-          <Subtitle>Compiler Advancements</Subtitle>
+          <Title>Key Topics Shaping Compiler Advancements</Title>
+          <Subtitle>Topics of Interest</Subtitle>
         </TopicsHeader>
 
         <GlobeImage>
@@ -92,32 +92,6 @@ function KeyTopics() {
           ))}
         </TopicsGrid>
       </KeyTopicsSection>
-
-      <SubmissionSection>
-        <SubmissionContent>
-          <SubmissionHeader>
-            <SubmissionTitle>Submission</SubmissionTitle>
-            <SubmissionSubtitle>Guidelines</SubmissionSubtitle>
-          </SubmissionHeader>
-
-          <div>
-            <SubmissionText>
-              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-              vivamus mauris elit. Hendrerit a donec platea nulla pretium
-              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-              egestas. Sit eget integer consequat odio fringilla massa sed
-              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
-              dui eros. Velit tempus scelerisque facilisis at amet habitant
-              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
-              vestibulum.
-            </SubmissionText>
-            <SubmissionDeadline>
-              Submission Deadline : <i>To be announced</i>
-            </SubmissionDeadline>
-            <SubmitButton>Submit Now</SubmitButton>
-          </div>
-        </SubmissionContent>
-      </SubmissionSection>
     </TopicsContainer>
   );
 }
@@ -147,7 +121,7 @@ const TopicsContainer = styled.div`
 `;
 
 const KeyTopicsSection = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin-bottom: 2rem;
@@ -165,7 +139,7 @@ const TopicsHeader = styled.div`
 
 const Title = styled.h2`
   margin: 0;
-  font-family: Poppins;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
@@ -189,7 +163,7 @@ const Subtitle = styled.h3`
   font-style: italic;
   color: #d83bd2;
   margin-top: 10px;
-  font-family: Spectral;
+  font-family: serif;
   font-weight: 500;
   font-style: italic;
   font-size: 36px;
@@ -292,166 +266,5 @@ const TopicDescription = styled.p`
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 0.85rem;
-  }
-`;
-
-const SubmissionSection = styled.div`
-  background-color: rgba(20, 20, 20, 0.5);
-  border: 1px solid #1e3a8a;
-  border-radius: 12px;
-  border: 0.5px solid #ffffff;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    border-radius: 8px;
-  }
-`;
-
-const SubmissionContent = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  background-color: #f9f8f50d;
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.75rem;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 1.5rem;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    padding: 1.25rem;
-  }
-`;
-
-const SubmissionHeader = styled.div`
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    width: 25%;
-    padding-right: 2rem;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-bottom: 1rem;
-  }
-`;
-
-const SubmissionTitle = styled.h2`
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 36px;
-  margin: 0;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 32px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 28px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 24px;
-  }
-`;
-
-const SubmissionSubtitle = styled.h3`
-  font-size: 36px;
-  font-weight: 500;
-  font-style: italic;
-  color: #d83bd2;
-  font-family: spectral;
-  margin-top: 10px;
-  margin-bottom: 0;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 32px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 28px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 24px;
-  }
-`;
-
-const SubmissionText = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    text-align: left;
-    width: 75%;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-`;
-
-const SubmissionDeadline = styled.p`
-  font-size: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-
-  i {
-    font-style: italic;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-`;
-
-const SubmitButton = styled.button`
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  @media (min-width: ${TABLET_BREAKPOINT}) {
-    display: inline-block;
-    margin: 0;
-  }
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    margin: 0 auto;
-    display: inline-block;
-  }
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 0.7rem 1.25rem;
-    font-size: 0.9rem;
   }
 `;

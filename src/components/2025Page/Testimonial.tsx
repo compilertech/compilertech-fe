@@ -6,64 +6,38 @@ import {
 } from "../../styles/GlobalStyle";
 
 const TestimonialSection = () => {
-  const stats = [
-    { number: "20+", description: "Key note Speakers" },
-    { number: "300+", description: "Attendees from various domains" },
-    { number: "50+", description: "Partners and sponsors" },
-    { number: "200+", description: "Presenters" },
-  ];
-
   return (
     <Container>
       <TopBorder />
 
-      <TestimonialCard>
+      <AboutCard id="about">
         <ContentWrapper>
-          <LeftContent>
-            <Title>
-              Exploring the Future of
-              <HighlightText>Compiler Technology</HighlightText>
-            </Title>
-          </LeftContent>
+          {/* First part: Left Column */}
+          <ColumnLeft>
+            <Title>Vision of IICT</Title>
+            <HighlightText>
+              Exploring the Future of Compiler Technology
+            </HighlightText>
+          </ColumnLeft>
 
-          <RightContent>
+          {/* Second part: Right Column */}
+          <ColumnRight>
             <Description>
-              Lorem ipsum dolor sit amet consectetur. Consectetur eget rhoncus
-              vivamus mauris elit. Hendrerit a donec platea nulla pretium
-              venenatis enim. Amet ut nunc eu fusce sit venenatis amet nunc
-              egestas. Sit eget integer consequat odio fringilla massa sed
-              pulvinar dignissim. Faucibus est in tincidunt cras egestas duis
-              dui eros. Velit tempus scelerisque facilisis at amet habitant
-              mattis aenean. Vitae quisque enim laoreet urna dictum nunc
-              vestibulum.
+              The IICT (Innovations In Compiler Technology) workshop aims to
+              bring together researchers, practitioners, and enthusiasts in the
+              field of compiler technologies. This year's theme focuses on the
+              cutting-edge advancements in design, implementation, and
+              optimization of compiler techniques as well as their applications
+              in emerging software and hardware platforms. The workshop consists
+              of accepted talks by our esteemed Program Committee along with
+              invited talks by experts from both academia and industry. This is
+              a novel opportunity to interact and learn from experts and
+              enthusiasts from both academia and industry. We invite
+              presentation proposals for our upcoming workshop.
             </Description>
-          </RightContent>
+          </ColumnRight>
         </ContentWrapper>
-
-        <Divider />
-
-        <SubscriptionWrapper>
-          <SubscriptionText>
-            Subscribe now and stay informed with the latest updates and
-            important announcements
-          </SubscriptionText>
-          <SubscribeButton>Subscribe</SubscribeButton>
-        </SubscriptionWrapper>
-      </TestimonialCard>
-
-      <StatsSection>
-        <StatsHeader>
-          Our stats <StatsLine />
-        </StatsHeader>
-        <StatsList>
-          {stats.map((stat, index) => (
-            <StatItem key={index}>
-              <StatNumber>{stat.number}</StatNumber>
-              <StatDescription>{stat.description}</StatDescription>
-            </StatItem>
-          ))}
-        </StatsList>
-      </StatsSection>
+      </AboutCard>
 
       {/* Decorative elements */}
       <PurpleCircle />
@@ -79,7 +53,7 @@ const Container = styled.div`
   padding: 6rem;
   position: relative;
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   overflow: hidden;
 
@@ -108,7 +82,7 @@ const TopBorder = styled.div`
   }
 `;
 
-const TestimonialCard = styled.div`
+const AboutCard = styled.div`
   background-color: #151515;
   border-radius: 20px;
   padding: 3rem;
@@ -140,18 +114,19 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const LeftContent = styled.div`
-  flex: 1;
-  padding-right: 2rem;
+const ColumnLeft = styled.div`
+  flex: 0 0 370px; /* Fixed width for the left column */
+  margin-right: 32px; /* Space between columns */
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    padding-right: 0;
-    margin-bottom: 1.5rem;
+    flex: 1 1 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
 `;
 
-const RightContent = styled.div`
-  flex: 1.5;
+const ColumnRight = styled.div`
+  flex: 1;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     width: 100%;
@@ -159,11 +134,12 @@ const RightContent = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
+  color: white;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
@@ -180,12 +156,16 @@ const Title = styled.h2`
 `;
 
 const HighlightText = styled.div`
-  font-family: "Spectral", serif;
-  color: #fb4dd8;
+  font-family: serif;
+  background: #fb4dd8;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-style: italic;
   font-size: 36px;
   font-weight: 500;
   margin-top: 0.5rem;
+  display: block;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 32px;
@@ -201,24 +181,13 @@ const HighlightText = styled.div`
   }
 `;
 
-const Divider = styled.hr`
-  border: none;
-  height: 0.5px;
-  background-color: #cfcbc4;
-  margin: 2rem 0;
-  width: 100%;
-`;
-
 const Description = styled.p`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-  }
+  text-align: justify;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 15px;
@@ -229,147 +198,7 @@ const Description = styled.p`
   }
 `;
 
-const SubscriptionWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-`;
-
-const SubscriptionText = styled.p`
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  flex: 1;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    text-align: center;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 15px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-  }
-`;
-
-const SubscribeButton = styled.button`
-  width: 140px;
-  height: 48px;
-  background: transparent;
-  border: 1px solid white;
-  border-radius: 8px;
-  color: white;
-  padding: 10px 12px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-    height: 40px;
-  }
-`;
-
-// Stats Section
-const StatsSection = styled.div`
-  margin-top: 6rem;
-`;
-
-const StatsHeader = styled.div`
-  display: flex;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 2rem;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 18px;
-    margin-bottom: 1.5rem;
-  }
-`;
-
-const StatsLine = styled.div`
-  flex: 1;
-  height: 1px;
-  background-color: #cfcbc4;
-  margin-left: 1rem;
-`;
-
-const StatsList = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: column;
-    gap: 2rem;
-  }
-`;
-
-const StatItem = styled.div`
-  text-align: center;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-`;
-
-const StatNumber = styled.h2`
-  font-family: "Poppins", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  margin: 0 0 0.5rem 0;
-
-  @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 40px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 36px;
-    margin: 0;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 30px;
-  }
-`;
-
-const StatDescription = styled.p`
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: #cfcbc4;
-  margin: 0;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 15px;
-  }
-
-  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    font-size: 14px;
-  }
-`;
-
-/* Decorative elements - kept as instructed */
+/* Decorative elements */
 const PurpleCircle = styled.div`
   position: absolute;
   top: 360px;
@@ -385,12 +214,13 @@ const PurpleCircle = styled.div`
   opacity: 0.8;
   z-index: 1;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     top: 480px;
     left: -40px;
-
     width: 150px;
     height: 150px;
+    visibility: hidden;
+    z-index: 1;
   }
 `;
 
@@ -400,7 +230,7 @@ const GoldBlueCircle = styled.div`
   right: -50px;
   width: 250px;
   height: 250px;
-  background: linear-gradient(310.99deg, #fcbf00 16.53%, #367aff 86.21%);
+  background: linear-gradient(180.99deg, #fcbf00 16.53%, #367aff 86.21%);
   border-bottom-left-radius: 250px;
   border-radius: 50%;
   opacity: 0.8;
@@ -410,12 +240,15 @@ const GoldBlueCircle = styled.div`
     width: 200px;
     height: 200px;
     top: 0;
+    z-index: 1;
+    visibility: hidden;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 150px;
     height: 150px;
     top: 0;
+    z-index: 1;
   }
 `;
 

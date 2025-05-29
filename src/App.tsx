@@ -7,15 +7,20 @@ import Header from "./components/Header";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { useThemeDetector } from "./utils/detectBrowserTheme";
-import Home from "./components/HomePage";
+import Home2024 from "./components/HomePage";
 import Attending from "./components/AttendingPage";
 import Organization from "./components/OrganizationPage";
 import Schedule from "./components/SchedulePage";
-import Home2 from "./components/2025Page";
+import Home from "./components/2025Page";
 import NewHeader from "./components/2025Page/NewHeader";
 import NewFooter from "./components/2025Page/NewFooter";
+import { useIs2024 } from "./utils/is2024";
+import ProgramPage from "./components/2025Page/CommitteePage";
+import CountdownTimer from "./components/2025Page/CountdownTimer";
+import SubmissionsPage from "./components/2025Page/SubmissionsPage";
 
 function App() {
+  // TODO: Lazy loading
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
   const location = useLocation();
   const isBrowserDarkTheme = useThemeDetector();
@@ -42,18 +47,14 @@ function App() {
       }
     };
     faviconUpdate();
-  }, [isBrowserDarkTheme, location]);
+  }, [isBrowserDarkTheme, location, isChrome]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
 
-  const is2024Page =
-    location.pathname.includes("/2024") ||
-    location.pathname.includes("/organization") ||
-    location.pathname.includes("/attending") ||
-    location.pathname.includes("/schedule");
+  const is2024Page = useIs2024();
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -61,13 +62,21 @@ function App() {
 
       <Wrapper>
         {is2024Page && <Header onClick={toggleTheme} theme={theme} />}
-        {!is2024Page && <NewHeader />}
+        {!is2024Page && (
+          <>
+            <NewHeader />
+            <CountdownTimer eventDate={new Date("2025-09-27T10:00:00")} />
+          </>
+        )}
         <Routes>
-          <Route path="/" element={<Home2 />} />
-          <Route path="/2024" element={<Home />} />
-          <Route path="/organization" element={<Organization />} />
-          <Route path="/attending" element={<Attending />} />
-          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/submissions" element={<SubmissionsPage />} />
+          <Route path="/committee" element={<ProgramPage />} />
+          {/* <Route path="/important-dates" element={<ImportantDates />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/2024" element={<Home2024 />} />
+          <Route path="/2024/organization" element={<Organization />} />
+          <Route path="/2024/attending" element={<Attending />} />
+          <Route path="/2024/schedule" element={<Schedule />} />
         </Routes>
         {is2024Page && <Footer />}
         {!is2024Page && <NewFooter />}

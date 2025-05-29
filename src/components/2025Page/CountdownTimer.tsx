@@ -4,7 +4,7 @@ import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 
 const CountdownContainer = styled.div`
   width: 100%;
-  padding: 15px 0;
+  height: 70px;
   background: linear-gradient(90deg, #4169e1 0%, #da70d6 100%);
   display: flex;
   justify-content: center;
@@ -20,9 +20,9 @@ const CountdownContainer = styled.div`
 `;
 
 const CountdownText = styled.div`
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
   text-align: center;
@@ -69,13 +69,10 @@ const CountdownTimer: FC<CountdownTimerProps> = ({ eventDate }) => {
       }
     };
 
-    // Calculate initially
     calculateTimeLeft();
 
-    // Update every second
     const timerId = setInterval(calculateTimeLeft, 1000);
 
-    // Cleanup
     return () => clearInterval(timerId);
   }, [eventDate]);
 

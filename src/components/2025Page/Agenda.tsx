@@ -55,7 +55,7 @@ const AgendaContainer = styled.div`
   width: 100%;
   position: relative;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: "Satoshi", sans-serif;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -122,7 +122,7 @@ const Subtitle = styled.h3`
   color: #fb4dd8;
   margin: 0;
   line-height: 1.2;
-  font-family: "Spectral", serif;
+  font-family: serif;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 32px;

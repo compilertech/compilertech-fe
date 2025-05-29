@@ -36,29 +36,29 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 `;
-const Pill = styled.div<{ position?: string }>`
-  display: inline-block;
-  padding: 2px 8px;
-  background-color: #f5d6f5;
-  border: 2px solid ${({ theme }) => theme.primary};
-  border-radius: 24px;
-  color: black;
-  font-size: 14px;
-  font-weight: 700;
-  position: ${({ position }) => position || "absolute"};
-  top: 112px;
-  left: 785px;
-`;
+// const Pill = styled.div<{ position?: string }>`
+//   display: inline-block;
+//   padding: 2px 8px;
+//   background-color: #f5d6f5;
+//   border: 2px solid ${({ theme }) => theme.primary};
+//   border-radius: 24px;
+//   color: black;
+//   font-size: 14px;
+//   font-weight: 700;
+//   position: ${({ position }) => position || "absolute"};
+//   top: 112px;
+//   left: 785px;
+// `;
 
 function HeaderOptions() {
   const navigate = useNavigate();
   const options: string[] = ["Organization", "Attending", "Schedule"];
 
   function handleOnClick(path: string) {
-    navigate(`/${path.toLowerCase()}`);
+    navigate(`/2024/${path.toLowerCase()}`);
   }
 
-  const selectedOption = window.location.pathname.split("/")[1];
+  const selectedOption = window.location.pathname.split("/2024/")[1];
   return (
     <Section>
       <Wrapper>
@@ -69,11 +69,11 @@ function HeaderOptions() {
             selected={selectedOption === option.toLowerCase()}
           >
             {option}
-            {option === "Schedule" && (
+            {/* {option === "Schedule" && (
               <PillContainer>
                 <Pill position="inherit">New</Pill>
               </PillContainer>
-            )}
+            )} */}
           </OptionText>
         ))}
       </Wrapper>
@@ -83,10 +83,10 @@ function HeaderOptions() {
 
 export default HeaderOptions;
 
-const PillContainer = styled.span`
-  display: inline-block;
-  margin-left: 8px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: none;
-  }
-`;
+// const PillContainer = styled.span`
+//   display: inline-block;
+//   margin-left: 8px;
+//   @media (max-width: ${MOBILE_BREAKPOINT}) {
+//     display: none;
+//   }
+// `;

@@ -7,17 +7,25 @@ import {
   SMALL_MOBILE_BREAKPOINT,
 } from "../../styles/GlobalStyle";
 import LogoImage from "/icons/logo_dark-cropped.png";
+import TwitterIcon from "../../assets/2025/twitter.svg";
+import LinkedInIcon from "../../assets/2025/linkedin.svg";
+import EmailIcon from "../../assets/2025/email.svg";
 
 const NewFooter: React.FC = () => {
   const navigate = useNavigate();
 
-  const quickLinks1 = ["Overview", "About us", "Our Stats", "Tracks & themes"];
+  const quickLinks1 = [
+    { label: "Overview", href: "/#overview" },
+    { label: "About us", href: "/#about" },
+    { label: "Tracks & themes", href: "/#tracks" },
+    { label: "Past Highlights", href: "/#past-highlights" },
+  ];
 
   const quickLinks2 = [
-    "Past Highlights",
-    "Venue",
-    "FAQs",
-    "Sponsorship opportunities",
+    { label: "Our Stats", href: "/#stats" },
+    { label: "Venue", href: "/#venue" },
+    { label: "FAQs", href: "/#faqs" },
+    { label: "Sponsorship opportunities", href: "/#sponsorship-opportunities" },
   ];
 
   return (
@@ -28,29 +36,79 @@ const NewFooter: React.FC = () => {
         </LogoContainer>
 
         <QuickLinksSection>
-          <QuickLinksContainer>Quick Links</QuickLinksContainer>
+          <FooterSectionHeader>Quick Links</FooterSectionHeader>
           <QuickLinks>
             <QuickLinksColumn>
               {quickLinks1.map((link, index) => (
-                <QuickLink key={index}>{link}</QuickLink>
+                <QuickLink key={index} href={link.href}>
+                  {link.label}
+                </QuickLink>
               ))}
             </QuickLinksColumn>
 
             <QuickLinksColumn>
               {quickLinks2.map((link, index) => (
-                <QuickLink key={index}>{link}</QuickLink>
+                <QuickLink key={index} href={link.href}>
+                  {link.label}
+                </QuickLink>
               ))}
             </QuickLinksColumn>
           </QuickLinks>
         </QuickLinksSection>
+        <GetInTouchSection>
+          <FooterSectionHeader>Get in touch</FooterSectionHeader>
+          <p>
+            In case of any queries please reach out to the workshop
+            organizers&nbsp;
+            <Email href="mailto:aditya.kumar@compilertech.org">
+              Aditya Kumar
+            </Email>
+            ,&nbsp;
+            <Email href="mailto:ashutosh@compilertech.org">
+              Ashutosh Pandey
+            </Email>
+            ,&nbsp;
+            <Email href="mailto:pradeep.kumar@compilertech.org">
+              Pradeep Kumar
+            </Email>
+            .
+          </p>
+
+          <SocialMediaContainer>
+            <a
+              href="https://www.linkedin.com/company/compiler-technology"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={LinkedInIcon} alt="LinkedIn" height={36} width={36} />
+            </a>
+            <a
+              href="https://x.com/compiler_tech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={TwitterIcon} alt="Twitter" height={36} width={36} />
+            </a>
+            <a
+              href="mailto:support@compilertechnology.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={EmailIcon} alt="Email" height={36} width={36} />
+            </a>
+          </SocialMediaContainer>
+        </GetInTouchSection>
       </FooterContent>
 
-      <CopyrightSection>
-        ©2024 Compiler Technology | Terms and conditions
-      </CopyrightSection>
+      <CopyrightSection>© 2025 Compiler Technology</CopyrightSection>
     </FooterContainer>
   );
 };
+const Email = styled.a`
+  color: ${({ theme }) => theme.primary};
+  font-weight: bold;
+  text-decoration: none;
+`;
 
 const FooterContainer = styled.footer`
   background-color: #000000;
@@ -73,25 +131,32 @@ const FooterContainer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
-  gap: 30vw;
+  justify-content: space-between;
   padding: 6rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    gap: 15vw;
     padding: 4rem 3rem;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
     padding: 3rem 1.5rem;
     margin-bottom: 1rem;
   }
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     padding: 2rem 1rem;
+  }
+`;
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: center;
   }
 `;
 
@@ -118,6 +183,21 @@ const QuickLinksSection = styled.div`
     text-align: center;
   }
 `;
+const GetInTouchSection = styled.div`
+  width: 280px;
+  @media (max-width: ${TABLET_BREAKPOINT}) {
+    width: 200px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+`;
 
 const QuickLinks = styled.div`
   display: flex;
@@ -139,8 +219,8 @@ const QuickLinks = styled.div`
   }
 `;
 
-const QuickLinksContainer = styled.div`
-  font-family: Poppins, sans-serif;
+const FooterSectionHeader = styled.div`
+  font-family: "Satoshi", sans-serif;
   font-weight: 600;
   font-size: 32px;
   padding-bottom: 30px;
@@ -175,10 +255,9 @@ const QuickLink = styled.a`
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  font-family: Poppins, sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 120%;
+  font-size: 16px;
   letter-spacing: 0%;
 
   &:hover {
@@ -186,12 +265,7 @@ const QuickLink = styled.a`
   }
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    font-size: 18px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px;
   }
 `;
 
