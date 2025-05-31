@@ -31,6 +31,7 @@ import img3 from "../../assets/2025/img3.webp";
 import img4 from "../../assets/2025/img4.webp";
 import { FaCircleNotch } from "react-icons/fa";
 import acmLogo from "../../assets/2025/logo_acm.png";
+import isoftLogo from "../../assets/2025/isoft-logo.png";
 
 const heroData = {
   title: "Innovations in Compiler Technology",
@@ -163,12 +164,10 @@ function Hero() {
 
         <Description>{heroData.description}</Description>
         {isTabletOrMobile && (
-          <img
-            src={acmLogo}
-            alt="ACM Logo"
-            height={"80px"}
-            style={{ marginBottom: "20px" }}
-          />
+          <div style={{ display: "flex", gap: "40px", marginBottom: "20px" }}>
+            <img src={acmLogo} alt="ACM Logo" height={"80px"} />
+            <img src={isoftLogo} alt="ACM Logo" height={"80px"} />
+          </div>
         )}
 
         <UpdatesSection>
@@ -264,6 +263,13 @@ function Hero() {
             <img
               style={{ display: "block", margin: "0 auto" }}
               src={acmLogo}
+              height={70}
+              width={210}
+              alt="ACM Logo"
+            />
+            <img
+              style={{ display: "block", margin: "0 auto" }}
+              src={isoftLogo}
               height={70}
               width={210}
               alt="ACM Logo"

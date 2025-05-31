@@ -208,15 +208,18 @@ function Collab() {
     <CollabContainer id="sponsorship-opportunities">
       <ContentSection>
         <Heading>Partner with Us to</Heading>
-        <SubHeading>Shape the Future</SubHeading>
+        <SubHeading style={{ width: "160%", maxWidth: "100%" }}>
+          Support the Compiler Community
+        </SubHeading>
         <Divider />
         <Description>
           We offer various sponsorship tiers tailored to your goals, Let's
           collaborate to drive the future of compiler technology together.
         </Description>
         <EmailText>
-          Get in touch at <EmailHighlight>sposnships@CT.com</EmailHighlight> to
-          explore sponsorship opportunities!
+          Get in touch at{" "}
+          <EmailHighlight>support@compilertech.com</EmailHighlight> to explore
+          sponsorship opportunities!
         </EmailText>
         <Button href="#">Get in touch</Button>
       </ContentSection>

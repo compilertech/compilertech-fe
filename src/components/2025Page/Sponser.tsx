@@ -5,6 +5,8 @@ import {
   TABLET_BREAKPOINT,
 } from "../../styles/GlobalStyle";
 import logo from "../../assets/2025/logo_acm.png";
+import isoftLogo from "../../assets/2025/isoft-logo.png";
+
 const Container = styled.div`
   background-color: #000;
   color: white;
@@ -138,13 +140,8 @@ const SponsorsComponent = () => {
     },
     {
       id: 2,
-      name: "Association for Computing Machinery",
-      logo: logo,
-    },
-    {
-      id: 3,
-      name: "Association for Computing Machinery",
-      logo: logo,
+      name: "India SOFTware Engineering community",
+      logo: isoftLogo,
     },
   ];
 
@@ -173,13 +170,7 @@ const SponsorsComponent = () => {
     );
   };
 
-  return (
-    <div>
-      {renderWithCount(1)}
-      {/* {renderWithCount(2)} */}
-      {/* {renderWithCount(3)} */}
-    </div>
-  );
+  return <div>{renderWithCount(2)}</div>;
 };
 
 export default SponsorsComponent;

@@ -119,15 +119,25 @@ function Highlights() {
           </ButtonWrapper>
         </HeaderSection>
 
-        <div style={{ width: "100%", height: "500px" }}>
-          <iframe
-            style={{ borderRadius: "8px", width: "100%", height: "100%" }}
-            src="https://www.youtube.com/embed/llQB1dX3dIQ"
-            title="Highlights Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+        <VideoSection>
+          <VideoContainer>
+            <iframe
+              style={{ borderRadius: "8px", width: "100%", height: "100%" }}
+              src="https://www.youtube.com/embed/llQB1dX3dIQ"
+              title="Highlights Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </VideoContainer>
+          <PlaylistLink
+            href="https://youtube.com/playlist?list=PLIShwgr315-At8C7U7n7Gt1syxfoMf_hT&feature=shared"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Full Playlist
+          </PlaylistLink>
+        </VideoSection>
+
         <StatsSection id="stats" style={{ marginBottom: "80px" }}>
           <StatsHeader>
             Our stats <StatsLine />
@@ -506,5 +516,36 @@ const GoldCircle = styled.div`
     height: 140px;
     top: 120px;
     visibility: hidden;
+  }
+`;
+
+const VideoSection = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const VideoContainer = styled.div`
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+`;
+
+const PlaylistLink = styled.a`
+  color: #d83bd2;
+  text-decoration: none;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d83bd2;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(216, 59, 210, 0.1);
   }
 `;
