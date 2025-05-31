@@ -164,10 +164,10 @@ function Hero() {
 
         <Description>{heroData.description}</Description>
         {isTabletOrMobile && (
-          <div style={{ display: "flex", gap: "40px", marginBottom: "20px" }}>
-            <img src={acmLogo} alt="ACM Logo" height={"80px"} />
-            <img src={isoftLogo} alt="ACM Logo" height={"80px"} />
-          </div>
+          <LogoMobileContainer>
+            <img src={acmLogo} alt="ACM Logo" />
+            <img src={isoftLogo} alt="ACM Logo" />
+          </LogoMobileContainer>
         )}
 
         <UpdatesSection>
@@ -547,6 +547,26 @@ const ContentSection = styled.div`
   }
 `;
 
+const LogoMobileContainer = styled.div`
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  justify-content: center;
+  img {
+    height: 80px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    gap: 12px;
+    img:first-child {
+      height: 60px;
+    }
+    img:last-child {
+      height: 60px;
+    }
+  }
+`;
+
 const VectorContainer = styled.div`
   position: relative;
   width: 40%;
@@ -609,7 +629,6 @@ const Description = styled.p`
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
     font-size: 1.1rem;
-    text-align: center;
     max-width: 90%;
     margin-bottom: 1.5rem;
   }
