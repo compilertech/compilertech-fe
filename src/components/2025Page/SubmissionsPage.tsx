@@ -44,8 +44,8 @@ export default function SubmissionsPage() {
           <Description>
             The selections will happen in two steps: In the first step, a
             conditional acceptance will be provided. The second step requires
-            the participants of conditionally accepted papers to submit a one
-            minute video of their presentation. The final acceptance will be
+            the participants of conditionally accepted papers to submit a 
+            90-second video of their presentation. The final acceptance will be
             provided based on the evaluation of the video presentations.
           </Description>
         </div>
