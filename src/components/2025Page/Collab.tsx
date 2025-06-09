@@ -218,7 +218,7 @@ function Collab() {
         </Description>
         <EmailText>
           Get in touch at{" "}
-          <EmailHighlight>support@compilertech.com</EmailHighlight> to explore
+          <EmailHighlight>sponsor@compilertech.org</EmailHighlight> to explore
           sponsorship opportunities!
         </EmailText>
         <Button href="#">Get in touch</Button>
