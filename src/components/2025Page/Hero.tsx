@@ -42,7 +42,7 @@ const heroData = {
   forMoreUpdates: "For more updates",
   comingSoon: "27, 28th September 2025",
   comingSoonSubText:
-    "A.V Ramana Rao Auditorium, Chemical Sciences Building, IISC",
+    "A.V Rama Rao Auditorium, Chemical Sciences Building, IISC",
   previousYearCta: "Previous Year CTA →",
 };
 
