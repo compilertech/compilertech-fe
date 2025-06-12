@@ -168,7 +168,7 @@ const QAndA: React.FC = () => {
   const faqItems: FaqItem[] = [
     {
       question: "Are there any travel or accommodation recommendations?",
-      answer: "Incase of queries related to travel assistance, please email support@compilertech.org with a legitimate reason for requesting travel assistance. Kindly note that travel assistance would be offered to attendees who are currently undergraduate,graduate or post graduate students who need financial support to attend the workshop and shall be granted on a case by case basis.",
+      answer: "Incase of queries related to travel assistance, please email support@compilertech.org with a legitimate reason for requesting travel assistance. Kindly note that travel assistance would be offered to attendees who are currently undergraduate, graduate or post graduate students who need financial support to attend the workshop and shall be granted on a case by case basis.",
     },
     {
       question: "Is there a virtual participation option?",
