@@ -18,6 +18,8 @@ import { useIs2024 } from "./utils/is2024";
 import ProgramPage from "./components/2025Page/CommitteePage";
 import CountdownTimer from "./components/2025Page/CountdownTimer";
 import SubmissionsPage from "./components/2025Page/SubmissionsPage";
+import SponsorshipPage from "./components/SponsorshipPage";
+import ImportantDatesPage from "./components/ImportantDatesPage";
 
 function App() {
   // TODO: Lazy loading
@@ -71,7 +73,8 @@ function App() {
         <Routes>
           <Route path="/submissions" element={<SubmissionsPage />} />
           <Route path="/committee" element={<ProgramPage />} />
-          {/* <Route path="/important-dates" element={<ImportantDates />} /> */}
+          <Route path="/sponsorship" element={<SponsorshipPage />} />
+          <Route path="/important-dates" element={<ImportantDatesPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />
           <Route path="/2024/organization" element={<Organization />} />
