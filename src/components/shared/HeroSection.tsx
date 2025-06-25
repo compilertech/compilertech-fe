@@ -85,25 +85,24 @@ const Subtitle = styled.h3`
   }
 `;
 
-const CirclesContainer = styled.div`
+const BackgroundImageSection = styled.img`
   position: absolute;
   z-index: 2;
-  background-image: url(${PageBannerImage});
   width: 350px;
   height: 350px;
   top: 0;
-  right: 0px;
+  right: 50px;
   background-size: contain;
   background-repeat: no-repeat;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
-    right: 30px;
+    right: 50px;
     width: 250px;
     height: 350px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    right: -70px;
+    right: -50px;
     top: 0;
     bottom: -50px;
     width: 180px;
@@ -120,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, subTitle }) => {
           <Title>{title}</Title>
           <Subtitle>{subTitle}</Subtitle>
         </TitleWrapper>
-        <CirclesContainer />
+        <BackgroundImageSection src={PageBannerImage} />
       </HeroSectionContainer>
       <Divider />
     </>
