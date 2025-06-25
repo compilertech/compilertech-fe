@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { TABLET_BREAKPOINT, MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 
@@ -394,7 +393,7 @@ const SponsorshipTable = () => {
                           key={tier.key}
                           isLast={index === tiers.length - 1}
                         >
-                          {renderIcon(row[tier.key])}
+                          {renderIcon(row[tier.key as keyof typeof row])}
                         </TableCell>
                       ))}
                     </TableRow>
@@ -430,7 +429,7 @@ const SponsorshipTable = () => {
                               isLast={rowIndex === sponsorshipData.length - 1}
                               className="feature-detail"
                             >
-                              {renderIcon(row[tier.key])}
+                              {renderIcon(row[tier.key as keyof typeof row])}
                             </MobileTableCell>
                           </MobileTableRow>
                         ))}
