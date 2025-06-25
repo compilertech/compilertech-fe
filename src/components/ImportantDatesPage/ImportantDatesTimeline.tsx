@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "styled-components";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import TopRightBackgroundImageSrc from "../../assets/common/ImportantDatesTopRightBackground.svg";
