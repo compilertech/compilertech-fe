@@ -86,6 +86,7 @@ const TimelineCircle = styled.div<{
 
 const TimelineEvent = styled.div<{ superHighlight?: boolean }>`
   flex: 1;
+  min-height: 80px;
   margin: 20px;
   padding: 32px;
   background: ${({ superHighlight }) =>
@@ -161,64 +162,124 @@ const BackgroundImageBottomRight = styled.img`
 `;
 
 const TIMELINE_EVENTS = [
-  { number: "1", date: "1 June 2025", description: "Submissions Open" },
-  { number: "2", date: "1 July 2025", description: "Submission Deadline" },
+  {
+    number: "1",
+    date: "1st June 2025",
+    description: "Submissions Open",
+    dateValue: "2025-06-01",
+  },
+  {
+    number: "2",
+    date: "15th July 2025",
+    description: "Submission Deadline",
+    dateValue: "2025-07-15",
+  },
   {
     number: "3",
-    date: "7 August 2025",
+    date: "7th August 2025",
     description: "Notification of Conditional Acceptance",
+    dateValue: "2025-08-07",
   },
   {
     number: "4",
-    date: "15 August 2025",
+    date: "15th August 2025",
     description: "Video submission Deadline",
+    dateValue: "2025-08-15",
   },
-  { number: "5", date: "1 June 2025", description: "Submissions Open" },
-  { number: "6", date: "1 July 2025", description: "Submission Deadline" },
+  {
+    number: "5",
+    date: "15th August 2025",
+    description: "Early Bird Registration Open",
+    dateValue: "2025-08-15",
+  },
+  {
+    number: "6",
+    date: "31st August 2025",
+    description: "Early Bird Registration Close",
+    dateValue: "2025-08-31",
+  },
   {
     number: "7",
-    date: "7 August 2025",
-    description: "Notification of Conditional Acceptance",
+    date: "1st September 2025",
+    description: "Final Notification",
+    dateValue: "2025-09-01",
   },
   {
     number: "8",
-    date: "15 August 2025",
-    description: "Video submission Deadline",
+    date: "1st September 2025",
+    description: "Regular Registration Open",
+    dateValue: "2025-09-01",
   },
-  { number: "9", date: "1 June 2025", description: "Submissions Open" },
-  { number: "10", date: "1 July 2025", description: "Submission Deadline" },
+  {
+    number: "9",
+    date: "20th September 2025",
+    description: "Regular Registration Close",
+    dateValue: "2025-09-20",
+  },
+  {
+    number: "10",
+    date: "27th, 28th September 2025",
+    description: "Workshop Dates",
+    dateValue: "2025-09-27",
+  },
 ];
 
-const HIGHLIGHT_TILL_INDEX = 3;
-const SUPER_HIGHLIGHT_INDEX = 9;
+const SUPER_HIGHLIGHT_DATE = "2025-09-27";
 
 const ImportantDatesTimeline = () => {
   return (
     <TimelineWrapper>
-      {TIMELINE_EVENTS.map((event, idx) => (
-        <TimelineRow key={event.number + event.date}>
-          <TimelineConnector>
-            <TimelineLine
-              visible={idx !== 0}
-              highlight={idx < HIGHLIGHT_TILL_INDEX}
-            />
-            <TimelineCircle
-              highlight={idx < HIGHLIGHT_TILL_INDEX}
-              superHighlight={idx === SUPER_HIGHLIGHT_INDEX}
+      {TIMELINE_EVENTS.map((event, idx) => {
+        const now = new Date();
+        const prevDateValue =
+          idx > 0 && TIMELINE_EVENTS[idx - 1].dateValue
+            ? new Date(TIMELINE_EVENTS[idx - 1].dateValue as string)
+            : null;
+        const currDateValue = new Date(event.dateValue ?? "");
+        const nextDateValue =
+          TIMELINE_EVENTS[idx + 1] && TIMELINE_EVENTS[idx + 1].dateValue
+            ? new Date(TIMELINE_EVENTS[idx + 1].dateValue as string)
+            : null;
+        return (
+          <TimelineRow key={event.number + event.date}>
+            <TimelineConnector>
+              <TimelineLine
+                visible={idx !== 0}
+                highlight={
+                  !prevDateValue
+                    ? false
+                    : prevDateValue.toString() === currDateValue.toString() &&
+                      now.toString() === currDateValue.toString()
+                    ? true
+                    : now > prevDateValue
+                }
+              />
+              <TimelineCircle
+                highlight={now >= currDateValue}
+                superHighlight={event.dateValue === SUPER_HIGHLIGHT_DATE}
+              >
+                {event.number}
+              </TimelineCircle>
+              <TimelineLine
+                visible={idx !== TIMELINE_EVENTS.length - 1}
+                highlight={
+                  now > currDateValue ||
+                  (nextDateValue
+                    ? now.toString() === nextDateValue.toString() &&
+                      now.toString() === currDateValue.toString()
+                    : false)
+                }
+              />
+            </TimelineConnector>
+            <TimelineEvent
+              superHighlight={event.dateValue === SUPER_HIGHLIGHT_DATE}
             >
-              {event.number}
-            </TimelineCircle>
-            <TimelineLine
-              visible={idx !== TIMELINE_EVENTS.length - 1}
-              highlight={idx + 1 < HIGHLIGHT_TILL_INDEX}
-            />
-          </TimelineConnector>
-          <TimelineEvent superHighlight={idx === SUPER_HIGHLIGHT_INDEX}>
-            <EventDate>{event.date}</EventDate>
-            <EventTitle>{event.description}</EventTitle>
-          </TimelineEvent>
-        </TimelineRow>
-      ))}
+              <EventDate>{event.date}</EventDate>
+              <EventTitle>{event.description}</EventTitle>
+            </TimelineEvent>
+          </TimelineRow>
+        );
+      })}
       <BackgroundImageTopRight src={TopRightBackgroundImageSrc} />
       <BackgroundImageBottomRight src={BottomRightBackgroundImageSrc} />
     </TimelineWrapper>

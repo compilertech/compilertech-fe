@@ -135,7 +135,13 @@ function PartnerWithUs() {
           <Subtitle>Shape the Future</Subtitle>
         </TitleWrapper>
         <ButtonWrapper>
-          <GetInTouchButton onClick={() => {}}>Get in touch</GetInTouchButton>
+          <GetInTouchButton
+            onClick={() => {
+              window.location.href = "mailto:sponsorship@compilertech.org";
+            }}
+          >
+            Get in touch
+          </GetInTouchButton>
         </ButtonWrapper>
       </PartnerWithUsContainer>
       <Divider />

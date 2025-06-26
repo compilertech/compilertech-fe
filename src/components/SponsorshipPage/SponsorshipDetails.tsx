@@ -10,27 +10,25 @@ function SponsorshipDetails() {
   const topics = [
     {
       icon: icon1,
-      title: "Novel Compiler Optimizations",
-      description:
-        "Techniques for improving performance, energy efficiency, code size, and security.",
+      title: "Advance Compiler Research in India",
+      description: "Help promote compiler research and development in India",
     },
     {
       icon: icon1,
-      title: "Domain-Specific Compilers",
+      title: "Empower the Next Generation of Researchers",
       description:
-        "Design and implementation of compilers tailored for specific applications or hardware architectures (e.g. AI, machine learning, high-performance computing).",
+        "Enable student researchers to attend with reduced registration fees",
     },
     {
       icon: icon1,
-      title: "Compiler Frameworks and Tools",
+      title: "Connect with Leaders in Academia & Industry",
       description:
-        "Advancements in compiler infrastructure, intermediate representations, program analysis, and transformation tools.",
+        "Provide your team with opportunities to network with experts from academia and industry",
     },
     {
       icon: icon1,
-      title: "Just-in-Time (JIT) Compilation",
-      description:
-        "Techniques for dynamic code generation and optimization, adaptive compilation, and runtime feedback.",
+      title: "Engage with Emerging Talent",
+      description: "Facilitate engagement with potential student hires",
     },
   ];
 
