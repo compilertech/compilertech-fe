@@ -124,7 +124,11 @@ const StyledBackgroundImage = styled.img`
   }
 `;
 
-function PartnerWithUs() {
+type PartnerWithUsProps = {
+  link?: string;
+};
+
+function PartnerWithUs({ link }: PartnerWithUsProps) {
   return (
     <>
       <Divider hideForMobile={true} />
@@ -137,7 +141,8 @@ function PartnerWithUs() {
         <ButtonWrapper>
           <GetInTouchButton
             onClick={() => {
-              window.location.href = "mailto:sponsorship@compilertech.org";
+              window.location.href =
+                link || "mailto:support@compilertech.org";
             }}
           >
             Get in touch

@@ -25,7 +25,7 @@ export default function Home() {
       <HeroSection title={"Become a"} subTitle={"Sponsor"} />
       <SponsorshipDetails />
       <SponsorshipTable />
-      <PartnerWithUs />
+      <PartnerWithUs link={"mailto:sponsorship@compilertech.org"} />
       <AnimatedBanner />
     </Main>
   );

@@ -23,7 +23,7 @@ export default function ImportantDatesPage() {
     <Main>
       <HeroSection title={"Important Dates at"} subTitle={"a Glance"} />
       <ImportantDatesTimeline />
-      <PartnerWithUs />
+      <PartnerWithUs link={"mailto:support@compilertech.org"} />
       <AnimatedBanner />
     </Main>
   );
