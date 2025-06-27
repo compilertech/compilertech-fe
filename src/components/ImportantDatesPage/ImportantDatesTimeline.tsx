@@ -207,13 +207,13 @@ const TIMELINE_EVENTS = [
   {
     number: "8",
     date: "1st September 2025",
-    description: "Regular Registration Open",
+    description: "Registration Open",
     dateValue: "2025-09-01",
   },
   {
     number: "9",
     date: "20th September 2025",
-    description: "Regular Registration Close",
+    description: "Registration Close",
     dateValue: "2025-09-20",
   },
   {
