@@ -221,7 +221,7 @@ function Collab() {
           <EmailHighlight>sponsorship@compilertech.org</EmailHighlight> to explore
           sponsorship opportunities!
         </EmailText>
-        <Button href="#">Get in touch</Button>
+        <Button href="mailto:sponsorship@compilertech.org">Get in touch</Button>
       </ContentSection>
 
       <CirclesContainer>

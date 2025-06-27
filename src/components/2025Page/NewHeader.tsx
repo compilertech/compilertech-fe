@@ -9,6 +9,8 @@ const navigationLinks = [
   { text: "Overview", path: "/" },
   { text: "Committee", path: "/committee" },
   { text: "Submissions", path: "/submissions" },
+  { text: "Sponsorship", path: "/sponsorship" },
+  { text: "Important Dates", path: "/important-dates" },
   // { text: "Attending", path: "/attending" },
 ];
 const Header: React.FC = () => {

@@ -1,18 +1,12 @@
 import { styled } from "styled-components";
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
-import Hero from "./Hero";
-// import Agenda from "./Agenda";
-// import Agenda2 from "./Agenda2";
-// import Agenda3 from "./Agenda3";
-import Testimonial from "./Testimonial";
-import KeyTopics from "./KeyTopics";
-import Highlights from "./Highlights";
 import AnimatedBanner from "../shared/AnimatedBanner";
-import Collab from "./Collab";
-import QAndA from "./QAndA";
-import Venue from "./Venue";
 import { useLayoutEffect } from "react";
-import SponsorsComponent from "./Sponser";
+import PartnerWithUs from "../shared/PartnerWithUs";
+import HeroSection from "../shared/HeroSection";
+import SponsorshipDetails from "./SponsorshipDetails";
+import SponsorshipTable from "./SponsorshipTable";
+
 const Main = styled.main`
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -28,14 +22,10 @@ export default function Home() {
 
   return (
     <Main>
-      <Hero />
-      <Testimonial />
-      <KeyTopics />
-      <Highlights />
-      <SponsorsComponent />
-      <Venue />
-      <QAndA />
-      <Collab />
+      <HeroSection title={"Become a"} subTitle={"Sponsor"} />
+      <SponsorshipDetails />
+      <SponsorshipTable />
+      <PartnerWithUs link={"mailto:sponsorship@compilertech.org"} />
       <AnimatedBanner />
     </Main>
   );
