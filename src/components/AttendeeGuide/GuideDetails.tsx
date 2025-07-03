@@ -4,19 +4,23 @@ import {
   TABLET_BREAKPOINT,
   SMALL_MOBILE_BREAKPOINT,
 } from "../../styles/GlobalStyle";
-import icon1 from "../../assets/2025/icon1.svg";
 import venueImg from "../../assets/2025/venue.svg";
+import AttendeeManualIconSrc from "../../assets/icons/attendee_manual.svg";
+import SpeakerManualIconSrc from "../../assets/icons/speaker_manual.svg";
+import TrainIconSrc from "../../assets/icons/train.svg";
+import LocationPointIconSrc from "../../assets/icons/location_point.svg";
+import FlightIconSrc from "../../assets/icons/flight.svg";
 
 const GuideDetails = () => {
   const importantDocuments = [
     {
-      icon: icon1,
+      icon: SpeakerManualIconSrc,
       title: "Speaker's manual",
       buttonText: "Download",
       onClick: () => {},
     },
     {
-      icon: icon1,
+      icon: AttendeeManualIconSrc,
       title: "Attendee's manual",
       buttonText: "Download",
       onClick: () => {},
@@ -24,19 +28,19 @@ const GuideDetails = () => {
   ];
   const venueDetails = [
     {
-      icon: icon1,
+      icon: LocationPointIconSrc,
       title: "Location",
       buttonText: "View in map",
       onClick: () => {},
     },
     {
-      icon: icon1,
+      icon: FlightIconSrc,
       title: "Airport",
       buttonText: "View in map",
       onClick: () => {},
     },
     {
-      icon: icon1,
+      icon: TrainIconSrc,
       title: "Train Junction",
       buttonText: "View in map",
       onClick: () => {},
@@ -44,19 +48,19 @@ const GuideDetails = () => {
   ];
   const nearbyAccommodations = [
     {
-      icon: icon1,
+      icon: SpeakerManualIconSrc,
       title: "Hotel SY comfort",
       buttonText: "Visit",
       onClick: () => {},
     },
     {
-      icon: icon1,
+      icon: AttendeeManualIconSrc,
       title: "Sri Shambhavi Comforts",
       buttonText: "Visit",
       onClick: () => {},
     },
     {
-      icon: icon1,
+      icon: AttendeeManualIconSrc,
       title: "OYO 8501 Abhimani",
       buttonText: "Visit",
       onClick: () => {},
@@ -67,7 +71,9 @@ const GuideDetails = () => {
     <TopicsGrid>
       {topics.map((topic, index) => (
         <TopicCard key={index}>
-          <TopicIcon src={topic.icon} alt={topic.title} />
+          <TopicIcon>
+            <StyledImg src={topic.icon} alt={topic.title} />
+          </TopicIcon>
           <TopicTitle>{topic.title}</TopicTitle>
           <Button onClick={topic.onClick}>{topic.buttonText}</Button>
         </TopicCard>
@@ -297,7 +303,7 @@ const TopicCard = styled.div`
   }
 `;
 
-const TopicIcon = styled.img`
+const TopicIcon = styled.div`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   background-color: #232928;
@@ -369,6 +375,11 @@ const VenueImage = styled.img`
 
 const StyledUl = styled.ul`
   text-align: start;
+`;
+
+const StyledImg = styled.img`
+  max-width: 90%;
+  max-height: 90%;
 `;
 
 export default GuideDetails;
