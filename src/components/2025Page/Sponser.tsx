@@ -6,6 +6,7 @@ import {
 } from "../../styles/GlobalStyle";
 import logo from "../../assets/2025/logo_acm.png";
 import isoftLogo from "../../assets/2025/isoft-logo.png";
+import nvidiaLogo from "../../assets/2025/nvidia-logo-vert-rgb-wht-no-reg-for-screen.svg";
 
 const Container = styled.div`
   background-color: #000;
@@ -28,11 +29,12 @@ const Container = styled.div`
 
 const SponsorSection = styled.div`
   width: 100%;
+  margin-bottom: 1rem;
 `;
 
 const SectionTitle = styled.div`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 `;
 
 const MainTitle = styled.h2`
@@ -60,9 +62,10 @@ const SubTitle = styled.h3`
   font-size: 36px;
   line-height: 120%;
   color: #fb4dd8;
-  margin: 5px 0 0;
+  margin: 5px 0 30px;
   font-weight: normal;
   font-style: italic;
+  text-align: center;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 28px;
@@ -71,13 +74,6 @@ const SubTitle = styled.h3`
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     font-size: 24px;
   }
-`;
-
-const Divider = styled.hr`
-  height: 0.5px;
-  background-color: #cfcbc4;
-  margin: 30px 0;
-  border: none;
 `;
 
 const SponsorsGrid = styled.div<SponsorsGridProps>`
@@ -124,15 +120,43 @@ const Logo = styled.div`
 
 const LogoImage = styled.img`
   width: auto;
-  height: 80px;
+  height: ${props => props.height || "80px"};
 
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
-    height: 60px;
+    height:  ${props => props.height ? (Number(props.height) * 0.75) + "px" : "60px"};
+  }
+`;
+
+const TitleHeader = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 3rem auto 2rem;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 5;
   }
 `;
 
 const SponsorsComponent = () => {
-  const sponsors = [
+  const legendSponsors: SpoonsosrDetails[] = [
+    {
+      id: "L_1",
+      name: "NVIDIA",
+      logo: nvidiaLogo,
+      height: 150
+    },
+  ];
+  const regularSponsors: SpoonsosrDetails[] = [
     {
       id: 1,
       name: "Association for Computing Machinery",
@@ -142,38 +166,48 @@ const SponsorsComponent = () => {
       id: 2,
       name: "India SOFTware Engineering community",
       logo: isoftLogo,
+      height: 60,
     },
   ];
 
-  const renderWithCount = (count: number) => {
-    const limitedSponsors = sponsors.slice(0, count);
+  const renderSponsorsGrid = (
+    sponsorsList: typeof regularSponsors | typeof legendSponsors,
+    gridTitle: string
+  ) => (
+    <SponsorSection>
+      <TitleHeader>{gridTitle}</TitleHeader>
+      <SponsorsGrid count={sponsorsList.length}>
+        {sponsorsList.map((sponsor) => (
+          <SponsorLogo key={sponsor.id}>
+            <Logo>
+              <LogoImage height={sponsor.height} src={sponsor.logo} alt={sponsor.name} />
+            </Logo>
+          </SponsorLogo>
+        ))}
+      </SponsorsGrid>
+    </SponsorSection>
+  );
 
-    return (
-      <Container id="sponsors">
-        <SponsorSection>
-          <SectionTitle>
-            <MainTitle>Making It Possible</MainTitle>
-            <SubTitle>Our Sponsors</SubTitle>
-          </SectionTitle>
-          <Divider />
-          <SponsorsGrid count={limitedSponsors.length}>
-            {limitedSponsors.map((sponsor) => (
-              <SponsorLogo key={sponsor.id}>
-                <Logo>
-                  <LogoImage src={sponsor.logo} alt={sponsor.name} />
-                </Logo>
-              </SponsorLogo>
-            ))}
-          </SponsorsGrid>
-        </SponsorSection>
-      </Container>
-    );
-  };
-
-  return <div>{renderWithCount(2)}</div>;
+  return (
+    <Container id="sponsors">
+      <SectionTitle>
+        <MainTitle>Making It Possible</MainTitle>
+        <SubTitle>Our Sponsors</SubTitle>
+      </SectionTitle>
+      {renderSponsorsGrid(legendSponsors, "Platinum Sponsor")}
+      {renderSponsorsGrid(regularSponsors, "Our Partners")}
+    </Container>
+  );
 };
 
 export default SponsorsComponent;
 interface SponsorsGridProps {
   count: number;
+}
+
+interface SpoonsosrDetails {
+  id: string | number;
+  name: string;
+  logo: string;
+  height?: number; // Optional for flexibility
 }
