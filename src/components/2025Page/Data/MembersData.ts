@@ -92,7 +92,7 @@ export const programCommitteeMemberData: MemberCardData[] = [
     id: "program_committee_m8",
     image: img9,
     name: "Ramana Radhakrishnan",
-    institute: "Director - CPU Compilers, Nvidia",
+    institute: "Director - CPU Compilers, NVIDIA",
     position: "(PC Member)",
     link: "https://in.linkedin.com/in/themadrasi",
   },
