@@ -100,7 +100,7 @@ export const programCommitteeMemberData: MemberCardData[] = [
     id: "program_committee_m9",
     image: img10,
     name: "Dr. Saurabh Joshi",
-    institute: "Principal Researcher, Supra Research",
+    institute: "Director of R&D, Supra Research",
     position: "(PC Member)",
     link: "https://sbjoshi.github.io/",
   },
