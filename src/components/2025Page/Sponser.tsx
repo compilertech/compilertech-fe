@@ -7,6 +7,7 @@ import {
 import logo from "../../assets/2025/logo_acm.png";
 import isoftLogo from "../../assets/2025/isoft-logo.png";
 import nvidiaLogo from "../../assets/2025/nvidia-logo-vert-rgb-wht-no-reg-for-screen.svg";
+import quadricLogo from "../../assets/2025/Quadric_Logo_FA_White_72_DPI.png";
 
 const Container = styled.div`
   background-color: #000;
@@ -156,6 +157,14 @@ const SponsorsComponent = () => {
       height: 150
     },
   ];
+  const bronzeSponsors: SpoonsosrDetails[] = [
+    {
+      id: "B_1",
+      name: "Quadric",
+      logo: quadricLogo,
+      height: 80
+    },
+  ];
   const regularSponsors: SpoonsosrDetails[] = [
     {
       id: 1,
@@ -195,6 +204,7 @@ const SponsorsComponent = () => {
         <SubTitle>Our Sponsors</SubTitle>
       </SectionTitle>
       {renderSponsorsGrid(legendSponsors, "Platinum Sponsor")}
+      {renderSponsorsGrid(bronzeSponsors, "Bronze Sponsor")}
       {renderSponsorsGrid(regularSponsors, "Our Partners")}
     </Container>
   );
