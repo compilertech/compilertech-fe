@@ -176,30 +176,42 @@ const TIMELINE_EVENTS = [
   },
   {
     number: "3",
-    date: "15th August 2025",
+    date: "7th August 2025",
     description: "Notification of Conditional Acceptance",
     dateValue: "2025-08-15",
   },
   {
     number: "4",
+    date: "15th August 2025",
+    description: "Registration Open",
+    dateValue: "2025-08-15",
+  },
+  {
+    number: "5",
     date: "20th August 2025",
     description: "Video submission Deadline",
     dateValue: "2025-08-20",
   },
   {
-    number: "5",
-    date: "7th September 2025",
-    description: "Registrations Close",
-    dateValue: "2025-09-07",
-  },
-  {
     number: "6",
-    date: "9th September 2025",
+    date: "1st September 2025",
     description: "Final Notification",
-    dateValue: "2025-09-09",
+    dateValue: "2025-09-01",
   },
   {
     number: "7",
+    date: "7th September 2025",
+    description: "Early Bird Registration Close",
+    dateValue: "2025-09-07",
+  },
+  {
+    number: "8",
+    date: "20th September 2025",
+    description: "Registration Close",
+    dateValue: "2025-09-20",
+  },
+  {
+    number: "9",
     date: "27th, 28th September 2025",
     description: "Workshop Dates",
     dateValue: "2025-09-27",
@@ -262,6 +274,8 @@ const ImportantDatesTimeline = () => {
           </TimelineRow>
         );
       })}
+      <BackgroundImageTopRight src={TopRightBackgroundImageSrc} />
+      <BackgroundImageBottomRight src={BottomRightBackgroundImageSrc} />
     </TimelineWrapper>
   );
 };
