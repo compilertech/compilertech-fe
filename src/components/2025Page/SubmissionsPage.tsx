@@ -130,18 +130,3 @@ const Description = styled.p`
   text-align: justify;
   color: rgba(255, 255, 255, 0.8);
 `;
-const SubmitButton = styled.button`
-  background: rgb(189, 67, 185);
-  border: 1px solid rgb(189, 67, 185);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-radius: 8px;
-  padding: 10px 12px;
-  gap: 12px;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-`;
