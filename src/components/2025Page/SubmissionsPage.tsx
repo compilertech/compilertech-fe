@@ -23,16 +23,6 @@ export default function SubmissionsPage() {
             Please note that some of the presentations may be accepted for
             posters rather than conventional presentations.
           </Description>
-          <SubmitButton
-            onClick={() => {
-              window.open(
-                "https://easychair.org/conferences?conf=compilertech2025",
-                "_blank"
-              );
-            }}
-          >
-            Submit your proposal
-          </SubmitButton>
         </div>
       </SectionWrapper>
       <SectionWrapper>
