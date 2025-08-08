@@ -208,7 +208,7 @@ const SponsorsComponent = () => {
         <p style={{ height: 28 }}></p>
       )}
       {gridTitle.toLowerCase().includes("bronze") && (
-        <p style={{ height: 16 }}></p>
+        <p style={{ height: 14 }}></p>
       )}
       <SponsorsGrid count={sponsorsList.length}>
         {sponsorsList.map((sponsor) => (
@@ -228,9 +228,6 @@ const SponsorsComponent = () => {
       )}
       {gridTitle.toLowerCase().includes("silver") && (
         <p style={{ marginBottom: -20 }}></p>
-      )}
-      {gridTitle.toLowerCase().includes("bronze") && (
-        <p style={{ height: 4 }}></p>
       )}
     </SponsorSection>
   );
