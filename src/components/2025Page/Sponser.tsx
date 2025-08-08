@@ -4,10 +4,12 @@ import {
   SMALL_MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../styles/GlobalStyle";
-import logo from "../../assets/2025/logo_acm.png";
+import acmLogo from "../../assets/2025/logo_acm.png";
 import isoftLogo from "../../assets/2025/isoft-logo.png";
-import nvidiaLogo from "../../assets/2025/nvidia-logo-vert-rgb-wht-no-reg-for-screen.svg";
-import quadricLogo from "../../assets/2025/Quadric_Logo_FA_White_72_DPI.png";
+import nvidiaLogo from "../../assets/2025/sponsors/nvidia-logo-vert-rgb-wht-no-reg-for-screen.svg";
+import quadricLogo from "../../assets/2025/sponsors/Quadric_Logo_FA_White_72_DPI.png";
+import googleLogo from "../../assets/2025/sponsors/logo_Google_Reverse_xxxhdpi_284x93px.png";
+import qualcommLogo from "../../assets/2025/sponsors/qualcomm logo rgb blue.png";
 
 const Container = styled.div`
   background-color: #000;
@@ -86,7 +88,7 @@ const SponsorsGrid = styled.div<SponsorsGridProps>`
   }};
   justify-items: center;
   gap: 40px 20px;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 
   @media (max-width: ${TABLET_BREAKPOINT}) {
@@ -149,27 +151,44 @@ const TitleHeader = styled.div`
 `;
 
 const SponsorsComponent = () => {
-  const legendSponsors: SpoonsosrDetails[] = [
+  const platinumSponsors: SponsorDetails[] = [
     {
       id: "L_1",
       name: "NVIDIA",
       logo: nvidiaLogo,
-      height: 150
+      height: 170
     },
   ];
-  const bronzeSponsors: SpoonsosrDetails[] = [
+  const goldSponsors: SponsorDetails[] = [
+    {
+      id: "G_1",
+      name: "Google",
+      logo: googleLogo,
+      height: 60,
+    },
+  ];
+  const silverSponsors: SponsorDetails[] = [
+    {
+      id: "S_1",
+      name: "Qualcomm",
+      logo: qualcommLogo,
+      height: 125,
+    },
+  ];
+  const bronzeSponsors: SponsorDetails[] = [
     {
       id: "B_1",
       name: "Quadric",
       logo: quadricLogo,
-      height: 80
+      height: 80,
     },
   ];
-  const regularSponsors: SpoonsosrDetails[] = [
+  const regularSponsors: SponsorDetails[] = [
     {
       id: 1,
       name: "Association for Computing Machinery",
-      logo: logo,
+      logo: acmLogo,
+      height: 80
     },
     {
       id: 2,
@@ -180,20 +199,33 @@ const SponsorsComponent = () => {
   ];
 
   const renderSponsorsGrid = (
-    sponsorsList: typeof regularSponsors | typeof legendSponsors,
+    sponsorsList: SponsorDetails[],
     gridTitle: string
   ) => (
     <SponsorSection>
       <TitleHeader>{gridTitle}</TitleHeader>
+      {gridTitle.toLowerCase().includes("gold") && (
+        <p style={{ height: 12 }}></p>
+      )}
+      {gridTitle.toLowerCase().includes("bronze") && (
+        <p style={{ height: 14 }}></p>
+      )}
       <SponsorsGrid count={sponsorsList.length}>
         {sponsorsList.map((sponsor) => (
           <SponsorLogo key={sponsor.id}>
             <Logo>
-              <LogoImage height={sponsor.height} src={sponsor.logo} alt={sponsor.name} />
+              <LogoImage
+                height={sponsor.height}
+                src={sponsor.logo}
+                alt={sponsor.name}
+              />
             </Logo>
           </SponsorLogo>
         ))}
       </SponsorsGrid>
+      {gridTitle.toLowerCase().includes("silver") && (
+        <p style={{ marginBottom: -20 }}></p>
+      )}
     </SponsorSection>
   );
 
@@ -203,8 +235,11 @@ const SponsorsComponent = () => {
         <MainTitle>Making It Possible</MainTitle>
         <SubTitle>Our Sponsors</SubTitle>
       </SectionTitle>
-      {renderSponsorsGrid(legendSponsors, "Platinum Sponsor")}
+      {renderSponsorsGrid(platinumSponsors, "Platinum Sponsor")}
+      {renderSponsorsGrid(goldSponsors, "Gold Sponsor")}
+      {renderSponsorsGrid(silverSponsors, "Silver Sponsor")}
       {renderSponsorsGrid(bronzeSponsors, "Bronze Sponsor")}
+      <p style={{height: 8}}></p>
       {renderSponsorsGrid(regularSponsors, "Our Partners")}
     </Container>
   );
@@ -215,7 +250,7 @@ interface SponsorsGridProps {
   count: number;
 }
 
-interface SpoonsosrDetails {
+interface SponsorDetails {
   id: string | number;
   name: string;
   logo: string;
