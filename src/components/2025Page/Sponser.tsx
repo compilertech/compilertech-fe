@@ -205,10 +205,10 @@ const SponsorsComponent = () => {
     <SponsorSection>
       <TitleHeader>{gridTitle}</TitleHeader>
       {gridTitle.toLowerCase().includes("gold") && (
-        <p style={{ height: 12 }}></p>
+        <p style={{ height: 28 }}></p>
       )}
       {gridTitle.toLowerCase().includes("bronze") && (
-        <p style={{ height: 14 }}></p>
+        <p style={{ height: 16 }}></p>
       )}
       <SponsorsGrid count={sponsorsList.length}>
         {sponsorsList.map((sponsor) => (
@@ -223,8 +223,14 @@ const SponsorsComponent = () => {
           </SponsorLogo>
         ))}
       </SponsorsGrid>
+      {gridTitle.toLowerCase().includes("gold") && (
+        <p style={{ height: 14 }}></p>
+      )}
       {gridTitle.toLowerCase().includes("silver") && (
         <p style={{ marginBottom: -20 }}></p>
+      )}
+      {gridTitle.toLowerCase().includes("bronze") && (
+        <p style={{ height: 4 }}></p>
       )}
     </SponsorSection>
   );
