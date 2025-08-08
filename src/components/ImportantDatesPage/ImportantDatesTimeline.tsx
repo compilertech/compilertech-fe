@@ -176,7 +176,7 @@ const TIMELINE_EVENTS = [
   },
   {
     number: "3",
-    date: "7th August 2025",
+    date: "15th August 2025",
     description: "Notification of Conditional Acceptance",
     dateValue: "2025-08-15",
   },
