@@ -240,7 +240,7 @@ const SponsorsComponent = () => {
       </SectionTitle>
       {renderSponsorsGrid(platinumSponsors, "Platinum Sponsor")}
       {renderSponsorsGrid(goldSponsors, "Gold Sponsor")}
-      {renderSponsorsGrid(silverSponsors, "Silver Sponsor")}
+      {/* {renderSponsorsGrid(silverSponsors, "Silver Sponsor")} */}
       {renderSponsorsGrid(bronzeSponsors, "Bronze Sponsor")}
       <p style={{height: 8}}></p>
       {renderSponsorsGrid(regularSponsors, "Our Partners")}
