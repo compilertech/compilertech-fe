@@ -35,7 +35,7 @@ const Sponsors: React.FC = () => {
                 />
               </SponsorListing>
             </SponsorTypeSection>
-            <SponsorTypeSection>
+            {/* <SponsorTypeSection>
               <SponsorType>Silver Sponsor</SponsorType>
               <SponsorListing>
                 <SponsorImage
@@ -55,7 +55,7 @@ const Sponsors: React.FC = () => {
                   }
                 />
               </SponsorListing>
-            </SponsorTypeSection>
+            </SponsorTypeSection> */}
           </SponsorTypeSectionList>
           <Divider />
           <SponsorTypeSectionList>
