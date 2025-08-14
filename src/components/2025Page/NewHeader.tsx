@@ -51,11 +51,23 @@ const Header: React.FC = () => {
             Visit IICT'24
           </VisitButton>
         </ActionButtons>
-        <Hamburger onClick={toggleMenu} isOpen={isMenuOpen}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </Hamburger>
+        <ButtonRow>
+          <RegisterButton
+            onClick={() =>
+              window.open(
+                "https://in.explara.com/e/innovations-in-compiler-technology-2025-iict-2025/checkout",
+                "_blank"
+              )
+            }
+          >
+            Register
+          </RegisterButton>
+          <Hamburger onClick={toggleMenu} isOpen={isMenuOpen}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </Hamburger>
+        </ButtonRow>
 
         <MobileMenu isOpen={isMenuOpen}>
           <div style={{ flex: 1 }}>
@@ -276,6 +288,23 @@ const HeaderBorder = styled.div`
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
+`;
+
+const RegisterButton = styled.button`
+  padding: 0.75rem 1.75rem;
+  color: #ffffff;
+  border-radius: 8px;
+  background: linear-gradient(95.98deg, #3779fe -7.3%, #fc4dd8 113.41%);
+  margin: 0 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 3%;
+`;
+
+
+const ButtonRow = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export default Header;
