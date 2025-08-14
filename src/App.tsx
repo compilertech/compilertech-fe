@@ -76,7 +76,7 @@ function App() {
           <Route path="/committee" element={<ProgramPage />} />
           <Route path="/sponsorship" element={<SponsorshipPage />} />
           <Route path="/important-dates" element={<ImportantDatesPage />} />
-          <Route path="/registrations" element={<RegistrationsPage />} />
+          <Route path="/register" element={<RegistrationsPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />
           <Route path="/2024/organization" element={<Organization />} />

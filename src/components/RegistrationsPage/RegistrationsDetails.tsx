@@ -352,6 +352,14 @@ const Divider = styled.div`
   }
 `;
 
+const StyledMailLink = styled.a`
+  color: inherit;
+  text-decoration: underline;
+  &:hover {
+    color: #fb4dd8;
+  }
+`;
+
 // Common Table rendering function
 const FeeTable = () => (
   <TableWrapper>
@@ -451,8 +459,14 @@ const RegistrationsDetails = () => {
             <RightCol>
               <NoteText>
                 <Highlight>
-                  Reach out to support@compilertech.org with any queries about
-                  the event, or the registration process
+                  Reach out to{" "}
+                  <StyledMailLink
+                    href="mailto:support@compilertech.org"
+                    target="_blank"
+                  >
+                    support@compilertech.org
+                  </StyledMailLink>{" "}
+                  with any queries about the event, or the registration process
                 </Highlight>
               </NoteText>
             </RightCol>

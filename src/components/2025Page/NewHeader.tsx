@@ -11,7 +11,6 @@ const navigationLinks = [
   { text: "Submissions", path: "/submissions" },
   { text: "Sponsorship", path: "/sponsorship" },
   { text: "Important Dates", path: "/important-dates" },
-  { text: "Registrations", path: "/registrations" },
   // { text: "Attending", path: "/attending" },
 ];
 const Header: React.FC = () => {
@@ -52,16 +51,11 @@ const Header: React.FC = () => {
           </VisitButton>
         </ActionButtons>
         <ButtonRow>
-          <RegisterButton
-            onClick={() =>
-              window.open(
-                "https://in.explara.com/e/innovations-in-compiler-technology-2025-iict-2025/checkout",
-                "_blank"
-              )
-            }
-          >
-            Register
-          </RegisterButton>
+          {location.pathname !== "/register" && (
+            <RegisterButton onClick={() => navigate("/register")}>
+              Register
+            </RegisterButton>
+          )}
           <Hamburger onClick={toggleMenu} isOpen={isMenuOpen}>
             <span></span>
             <span></span>
@@ -291,6 +285,7 @@ const HeaderBorder = styled.div`
 `;
 
 const RegisterButton = styled.button`
+  height: 45px;
   padding: 0.75rem 1.75rem;
   color: #ffffff;
   border-radius: 8px;
@@ -299,8 +294,12 @@ const RegisterButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   letter-spacing: 3%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    height: 40px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
 `;
-
 
 const ButtonRow = styled.div`
   display: flex;
