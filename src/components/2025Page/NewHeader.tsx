@@ -11,6 +11,7 @@ const navigationLinks = [
   { text: "Submissions", path: "/submissions" },
   { text: "Sponsorship", path: "/sponsorship" },
   { text: "Important Dates", path: "/important-dates" },
+  { text: "Registrations", path: "/registrations" },
   // { text: "Attending", path: "/attending" },
 ];
 const Header: React.FC = () => {
