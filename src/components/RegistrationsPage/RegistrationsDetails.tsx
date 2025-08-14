@@ -381,7 +381,12 @@ const RegistrationsDetails = () => {
     <>
       <AbsoluteDecorWrapper>
         <DecorImage src={GradientBlob1} top="80px" left="0px" width="165px" />
-        <DecorImage src={GradientBlob2} bottom="400px" right="0px" width="260px" />
+        <DecorImage
+          src={GradientBlob2}
+          bottom="400px"
+          right="0px"
+          width="260px"
+        />
         <MobileHeader>
           <SectionTitle>Early Bird</SectionTitle>
           <SectionSubtitle>Fee Structure</SectionSubtitle>
@@ -402,7 +407,8 @@ const RegistrationsDetails = () => {
                 <br />
                 <br />
                 <Highlight>
-                  To avail the ACM member discount, please enter your ACM membership ID in the registration form
+                  To avail the ACM member discount, please enter your ACM
+                  membership ID in the registration form
                 </Highlight>
               </NoteText>
             </RightCol>
@@ -427,7 +433,7 @@ const RegistrationsDetails = () => {
               <GradientButton
                 onClick={() =>
                   window.open(
-                    "https://in.explara.com/e/innovations-in-compiler-technology-2025-iict-2025/",
+                    "https://in.explara.com/e/innovations-in-compiler-technology-2025-iict-2025/checkout",
                     "_blank"
                   )
                 }
@@ -445,7 +451,8 @@ const RegistrationsDetails = () => {
             <RightCol>
               <NoteText>
                 <Highlight>
-                  Reach out to support@compilertech.org with any queries about the event, or the registration process
+                  Reach out to support@compilertech.org with any queries about
+                  the event, or the registration process
                 </Highlight>
               </NoteText>
             </RightCol>
