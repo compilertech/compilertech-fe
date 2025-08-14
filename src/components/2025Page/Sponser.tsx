@@ -9,7 +9,7 @@ import isoftLogo from "../../assets/2025/isoft-logo.png";
 import nvidiaLogo from "../../assets/2025/sponsors/nvidia-logo-vert-rgb-wht-no-reg-for-screen.svg";
 import quadricLogo from "../../assets/2025/sponsors/Quadric_Logo_FA_White_72_DPI.png";
 import googleLogo from "../../assets/2025/sponsors/logo_Google_Reverse_xxxhdpi_284x93px.png";
-// import qualcommLogo from "../../assets/2025/sponsors/qualcomm logo rgb blue.png";
+import qualcommLogo from "../../assets/2025/sponsors/qualcomm logo white.png";
 
 const Container = styled.div`
   background-color: #000;
@@ -167,14 +167,14 @@ const SponsorsComponent = () => {
       height: 60,
     },
   ];
-  // const silverSponsors: SponsorDetails[] = [
-  //   {
-  //     id: "S_1",
-  //     name: "Qualcomm",
-  //     logo: qualcommLogo,
-  //     height: 125,
-  //   },
-  // ];
+  const silverSponsors: SponsorDetails[] = [
+    {
+      id: "S_1",
+      name: "Qualcomm",
+      logo: qualcommLogo,
+      height: 125,
+    },
+  ];
   const bronzeSponsors: SponsorDetails[] = [
     {
       id: "B_1",
@@ -240,7 +240,7 @@ const SponsorsComponent = () => {
       </SectionTitle>
       {renderSponsorsGrid(platinumSponsors, "Platinum Sponsor")}
       {renderSponsorsGrid(goldSponsors, "Gold Sponsor")}
-      {/* {renderSponsorsGrid(silverSponsors, "Silver Sponsor")} */}
+      {renderSponsorsGrid(silverSponsors, "Silver Sponsor")}
       {renderSponsorsGrid(bronzeSponsors, "Bronze Sponsor")}
       <p style={{height: 8}}></p>
       {renderSponsorsGrid(regularSponsors, "Our Partners")}
