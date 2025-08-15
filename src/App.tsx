@@ -20,6 +20,7 @@ import CountdownTimer from "./components/2025Page/CountdownTimer";
 import SubmissionsPage from "./components/2025Page/SubmissionsPage";
 import SponsorshipPage from "./components/SponsorshipPage";
 import ImportantDatesPage from "./components/ImportantDatesPage";
+import RegistrationsPage from "./components/RegistrationsPage";
 
 function App() {
   // TODO: Lazy loading
@@ -75,6 +76,7 @@ function App() {
           <Route path="/committee" element={<ProgramPage />} />
           <Route path="/sponsorship" element={<SponsorshipPage />} />
           <Route path="/important-dates" element={<ImportantDatesPage />} />
+          <Route path="/register" element={<RegistrationsPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />
           <Route path="/2024/organization" element={<Organization />} />
