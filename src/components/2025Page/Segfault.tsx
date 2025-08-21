@@ -96,9 +96,9 @@ const HackathonButton = styled.button`
 `;
 
 const SegFaultLogoImg = styled.img`
-  width: 120%
+  width: 120%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 90%;
+    width: 95%;
   }
 `;
 
