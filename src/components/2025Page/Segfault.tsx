@@ -95,11 +95,15 @@ const HackathonButton = styled.button`
   font-family: "Satoshi", sans-serif;
 `;
 
+const SegFaultLogoImg = styled.img`
+  width: 120%
+`;
+
 const Segfault = () => {
   return (
     <Wrapper>
       <ContentContainer>
-        <img src={SegfaultIconPng} alt="Segfault Logo" />
+        <SegFaultLogoImg src={SegfaultIconPng} alt="Segfault Logo" />
         <Tagline>Where Impossible is Just an Error Code.</Tagline>
         <Description>
           The SegFault Hackathon is co-located and organized as a part of the
