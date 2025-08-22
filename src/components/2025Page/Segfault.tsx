@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
-import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
+import { MOBILE_BREAKPOINT, SMALL_MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 import RightBlobSvg from "../../assets/common/Segfault_Right_Blob.svg";
 import LeftBlobDesktopSvg from "../../assets/common/Segfault_Left_Blob_Desktop.svg";
 import LeftBlobMobileSvg from "../../assets/common/Segfault_Left_Blob_Mobile.svg";
-import SegfaultIconPng from "../../assets/common/SEGFAULT_Icon.png";
+import SegfaultIcon from "../../assets/2025/SEGFAULT.svg";
+import SegfaultIcon2 from "../../assets/2025/Property 1=Variant2.svg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -68,9 +69,15 @@ const ContentContainer = styled.div`
 const Tagline = styled.p`
   color: #ffffff;
   font-size: 16px;
-  margin-top: 24px;
+  margin-top: -24px;
   max-width: 450px;
   font-family: "Satoshi", sans-serif;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    margin-top: -12px;
+  }
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    margin-top: -12px;
+  }
 `;
 
 const Description = styled.p`
@@ -96,17 +103,38 @@ const HackathonButton = styled.button`
 `;
 
 const SegFaultLogoImg = styled.img`
-  width: 120%;
+  width: 70%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 95%;
+    width: 80%;
   }
+  @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
+    width: 120%;
+  }
+  opacity: 1;
+  &:hover {
+    opacity: 0;
+  }
+  transition: opacity 0.3s ease-in-out;
+  color: transparent;
+`;
+
+const SegFaultLogoImg2 = styled(SegFaultLogoImg)`
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+  transition: opacity 0.3s ease-in-out;
+  color: transparent;
 `;
 
 const Segfault = () => {
   return (
     <Wrapper>
       <ContentContainer>
-        <SegFaultLogoImg src={SegfaultIconPng} alt="Segfault Logo" />
+        <SegFaultLogoImg2 src={SegfaultIcon2} alt="Segfault Logo" />
+        <SegFaultLogoImg src={SegfaultIcon} alt="Segfault Logo" />
         <Tagline>Where Impossible is Just an Error Code.</Tagline>
         <Description>
           The SegFault Hackathon is co-located and organized as a part of the
