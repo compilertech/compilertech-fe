@@ -110,31 +110,45 @@ const SegFaultLogoImg = styled.img`
   @media (max-width: ${SMALL_MOBILE_BREAKPOINT}) {
     width: 120%;
   }
-  opacity: 1;
-  &:hover {
-    opacity: 0;
-  }
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   color: transparent;
 `;
 
 const SegFaultLogoImg2 = styled(SegFaultLogoImg)`
   position: absolute;
   top: 0;
-  opacity: 0;
-  &:hover {
+`;
+
+const LogoBlock = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${SegFaultLogoImg} {
     opacity: 1;
   }
-  transition: opacity 0.3s ease-in-out;
-  color: transparent;
+  ${SegFaultLogoImg2} {
+    opacity: 0;
+  }
+  &:hover {
+    ${SegFaultLogoImg} {
+      opacity: 0;
+    }
+    ${SegFaultLogoImg2} {
+      opacity: 1;
+    }
+  }
 `;
 
 const Segfault = () => {
   return (
     <Wrapper>
       <ContentContainer>
-        <SegFaultLogoImg2 src={SegfaultIcon2} alt="Segfault Logo" />
-        <SegFaultLogoImg src={SegfaultIcon} alt="Segfault Logo" />
+        <LogoBlock>
+          <SegFaultLogoImg src={SegfaultIcon} alt="Segfault Logo" />
+          <SegFaultLogoImg2 src={SegfaultIcon2} alt="Segfault Logo 2" />
+        </LogoBlock>
         <Tagline>Where Impossible is Just an Error Code.</Tagline>
         <Description>
           The SegFault Hackathon is co-located and organized as a part of the
