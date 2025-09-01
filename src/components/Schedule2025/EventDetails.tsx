@@ -57,11 +57,11 @@ export default function EventDetails() {
         abstract: `
           In this paper, we share the experience in engineering the Eclipse Java Compiler across Java releases. This proposal is more about sharing the experience of working in the compiler for the last decade or so rather than a focused discussion on a particular issue.
 
-          First part starts with problems encountered in the compiler pipeline starting with the grammar especially with the usage of context-sensitive restricted identifiers becoming widespread. Some of the statements changed to expressions causing non-trivial implementations changes which the paper covers next. First part concludes with a discussion on compiler generated synthetic code and associated challenges.
+          \nFirst part starts with problems encountered in the compiler pipeline starting with the grammar especially with the usage of context-sensitive restricted identifiers becoming widespread. Some of the statements changed to expressions causing non-trivial implementations changes which the paper covers next. First part concludes with a discussion on compiler generated synthetic code and associated challenges.
 
-          In the second part, paper talks about the challenges in providing a good user experience. Starts with general issues of preview features, a concept introduced in Java for feedback mechanism. The paper then talks about some of the integration challenges from the point of upline consumers.
+          \nIn the second part, paper talks about the challenges in providing a good user experience. Starts with general issues of preview features, a concept introduced in Java for feedback mechanism. The paper then talks about some of the integration challenges from the point of upline consumers.
 
-          Paper concludes with a list of few possible future works including replacing “jikespg”[1] with a modern parser, code-gen optimizations, paths for easy migration, or even the possibility of new program analysis tools.`,
+          \nPaper concludes with a list of few possible future works including replacing “jikespg”[1] with a modern parser, code-gen optimizations, paths for easy migration, or even the possibility of new program analysis tools.`,
       },
       {
         id: "1_4",
@@ -91,14 +91,14 @@ export default function EventDetails() {
         activity: "Contributed talks",
         abstract: `
           This talk introduces eld, a linker designed to meet the needs of embedded systems development. While traditional linkers such as GNU ld and LLVM lld perform well on general-purpose platforms like x86-64, they often fall short in embedded environments where performance constraints, precise memory layout control, and detailed diagnostics are critical.
-          Embedded platforms require a different set of priorities -- tight memory footprints, deterministic behavior, and deep visibility into the linking process. eld addresses these challenges with a feature set tailored for embedded development, including:
+          \nEmbedded platforms require a different set of priorities -- tight memory footprints, deterministic behavior, and deep visibility into the linking process. eld addresses these challenges with a feature set tailored for embedded development, including:
 
-          - A faster and more resource-efficient GNU-compatible linker
-          - Rich diagnostics and detailed map-files
-          - Linker plugin framework that enables developers to customize the link.
-          - A modular target architecture that makes it easy to extend eld to new targets.
+          \n- A faster and more resource-efficient GNU-compatible linker
+          \n- Rich diagnostics and detailed map-files
+          \n- Linker plugin framework that enables developers to customize the link.
+          \n- A modular target architecture that makes it easy to extend eld to new targets.
 
-          This talk will explore the philosophy and design goals of eld, highlight its key capabilities, and present a comparative analysis with other major open-source linkers.`,
+          \n\nThis talk will explore the philosophy and design goals of eld, highlight its key capabilities, and present a comparative analysis with other major open-source linkers.`,
       },
       {
         id: "1_7",
@@ -110,12 +110,12 @@ export default function EventDetails() {
         teaser:
           "https://drive.google.com/file/d/1pdLk_wJy_O_J9EYIeOL5CJEPkjbpZwU0/view?usp=drivesdk",
         abstract: ` Modern build systems increasingly demand precise control over the linking process to support specialized use cases in performance, memory layout, and diagnostics. ELD (Embedded Linker) introduces a powerful and flexible plugin framework that enables developers to customize the linking pipeline -- without modifying the linker itself.
-          The ELD plugin framework provides deep visibility and control over every stage of the linking process, including symbols, sections, relocations, input files, rule-matching, diagnostics, layout, Link Time Optimization (LTO), garbage collection, and more. ELD plugins empower developers to implement highly tailored linking strategies aligned with their system’s architecture, performance goals, or security constraints.
+          \nThe ELD plugin framework provides deep visibility and control over every stage of the linking process, including symbols, sections, relocations, input files, rule-matching, diagnostics, layout, Link Time Optimization (LTO), garbage collection, and more. ELD plugins empower developers to implement highly tailored linking strategies aligned with their system’s architecture, performance goals, or security constraints.
 
-          This tutorial talk will introduce the ELD plugin frameworkand demonstrate its practical utility through twoillustrative examples:
+          \n\nThis tutorial talk will introduce the ELD plugin frameworkand demonstrate its practical utility through twoillustrative examples:
 
-          - SymbolChecker: A linker plugin that inspects symbols during linking and emits diagnostics for problematic or error-prone symbols.
-          - LayoutOptimizer: A linker plugin that improves the image layout by reordering sections and applying memory budgeting techniques to enhance performance and memory efficiency.`,
+          \n- SymbolChecker: A linker plugin that inspects symbols during linking and emits diagnostics for problematic or error-prone symbols.
+          \n- LayoutOptimizer: A linker plugin that improves the image layout by reordering sections and applying memory budgeting techniques to enhance performance and memory efficiency.`,
       },
       {
         id: "1_8",
@@ -129,8 +129,8 @@ export default function EventDetails() {
           "https://archive.fosdem.org/2022/schedule/event/llvm_fortran_debug/",
         activity: "Contributed talks",
         abstract: `In the world of high-performance computing, the FORTRAN (standing for FORmula TRANslator) language still stands tall after decades, thanks to its strong support for parallel computing and its ability to efficiently handle complex mathematical calculations and numerical operations. The powerful array and modular programming features of the language make it extremely suitable for computationally intensive fields like numerical weather prediction, finite element analysis, computational fluid dynamics, geophysics, computational physics, crystallography, and computational chemistry. But these very same features can pose a challenge when it comes to debugging applications with these features and can create a stumbling block in the adaptability of this language, in turn, reducing AMD's chances of being a pioneer in the HPC world.
-              Our paper details out the challenges to provide debuggability support for a plethora of complex Fortran features (like various types of Arrays, Strings, Modules and Namelists etc) in the LLVM based AOCC Fortran compiler (Flang) and our novel solutions for addressing those. These solutions include enhancements done in (a)AOCC Flang (compiler front-end) to produce the apt LLVM IR (Intermediate Representation) (b)LLVM (compiler backend) to process these modified IR to generate feature-rich DWARF debug information (c)GDB (The GNU Debugger) to consume this DWARF information and help users to have a seamless debugging experience.
-              NOTE: This paper is presented at the FOSDEM (Free and Open Source Software Developers' European Meeting) conference. please find the link: https://archive.fosdem.org/2022/schedule/event/llvm_fortran_debug/`,
+              \nOur paper details out the challenges to provide debuggability support for a plethora of complex Fortran features (like various types of Arrays, Strings, Modules and Namelists etc) in the LLVM based AOCC Fortran compiler (Flang) and our novel solutions for addressing those. These solutions include enhancements done in (a)AOCC Flang (compiler front-end) to produce the apt LLVM IR (Intermediate Representation) (b)LLVM (compiler backend) to process these modified IR to generate feature-rich DWARF debug information (c)GDB (The GNU Debugger) to consume this DWARF information and help users to have a seamless debugging experience.
+              \nNOTE: This paper is presented at the FOSDEM (Free and Open Source Software Developers' European Meeting) conference. please find the link: https://archive.fosdem.org/2022/schedule/event/llvm_fortran_debug/`,
       },
       {
         id: "1_9",
@@ -174,7 +174,7 @@ export default function EventDetails() {
           "https://drive.google.com/file/d/1KIet4e4cGqMHg2bd6uo3KvEN7LsBSsa9/view?usp=sharing",
         activity: "Contributed talks",
         abstract: `Graph algorithms are challenging to implement due to their varying topology and irregular access patterns. Real-world graphs are dynamic in nature and routinely undergo edge and vertex additions, as well as, deletions. Typical examples of dynamic graphs are social networks, collaboration networks, and road networks. Applying static algorithms repeatedly on dynamic graphs is inefficient. Further, due to the rapid growth of unstructured and semi-structured data, graph algorithms demand efficient parallel processing. Unfortunately, we know only a little about how to efficiently process dynamic graphs on massively parallel architectures such as GPUs. Existing approaches to represent and process dynamic graphs are either not general or are inefficient. In this work, we propose a graph library for dynamic graph algorithms over a GPU-tailored graph representation and exploits the warp-cooperative work-sharing (WCWS) execution model, which makes use of intra-warp instrinsics, avoids warp divergence, and enables coalesced access of the neighbours of a vertex. Based on the warp-cooperative work-sharing strategy, our library, named Meerkat, builds upon a recently proposed dynamic graph representation on GPUs, and enables fast iteration through a group of vertices, a pattern that is crucial for achieving performance in graph applications. We have implemented dynamic versions of popular graph algorithms such as breadth-first search, single-source shortest paths, triangle counting, PageRank, and weakly connected components, and evaluated them over the ones in other publicly available dynamic graph data structures and frameworks: GPMA, Hornet, and faimGraph. Using a variety of real-world graphs, we observe that Meerkat significantly improves the efficiency of the underlying dynamic graph algorithm, outperforming these frameworks.
-            Full Paper: https://link.springer.com/article/10.1007/s10766-024-00774-z`,
+            \nFull Paper: https://link.springer.com/article/10.1007/s10766-024-00774-z`,
       },
       {
         id: "1_13",
@@ -203,8 +203,8 @@ export default function EventDetails() {
         teaser: "https://youtu.be/HS4l8qxLELE",
         activity: "Contributed talks",
         abstract: `Extensible compiler IR frameworks, such as pliron or MLIR allow compiler writers to extend the IR by enabling definitions of new IR entities such operations, types etc. It is common for these definitions to contain boilerplate code and verbose syntax (printer and parser) definitions.
-            While MLIR employs the TableGen language and tool to specify these definitions in a declarative manner, pliron takes advantage of Rust's powerful procedural macros to serve the same end goal: declarative specification of IR entities.
-            This talk, beginning with a brief introduction to the problem space, proceeds to demonstrate, mostly with examples, the power and utility of a Rust macros based`,
+            \nWhile MLIR employs the TableGen language and tool to specify these definitions in a declarative manner, pliron takes advantage of Rust's powerful procedural macros to serve the same end goal: declarative specification of IR entities.
+            \nThis talk, beginning with a brief introduction to the problem space, proceeds to demonstrate, mostly with examples, the power and utility of a Rust macros based`,
       },
       {
         id: "1_16",
@@ -277,25 +277,25 @@ export default function EventDetails() {
         activity: "Contributed talks",
         abstract: `
           Overview
-          PyTorch 2.0 revolutionized neural network compilation through its innovative compiler backend architecture, combining Dynamo and Inductor backends over the existing FX Graph compilation framework. While Dynamo provides device-agnostic JIT compilation capabilities for various accelerators, Inductor specializes in optimizing GEMM inference through advanced tiling, primitive fusion, and hardware-aware data layout reordering.
+          \nPyTorch 2.0 revolutionized neural network compilation through its innovative compiler backend architecture, combining Dynamo and Inductor backends over the existing FX Graph compilation framework. While Dynamo provides device-agnostic JIT compilation capabilities for various accelerators, Inductor specializes in optimizing GEMM inference through advanced tiling, primitive fusion, and hardware-aware data layout reordering.
 
-          The Challenge
-          Despite its performance benefits, the PyTorch Inductor backend suffers from reliability issues inherent to its rapid development cycle, including undefined behavior (UB), erroneous behavior (EB), out-of-bounds accesses (OOBs), and nullptr exceptions. These issues are exacerbated by Inductor's heterogeneous backend architecture, which generates C++/OpenMP code for CPU execution and Triton runtime (PTX) for NVIDIA CUDA accelerators.
+          \n\nThe Challenge
+          \nDespite its performance benefits, the PyTorch Inductor backend suffers from reliability issues inherent to its rapid development cycle, including undefined behavior (UB), erroneous behavior (EB), out-of-bounds accesses (OOBs), and nullptr exceptions. These issues are exacerbated by Inductor's heterogeneous backend architecture, which generates C++/OpenMP code for CPU execution and Triton runtime (PTX) for NVIDIA CUDA accelerators.
 
-          Proposed Solution
-          This work presents a novel formal verification framework inspired by Alive2's SMT-based approach, specifically designed to validate PyTorch Inductor's custom intermediate representation. The framework addresses the critical need for robustness in production compiler backends by providing:
+          \n\nProposed Solution
+          \nThis work presents a novel formal verification framework inspired by Alive2's SMT-based approach, specifically designed to validate PyTorch Inductor's custom intermediate representation. The framework addresses the critical need for robustness in production compiler backends by providing:
 
-          1. Fine-grained transformation validation - Verifying correctness of individual optimization passes within the Inductor pipeline
-          2. Multi-backend formal verification - Handling both CPU (C++/OpenMP) LLVM and GPU (Triton/PTX) NVVM code generation paths to generate stabilized Alive2 IR.
-          3. Program synthesis - Anatomically splicing optimized IR to inject target specific optimizations and generating superoptimized kernels which can be reconstructed to PTX to be fed into the Inductor for performance benchmarking and robustness.
+          \n\n1. Fine-grained transformation validation - Verifying correctness of individual optimization passes within the Inductor pipeline
+          \n2. Multi-backend formal verification - Handling both CPU (C++/OpenMP) LLVM and GPU (Triton/PTX) NVVM code generation paths to generate stabilized Alive2 IR.
+          \n3. Program synthesis - Anatomically splicing optimized IR to inject target specific optimizations and generating superoptimized kernels which can be reconstructed to PTX to be fed into the Inductor for performance benchmarking and robustness.
 
-          Technical Approach
-          The verification framework leverages SMT solvers (Z3) to formally prove equivalence between original FX graph, Inductor-compiled counterparts and LLVM/NVVM IR guardrails. This enables detection of compiler bugs, optimization errors, and hardware-specific translation issues before deployment, ensuring the reliability of PyTorch 2.0's aggressive compilation optimizations.
+          \n\nTechnical Approach
+          \nThe verification framework leverages SMT solvers (Z3) to formally prove equivalence between original FX graph, Inductor-compiled counterparts and LLVM/NVVM IR guardrails. This enables detection of compiler bugs, optimization errors, and hardware-specific translation issues before deployment, ensuring the reliability of PyTorch 2.0's aggressive compilation optimizations.
 
-          Impact
-          By integrating formal verification directly into the PyTorch compilation pipeline, this work provides a foundation for trustworthy AI model deployment, particularly critical for safety-critical applications where compiler correctness cannot be assumed.
+          \nImpact
+          \nBy integrating formal verification directly into the PyTorch compilation pipeline, this work provides a foundation for trustworthy AI model deployment, particularly critical for safety-critical applications where compiler correctness cannot be assumed.
 
-          Online copy of pdf: https://drive.google.com/file/d/1ALMmYSSJM2srCnxFZoxxp_wvoATsqo5i/view?usp=sharing`,
+          \n\nOnline copy of pdf: https://drive.google.com/file/d/1ALMmYSSJM2srCnxFZoxxp_wvoATsqo5i/view?usp=sharing`,
       },
       {
         id: "2_4",
@@ -327,11 +327,11 @@ export default function EventDetails() {
         activity: "Contributed talks",
         abstract: `
           JavaScript is no doubt an interesting language. It powers websites, servers, mobile and desktop applications, and more.
-          The widespread adoption of the language is not a fluke—it is, by design, a highly extensible language. Over the years, the language has been extended and adapted to fit many paradigms, such as JSX extensions for UI design and the async/await syntax, which allows for easy-to-read abstractions over asynchronous computation. New syntax often abstracts away complex semantics, making the task of performing analysis difficult. An intermediate language serves as a platform to reduce this abstraction cost by exposing hidden semantics, implicit transformations, and abstract operations of the system.
+          \nThe widespread adoption of the language is not a fluke—it is, by design, a highly extensible language. Over the years, the language has been extended and adapted to fit many paradigms, such as JSX extensions for UI design and the async/await syntax, which allows for easy-to-read abstractions over asynchronous computation. New syntax often abstracts away complex semantics, making the task of performing analysis difficult. An intermediate language serves as a platform to reduce this abstraction cost by exposing hidden semantics, implicit transformations, and abstract operations of the system.
 
-          A lot of code written in dynamic languages tends to look, work, and feel very similar. It is natural in these languages to ignore the technicalities of strict typing and instead reason at a higher level—like orchestrating callbacks that are dynamically loaded or switched at runtime. To support such reasoning, we need analysis tools that understand these high-level primitives. Our aim is straightforward: develop an expressive intermediate representation (IR) for JavaScript that can model the full language—and, in doing so, uncover a functional core that can serve as a shared foundation for analyzing many such languages.
+          \n\nA lot of code written in dynamic languages tends to look, work, and feel very similar. It is natural in these languages to ignore the technicalities of strict typing and instead reason at a higher level—like orchestrating callbacks that are dynamically loaded or switched at runtime. To support such reasoning, we need analysis tools that understand these high-level primitives. Our aim is straightforward: develop an expressive intermediate representation (IR) for JavaScript that can model the full language—and, in doing so, uncover a functional core that can serve as a shared foundation for analyzing many such languages.
 
-          Our pipeline currently has three stages: (i) JavaScript source to 3JS (a three-address-like subset of JavaScript), (ii) 3JS to Iridium (our core IR), and (iii) a fork of the QuickJS virtual machine with added support for Iridium. Last year at IICT, we spoke about the challenges of reducing JavaScript into a three-address-code representation, and why in some cases this reduction isn’t achievable without violating language semantics. Since then, we have been steadily building our static analysis intermediate language, Iridium. This talk will share our thoughts and experiences on designing such a language, the implementation techniques involved, and the ongoing tug-of-war between abstracting logic and managing verbosity.
+          \n\nOur pipeline currently has three stages: (i) JavaScript source to 3JS (a three-address-like subset of JavaScript), (ii) 3JS to Iridium (our core IR), and (iii) a fork of the QuickJS virtual machine with added support for Iridium. Last year at IICT, we spoke about the challenges of reducing JavaScript into a three-address-code representation, and why in some cases this reduction isn’t achievable without violating language semantics. Since then, we have been steadily building our static analysis intermediate language, Iridium. This talk will share our thoughts and experiences on designing such a language, the implementation techniques involved, and the ongoing tug-of-war between abstracting logic and managing verbosity.
         `,
       },
       {
@@ -346,9 +346,9 @@ export default function EventDetails() {
         abstract: `
           Context-sensitive analysis is more precise as it distinguishes between different calling contexts. VASCO (value-sensitive contexts) is a context-sensitive method designed for unidirectional analysis. It is designed algorithmically and uses data flow values to define context. Every procedure is analysed only once in a particular context for a particular data flow value. The algorithm additionally builds a context transition graph to identify the caller to return to, thereby eliminating interprocedurally invalid paths. However, this method is designed for unidirectional analysis.
 
-          Bidirectional analysis such as LFCPA (liveness based flow- and context-sensitive pointer analysis) computes points-to information for pointers that are live. It consists of two interacting components: liveness analysis and points-to analysis. It is interleaving of liveness and points-to analysis and is achieved by a fixed point computation of both the analysis. Liveness information is used to compute points-to information and points-to information in turn is used to identify further liveness.
+          \n\nBidirectional analysis such as LFCPA (liveness based flow- and context-sensitive pointer analysis) computes points-to information for pointers that are live. It consists of two interacting components: liveness analysis and points-to analysis. It is interleaving of liveness and points-to analysis and is achieved by a fixed point computation of both the analysis. Liveness information is used to compute points-to information and points-to information in turn is used to identify further liveness.
 
-          The notion of value-sensitive contexts was defined for unidirectional data flow analyses. Using the same notion for bidirectional analysis by treating the component analyses as two unidirectional analyses leads to unsoundness. We propose the notion of value-sensitive contexts for bidirectional analyses and extend the VASCO algorithm to bidirectional analyses. We have implemented LFCPA using this notion of context and extending the implementation to support bypassing in LFCPA.
+          \n\nThe notion of value-sensitive contexts was defined for unidirectional data flow analyses. Using the same notion for bidirectional analysis by treating the component analyses as two unidirectional analyses leads to unsoundness. We propose the notion of value-sensitive contexts for bidirectional analyses and extend the VASCO algorithm to bidirectional analyses. We have implemented LFCPA using this notion of context and extending the implementation to support bypassing in LFCPA.
         `,
       },
       {
