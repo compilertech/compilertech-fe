@@ -674,7 +674,7 @@ const SubHeading = styled.p`
   line-height: 100%;
   color: #787878;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 
