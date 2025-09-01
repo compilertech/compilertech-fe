@@ -80,7 +80,9 @@ const EventDetailModal: React.FC<EventDetailModalProps> = ({
                   </EventIconWrapper>
                   <EventLabel>Abstract/s</EventLabel>
                 </EventDetailHeader>
-                <EventValue>{event.abstract}</EventValue>
+                {event.abstract.split("\n").map((line, i) => (
+                  <EventValue key={i}>{line}</EventValue>
+                ))}
               </EventDetailItem>
             )}
             {event.speakers && (
@@ -117,7 +119,6 @@ const EventDetailModal: React.FC<EventDetailModalProps> = ({
 };
 
 export default EventDetailModal;
-
 
 const Backdrop = styled.div`
   position: fixed;
