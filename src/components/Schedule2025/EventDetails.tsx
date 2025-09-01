@@ -40,7 +40,9 @@ export default function EventDetails() {
       {
         id: "1_2",
         time: "09:30 - 10:15",
-        event: "TBD",
+        buttonText: "Invited Talks",
+        highlightedHeading: "TBD",
+        speakers: "NVIDIA",
         icon: ClockIcon,
         activity: "Keynote talk",
       },
@@ -48,7 +50,6 @@ export default function EventDetails() {
         id: "1_3",
         time: "10:15 - 10:35",
         icon: ClockIcon,
-        buttonText: "Invited Talks",
         highlightedHeading:
           "Experiences in Engineering The Eclipse Compiler for Java",
         speakers: "Manoj Nalledathu Palat, Jayaprakash Arthanareeswaran",
@@ -155,17 +156,16 @@ export default function EventDetails() {
       {
         id: "1_11",
         time: "14:00 - 14:45",
-        // highlightedHeading: "TBD",
-        // speakers: "K C Shivaramkrishnan",
+        buttonText: "Invited Talks",
+        highlightedHeading: "TBD",
+        speakers: "K C Shivaramkrishnan",
         icon: ClockIcon,
-        event: "TBD",
         activity: "Keynote",
       },
       {
         id: "1_12",
         time: "14:45 - 15:05",
         icon: ClockIcon,
-        buttonText: "Invited Talk",
         highlightedHeading:
           "Meerkat: A Framework for Dynamic Graph Algorithms on GPUs",
         speakers:
@@ -248,7 +248,9 @@ export default function EventDetails() {
       {
         id: "2_1",
         time: "09:30 - 10:15",
-        event: "TBD",
+        highlightedHeading: "TBD",
+        speakers: "Sorav Bansal",
+        buttonText: "Invited Talks",
         icon: ClockIcon,
         activity: "Kenote talk",
       },
@@ -269,7 +271,6 @@ export default function EventDetails() {
         id: "2_3",
         time: "10:35 - 10:55",
         icon: ClockIcon,
-        buttonText: "Invited Talks",
         highlightedHeading: "Inductor-TV: Formal Methods for Pytorch Compiler",
         speakers: "Abhilash Majumder",
         teaser:
@@ -391,44 +392,20 @@ export default function EventDetails() {
       },
       {
         id: "2_13",
-        time: "16:00 - 16:20",
+        time: "16:00 - 17:00",
         icon: ClockIcon,
-        event: "TBD",
+        event: "Hackathon Presentations",
       },
       {
-        id: "1_14",
-        time: "16:20 - 16:40",
-        icon: ClockIcon,
-        event: "TBD",
-      },
-      {
-        id: "1_15",
-        time: "16:40 - 16:50",
-        icon: ClockIcon,
-        event: "TBD",
-      },
-      {
-        id: "1_16",
-        time: "16:50 - 17:00",
-        icon: ClockIcon,
-        event: "TBD",
-      },
-      {
-        id: "1_17",
-        time: "17:00 - 17:10",
-        icon: ClockIcon,
-        event: "TBD",
-      },
-      {
-        id: "1_18",
-        time: "17:10 - 17:20",
+        id: "2_14",
+        time: "17:00 - 17:20",
         icon: ClockIcon,
         highlightedHeading: "About CDAC compilers group",
         speakers: "CDAC",
         activity: "Sponsor presentation",
       },
       {
-        id: "1_19",
+        id: "2_15",
         time: "17:20 - 17:25",
         icon: ClockIcon,
         event: "Prize distribution",
@@ -669,6 +646,7 @@ const EventButton = styled.button`
   margin-bottom: 24px;
   cursor: pointer;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+  padding: 7px 12px;
     margin-bottom: 8px;
   }
 `;
@@ -685,19 +663,18 @@ const HighlightedHeading = styled.p`
   margin-bottom: 8px;
   cursor: pointer;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 6px;
   }
 `;
 
 const SubHeading = styled.p`
-  font-weight: 300;
-  font-style: Italic;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 100%;
   color: #787878;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
