@@ -6,7 +6,7 @@ import MicIcon from "../../assets/common/MicIcon.svg";
 import CalendarIcon from "../../assets/common/CalendarIcon.svg";
 import NoteIcon from "../../assets/common/NoteIcon.svg";
 import PeopleIcon from "../../assets/common/PeopleIcon.svg";
-import LocationIcon from "../../assets/common/LocationIcon.svg";
+import { RiPlayLargeLine } from "react-icons/ri";
 
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
 
@@ -19,7 +19,7 @@ interface EventDetailModalProps {
     datetime: string;
     abstract: string;
     speakers: string;
-    location: string;
+    teaser: string;
   };
 }
 
@@ -39,60 +39,76 @@ const EventDetailModal: React.FC<EventDetailModalProps> = ({
         <ModalTitle>Session Details</ModalTitle>
         <ModalScrollableContent>
           <EventDetailList>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={DocIcon} />
-                </EventIconWrapper>
-                <EventLabel>Name</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.name}</EventValue>
-            </EventDetailItem>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={MicIcon} />
-                </EventIconWrapper>
-                <EventLabel>Session Type</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.type}</EventValue>
-            </EventDetailItem>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={CalendarIcon} />
-                </EventIconWrapper>
-                <EventLabel>Date &amp; Time</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.datetime}</EventValue>
-            </EventDetailItem>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={NoteIcon} />
-                </EventIconWrapper>
-                <EventLabel>Abstract/s</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.abstract}</EventValue>
-            </EventDetailItem>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={PeopleIcon} />
-                </EventIconWrapper>
-                <EventLabel>Speakers</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.speakers}</EventValue>
-            </EventDetailItem>
-            <EventDetailItem>
-              <EventDetailHeader>
-                <EventIconWrapper>
-                  <EventIconImg src={LocationIcon} />
-                </EventIconWrapper>
-                <EventLabel>Location</EventLabel>
-              </EventDetailHeader>
-              <EventValue>{event.location}</EventValue>
-            </EventDetailItem>
+            {event.name && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <EventIconImg src={DocIcon} />
+                  </EventIconWrapper>
+                  <EventLabel>Name</EventLabel>
+                </EventDetailHeader>
+                <EventValue>{event.name}</EventValue>
+              </EventDetailItem>
+            )}
+            {event.type && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <EventIconImg src={MicIcon} />
+                  </EventIconWrapper>
+                  <EventLabel>Session Type</EventLabel>
+                </EventDetailHeader>
+                <EventValue>{event.type}</EventValue>
+              </EventDetailItem>
+            )}
+            {event.datetime && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <EventIconImg src={CalendarIcon} />
+                  </EventIconWrapper>
+                  <EventLabel>Date &amp; Time</EventLabel>
+                </EventDetailHeader>
+                <EventValue>{event.datetime}</EventValue>
+              </EventDetailItem>
+            )}
+            {event.abstract && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <EventIconImg src={NoteIcon} />
+                  </EventIconWrapper>
+                  <EventLabel>Abstract/s</EventLabel>
+                </EventDetailHeader>
+                <EventValue>{event.abstract}</EventValue>
+              </EventDetailItem>
+            )}
+            {event.speakers && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <EventIconImg src={PeopleIcon} />
+                  </EventIconWrapper>
+                  <EventLabel>Speakers</EventLabel>
+                </EventDetailHeader>
+                <EventValue>{event.speakers}</EventValue>
+              </EventDetailItem>
+            )}
+            {event.teaser && (
+              <EventDetailItem>
+                <EventDetailHeader>
+                  <EventIconWrapper>
+                    <StyledRiPlayLargeLine />
+                  </EventIconWrapper>
+                  <EventLabel>Teaser</EventLabel>
+                </EventDetailHeader>
+                <EventValue>
+                  <a href={event.teaser} target="_blank">
+                    {event.teaser}
+                  </a>
+                </EventValue>
+              </EventDetailItem>
+            )}
           </EventDetailList>
         </ModalScrollableContent>
       </ModalContainer>
@@ -102,7 +118,6 @@ const EventDetailModal: React.FC<EventDetailModalProps> = ({
 
 export default EventDetailModal;
 
-// Styled Components with improved names
 
 const Backdrop = styled.div`
   position: fixed;
@@ -212,6 +227,7 @@ const EventValue = styled.div`
   color: #151b1a;
   font-family: Satoshi, sans-serif;
   margin-top: 2px;
+  overflow-wrap: anywhere;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 14px;
   }
@@ -233,5 +249,12 @@ const EventIconImg = styled.img`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     max-width: 20px;
     max-height: 20px;
+  }
+`;
+
+const StyledRiPlayLargeLine = styled(RiPlayLargeLine)`
+  font-size: 24px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 20px;
   }
 `;
