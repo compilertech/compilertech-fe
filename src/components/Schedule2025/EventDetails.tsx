@@ -20,8 +20,8 @@ type ScheduleItem = {
 };
 
 const dayTabs: DayTab[] = [
-  { title: "Day 1", id: 1, date: "27th September 2025" },
-  { title: "Day 2", id: 2, date: "28th September 2025" },
+  { title: "Day 1", id: 1, date: "Sat 27 September 2025" },
+  { title: "Day 2", id: 2, date: "Sun 28 September 2025" },
 ];
 
 export default function EventDetails() {
@@ -429,7 +429,7 @@ export default function EventDetails() {
       </TabWrapper>
       <ContentWrapper>
         <ContentHeader>
-          <Title>SAT 28 SEP</Title>
+          <Title>{selectedDay.id === 1 ? "SAT 27 SEP" : "SUN 28 SEP"}</Title>
           <SubTitle>
             Displayed time zone:{" "}
             <span style={{ fontWeight: "bold" }}>
