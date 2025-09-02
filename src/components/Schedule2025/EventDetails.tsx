@@ -158,7 +158,7 @@ export default function EventDetails() {
         time: "14:00 - 14:45",
         buttonText: "Invited Talks",
         highlightedHeading: "TBD",
-        speakers: "K C Shivaramkrishnan",
+        speakers: "KC Sivaramakrishnan",
         icon: ClockIcon,
         activity: "Keynote",
       },
