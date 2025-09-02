@@ -196,7 +196,7 @@ export default function EventDetails() {
       },
       {
         id: "1_15",
-        time: "1:00 - 16:20",
+        time: "16:00 - 16:20",
         icon: ClockIcon,
         highlightedHeading: "Declarative IR Specification in Pliron",
         speakers: "Vaivaswatha Nagaraj",
@@ -429,7 +429,7 @@ export default function EventDetails() {
       </TabWrapper>
       <ContentWrapper>
         <ContentHeader>
-          <Title>SAT 28 SEP</Title>
+          <Title>SAT 27 SEP</Title>
           <SubTitle>
             Displayed time zone:{" "}
             <span style={{ fontWeight: "bold" }}>
