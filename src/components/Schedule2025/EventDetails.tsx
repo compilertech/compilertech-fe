@@ -208,7 +208,7 @@ export default function EventDetails() {
       },
       {
         id: "1_16",
-        time: "16:20 - 16:30",
+        time: "16:20 - 16:40",
         icon: ClockIcon,
         highlightedHeading:
           "Compiling Distributed Consistency: Thoughts on Designing an Initial Compiler for Orthogonally Replicated Data Types",
@@ -220,7 +220,7 @@ export default function EventDetails() {
       },
       {
         id: "1_17",
-        time: "16:30 - 16:50",
+        time: "16:40 - 17:00",
         icon: ClockIcon,
         highlightedHeading:
           "GSOHC: Global Synchronization Optimization in Heterogeneous Computing",
@@ -233,7 +233,7 @@ export default function EventDetails() {
       },
       {
         id: "1_18",
-        time: "16:50 - 17:10",
+        time: "17:00 - 17:20",
         icon: ClockIcon,
         highlightedHeading: "Enhance LLVM Loop Vectorization Using Polly",
         speakers: "Karthika Devi C",
