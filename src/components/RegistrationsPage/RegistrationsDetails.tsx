@@ -10,8 +10,8 @@ import FoodIcon from "../../assets/common/Food-outline.svg";
 const feeTableData = [
   ["ACM Student", "₹700"],
   ["Student", "₹800"],
-  ["ACM Professional Member", "₹1000"],
-  ["Professional Member", "₹1200"],
+  ["ACM Professional Member", "₹1200"],
+  ["Professional Member", "₹1300"],
 ];
 
 const TableWrapper = styled.div`
@@ -368,7 +368,7 @@ const FeeTable = () => (
         <thead>
           <TableRow>
             <TableHeader>Tier</TableHeader>
-            <TableHeader isLast>Early Bird</TableHeader>
+            <TableHeader isLast>Registration</TableHeader>
           </TableRow>
         </thead>
         <tbody>
@@ -396,12 +396,12 @@ const RegistrationsDetails = () => {
           width="260px"
         />
         <MobileHeader>
-          <SectionTitle>Early Bird</SectionTitle>
+          <SectionTitle>Registration</SectionTitle>
           <SectionSubtitle>Fee Structure</SectionSubtitle>
         </MobileHeader>
         <ContentWrapper>
           <DesktopHeader>
-            <SectionTitle>Early Bird</SectionTitle>
+            <SectionTitle>Registration</SectionTitle>
             <SectionSubtitle>Fee Structure</SectionSubtitle>
           </DesktopHeader>
           <FeeTable />
@@ -466,7 +466,7 @@ const RegistrationsDetails = () => {
                   >
                     support@compilertech.org
                   </StyledMailLink>{" "}
-                  with any queries about the event, or the registration process
+                  with any queries about the event, or the registration process including bulk registrations
                 </Highlight>
               </NoteText>
             </RightCol>
