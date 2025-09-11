@@ -157,7 +157,7 @@ export default function EventDetails() {
         id: "1_11",
         time: "14:00 - 14:45",
         buttonText: "Invited Talks",
-        highlightedHeading: "TBD",
+        highlightedHeading: "Evolving the OCaml Programming Language",
         speakers: "KC Sivaramakrishnan",
         icon: ClockIcon,
         activity: "Keynote",
@@ -248,11 +248,13 @@ export default function EventDetails() {
       {
         id: "2_1",
         time: "09:30 - 10:15",
-        highlightedHeading: "TBD",
+        highlightedHeading: "Imagining a Next-generation Superoptimizer",
         speakers: "Sorav Bansal",
         buttonText: "Invited Talks",
         icon: ClockIcon,
         activity: "Kenote talk",
+        abstract:
+          "A program superoptimizer uses a search procedure, e.g., a probabilistic backtracking algorithm, to find an optimized (and sometimes, optimal) implementation of a program specification on a given machine architecture.  Each candidate implementation proposed by the search procedure is checked for equivalence with the input program specification, to eventually identify a sound optimization that can subsequently be stored as a peephole optimization rule.  This is in contrast to a traditional compiler optimizer that is typically organized as a sequence of algorithmic passes that transform the program successively towards an optimized implementation.\nI will share my thoughts on why the traditional model of compiler development may be unsustainable, and why it is likely for a superoptimizer to become a mainstream method of optimizing programs in the foreseeable future, considering recent advances in AI.  I will then present our formal program equivalence checker which is intended to enable such a superoptimizer.",
       },
       {
         id: "2_2",
