@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import CrossIconWhite from "../../assets/common/CrossIcon_White.svg";
 import { MOBILE_BREAKPOINT } from "../../styles/GlobalStyle";
@@ -51,59 +51,27 @@ const posterSlides = [
   },
 ];
 
-const SLIDE_INTERVAL = 4000;
-
 interface PostersModalProps {
   open: boolean;
   onClose: () => void;
 }
 
 const PostersModal: React.FC<PostersModalProps> = ({ open, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index);
-  }, []);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === posterSlides.length - 1 ? 0 : prevIndex + 1
-    );
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
-    const interval = setInterval(nextSlide, SLIDE_INTERVAL);
-    return () => clearInterval(interval);
-  }, [nextSlide, open]);
-
   if (!open) return null;
-
   return (
     <Backdrop onClick={onClose}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
         <CloseModalButton onClick={onClose}>
-          <img src={CrossIconWhite} />
+          <img src={CrossIconWhite} alt="Close" />
         </CloseModalButton>
         <ModalTitle></ModalTitle>
         <ModalScrollableContent>
-          <SlideWrapper>
-            <PosterSlide>
-              <PosterTitle>{posterSlides[currentIndex].title}</PosterTitle>
-              <PosterSubtitle>
-                {posterSlides[currentIndex].subtitle}
-              </PosterSubtitle>
-            </PosterSlide>
-            <DotsContainer>
-              {posterSlides.map((_, idx) => (
-                <Dot
-                  key={idx}
-                  active={idx === currentIndex}
-                  onClick={() => goToSlide(idx)}
-                />
-              ))}
-            </DotsContainer>
-          </SlideWrapper>
+          {posterSlides.map((slide, idx) => (
+            <PosterListItem key={idx}>
+              <PosterTitle>{slide.title}</PosterTitle>
+              <PosterSubtitle>{slide.subtitle}</PosterSubtitle>
+            </PosterListItem>
+          ))}
         </ModalScrollableContent>
       </ModalContainer>
     </Backdrop>
@@ -138,7 +106,7 @@ const ModalContainer = styled.div`
   overflow: hidden;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 98vw;
-    padding: 18px 4vw 40px 4vw;
+    padding: 18px 4vw 18px 4vw;
   }
 `;
 
@@ -175,34 +143,26 @@ const ModalTitle = styled.h2`
   }
 `;
 
-const SlideWrapper = styled.div`
+const ModalScrollableContent = styled.div`
+  overflow-y: auto;
+  max-height: calc(90vh - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  max-width: 90%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    min-height: 200px;
-  }
 `;
 
-const PosterSlide = styled.div`
-  margin-bottom: 32px;
+const PosterListItem = styled.div`
+  margin-bottom: 7px;
   padding: 24px 20px;
   border-radius: 14px;
   min-width: 320px;
-  max-width: 600px;
   transition: box-shadow 0.2s;
-  text-align: center;
-  min-height: 180px;
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin-bottom: 12px;
     min-width: 180px;
   }
 `;
@@ -232,41 +192,4 @@ const PosterSubtitle = styled.p`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     font-size: 15px;
   }
-`;
-
-const DotsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: auto;
-  width: 100%;
-`;
-
-interface DotProps {
-  active: boolean;
-}
-
-const Dot = styled.div<DotProps>`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  background: ${(props) =>
-    props.active ? "#a93d9d" : "rgba(169, 61, 157, 0.3)"};
-  transition: background 0.3s ease;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 8px;
-    height: 8px;
-    margin: 0 4px;
-  }
-`;
-
-const ModalScrollableContent = styled.div`
-  overflow-y: auto;
-  max-height: calc(90vh - 100px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 `;
