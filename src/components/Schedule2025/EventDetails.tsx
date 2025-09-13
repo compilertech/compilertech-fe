@@ -4,6 +4,7 @@ import ClockIcon from "../../assets/common/ClockIcon.svg";
 import TeaCupIconSrc from "../../assets/common/TeaCupIcon.svg";
 import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../styles/GlobalStyle";
 import EventDetailModal from "./EventDetailModal";
+import PostersModal from "./PostersModal";
 
 type DayTab = { title: string; id: number; date: string };
 type ScheduleItem = {
@@ -17,6 +18,7 @@ type ScheduleItem = {
   speakers?: string;
   teaser?: string;
   abstract?: string;
+  onClick?: () => void;
 };
 
 const dayTabs: DayTab[] = [
@@ -27,6 +29,7 @@ const dayTabs: DayTab[] = [
 export default function EventDetails() {
   const [selectedDay, setSelectedDay] = useState<DayTab>(dayTabs[0]);
   const [selectedEvent, setSelectedEvent] = useState<ScheduleItem | null>(null);
+  const [openPosterSession, setOpenPosterSession] = useState(false);
 
   const scheduleItems: { [key: number]: ScheduleItem[] } = {
     1: [
@@ -378,7 +381,8 @@ export default function EventDetails() {
         id: "2_10",
         time: "14:00 - 15:00",
         icon: ClockIcon,
-        event: "Poster Session",
+        highlightedHeading: "Poster Session",
+        onClick: () => setOpenPosterSession(true),
       },
       {
         id: "2_11",
@@ -453,7 +457,15 @@ export default function EventDetails() {
                 ) : null}
                 {item.event ? item.event : null}
                 {item.highlightedHeading ? (
-                  <HighlightedHeading onClick={() => setSelectedEvent(item)}>
+                  <HighlightedHeading
+                    onClick={() => {
+                      if (item.onClick) {
+                        item.onClick();
+                        return;
+                      }
+                      setSelectedEvent(item);
+                    }}
+                  >
                     {item.highlightedHeading}
                   </HighlightedHeading>
                 ) : null}
@@ -477,6 +489,10 @@ export default function EventDetails() {
           speakers: selectedEvent?.speakers || "",
           teaser: selectedEvent?.teaser || "",
         }}
+      />
+      <PostersModal
+        open={openPosterSession}
+        onClose={() => setOpenPosterSession(false)}
       />
     </EventDetailsWrapper>
   );
@@ -648,7 +664,7 @@ const EventButton = styled.button`
   margin-bottom: 24px;
   cursor: pointer;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-  padding: 7px 12px;
+    padding: 7px 12px;
     margin-bottom: 8px;
   }
 `;
