@@ -57,6 +57,20 @@ interface PostersModalProps {
 }
 
 const PostersModal: React.FC<PostersModalProps> = ({ open, onClose }) => {
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup function to reset overflow when the component unmounts
+    // or when the 'open' prop changes
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   if (!open) return null;
   return (
     <Backdrop onClick={onClose}>
