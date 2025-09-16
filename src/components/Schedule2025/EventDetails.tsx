@@ -16,6 +16,7 @@ type ScheduleItem = {
   buttonText?: string;
   highlightedHeading?: string;
   speakers?: string;
+  designation?: string;
   teaser?: string;
   abstract?: string;
   onClick?: () => void;
@@ -44,10 +45,12 @@ export default function EventDetails() {
         id: "1_2",
         time: "09:30 - 10:15",
         buttonText: "Invited Talks",
-        highlightedHeading: "TBD",
-        speakers: "NVIDIA",
+        highlightedHeading: "Compilers @ Nvidia : Challenges, Innovations, and the impact of AI",
+        speakers: "Shekhar Divekar",
+        designation: "Senior Manager, GPU Compilers, NVIDIA",
         icon: ClockIcon,
         activity: "Keynote talk",
+        abstract: "NVIDIA engineers a wide spectrum of computing systems, ranging from handheld consoles to large-scale data centers, all unified by core hardware components such as CPUs, GPUs, and DPUs. Compilers play a pivotal role in unlocking the full potential of these heterogeneous platforms, driving both functionality and performance across diverse application domains.\n\nIn this keynote, I will explore the critical role of compilers within the software stack, highlighting key challenges, recent innovations, and unsolved problems that emerge when targeting such a broad array of hardware components.\n\nAdditionally, I will delve into the transformative impact of AI techniques on modern compiler design—examining current applications as well as forward-looking implications of AI integration, which promise to redefine how compilers evolve and operate in the future."
       },
       {
         id: "1_3",
@@ -162,8 +165,10 @@ export default function EventDetails() {
         buttonText: "Invited Talks",
         highlightedHeading: "Evolving the OCaml Programming Language",
         speakers: "KC Sivaramakrishnan",
+        designation: "Assistant Professor, CSE, IIT Madras and CTO, Tarides",
         icon: ClockIcon,
         activity: "Keynote",
+        abstract: "OCaml is a 25+ year old, industrial-strength functional programming language used widely in the industry and academia. OCaml is particularly favoured for its ability to write correct and efficient programs easily. Notable open-source projects using OCaml include the Rocq theorem prover, MirageOS Unikernel libraries, and static analysis tools and programming languages such as Hack, Flow, Infer, CompCert, etc. Some notable industrial users include Jane Street, Meta, Ahrefs and Docker.\n\nDespite its age, OCaml community is strong and growing, bringing cutting edge programming language research and language tooling to its users without breaking critical legacy code. In this talk, I will present how the OCaml community approaches this difficult task, reflecting upon the development of the recent major release OCaml 5 which brought native support for concurrency and parallelism to the language and developing state-of-the-art platform tools to help our users be effective at using OCaml."
       },
       {
         id: "1_12",
@@ -253,6 +258,7 @@ export default function EventDetails() {
         time: "09:30 - 10:15",
         highlightedHeading: "Imagining a Next-generation Superoptimizer",
         speakers: "Sorav Bansal",
+        designation: "Graviton Fellow, Graviton Research Capital LLP and Professor, Department of Computer Science, IIT Delhi",
         buttonText: "Invited Talks",
         icon: ClockIcon,
         activity: "Kenote talk",
@@ -487,6 +493,7 @@ export default function EventDetails() {
           datetime: selectedDay.date + ", " + (selectedEvent?.time || ""),
           abstract: selectedEvent?.abstract || "",
           speakers: selectedEvent?.speakers || "",
+          designation: selectedEvent?.designation || "",
           teaser: selectedEvent?.teaser || "",
         }}
       />
