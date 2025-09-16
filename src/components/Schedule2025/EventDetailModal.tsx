@@ -19,6 +19,7 @@ interface EventDetailModalProps {
     datetime: string;
     abstract: string;
     speakers: string;
+    designation: string;
     teaser: string;
   };
 }
@@ -108,6 +109,10 @@ const EventDetailModal: React.FC<EventDetailModalProps> = ({
                   <EventLabel>Speakers</EventLabel>
                 </EventDetailHeader>
                 <EventValue>{event.speakers}</EventValue>
+                {event.designation && (
+                  <EventValue>{event.designation}</EventValue>
+                )
+                }
               </EventDetailItem>
             )}
             {event.teaser && (
