@@ -44,7 +44,7 @@ export const programCommitteeMemberData: MemberCardData[] = [
     id: "program_committee_m2",
     image: img2,
     name: "Dr. Dibyendu Das",
-    institute: "Sr. Principal Engineer, Intel",
+    institute: "Sr. Director of Engineering, Qualcomm Cloud AI and Compilers",
     position: "(PC Member)",
     link: "https://www.linkedin.com/in/dibyendu-das-80341b8/",
   },
