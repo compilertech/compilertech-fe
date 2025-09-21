@@ -13,6 +13,7 @@ import QAndA from "./QAndA";
 import Venue from "./Venue";
 import { useLayoutEffect } from "react";
 import SponsorsComponent from "./Sponser";
+import Segfault from "./Segfault";
 const Main = styled.main`
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -30,6 +31,7 @@ export default function Home() {
     <Main>
       <Hero />
       <Testimonial />
+      <Segfault />
       <KeyTopics />
       <Highlights />
       <SponsorsComponent />

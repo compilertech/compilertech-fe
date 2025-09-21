@@ -23,16 +23,7 @@ export default function SubmissionsPage() {
             Please note that some of the presentations may be accepted for
             posters rather than conventional presentations.
           </Description>
-          <SubmitButton
-            onClick={() => {
-              window.open(
-                "https://easychair.org/conferences?conf=compilertech2025",
-                "_blank"
-              );
-            }}
-          >
-            Submit your proposal
-          </SubmitButton>
+          <Pill>Closed</Pill>
         </div>
       </SectionWrapper>
       <SectionWrapper>
@@ -44,7 +35,7 @@ export default function SubmissionsPage() {
           <Description>
             The selections will happen in two steps: In the first step, a
             conditional acceptance will be provided. The second step requires
-            the participants of conditionally accepted papers to submit a 
+            the participants of conditionally accepted papers to submit a
             90-second video of their presentation. The final acceptance will be
             provided based on the evaluation of the video presentations.
           </Description>
@@ -140,18 +131,14 @@ const Description = styled.p`
   text-align: justify;
   color: rgba(255, 255, 255, 0.8);
 `;
-const SubmitButton = styled.button`
-  background: rgb(189, 67, 185);
-  border: 1px solid rgb(189, 67, 185);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-radius: 8px;
-  padding: 10px 12px;
-  gap: 12px;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+const Pill = styled.div`
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #f5d6f5;
+  border: 2px solid ${({ theme }) => theme.primary};
+  border-radius: 24px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
 `;

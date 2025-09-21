@@ -18,7 +18,7 @@ function Organization() {
         <Description>
           We believe this workshop will become a venue that brings together
           compiler engineers, students and professors. We have a strong
-          organizing team with engineers from Google, AMD, and Nvidia who are
+          organizing team with engineers from Google, AMD, and NVIDIA who are
           experienced in organizing technical events working tirelessly to make
           the workshop successful.
         </Description>

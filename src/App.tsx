@@ -21,6 +21,8 @@ import SubmissionsPage from "./components/2025Page/SubmissionsPage";
 import SponsorshipPage from "./components/SponsorshipPage";
 import ImportantDatesPage from "./components/ImportantDatesPage";
 import AttendeeGuide from "./components/AttendeeGuide";
+import RegistrationsPage from "./components/RegistrationsPage";
+import Schedule2025 from "./components/Schedule2025";
 
 function App() {
   // TODO: Lazy loading
@@ -77,11 +79,13 @@ function App() {
           <Route path="/sponsorship" element={<SponsorshipPage />} />
           <Route path="/important-dates" element={<ImportantDatesPage />} />
           <Route path="/attendee-guide" element={<AttendeeGuide />} />
+          <Route path="/register" element={<RegistrationsPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/2024" element={<Home2024 />} />
           <Route path="/2024/organization" element={<Organization />} />
           <Route path="/2024/attending" element={<Attending />} />
           <Route path="/2024/schedule" element={<Schedule />} />
+          <Route path="/schedule" element={<Schedule2025 />} />
         </Routes>
         {is2024Page && <Footer />}
         {!is2024Page && <NewFooter />}
