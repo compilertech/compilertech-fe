@@ -31,40 +31,76 @@ const GuideDetails = () => {
       icon: LocationPointIconSrc,
       title: "Location",
       buttonText: "View in map",
-      onClick: () => {},
+      onClick: () => {
+        window.open(`https://www.google.com/maps/place/A+V+Rama+Rao+Auditorium/@13.0254799,77.5642895,735m/data=!3m1!1e3!4m6!3m5!1s0x3bae170072e0ac2d:0xa11507858c340e41!8m2!3d13.0254843!4d77.5643961!16s%2Fg%2F11y6kc54lx!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D`, "_blank");
+      },
     },
     {
       icon: FlightIconSrc,
       title: "Airport",
       buttonText: "View in map",
-      onClick: () => {},
+      onClick: () => {
+        window.open(`https://maps.app.goo.gl/Cp6dvpqfqAvSsZ1v7?g_st=aw`, "_blank");
+      },
     },
     {
       icon: TrainIconSrc,
       title: "Train Junction",
       buttonText: "View in map",
-      onClick: () => {},
+      onClick: () => {
+        window.open(`https://maps.app.goo.gl/6dmLKksGqyTeDfQYA?g_st=aw`, "_blank");
+      },
     },
   ];
   const nearbyAccommodations = [
     {
+      icon: AttendeeManualIconSrc,
+      title: "Super Hotel O Yeshwanthpur Formerly Stay Comforts",
+      buttonText: "Visit",
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-JtozueJ`, "_blank");
+      },
+    },
+    {
+      icon: AttendeeManualIconSrc,
+      title: "Hotel Saarang Foreve",
+      buttonText: "Visit",
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-enq4B9`, "_blank");
+      },
+    },
+    {
+      icon: AttendeeManualIconSrc,
+      title: "Maldives INN",
+      buttonText: "Visit",
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-yzqOtS`, "_blank");
+      },
+    },
+    {
       icon: SpeakerManualIconSrc,
-      title: "Hotel SY comfort",
+      title: "UR Residency",
       buttonText: "Visit",
-      onClick: () => {},
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-dmHAHv`, "_blank");
+      },
     },
     {
       icon: AttendeeManualIconSrc,
-      title: "Sri Shambhavi Comforts",
+      title: "Sasthi Suites",
       buttonText: "Visit",
-      onClick: () => {},
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-amp22m`, "_blank");
+      },
     },
     {
       icon: AttendeeManualIconSrc,
-      title: "OYO 8501 Abhimani",
+      title: "Hotel O SpotonSLV Comfort",
       buttonText: "Visit",
-      onClick: () => {},
-    },
+      onClick: () => {
+        window.open(`https://www.booking.com/Share-3HwsJNp`, "_blank");
+      },
+    }
   ];
 
   const renderTopicCards = (topics: typeof importantDocuments) => (

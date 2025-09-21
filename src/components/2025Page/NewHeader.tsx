@@ -108,7 +108,7 @@ const Header: React.FC = () => {
 
       <style>
         {`
-          @media (min-width: ${MOBILE_BREAKPOINT}) {
+          @media (min-width: ${TABLET_BREAKPOINT}) {
             .mobile-only {
               display: none;
             }
@@ -149,7 +149,7 @@ const Hamburger = styled.div<{ isOpen: boolean }>`
     transition: all 0.2s ease-in-out;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     display: flex;
 
     // Animate hamburger to close icon
@@ -211,7 +211,7 @@ const Navigation = styled.nav<{
   border-top: ${(props) => props.border || "none"};
   gap: ${(props) => props.gap || "0"};
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
@@ -250,7 +250,7 @@ const ActionButtons = styled.div`
   @media (min-width: ${TABLET_BREAKPOINT}) {
     margin-left: 4rem;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  @media (max-width: ${TABLET_BREAKPOINT}) {
     display: none;
   }
 `;
