@@ -11,19 +11,37 @@ import TrainIconSrc from "../../assets/icons/train.svg";
 import LocationPointIconSrc from "../../assets/icons/location_point.svg";
 import FlightIconSrc from "../../assets/icons/flight.svg";
 
+const downloadDoc = (downloadUrl: string) => {
+  const link = document.createElement("a");
+  link.href = downloadUrl;
+  link.download = "document.pdf";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const GuideDetails = () => {
   const importantDocuments = [
     {
       icon: SpeakerManualIconSrc,
       title: "Speaker's manual",
       buttonText: "Download",
-      onClick: () => {},
+      onClick: () => {
+        downloadDoc(
+          `https://docs.google.com/document/d/1Fxj_BZ2JO-vCFrbphYjrmsyBAKuiCpn2ptQLT2OKqSQ/export?tab=t.0&format=pdf`
+        );
+      },
     },
     {
       icon: AttendeeManualIconSrc,
       title: "Attendee's manual",
       buttonText: "Download",
-      onClick: () => {},
+      onClick: () => {
+        downloadDoc(
+          `https://drive.google.com/uc?export=download&id=1BtGByhsBBRL72Pj_dM-08h0xfiCZTloS`
+        );
+      },
     },
   ];
   const venueDetails = [
@@ -32,7 +50,10 @@ const GuideDetails = () => {
       title: "Location",
       buttonText: "View in map",
       onClick: () => {
-        window.open(`https://www.google.com/maps/place/A+V+Rama+Rao+Auditorium/@13.0254799,77.5642895,735m/data=!3m1!1e3!4m6!3m5!1s0x3bae170072e0ac2d:0xa11507858c340e41!8m2!3d13.0254843!4d77.5643961!16s%2Fg%2F11y6kc54lx!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D`, "_blank");
+        window.open(
+          `https://www.google.com/maps/place/A+V+Rama+Rao+Auditorium/@13.0254799,77.5642895,735m/data=!3m1!1e3!4m6!3m5!1s0x3bae170072e0ac2d:0xa11507858c340e41!8m2!3d13.0254843!4d77.5643961!16s%2Fg%2F11y6kc54lx!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D`,
+          "_blank"
+        );
       },
     },
     {
@@ -40,7 +61,10 @@ const GuideDetails = () => {
       title: "Airport",
       buttonText: "View in map",
       onClick: () => {
-        window.open(`https://maps.app.goo.gl/Cp6dvpqfqAvSsZ1v7?g_st=aw`, "_blank");
+        window.open(
+          `https://maps.app.goo.gl/Cp6dvpqfqAvSsZ1v7?g_st=aw`,
+          "_blank"
+        );
       },
     },
     {
@@ -48,7 +72,10 @@ const GuideDetails = () => {
       title: "Train Junction",
       buttonText: "View in map",
       onClick: () => {
-        window.open(`https://maps.app.goo.gl/6dmLKksGqyTeDfQYA?g_st=aw`, "_blank");
+        window.open(
+          `https://maps.app.goo.gl/6dmLKksGqyTeDfQYA?g_st=aw`,
+          "_blank"
+        );
       },
     },
   ];
@@ -100,7 +127,7 @@ const GuideDetails = () => {
       onClick: () => {
         window.open(`https://www.booking.com/Share-3HwsJNp`, "_blank");
       },
-    }
+    },
   ];
 
   const renderTopicCards = (topics: typeof importantDocuments) => (
