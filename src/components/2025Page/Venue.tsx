@@ -164,7 +164,7 @@ function Venue() {
           <Heading>Where Innovation Meets</Heading>
           <SubHeading>Collaboration</SubHeading>
           <Address>
-            Address : IISc, CV Raman Rd, Bengaluru, Karnataka 560012
+            Address : A. V Rama Rao Auditorium, Chemical Sciences Building, IISC
           </Address>
           <Button
             onClick={() =>
