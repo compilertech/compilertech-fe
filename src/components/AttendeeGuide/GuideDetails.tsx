@@ -154,7 +154,7 @@ const GuideDetails = () => {
         <ColumnRight>
           <Description>
             The information provided in these documents will be valuable for all
-            participants involved in the IICT 2024 workshop, including both the
+            participants involved in the IICT 2025 workshop, including both the
             speaker's manual and the attendee guide. workshop.
           </Description>
           {renderTopicCards(importantDocuments)}
@@ -173,7 +173,7 @@ const GuideDetails = () => {
             />
           </ImageContainer>
           <Description>
-            Address : IISc, CV Raman Rd, Bengaluru, Karnataka 560012
+            Address : A. V Rama Rao Auditorium, Chemical Sciences Building, IISC
           </Description>
           {renderTopicCards(venueDetails)}
         </ColumnRight>
@@ -203,6 +203,7 @@ const GuideDetails = () => {
               {[
                 `Please bring identity proof (Driver's License, Student Id, Aadhaar, or Passport)`,
                 `If you have registered as a student please bring your student ID for verification`,
+                `If you have registered as an ACM member, please provide your ACM Id at the registration desk`,
                 `Email confirmation of the registration`,
                 `If you don't have the confirmation please email support@compilertech.org or see someone at the checkin counter on the date of the registration.`,
               ].map((text, index) => (
