@@ -412,8 +412,8 @@ export default function EventDetails() {
         id: "2_14",
         time: "17:00 - 17:20",
         icon: ClockIcon,
-        highlightedHeading: "About CDAC compilers group",
-        speakers: "CDAC",
+        highlightedHeading: "Compiler Research & Development Initiatives @ C-DAC Bangalore",
+        speakers: "Prachi Pandey",
         activity: "Sponsor presentation",
       },
       {
